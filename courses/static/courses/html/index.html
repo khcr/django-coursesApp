@@ -1,0 +1,10 @@
+<h1>Home</h1>
+<a href='#/new'><button class="btn btn-lg btn-primary" type="button">Rédiger un nouveau cours</button></a>
+<h2 class="text-center">Cours à lire</h2>
+<div ng-repeat="course in courses">
+  <div class="course-block col-md-5" ng-click="showCourse(course)">
+	 <h4>{{ course.name }}</h4>
+	 <p>{{ course.description }}</p>
+   <a ng-href="#/{{ course.id }}/edit/1">Editer</a>
+  </div>
+</div>
