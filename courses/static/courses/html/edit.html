@@ -4,7 +4,7 @@
 
 <div class="pull-right margin bottom">
   <button type="button" ng-click="saveCourse()" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk"></span> Enregistrer</button>
-  <a ng-href="#/{{ course.id }}/preview/{{ page.id }}"><button type="button" ng-click="preview()" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> Aperçu</button></a>
+  <button type="button" ng-click="preview()" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> Aperçu</button>
 </div>
 
 <form class="form-horizontal" role="form" name="editCourse" ng-submit="newCourse.$valid && saveCourse()" novalidate>
@@ -43,3 +43,5 @@
   <button ng-click="upload.abort()">Cancel Upload</button>
 </div>
 -->
+
+{{ page.sections }}

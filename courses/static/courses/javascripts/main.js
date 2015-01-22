@@ -131,34 +131,35 @@ app.controller('EditCourseController', ['$scope', '$routeParams', '$location', '
       $scope.page.$add_section()
     };
     $scope.removeSection = function(key) {
+      for(var i = key + 1; i < $scope.page.sections.length; i++) {
+        $scope.page.sections[i].order -= 1;
+      }
       section = new Section($scope.page.sections[key]);
       section.$delete(function() {
         $scope.page.sections.splice(key, 1);
+        $scope.page.$update({ objectId: $scope.course.id });
       });
-      // TODO: rewrite order
     };
     $scope.upSection = function(key) {
-      $scope.page.sections[key].order -= 1
-      $scope.page.sections[key - 1].order += 1
-      $scope.page.$update({ objectId: $scope.course.id }, function() {
-        alert('saved !');
-      });
+      if(key !== 0) {
+        $scope.page.sections[key].order -= 1;
+        $scope.page.sections[key - 1].order += 1;
+        $scope.page.$update({ objectId: $scope.course.id });
+      }
     };
     $scope.downSection = function(key) {
-      if($scope.page.sections[key + 1])
-      $scope.page.sections[key].order += 1
-      $scope.page.sections[key + 1].order -= 1
-      $scope.page.$update({ objectId: $scope.course.id }, function() {
-        alert('saved !');
-      });
-      
+      if($scope.page.sections[key + 1] !== undefined) {
+        $scope.page.sections[key].order += 1;
+        $scope.page.sections[key + 1].order -= 1;
+        $scope.page.$update({ objectId: $scope.course.id });
+      }
     };
     $scope.saveCourse = function() {
       angular.forEach($scope.page.sections, function(value, key) {
         $scope.page.sections[key].html_content = $filter('markdown')($scope.page.sections[key].markdown_content)
       });
       $scope.page.$update({ objectId: $scope.course.id }, function() {
-        alert('saved !');
+        console.log('saved !');
       });
     };
     $scope.newPage = function() {
@@ -172,6 +173,10 @@ app.controller('EditCourseController', ['$scope', '$routeParams', '$location', '
     };
     $scope.isCurrentPage = function(number) {
       return number === $scope.page.id;
+    };
+    $scope.preview = function() {
+      $scope.saveCourse();
+      $location.path($scope.course.id + "/preview/" + $scope.page.order);
     };
     $scope.onFileSelect = function($files) {
       for (var i = 0; i < $files.length; i++) {
