@@ -1,26 +1,29 @@
-Projet Commun webmath
-=====================
+# TM2014 Keran Kocher
 
-Ce projet permettra à toutes les personnes du séminaire d'intégrer
-leurs contributions sur le projet commun.
+Application de gestion de cours.
 
-Répartition des tâches
------------------------
+## Démarrage
 
-*   Dashboard élève : Sébastien Chuat
-*   Dashboard professeur : Bryan Oberson
-*   Générateur de quiz : Benoît Maillard
-*   Cours : Keran Kocher
-*   Exercices et corrigés : Florian Genilloud
-*   Version mobile du site : Daniel Nunes Silva
+**Pré-requis**
 
-Organisation
-------------
+* Python 3 installé et pip
 
-*   Chaque étudiant crée une application django avec
+**Installer Django et les dépendences**
 
-    ```bash
-    $ python3 manage.py startapp <nom_application>
-    ```
-    
-*   Cette application contiendra les modèles spécifiques à son application
+``pip3 install -r requirement.txt``
+
+**Lancer les migrations**
+
+``python3 manage.py migrate``
+
+**Créer un super utilisateur**
+
+``python3 manage.py createsuperuser`` et suivre les instructions
+
+**Lancer le serveur Django**
+
+``python3 manage.py runserver``
+
+**Données**
+
+Se connecter à la zone admin - ``/admin`` - et ajouter au moins un thème (Themes) et un chapitre (Chapters) dans la base de données. Ensuite créer un professeur (dans la section Teachers sous le nom Users). Finalement vous pouvez vous rendre sur l'URL ``/courses`` et profiter des des fonctionnalités.
