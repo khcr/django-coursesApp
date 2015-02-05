@@ -16,7 +16,7 @@ app.config(function($routeProvider, $resourceProvider){
     })
     .when('/:courseId/view/:pageId', {
       templateUrl: basePath + 'show.html',
-      controller: 'ViewCourseController'
+      controller: 'ShowCourseController'
     })
     .when('/:courseId/edit/:pageId', {
       templateUrl: basePath + 'edit.html',

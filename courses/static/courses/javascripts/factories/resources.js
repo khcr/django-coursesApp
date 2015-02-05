@@ -27,3 +27,10 @@ app.factory('Section', ['$resource', function($resource) {
     {sectionId: '@id'}
   );
 }]);
+
+app.factory('Comment', ['$resource', function($resource) {
+  return $resource(
+    'api/courses/:courseId/comments/:commentId',
+    {courseId: '@course_id', commentId: '@id'}
+  );
+}]);

@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 
-from courses.models import Course, Page, Section
+from courses.models import Course, Page, Section, CourseComment
 from teachers.models import Teacher
 
 # Create the form class.
@@ -18,3 +18,8 @@ class SectionForm(ModelForm):
     class Meta:
         model = Section
         fields = ['name', 'html_content', 'markdown_content', 'order', 'page']
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = CourseComment
+        fields = ['content']

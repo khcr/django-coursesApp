@@ -1,6 +1,6 @@
 var app = angular.module('controllers');
 
-app.controller('ViewCourseController', ['$scope', '$routeParams', '$location', 'Page', function($scope, $routeParams, $location, Page) {
+app.controller('ShowCourseController', ['$scope', '$routeParams', '$location', 'Page', 'Comment', function($scope, $routeParams, $location, Page, Comment) {
   $scope.page = Page.get({ pageId: $routeParams.pageId, objectId: $routeParams.courseId }, function(page) {
     $scope.course = page.course
     
@@ -18,5 +18,17 @@ app.controller('ViewCourseController', ['$scope', '$routeParams', '$location', '
   };
   $scope.previousPage = function() {
     $location.path($scope.course.id + "/view/" + ($scope.page.order - 1));
+  };
+
+  $scope.comments = Comment.query({courseId: $routeParams.courseId});
+
+  var newComment = new Comment({"placeholder":"Ton commentaire", "user":"Keran", course_id: $routeParams.courseId});
+  $scope.comment = Object.create(newComment);
+
+  $scope.saveComment = function() {
+    $scope.comment.$save(function(comment) {
+      $scope.comments.push(comment);
+      $scope.comment = Object.create(newComment);
+    });
   };
 }]);
