@@ -1,4 +1,4 @@
-var app = angular.module('routes', [])
+var app = angular.module('routes');
 
 app.config(function($routeProvider, $resourceProvider){
   var basePath = '/static/courses/html/';
