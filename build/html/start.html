@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Démarrage &mdash; Module de cours: guide</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Module de cours: guide" href="index.html" />
+    <link rel="next" title="AngularJS" href="angularjs.html" />
+    <link rel="prev" title="Développer avec AngularJS" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="angularjs.html" title="AngularJS"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Développer avec AngularJS"
+             accesskey="P">précédent</a> |</li>
+        <li><a href="index.html">Module de cours: guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="demarrage">
+<h1>Démarrage<a class="headerlink" href="#demarrage" title="Lien permanent vers ce titre">¶</a></h1>
+<p><strong>Pré-requis</strong></p>
+<ul class="simple">
+<li>Python 3 installé et pip</li>
+</ul>
+<p><strong>Installer Django et les dépendences</strong></p>
+<p><tt class="docutils literal"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirement.txt</span></tt></p>
+<p><strong>Lancer les migrations</strong></p>
+<p><tt class="docutils literal"><span class="pre">python3</span> <span class="pre">manage.py</span> <span class="pre">migrate</span></tt></p>
+<p><strong>Créer un super utilisateur</strong></p>
+<p><tt class="docutils literal"><span class="pre">python3</span> <span class="pre">manage.py</span> <span class="pre">createsuperuser</span></tt> et suivre les instructions</p>
+<p><strong>Lancer le serveur Django</strong></p>
+<p><tt class="docutils literal"><span class="pre">python3</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></tt></p>
+<p><strong>Données</strong></p>
+<p>Se connecter à la zone admin - <tt class="docutils literal"><span class="pre">/admin</span></tt> - et ajouter au moins un thème (Themes) et un chapitre (Chapters) dans la base de données. Ensuite vous pouvez vous rendre sur l&#8217;URL <tt class="docutils literal"><span class="pre">/courses</span></tt> et profiter des des fonctionnalités.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="index.html"
+                        title="Chapitre précédent">Développer avec AngularJS</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="angularjs.html"
+                        title="Chapitre suivant">AngularJS</a></p>
+  <h3>Cette page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/start.txt"
+           rel="nofollow">Montrer la source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Saisissez un mot clef ou un nom de module, classe ou fonction.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="angularjs.html" title="AngularJS"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Développer avec AngularJS"
+             >précédent</a> |</li>
+        <li><a href="index.html">Module de cours: guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Keran Kocher.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

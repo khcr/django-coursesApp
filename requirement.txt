@@ -1,6 +1,0 @@
-Django==1.7
-DjangoRestless==0.0.9
-Pillow==2.6.1
-python-dateutil==2.3
-python-mimeparse==0.1.4
-six==1.8.0

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MathJax &mdash; Module de cours: guide</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Module de cours: guide" href="index.html" />
+    <link rel="next" title="Guide du développeur" href="guide.html" />
+    <link rel="prev" title="RestLess" href="restless.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="guide.html" title="Guide du développeur"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="restless.html" title="RestLess"
+             accesskey="P">précédent</a> |</li>
+        <li><a href="index.html">Module de cours: guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="mathjax">
+<h1>MathJax<a class="headerlink" href="#mathjax" title="Lien permanent vers ce titre">¶</a></h1>
+<p><a class="reference external" href="http://mathjax.org">MathJax</a> est un plugin JavaScript pour afficher des mathématiques dans le navigateur. Il utilise HTML et CSS pour afficher les expressions de maths dans un style LaTeX. Le rédacteur peut par conséquent aisément utiliser la notation LaTeX pour définir des fonctions, faire des fractions, des racines carrées, des puissances, écrire les symboles spéciaux, etc, en balisant le contenu et ensuite celui-ci sera correctement affiché grâce au moteur de rendu MathJax. Une section d&#8217;aide est disponible pour la syntaxe à utiliser.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L&#8217;installation de MathJax est très facile sur n&#8217;import quelle site web. Il suffit de télécharger le dossier sur le <a class="reference external" href="http://mathjax.org">site officel</a>, de le mettre dans le projet et d&#8217;inclure le lien du fichier JavaScript <tt class="docutils literal"><span class="pre">MathJax.js</span></tt> à la racine du dossier. Il est possible de charger une configuration différente de celle par défaut, pour changer la mise en forme, la notation et d&#8217;autres subtilités. On peut passer le nom de la configuration dans un paramètre <tt class="docutils literal"><span class="pre">config</span></tt> dans le lien qui inclut MathJax. Toutes ces fichiers se trouvent dans le dossier <tt class="docutils literal"><span class="pre">config</span></tt> de MathJax ou alors il est possible de créer sa configuration personnalisée. Les informations détaillées des configurations disponibles se trouvent dans <a class="reference external" href="http://docs.mathjax.org/en/latest/config-files.html">leur documentation</a>. Actuellement nous utilisons la configuration <tt class="docutils literal"><span class="pre">TeX-AMS_HTML</span></tt> qui utilise la notation Tex (LaTeX) et qui génère du HTML. Il est aussi possible d&#8217;utiliser le CDN, et dans le lien on peut églamement spécifier le fichier de configuration.</p>
+<p>Une fois le plugin MathJax installé, il va automatiquement scanner les pages HTML et detecter les balises qui délimitent du contenu mathématique - par défaut <tt class="docutils literal"><span class="pre">$$</span></tt> - pour après le transformer. Ci-dessous un exemple de l&#8217;intégration du plugin et du résultat.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="c">&lt;!-- Fichiers locals --&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/MathJax/MathJax.js?config=TeX-AMS_HTML&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+        <span class="c">&lt;!-- CDN --&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        $$ f(x) = 5x + 4 $$
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/mathjax.png" src="_images/mathjax.png" />
+<p class="caption">Résultat</p>
+</div>
+</div>
+<div class="section" id="personnalisation">
+<h2>Personnalisation<a class="headerlink" href="#personnalisation" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans le cadre du projet, quelques modifications ont été faites par rapport à l&#8217;utilisation basique de MathJax. Pour pouvoir personnaliser MathJax, on utilise un fichier spécial pour modifier des options que MathJax met à disposition. Ce fichier est déjà créé, se trouve dans le dossier <tt class="docutils literal"><span class="pre">config/local</span></tt> et se nomme <tt class="docutils literal"><span class="pre">local.js</span></tt>. Ensuite il suffit quand on inclut MathJax dans notre page de modifier l&#8217;URL comme suit: <tt class="docutils literal"><span class="pre">config=TeX-AMS_HTML,local=local</span></tt>. On a ajouté dans le paramètre <tt class="docutils literal"><span class="pre">config</span></tt> de l&#8217;URL <tt class="docutils literal"><span class="pre">,local/local</span></tt>.</p>
+<p>Etudions ce fichier qui a été modifié pour les besoins du projet.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
+
+    <span class="nx">skipStartupTypeset</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+
+    <span class="c1">// Apparence</span>
+    <span class="nx">showProcessingMessages</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">messageStyle</span><span class="o">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+    <span class="nx">showMathMenu</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">showMathMenuMSIE</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+
+    <span class="nx">styles</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;.MathJax_Display&quot;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">clear</span><span class="o">:</span> <span class="s2">&quot;both&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="p">});</span>
+
+<span class="nx">MathJax</span><span class="p">.</span><span class="nx">Ajax</span><span class="p">.</span><span class="nx">loadComplete</span><span class="p">(</span><span class="s2">&quot;[MathJax]/config/local/local.js&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Premièrement, les options commentées <tt class="docutils literal"><span class="pre">Apparence</span></tt> servent à supprimer les messages superficiels de MathJax, c&#8217;est-à-dire les messages de chargements et autres. On a également supprimé le menu MathJax qu&#8217;il ajoute aux expressions qu&#8217;il transforme et qu&#8217;on affiche avec un clique-droit. Ce menu a été jugé inutile et surchargeant. Ensuite le dictionnaire <tt class="docutils literal"><span class="pre">styles</span></tt> permet d&#8217;ajouter du CSS en plus de ce fait MathJax. Ici on ajoute à la classe &#8220;MathJax_Display&#8221; - classe utilisé sur toutes les expressions qu&#8217;il transforme - l&#8217;expression <tt class="docutils literal"><span class="pre">clear:</span> <span class="pre">&quot;both&quot;</span></tt>. Il s&#8217;agit d&#8217;une correction d&#8217;un bug du plugin car par défaut MathJax pouvait interférer avec le style déjà en place sur le site web et créait des problèmes génants pour l&#8217;interface. Finalement la dernière configuration faite n&#8217;est pas la plus simple. Nous avons vu que MathJax analysait toute la page HTML pour transformer le contenu balisé. Nous avons modifié ce comportement par défaut de MathJax. D&#8217;une part pour des questions de performance, car nous n&#8217;avons pas envie que des pages qui n&#8217;ont pas de contenu mathématique soient analysées par le lourd code JavaScript de MathJax, d&#8217;autre part pour des questions de contrôle, en effet on veut que savoir exactement où MathJax agit. L&#8217;option <tt class="docutils literal"><span class="pre">skipStartupTypeset</span></tt> permet donc de désactiver l&#8217;exécution automatique du processus MathJax. Le prochaine défi est de trouver un moyen facilemenent utilisable d&#8217;indiquer quelle partie doit être analysée ou non. Pour ce faire AngularJS a un outils très pratique pour accomplir ce genre de tâches et nous avons déjà eu l&#8217;occasion de le découvrir dans le premier chapitre: <a class="reference internal" href="angularjs.html"><em>les directives</em></a>. Ce sont ces attributs ou éléments HTML d&#8217;AngularJS qui exécute des actions spécifiques, comme <tt class="docutils literal"><span class="pre">ng-repeat</span></tt> ou <tt class="docutils literal"><span class="pre">ng-show</span></tt>.</p>
+<p>Nous allons donc créer une directive Angular <tt class="docutils literal"><span class="pre">mathjax</span></tt>.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">&#39;mathjax&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Le code vient ici</span>
+<span class="p">}]);</span>
+</pre></div>
+</div>
+<p>Le but de cette directive est de pouvoir baliser les parties de notre page HTML qui contiennent des maths avec un élément HTML. Par exemple de la façon suivante quand on affiche le cours: <tt class="docutils literal"><span class="pre">&lt;mathjax&gt;{{</span> <span class="pre">cours.contenu</span> <span class="pre">}}&lt;/mathjax&gt;</span></tt>.
+Pour définir notre directive et son comportement, il faut returner un dictionnaire contenant les options de notre directive. Voici la directive complète que nous allons analyser ensemble.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">&#39;mathjax&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$timeout</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">restrict</span><span class="o">:</span> <span class="s1">&#39;AE&#39;</span><span class="p">,</span>
+    <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;&lt;div class=&quot;ng-hide&quot; ng-transclude&gt;&lt;/div&gt;&#39;</span><span class="p">,</span>
+    <span class="nx">transclude</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">link</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="nx">element</span><span class="p">,</span> <span class="nx">attrs</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$timeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Queue</span><span class="p">([</span><span class="s2">&quot;Typeset&quot;</span><span class="p">,</span> <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">,</span> <span class="nx">element</span><span class="p">[</span><span class="mi">0</span><span class="p">]]);</span>
+            <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Queue</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">element</span><span class="p">.</span><span class="nx">children</span><span class="p">().</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">&quot;ng-hide&quot;</span><span class="p">);</span>
+            <span class="p">})</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}]);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>restrict</strong>: &#8216;AE&#8217; signifie que notre directive peut être un attribut (A = Attribut), c&#8217;est à dire <tt class="docutils literal"><span class="pre">&lt;directive&gt;&lt;/directive&gt;</span></tt> ou alors un élément (E = Element), c&#8217;est à dire <tt class="docutils literal"><span class="pre">&lt;div</span> <span class="pre">directive&gt;&lt;/div&gt;</span></tt>. On peut encore l&#8217;utiliser en tant que classe avec l&#8217;option C (C = Class), c&#8217;est-à-dire <tt class="docutils literal"><span class="pre">&lt;div</span> <span class="pre">class=&quot;directive&quot;&gt;&lt;/div&gt;</span></tt>.</li>
+<li><strong>template</strong>: Le contenu HTML dans notre directive.</li>
+<li><strong>tranclude</strong>: Cette option permet de récupérer le contenu qui est dans la directive et de l&#8217;injecter dans le template. En fait, si on n&#8217;utilise pas transclude, qu&#8217;importe ce qu&#8217;on écrira dans notre directive sur notre page HTML, par exemple lorsqu&#8217;on fait <tt class="docutils literal"><span class="pre">&lt;mathjax&gt;{{</span> <span class="pre">cours.contenu</span> <span class="pre">}}&lt;/mathjax&gt;</span></tt>, le contenu du cours sera remplacé par la chaine de caractère de l&#8217;option <tt class="docutils literal"><span class="pre">template</span></tt>. Par contre quand on utilise <tt class="docutils literal"><span class="pre">transclude</span></tt>, Angular récupère le contenu de la directive et l&#8217;injecte dans notre template à l&#8217;endroit où on spécifie <tt class="docutils literal"><span class="pre">ng-tranclude</span></tt>, c&#8217;est pour cela qu&#8217;on trouve dans <tt class="docutils literal"><span class="pre">template</span></tt> le code <tt class="docutils literal"><span class="pre">&lt;div</span> <span class="pre">ng-transclude&gt;&lt;/div&gt;</span></tt>, le contenu sera donc dans la <tt class="docutils literal"><span class="pre">div</span></tt>.</li>
+<li><strong>link</strong>: c&#8217;est la fonction qui sera exécuté une fois que le code sera compilé, en clair quand Angular a transformé la page HTML et ses directives, le code HTML est donc totalement généré et il reste à ajouter la couche JavaScript. Par conséquent avec la fonction qu&#8217;on passe à <tt class="docutils literal"><span class="pre">link</span></tt> on peut manipuler le contenu de notre directive. La fonction prend trois arguments: <tt class="docutils literal"><span class="pre">scope</span></tt>, basiquement l&#8217;objet qui contient des données du modèle, <tt class="docutils literal"><span class="pre">element</span></tt>, l&#8217;élément HTML lui-même et <tt class="docutils literal"><span class="pre">attrs</span></tt>, les attributs HTML de notre directive.</li>
+</ul>
+<p>Il y a encore beaucoup d&#8217;autres options disponibles pour personnaliser la directive, voir <a class="reference external" href="https://docs.angularjs.org/guide/directive">la documentation</a>.</p>
+<p>Intéressons nous maintenant au code qui se trouve à l&#8217;intérieur de la fonction <tt class="docutils literal"><span class="pre">link</span></tt>. La difficulté se trouve surtout dans le code spécifique à MathJax, <tt class="docutils literal"><span class="pre">MathJax.Hub.Queue</span></tt>. En fait cette expression permet d&#8217;exécuter des fonctions en lien avec MathJax au bon moment. Elle permet tout simplement d&#8217;assurer que les fonctions qu&#8217;on passe à <tt class="docutils literal"><span class="pre">Queue</span></tt> s&#8217;exécute une fois que MathJax est complétement chargé et qu&#8217;il est prêt à être utilisé. La première expression MathJax, le <tt class="docutils literal"><span class="pre">Typeset</span></tt> - une fonction fournie par MathJax -, sert à analyser et transformer le contenu de la directive pour mettre en forme les mathématiques, remarquez qu&#8217;on passe l&#8217;élément en dernier argument, <tt class="docutils literal"><span class="pre">element[0]</span></tt>. Ensuite la deuxième expression, on enlève la classe <tt class="docutils literal"><span class="pre">ng-hide</span></tt> de notre élément. Par défaut on cache le contenu de la directive, comme on peut l&#8217;observer dans l&#8217;option <tt class="docutils literal"><span class="pre">template</span></tt> qui contient la classe <tt class="docutils literal"><span class="pre">ng-hide</span></tt>, et cette expression sert à l&#8217;afficher une fois que les expressions mathématiques on été tranformées, ainsi l&#8217;utilisateur ne voit pas du contenu qui n&#8217;a pas encore été formaté par MathJax. Pour plus d&#8217;informations sur la Queue MathJax, voir <a class="reference external" href="http://docs.mathjax.org/en/latest/typeset.html">la documentation MathJax</a>. Finalement le tout est enveloppé dans une fonction <tt class="docutils literal"><span class="pre">$timeout</span></tt> qui permet simplement d&#8217;assurer, lorsque notre directive est utilisé dans une boucle, que le contenu est présent avant que nous exécutions nos transformations.</p>
+<p>Voilà, notre directive est prête à être utilisée ! Maintenant il suffit de l&#8217;utiliser pour formater notre contenu mathématique à l&#8217;endroit où on le désire.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table des Matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">MathJax</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#personnalisation">Personnalisation</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="restless.html"
+                        title="Chapitre précédent">RestLess</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="guide.html"
+                        title="Chapitre suivant">Guide du développeur</a></p>
+  <h3>Cette page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/maths.txt"
+           rel="nofollow">Montrer la source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Saisissez un mot clef ou un nom de module, classe ou fonction.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="guide.html" title="Guide du développeur"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="restless.html" title="RestLess"
+             >précédent</a> |</li>
+        <li><a href="index.html">Module de cours: guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Keran Kocher.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

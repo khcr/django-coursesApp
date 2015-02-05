@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Modèle relationnel &mdash; Module de cours: guide</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Module de cours: guide" href="index.html" />
+    <link rel="next" title="RestLess" href="restless.html" />
+    <link rel="prev" title="Fonctionnalités" href="functionalities.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="restless.html" title="RestLess"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="functionalities.html" title="Fonctionnalités"
+             accesskey="P">précédent</a> |</li>
+        <li><a href="index.html">Module de cours: guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="modele-relationnel">
+<h1>Modèle relationnel<a class="headerlink" href="#modele-relationnel" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Une base de données est un outil permettant, comme son nom l&#8217;indique, de stocker des données persistantes pour ensuite les réutiliser ou les conserver. Dans le domaine du web, on utilise des base de données relationnelles. Traditionnelement elle se découpe en plusieurs tableaux, ou plutôt tables dans le jargon, contenant des colonnes et des lignes. On crée des tables pour représenter des objets, des cours par exemple, qui ont des attributs représentés par des colonnes et chaque ligne est un enregistrement, c&#8217;est-à-dire une entité, un objet, 1 cours dans notre exemple. Une table a pratiquement toujours une colonne ID qui est un nombre, un identifiant unique qui permet de trouver un enregistrement parmi les autres de la table. On l&#8217;appelle <em>clé primaire</em>. Ils servent aussi à créer des relations entre les tables, un lier un enregistrement à un autre, d&#8217;une table différente ou non, comme nous le verrons ensuite dans la construction du module de cours. Pour communiquer avec la base de données relationnelles, notamment chercher tous les enregistrements d&#8217;une table ou seulement 1, créer ou mettre à jour un enregistrement, etc, on utilse le language SQL, Structured Query Language.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/bd.png"><img alt="_images/bd.png" src="_images/bd.png" style="width: 896.0px; height: 350.0px;" /></a>
+<p class="caption">Schéma résumant une base de données relationnelle</p>
+</div>
+<p>Le modèle relationnel est une modélisation de la base de données du site. Attardons-nous donc sur le modèle qui se cache derrière les fonctionnalités évoquées précédemment. Nous commencerons par le point centrale de la base données: les tables et relations qui concernent les cours et qui forment la majeur partie du modèle et ensuite nous verrons les tables additionelles qui complètent le modèle relationnel et ajoutent les fonctionnalités auxiliaires.</p>
+<p>Il est important de savoir que Django fourni en tant que framework plusieurs outils facilitant le travail avec une base de données. Chaque table de notre BD est représenté par ce qu&#8217;on appelle un modèle, c&#8217;est un simple fichier Python qui contient les informations de notre table. Ces fichiers permettent ensuite à Django de générer lui-même les tables et ensuite de fournir une série de méthodes qui permettent de communiquer avec la BD sans utiliser directement SQL qui est le seul language que comprend la BD. Django nous évite donc d&#8217;apprendre un nouveau language. Nous verrons ces méthodes plus tard dans les exemples d&#8217;utilisation.</p>
+</div>
+<div class="section" id="les-cours">
+<h2>Les cours<a class="headerlink" href="#les-cours" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="la-structure">
+<h3>La structure<a class="headerlink" href="#la-structure" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/uml_courses.png"><img alt="_images/uml_courses.png" src="_images/uml_courses.png" style="width: 817.2px; height: 656.1px;" /></a>
+<p class="caption">Le schema de toutes les tables du modèle relationnel</p>
+</div>
+<p>Le fait que la structure des tables relationnelles reflètent la structure que perçoit le rédacteur facilitent grandement la compréhension. Nous avons vu qu&#8217;un cours de compose de plusieurs pages, qui elles-mêmes contiennent plusieurs sections avec un titre et un contenu et que l&#8217;auteur pouvait ajouter ou retirer des éléments à sa guise. C&#8217;est exactement la même chose dans le modèle. Tout d&#8217;abord on trouve une tables <tt class="docutils literal"><span class="pre">courses</span></tt> qui contient les informations de base qu&#8217;entre le professeur au début du processus et qui sont les colonnes suivantes: <tt class="docutils literal"><span class="pre">name</span></tt>, <tt class="docutils literal"><span class="pre">description</span></tt>, <tt class="docutils literal"><span class="pre">difficulty</span></tt>, il reste le champs <tt class="docutils literal"><span class="pre">chaptitre</span></tt> que nous verrons plus tard. Ensuite il y a la table <tt class="docutils literal"><span class="pre">pages</span></tt> avec les colonnes <tt class="docutils literal"><span class="pre">name</span></tt> qui est le titre de la page, <tt class="docutils literal"><span class="pre">order</span></tt> qui est un nombre qui permet de trier les pages d&#8217;un cours entre elles et de permettre de rérganiser l&#8217;ordre et <tt class="docutils literal"><span class="pre">course_id</span></tt> qui signale la relation avec le cours. En effet chaque page appartient à un cours et vice-versa un cours possède donc plusieurs page, grâce à la clé étrangère - champs qui contient l&#8217;ID, l&#8217;identifiant d&#8217;un enregistrement d&#8217;une autre table - <tt class="docutils literal"><span class="pre">course_id</span></tt> qui relie les deux tables. L&#8217;utilisation plus précise de la relation est expliqué dans la partie suivante. Finalement pour terminer l&#8217;ensemble il reste la table <tt class="docutils literal"><span class="pre">sections</span></tt> qui a les colonnes <tt class="docutils literal"><span class="pre">name</span></tt>, <tt class="docutils literal"><span class="pre">content</span></tt>, <tt class="docutils literal"><span class="pre">order</span></tt> et <tt class="docutils literal"><span class="pre">page_id</span></tt>, un titre, un contenu, et à l&#8217;instar des pages un order et une clé étrangère qui la relie à une page. Donc une section appartient à une page et une page a plusieurs sections. A noter que ces trois tables possèdent également les champs <tt class="docutils literal"><span class="pre">created_at</span></tt> et <tt class="docutils literal"><span class="pre">updated_at</span></tt> qui enregistrent la date et l&#8217;heure de la création et la dernière mise à jour de l&#8217;entité. Pour résumé les relations, un cours a plusieurs pages et chacune de ses pages a plusieurs sections. Comme dit précédement on comprend facilement les relations en observant comment les tables sont implémentés dans l&#8217;interface de rédaction d&#8217;un cours.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/schema_cours.png"><img alt="_images/schema_cours.png" src="_images/schema_cours.png" style="width: 1024.0px; height: 400.0px;" /></a>
+<p class="caption">Schema qui résume les relations des tables courses, pages et sections</p>
+</div>
+</div>
+<div class="section" id="utilisation">
+<h3>Utilisation<a class="headerlink" href="#utilisation" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Tous les examples d&#8217;opérations sur la base de données sont d&#8217;abord écrit avec les méthodes de Django puis en SQL pur. Une des particularités de Django quant il s&#8217;agit de sauvegarder des objets dans la base de données est qu&#8217;il fait appelle à des formulaires, nommé dans le code sous forme de ....Form, comme CourseForm par exemple. On utilise ces mêmes formulaires dans les vues pour générer les formulaires HTML que complètent les utilisateurs, comme pour s&#8217;inscrire sur le site. Ils permettent en fait de simplement relier les données soumises par les utilisateurs à nos modèles Django (je rappelle que les modèles sont dans Django la représentation de nos tables de la BD) et par conséquent de créer ou mettre à jour des enregistrements via des formulaires HTML. Pour bien se représenter le concept, lorsqu&#8217;un utilisateur soumet un formulaire, le navigateur envoie les données au serveur sous la forme d&#8217;un dictionnaire qui ressemble à cela: {&#8220;titre&#8221; : &#8220;La géométrie&#8221;, &#8220;description&#8221; : &#8220;Bla bla&#8221;}. On récupère ensuite dans le code ce dictionnaire et on enregistre les données dans la BD.</p>
+<p>Récupère tous les cours afin de créer une liste avec un lien pour pouvoir se rendre sur le page de lecture d&#8217;un cours.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Course</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">courses</span>
+</pre></div>
+</div>
+<p>Créer un nouveau cours. On crée d&#8217;abord le cours, puis une page associée contenant une section.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># on utilise un formulaire</span>
+<span class="c"># request.data est un dictionnaire contenant les données soumise par un utilisateur: ici les informations du cours</span>
+<span class="n">course_form</span> <span class="o">=</span> <span class="n">CourseForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">course_form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+    <span class="c"># on crée le cours</span>
+    <span class="n">course</span> <span class="o">=</span> <span class="n">course_form</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="c"># on crée la page associée</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="n">Page</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Première page&quot;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">course_id</span><span class="o">=</span><span class="n">course</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="c"># on crée une section associée à la page</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">sections</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Première section&quot;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre><span class="c1">-- on crée le cours</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">courses</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">description</span><span class="p">,</span> <span class="n">difficulty</span><span class="p">,</span> <span class="n">author_id</span><span class="p">,</span> <span class="n">chapter_id</span><span class="p">,</span> <span class="n">created_at</span><span class="p">,</span> <span class="n">updated_at</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="ss">&quot;L&#39;algèbre&quot;</span><span class="p">,</span> <span class="ss">&quot;Lorem ipsum...&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="c1">-- =&gt; ID du cours = 1</span>
+<span class="c1">-- On crée la page associée</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">pages</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="k">order</span><span class="p">,</span> <span class="n">course_id</span><span class="p">,</span> <span class="n">created_at</span><span class="p">,</span> <span class="n">updated_at</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="ss">&quot;Première page&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="c1">-- =&gt; ID de la page = 1</span>
+<span class="c1">-- on crée une section associée à la page</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">sections</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="k">order</span><span class="p">,</span> <span class="n">course_id</span><span class="p">,</span> <span class="n">created_at</span><span class="p">,</span> <span class="n">updated_at</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="ss">&quot;Première section&quot;</span><span class="p">,</span> <span class="ss">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mettre à jour le contenu d&#8217;une page d&#8217;un cours. Le titre de la page, le titre et le contenu des sections vont être sauvegardé. Pour accomplir cela on commence par simplement enregistrer la page avec les nouvelles données par la même procédure que pour la création d&#8217;un cours. Remarquez simplement dans <tt class="docutils literal"><span class="pre">page_form</span> <span class="pre">=</span> <span class="pre">PageForm(request.data,</span> <span class="pre">instance=page)</span></tt> qu&#8217;on passe en paramètre la page provenant de la base de données pour signaler à Django que l&#8217;enregistrement existe déjà et que par conséquent il faut non pas le créer mais le mettre à jour. Pour les sections, on itère le dictionnaire qui contient les données de toutes les sections de la page et ensuite pour chaque section on accomplit la même procédure que pour une page.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Récupère la page à editer</span>
+<span class="n">page</span> <span class="o">=</span> <span class="n">Page</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">page_id</span><span class="p">)</span>
+<span class="c"># On utilise un formulaire</span>
+<span class="c"># request.data est un dictionnaire contenant les données soumise par un utilisateur: ici le contenu de la page</span>
+<span class="n">page_form</span> <span class="o">=</span> <span class="n">PageForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">instance</span><span class="o">=</span><span class="n">page</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">page_form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+    <span class="c"># On enregistre la page - sauvegarde le titre</span>
+    <span class="n">page_form</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="c"># On récupère le dictionnaire contenant seulement les sections</span>
+<span class="n">sections_params</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;sections&#39;</span><span class="p">]</span>
+<span class="c"># On fait une boucle pour chaque section</span>
+<span class="k">for</span> <span class="n">section_params</span> <span class="ow">in</span> <span class="n">sections_params</span><span class="p">:</span>
+    <span class="c"># On récupère la section</span>
+    <span class="n">section</span> <span class="o">=</span> <span class="n">Section</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">section_params</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">])</span>
+    <span class="c"># On utilise un formulaire</span>
+    <span class="c"># section_params est un dictionnaire contenant le titre et le contenu de la section</span>
+    <span class="n">section_form</span> <span class="o">=</span> <span class="n">SectionForm</span><span class="p">(</span><span class="n">section_params</span><span class="p">,</span> <span class="n">instance</span><span class="o">=</span><span class="n">section</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">section_form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+        <span class="c"># On enregistre la section</span>
+        <span class="n">section_form</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre><span class="c1">-- Récupère la page à editer</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">pages</span> <span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="n">page_id</span>
+<span class="c1">-- On enregistre la page</span>
+<span class="k">UPDATE</span> <span class="n">pages</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="ss">&quot;Nouveau titre&quot;</span> <span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1">-- On enregistre la section</span>
+<span class="k">UPDATE</span> <span class="n">sections</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="ss">&quot;Nouveau titre&quot;</span><span class="p">,</span> <span class="ss">&quot;content&quot;</span> <span class="o">=</span> <span class="ss">&quot;Lorem ispum&quot;</span> <span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="les-chapitres">
+<h2>Les chapitres<a class="headerlink" href="#les-chapitres" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour pouvoir organiser le contenu du site, cours, exercices, quiz, est toujours associé à un chapitre. Deux tables servent à cette objectif. Tout d&#8217;abord la table <tt class="docutils literal"><span class="pre">themes</span></tt> avec un champs <tt class="docutils literal"><span class="pre">name</span></tt> et la table <tt class="docutils literal"><span class="pre">chapters</span></tt> avec un champs <tt class="docutils literal"><span class="pre">name</span></tt> et <tt class="docutils literal"><span class="pre">theme_id</span></tt> qui associe chaque thème à un chapitre. Ensuite les tables comme <tt class="docutils literal"><span class="pre">courses</span></tt> ont un champs <tt class="docutils literal"><span class="pre">chapter_id</span></tt> qui les relient à un chapitre et donc à un thème aussi. On peut légitement se demander pourquoi ces deux niveaux, ces deux tables ? Cela laisse une plus grande souplesse et liberté pour organiser le contenu et l&#8217;afficher. En effet imaginons qu&#8217;il y ait 10, 20, 30 ou plus chapitres, comment s&#8217;y retrouver ? On les regroupe sous une idée plus générale, et c&#8217;est là le rôle de la table <tt class="docutils literal"><span class="pre">themes</span></tt>.</p>
+</div>
+<div class="section" id="les-commentaires">
+<h2>Les commentaires<a class="headerlink" href="#les-commentaires" title="Lien permanent vers ce titre">¶</a></h2>
+</div>
+<div class="section" id="la-progression">
+<h2>La progression<a class="headerlink" href="#la-progression" title="Lien permanent vers ce titre">¶</a></h2>
+</div>
+<div class="section" id="les-favoris">
+<h2>Les favoris<a class="headerlink" href="#les-favoris" title="Lien permanent vers ce titre">¶</a></h2>
+</div>
+<div class="section" id="les-demandes">
+<h2>Les demandes<a class="headerlink" href="#les-demandes" title="Lien permanent vers ce titre">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table des Matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Modèle relationnel</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#les-cours">Les cours</a><ul>
+<li><a class="reference internal" href="#la-structure">La structure</a></li>
+<li><a class="reference internal" href="#utilisation">Utilisation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#les-chapitres">Les chapitres</a></li>
+<li><a class="reference internal" href="#les-commentaires">Les commentaires</a></li>
+<li><a class="reference internal" href="#la-progression">La progression</a></li>
+<li><a class="reference internal" href="#les-favoris">Les favoris</a></li>
+<li><a class="reference internal" href="#les-demandes">Les demandes</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="functionalities.html"
+                        title="Chapitre précédent">Fonctionnalités</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="restless.html"
+                        title="Chapitre suivant">RestLess</a></p>
+  <h3>Cette page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/models.txt"
+           rel="nofollow">Montrer la source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Saisissez un mot clef ou un nom de module, classe ou fonction.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="restless.html" title="RestLess"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="functionalities.html" title="Fonctionnalités"
+             >précédent</a> |</li>
+        <li><a href="index.html">Module de cours: guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Keran Kocher.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
