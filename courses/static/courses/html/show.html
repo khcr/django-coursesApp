@@ -14,6 +14,7 @@
   <div class="comment col-sm-7" ng-repeat="comment in comments">
       <p class="author">{{ comment.user }}</p>
       <p>{{ comment.content }}<p>
+      <em><small>Posté le {{ comment.created_at | date : "d MMMM yyyy à H:m" }}</small></em>
   </div>
 
   <div class="comment col-sm-7">
