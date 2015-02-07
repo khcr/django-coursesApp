@@ -7,6 +7,15 @@
   </div>
   <div class="pull-left"><button class="btn btn-default" ng-disabled="firstPage()" ng-click="previousPage()">Précédent</button></div>
   <div class="pull-right"><button class="btn btn-default" ng-disabled="lastPage()" ng-click="nextPage()">Suivant</button></div>
+
+  <div class="menu">
+    <div ng-repeat="page in pages">
+      {{ page }}
+      <div ng-repeat)"section in page">
+        {{ section }}
+      </div>
+    </div>
+  </div>
 </div>
 
 <div id="comments" class="col-sm-12 margin border top">
