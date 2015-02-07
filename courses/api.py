@@ -2,10 +2,11 @@ from restless.modelviews import ListEndpoint, DetailEndpoint
 from restless.models import serialize
 from restless.http import Http201, Http200
 
-from courses.models import Course, Page, Section
-from courses.forms import CourseForm, PageForm, SectionForm
+from courses.models import Course, Page, Section, CourseComment
+from courses.forms import CourseForm, PageForm, SectionForm, CommentForm
 from courses.utils import serialize_page
 from teachers.models import Theme, Teacher
+from django.contrib.auth.models import User
 
 class CourseList(ListEndpoint):
     model = Course
@@ -100,6 +101,7 @@ class SectionDetail(DetailEndpoint):
 
 
 class ThemeList(ListEndpoint):
+    model = Theme
 
     # /themes
     # POST
@@ -110,3 +112,27 @@ class ThemeList(ListEndpoint):
         return serialize(themes, include=[
                 ('chapters', dict())
             ])
+
+class CommentList(ListEndpoint):
+    model = CourseComment
+
+    # /comments
+    # GET
+    def get(self, request, pk):
+        comments = CourseComment.objects.filter(course_id=pk)
+        return serialize(comments, include=[
+                ('user', lambda c: c.user.username)
+            ])
+
+
+    # POST: get all comments for a course
+    def post(self, request, pk):
+        comment_form = CommentForm(request.data)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.user = User.objects.first()
+            comment.course_id = pk
+            comment.save()
+            return Http201(serialize(comment, include=[
+                ('user', lambda c: c.user.username)
+            ]))

@@ -69,7 +69,7 @@ class CourseComment(models.Model):
     
     user = models.ForeignKey(User)
     course = models.ForeignKey(Course)
-    section = models.ForeignKey(Section)
+    section = models.ForeignKey(Section, null=True)
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

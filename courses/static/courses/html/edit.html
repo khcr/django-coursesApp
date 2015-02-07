@@ -7,7 +7,7 @@
   <button type="button" ng-click="preview()" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> Aperçu</button>
 </div>
 
-<form class="form-horizontal" role="form" name="editCourse" ng-submit="newCourse.$valid && saveCourse()" novalidate>
+<form class="form-horizontal" role="form" name="editCourse" novalidate>
 
   <div class="margin bottom">
     <div ng-repeat="(key, section) in page.sections" class="form-group">
@@ -43,5 +43,3 @@
   <button ng-click="upload.abort()">Cancel Upload</button>
 </div>
 -->
-
-{{ page.sections }}

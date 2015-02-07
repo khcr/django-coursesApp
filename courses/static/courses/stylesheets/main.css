@@ -56,6 +56,10 @@ button:hover {
   margin-bottom: 40px;
 }
 
+.border.top {
+  border-top: 1px solid #BABABA;
+}
+
 /* New course */
 #new-course-form {
 	padding-top: 40px;
@@ -97,6 +101,24 @@ button:hover {
 }
 .course-block:hover{
 	background-color: #BABABA;
+}
+
+/* Show course */
+
+.comment {
+  border-top: 1px solid #DEDEDE;
+  padding: 5px;
+  margin: 15px 0 15px 0;
+}
+
+#comments .new .form-group {
+  padding-top: 30px;
+  border-top: 1px solid #DEDEDE;
+}
+
+#comments .author {
+  font-weight: bold;
+  font-style: italic;
 }
 
 /*  ng-view Animation  */
