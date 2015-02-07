@@ -8,9 +8,11 @@ app.controller('EditCourseController', ['$scope', '$routeParams', '$location', '
     });
 
     $scope.newSection = function() {
+      $scope.saveCourse();
       $scope.page.$add_section()
     };
     $scope.removeSection = function(key) {
+      $scope.saveCourse();
       for(var i = key + 1; i < $scope.page.sections.length; i++) {
         $scope.page.sections[i].order -= 1;
       }
@@ -21,6 +23,7 @@ app.controller('EditCourseController', ['$scope', '$routeParams', '$location', '
       });
     };
     $scope.upSection = function(key) {
+      $scope.saveCourse();
       if(key !== 0) {
         $scope.page.sections[key].order -= 1;
         $scope.page.sections[key - 1].order += 1;
@@ -28,6 +31,7 @@ app.controller('EditCourseController', ['$scope', '$routeParams', '$location', '
       }
     };
     $scope.downSection = function(key) {
+      $scope.saveCourse();
       if($scope.page.sections[key + 1] !== undefined) {
         $scope.page.sections[key].order += 1;
         $scope.page.sections[key + 1].order -= 1;

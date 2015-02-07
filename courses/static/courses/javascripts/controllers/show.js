@@ -1,6 +1,6 @@
 var app = angular.module('controllers');
 
-app.controller('ShowCourseController', ['$scope', '$routeParams', '$location', 'Page', 'Comment', function($scope, $routeParams, $location, Page, Comment) {
+app.controller('ShowCourseController', ['$scope', '$routeParams', '$location', 'Page', 'Comment', '$http', '$anchorScroll', '$timeout', function($scope, $routeParams, $location, Page, Comment, $http, $anchorScroll, $timeout) {
   $scope.page = Page.get({ pageId: $routeParams.pageId, objectId: $routeParams.courseId }, function(page) {
     $scope.course = page.course
     
@@ -31,4 +31,13 @@ app.controller('ShowCourseController', ['$scope', '$routeParams', '$location', '
       $scope.comment = Object.create(newComment);
     });
   };
+
+  $http.get('api/courses/' + $routeParams.courseId + '/menu').success(function(pages) {
+    $scope.pages = pages;
+  });
+
+  $scope.isCurrentPage = function(page){
+    return page.order === $scope.page.order
+  };
+
 }]);

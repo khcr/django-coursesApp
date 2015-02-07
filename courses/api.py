@@ -140,4 +140,9 @@ class CommentList(ListEndpoint):
 class CourseMenu(Endpoint):
 
     def get(self, request, pk):
-        pass
+        pages = Page.objects.filter(course_id=pk)
+        return serialize(pages, fields=[
+                'name',
+                'order',
+                ('sections', dict(fields=['name']))
+            ])
