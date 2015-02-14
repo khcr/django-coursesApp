@@ -46,11 +46,18 @@ app.controller('ShowCourseController', ['$scope', '$routeParams', '$location', '
     return page.order === $scope.page.order
   };
 
+  $scope.isProgress = function(name) {
+    return $scope.page.progression === name;
+  };
+
   $scope.saveProgress = function(isDone) {
-    $http.post('api/courses/' + $routeParams.courseId + '/progression', {is_done: isDone}).
+    $http.post('api/pages/' + $scope.page.id + '/progression', {is_done: isDone}).
       success(function(response) {
         if( !$scope.lastPage() ) {
           $scope.nextPage();
+        } else {
+          $scope.page.progression = response.progression;
+          $scope.page.course.percentage = response.percentage;
         }
       })
   };

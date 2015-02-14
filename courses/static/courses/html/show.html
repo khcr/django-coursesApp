@@ -1,6 +1,12 @@
 <div id="show-course">
   
   <h1>{{ course.name }}</h1>
+  <!-- http://www.w3schools.com/bootstrap/bootstrap_progressbars.asp -->
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width:{{ course.percentage }}%">
+      <span>{{ course.percentage }}%</span>
+    </div>
+  </div>
   <h2>{{ page.name }}</h2>
   <div class="col-sm-10">
     <div mathjax class="margin bottom" ng-repeat="section in page.sections">
@@ -23,8 +29,8 @@
   <div class="col-sm-12 nav">
     <div class="pull-left"><button class="btn btn-primary" ng-disabled="firstPage()" ng-click="previousPage()">Précédent</button></div>
     <div class="pull-right"><button class="btn btn-primary" ng-disabled="lastPage()" ng-click="nextPage()">Suivant</button></div>
-    <div class="pull-right"><button class="btn btn-success" ng-click="saveProgress(true)">J'ai compris !</button></div>
-    <div class="pull-right"><button class="btn btn-danger" ng-click="saveProgress(false)">A relire</button></div>
+    <div class="pull-right"><button class="btn btn-success" ng-disabled="isProgress('Compris')" ng-click="saveProgress(true)">J'ai compris !</button></div>
+    <div class="pull-right"><button class="btn btn-danger" ng-disabled="isProgress('Relire')" ng-click="saveProgress(false)">A relire</button></div>
   </div>
 
 </div>
@@ -33,7 +39,7 @@
   <a ng-click="toggleComments()">Afficher/Masquer les commentaires</a>
 </div>
 
-<div id="comments" ng-show="showComments" class="col-sm-12 margin border top">
+<div id="comments" ng-show="showComments" class="col-sm-12 margin top">
   <h3>Commentaires</h3>
   <div class="comment col-sm-7" ng-repeat="comment in comments">
       <p class="author"><span class="glyphicon glyphicon-user"></span>  {{ comment.user }}</p>

@@ -7,6 +7,9 @@ from django.contrib.auth.models import User
 class Status(models.Model):
     name = models.CharField(max_length=30, unique=True)
 
+    def __str__(self):
+        return self.name
+
 #
 # Course build
 #
@@ -31,6 +34,11 @@ class Course(models.Model):
     def total_pages(self):
         return self.pages.count()
 
+    def percentage(self):
+        done = self.pages.filter(progression__status__name="Compris").count()
+        percentage = done / self.total_pages() * 100
+        return round(percentage/5) * 5
+
 
 class Page(models.Model):
     name = models.CharField(max_length=30)
@@ -46,6 +54,14 @@ class Page(models.Model):
 
     def __str__(self):
       return self.name
+
+    def state(self):
+        try:
+            progession = self.progression
+        except Page.progression.RelatedObjectDoesNotExist:
+            return ""
+        else:
+            return progession.status.name
 
 class Section(models.Model):
     name = models.CharField(max_length=30)
@@ -87,12 +103,15 @@ class CourseRequest(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 class Progression(models.Model):
-    page = models.ForeignKey(Page)
+    page = models.OneToOneField(Page)
     status = models.ForeignKey(Status)
     user = models.ForeignKey(User)
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return "status: {}, page: {}".format(self.status.name, self.page.name)
 
 #
 # Various
