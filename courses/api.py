@@ -1,4 +1,4 @@
-from restless.modelviews import ListEndpoint, DetailEndpoint
+from restless.modelviews import ListEndpoint, DetailEndpoint, Endpoint
 from restless.models import serialize
 from restless.http import Http201, Http200
 
@@ -53,7 +53,7 @@ class CoursePageList(ListEndpoint):
 class PageCourseDetail(DetailEndpoint):
     model = Page
 
-    # /courses/id/pages/id
+    # /pages/id/courses/id
     # DELETE
 
     # GET: get all pages for a course
@@ -136,3 +136,13 @@ class CommentList(ListEndpoint):
             return Http201(serialize(comment, include=[
                 ('user', lambda c: c.user.username)
             ]))
+
+class CourseMenu(Endpoint):
+
+    def get(self, request, pk):
+        pages = Page.objects.filter(course_id=pk)
+        return serialize(pages, fields=[
+                'name',
+                'order',
+                ('sections', dict(fields=['name']))
+            ])

@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, url, include
 
 from courses import views
-from courses.api import CourseList, CourseDetail, PageCourseDetail, PageSectionList, CoursePageList, SectionDetail, ThemeList, CommentList
+from courses.api import CourseList, CourseDetail, PageCourseDetail, PageSectionList, CoursePageList, SectionDetail, ThemeList, CommentList, CourseMenu
 
 urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
@@ -13,4 +13,5 @@ urlpatterns = patterns('',
     url(r'^api/courses/(?P<course_id>\d+)/pages$', CoursePageList.as_view()),
     url(r'^api/sections/(?P<pk>\d+)$', SectionDetail.as_view()),
     url(r'^api/courses/(?P<pk>\d+)/comments$', CommentList.as_view()),
+    url(r'^api/courses/(?P<pk>\d+)/menu$', CourseMenu.as_view()),
 )
