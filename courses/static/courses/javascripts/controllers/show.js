@@ -32,12 +32,27 @@ app.controller('ShowCourseController', ['$scope', '$routeParams', '$location', '
     });
   };
 
+  $scope.showComments = false;
+
+  $scope.toggleComments = function() {
+    $scope.showComments = !$scope.showComments;
+  };
+
   $http.get('api/courses/' + $routeParams.courseId + '/menu').success(function(pages) {
     $scope.pages = pages;
   });
 
-  $scope.isCurrentPage = function(page){
+  $scope.isCurrentPage = function(page) {
     return page.order === $scope.page.order
+  };
+
+  $scope.saveProgress = function(isDone) {
+    $http.post('api/courses/' + $routeParams.courseId + '/progression', {is_done: isDone}).
+      success(function(response) {
+        if( !$scope.lastPage() ) {
+          $scope.nextPage();
+        }
+      })
   };
 
 }]);

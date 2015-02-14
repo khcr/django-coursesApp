@@ -107,8 +107,12 @@ button:hover {
 
 .comment {
   border-top: 1px solid #DEDEDE;
-  padding: 5px;
+  padding: 20px;
   margin: 15px 0 15px 0;
+}
+
+#comments {
+  background-color: #FCF0F0;
 }
 
 #comments .new .form-group {
@@ -134,6 +138,11 @@ button:hover {
 .menu .section-name {
   padding-left: 10px;
   padding-top: 2px;
+}
+
+#show-course .nav button {
+  margin-left: 6px;
+  margin-top: 15px;
 }
 
 /*  ng-view Animation  */
