@@ -1,7 +1,7 @@
 var app = angular.module('controllers');
 
-app.controller('EditCourseController', ['$scope', '$routeParams', '$location', '$upload', 'Section', '$filter', 'Page', 'Course',
-  function($scope, $routeParams, $location, $upload, Section, $filter, Page, Course, Range) {
+app.controller('EditCourseController', ['$scope', '$routeParams', '$location', '$upload', 'Section', '$filter', 'Page', 'Course', '$interval',
+  function($scope, $routeParams, $location, $upload, Section, $filter, Page, Course, $interval) {
 
     $scope.page = Page.get({ pageId: $routeParams.pageId, objectId: $routeParams.courseId }, function(page) {
       $scope.course = new Course(page.course);
@@ -46,8 +46,15 @@ app.controller('EditCourseController', ['$scope', '$routeParams', '$location', '
         console.log('saved !');
       });
     };
+
+    $interval($scope.saveCourse, 30000);
+
+    $scope.$on("$destroy", function(){
+      $scope.saveCourse();
+    });
+    
     $scope.newPage = function() {
-      // TODO: save course in the database and add a new page
+      $scope.saveCourse();
       $scope.course.$add_page(function(page) {
         $scope.page = page;
         $scope.course = page.course;
@@ -62,6 +69,7 @@ app.controller('EditCourseController', ['$scope', '$routeParams', '$location', '
       $scope.saveCourse();
       $location.path($scope.course.id + "/preview/" + $scope.page.order);
     };
+
     $scope.onFileSelect = function($files) {
       for (var i = 0; i < $files.length; i++) {
         var file = $files[i];

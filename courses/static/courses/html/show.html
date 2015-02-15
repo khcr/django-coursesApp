@@ -53,8 +53,8 @@
       <p>{{ comment.content }}<p>
   </div>
 
-  <div class="new col-sm-7">
-    <form class="form-horizontal" role="form" name="newComment" ng-submit="newComment.$valid && saveComment()" novalidate>
+  <div class="new col-sm-12">
+    <form class="form-horizontal col-sm-offset-3 col-sm-6" role="form" name="newComment" ng-submit="newComment.$valid && saveComment()" novalidate>
       <div class="form-group">
         <textarea placeholder="Ton commentaire" class="col-sm-12" msd-elastic="\n" ng-model="comment.content" ng-minlength=3 required></textarea>
         <input type="submit" value="Envoyer" class="form-control btn-primary" ng-disabled="newComment.$invalid">
