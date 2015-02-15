@@ -7,12 +7,13 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('courses', '0004_auto_20150205_2149'),
+        ('courses', '0005_auto_20150207_1113'),
     ]
 
     operations = [
-        migrations.AlterModelOptions(
+        migrations.AlterField(
+            model_name='progression',
             name='page',
-            options={'ordering': ['order']},
+            field=models.OneToOneField(to='courses.Page'),
         ),
     ]

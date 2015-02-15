@@ -3,6 +3,7 @@
 <div class="col-sm-4"><input id="page-name" class="form-control" type="text" ng-model="page.name"></div>
 
 <div class="pull-right margin bottom">
+  <span><small><em>Dernière sauvegarde: {{ lastSave | date: "H 'h' mm 'min' et ss 'sec'" }}</em></small></span>
   <button type="button" ng-click="saveCourse()" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk"></span> Enregistrer</button>
   <button type="button" ng-click="preview()" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> Aperçu</button>
 </div>

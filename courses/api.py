@@ -2,7 +2,7 @@ from restless.modelviews import ListEndpoint, DetailEndpoint, Endpoint
 from restless.models import serialize
 from restless.http import Http201, Http200
 
-from courses.models import Course, Page, Section, CourseComment
+from courses.models import Course, Page, Section, CourseComment, Status, Progression
 from courses.forms import CourseForm, PageForm, SectionForm, CommentForm
 from courses.utils import serialize_page
 from teachers.models import Theme, Teacher
@@ -146,3 +146,18 @@ class CourseMenu(Endpoint):
                 'order',
                 ('sections', dict(fields=['name']))
             ])
+
+class CoursePageProgress(Endpoint):
+
+    def post(self, request, pk):
+        page = Page.objects.get(id=pk)
+        if request.data['is_done'] == True:
+            status = Status.objects.get(name="Compris")
+        else:
+            status = Status.objects.get(name="Relire")
+        if not page.state():
+            page.progression = Progression(status=status, user=User.objects.first())
+        else:
+            page.progression.status = status
+        page.progression.save()
+        return Http201({"progression": status.name, "percentage": page.course.percentage()})

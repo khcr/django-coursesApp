@@ -107,8 +107,13 @@ button:hover {
 
 .comment {
   border-top: 1px solid #DEDEDE;
-  padding: 5px;
+  padding: 20px;
   margin: 15px 0 15px 0;
+}
+
+#comments {
+  background-color: #FCFAFA;
+  border: 1px solid #FACACA;
 }
 
 #comments .new .form-group {
@@ -123,17 +128,22 @@ button:hover {
 
 #show-course .menu {
   padding: 15px;
-  background-color: #F2F2F2;
-  border: 1px solid #DEDEDE;
+  background-color: #FCFAFA;
+  border: 1px solid #FACACA;
 }
 
-.menu .page-name {
+#show-course .menu .page-name {
   font-size: 1.2em;
 }
 
-.menu .section-name {
+#show-course .menu .section-name {
   padding-left: 10px;
   padding-top: 2px;
+}
+
+#show-course .nav button {
+  margin-left: 6px;
+  margin-top: 15px;
 }
 
 /*  ng-view Animation  */
