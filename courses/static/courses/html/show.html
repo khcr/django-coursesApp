@@ -1,5 +1,4 @@
 <div id="show-course">
-  <p><span class="glyphicon glyphicon-download"></span><a ng-href="/courses/pdf/{{ course.id }}/{{ course.name }}.pdf"> Télécharger le cours</a></p>
 
   <h1>{{ course.name }}</h1>
   <!-- http://www.w3schools.com/bootstrap/bootstrap_progressbars.asp -->
@@ -19,6 +18,7 @@
   </div>
 
   <div class="menu col-sm-2">
+    <p><span class="glyphicon glyphicon-download"></span><a ng-href="/courses/pdf/{{ course.id }}/{{ course.name | parameterize }}.pdf"> Télécharger le cours</a></p>
     <div ng-repeat="page in pages">
       <div class="page-name"><a ng-href="/courses/#/{{ course.id }}/view/{{ page.order }}" ng-class="{ disabled: isCurrentPage(page) }">{{ page.name }}  <span ng-show="isCurrentPage(page)" class="glyphicon glyphicon-tag"></span></a></div>
       <div class="section-name" ng-repeat="section in page.sections">

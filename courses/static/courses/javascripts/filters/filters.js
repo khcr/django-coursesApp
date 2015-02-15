@@ -16,3 +16,10 @@ app.filter('markdown', function() {
     return converter.makeHtml(input);
   };
 });
+
+app.filter('parameterize', function() {
+  return function(input) {
+    input = input || '';
+    return input.replace(/\s/g, "_").toLowerCase();
+  };
+});
