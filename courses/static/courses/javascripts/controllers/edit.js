@@ -43,16 +43,18 @@ app.controller('EditCourseController', ['$scope', '$routeParams', '$location', '
         $scope.page.sections[key].html_content = $filter('markdown')($scope.page.sections[key].markdown_content)
       });
       $scope.page.$update({ objectId: $scope.course.id }, function() {
-        console.log('saved !');
+        $scope.lastSave = new Date;
       });
     };
 
-    $interval($scope.saveCourse, 30000);
+    var interval = $interval($scope.saveCourse, 30000);
+    $scope.lastSave = new Date;
 
     $scope.$on("$destroy", function(){
+      $interval.cancel(interval);
       $scope.saveCourse();
     });
-    
+
     $scope.newPage = function() {
       $scope.saveCourse();
       $scope.course.$add_page(function(page) {
