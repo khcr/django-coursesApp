@@ -12,6 +12,11 @@ Application de gestion de cours.
 
 ``pip3 install -r requirement.txt``
 
+De plus, il faut encore installer ces paquets sur la machine:
+* cairo
+* pango
+* Plus d'info: http://weasyprint.org/docs/install/
+
 **Lancer les migrations**
 
 ``python3 manage.py migrate``

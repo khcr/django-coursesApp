@@ -15,4 +15,5 @@ urlpatterns = patterns('',
     url(r'^api/courses/(?P<pk>\d+)/comments$', CommentList.as_view()),
     url(r'^api/courses/(?P<pk>\d+)/menu$', CourseMenu.as_view()),
     url(r'^api/pages/(?P<pk>\d+)/progression$', CoursePageProgress.as_view()),
+    url(r"^pdf/(?P<pk>\d+)/.*\.pdf$", views.pdf, name="pdf")
 )
