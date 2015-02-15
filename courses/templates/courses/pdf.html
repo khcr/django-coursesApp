@@ -1,0 +1,70 @@
+<body>
+
+    <style>
+        #header {
+            clear: both;
+            margin-bottom: 20px;
+        }
+        #author {
+            float: right;
+        }
+        #date {
+            float: left;
+        }
+        .line {
+            border-bottom: 1px solid black;
+            margin-bottom: 10px;
+        }
+        h1 {
+            text-align: center;
+            
+        }
+        #description {
+            margin-bottom: 50px;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 5px;
+        }
+        h3 {
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        p {
+            margin: 0;
+        }
+        .math {
+            text-align: center;
+            padding: 10px;
+        }
+        .notice {
+            font-size: 0.8em;
+            font-style: italic;
+            margin-bottom: 50px;
+        }
+    </style>
+
+    <div id="header">
+        <div id="author">{{ course.author.first_name }} {{ course.author.last_name}}</div>
+        <div id="date">{{ course.created_at | date:"d F Y" }}</div>
+    </div>
+    <div class="line"></div>
+    <div id="course">
+        <div class="notice">Notice: le contenu mathématique n'est pas interprété et est donc sous la forme de la notation Tex.</div>
+        <h1>{{ course.name }}</h1>
+        <div id="description">{{ course.description }}</div>
+
+        {% for page in course.pages.all %}
+            <h2>{{ page.name }}</h2>
+            {% for section in page.sections.all %}
+
+                <h3>{{ section.name }}</h3>
+                {% autoescape off %}
+                    <p>{{ section.html_content }}</p>
+                {% endautoescape %}
+
+            {% endfor %}
+        {% endfor %}
+    </div>
+
+</body>
