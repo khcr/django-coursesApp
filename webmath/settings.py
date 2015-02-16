@@ -39,8 +39,6 @@ INSTALLED_APPS = (
     'courses',
     'teachers',
     'students',
-    'exercises',
-    'quiz',
     'restless',
     'weasyprint'
 )

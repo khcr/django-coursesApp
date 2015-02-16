@@ -15,6 +15,7 @@ Application de gestion de cours.
 De plus, il faut encore installer ces paquets sur la machine:
 * cairo
 * pango
+* GDK-PixBuf
 * Plus d'info: http://weasyprint.org/docs/install/
 
 **Lancer les migrations**
@@ -31,4 +32,8 @@ De plus, il faut encore installer ces paquets sur la machine:
 
 **Données**
 
-Se connecter à la zone admin - ``/admin`` - et ajouter au moins un thème (Themes) et un chapitre (Chapters) dans la base de données. Ensuite créer un professeur (dans la section Teachers sous le nom Users). Finalement vous pouvez vous rendre sur l'URL ``/courses`` et profiter des des fonctionnalités.
+* Se connecter à la zone admin - ``/admin`` 
+* Ajouter au moins un thème (Themes) et un chapitre (Chapters) dans la base de données. 
+* Créer un professeur (dans la section Teachers sous le nom Users).
+* Créer deux status (Statuss): un "Relire" et l'autre "Compris"
+* Finalement vous pouvez vous rendre sur l'URL ``/courses`` et profiter des des fonctionnalités.

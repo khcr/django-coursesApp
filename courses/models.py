@@ -17,6 +17,7 @@ class Course(models.Model):
     name = models.CharField(max_length=30, unique=True)
     description = models.TextField()
     difficulty = models.IntegerField()
+    published = models.BooleanField(default=False)
     
     author = models.ForeignKey('teachers.Teacher', related_name="courses")
     chapter = models.ForeignKey('teachers.Chapter', related_name="courses")
