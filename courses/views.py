@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.template.loader import get_template
 from django.template import RequestContext
 from django.http import HttpResponse
@@ -12,7 +12,7 @@ def index(request):
 
 def pdf(request, pk):
     # https://www.ampad.de/blog/generating-pdfs-django/
-    course = Course.objects.get(id=pk)
+    course = get_object_or_404(Course, pk=pk)
     template = get_template("courses/pdf.html")
     html = template.render(RequestContext(request, {"course": course}))
     # replace maths expressions
