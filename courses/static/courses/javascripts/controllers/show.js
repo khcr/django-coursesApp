@@ -51,7 +51,7 @@ app.controller('ShowCourseController', ['$scope', '$routeParams', '$location', '
   };
 
   $scope.saveProgress = function(isDone) {
-    $http.post('api/pages/' + $scope.page.id + '/progression', {is_done: isDone}).
+    $http.put('api/pages/' + $scope.page.id + '/progression', {is_done: isDone}).
       success(function(response) {
         if( !$scope.lastPage() ) {
           $scope.nextPage();

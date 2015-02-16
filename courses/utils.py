@@ -8,7 +8,8 @@ def serialize_page(page, course):
                 'id': course.id,
                 'name': course.name, 
                 'description': course.description,
-                'percentage': course.percentage()
+                'percentage': course.percentage(),
+                'published': course.published
             }
         ),
             ('sections', dict()),

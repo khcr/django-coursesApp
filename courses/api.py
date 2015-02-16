@@ -149,7 +149,7 @@ class CourseMenu(Endpoint):
 
 class CoursePageProgress(Endpoint):
 
-    def post(self, request, pk):
+    def put(self, request, pk):
         page = Page.objects.get(id=pk)
         if request.data['is_done'] == True:
             status = Status.objects.get(name="Compris")
@@ -160,4 +160,12 @@ class CoursePageProgress(Endpoint):
         else:
             page.progression.status = status
         page.progression.save()
-        return Http201({"progression": status.name, "percentage": page.course.percentage()})
+        return Http200({"progression": status.name, "percentage": page.course.percentage()})
+
+class CoursePublish(Endpoint):
+
+    def put(self, request, pk):
+        course = Course.objects.get(id=pk)
+        course.published = not course.published
+        course.save()
+        return Http200("OK")

@@ -6,6 +6,8 @@
   <span><small><em>Dernière sauvegarde: {{ lastSave | date: "H 'h' mm 'min' et ss 'sec'" }}</em></small></span>
   <button type="button" ng-click="saveCourse()" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk"></span> Enregistrer</button>
   <button type="button" ng-click="preview()" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> Aperçu</button>
+  <button type="button" ng-hide="course.published" ng-click="publish()" class="btn btn-default"><span class="glyphicon glyphicon-globe"></span> Publier</button>
+  <button type="button" ng-show="course.published" ng-click="publish()" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span> Retirer</button>
 </div>
 
 <form class="form-horizontal" role="form" name="editCourse" novalidate>

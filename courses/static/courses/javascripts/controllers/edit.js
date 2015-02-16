@@ -1,7 +1,7 @@
 var app = angular.module('controllers');
 
-app.controller('EditCourseController', ['$scope', '$routeParams', '$location', '$upload', 'Section', '$filter', 'Page', 'Course', '$interval',
-  function($scope, $routeParams, $location, $upload, Section, $filter, Page, Course, $interval) {
+app.controller('EditCourseController', ['$scope', '$routeParams', '$location', '$upload', 'Section', '$filter', 'Page', 'Course', '$interval', '$http',
+  function($scope, $routeParams, $location, $upload, Section, $filter, Page, Course, $interval, $http) {
 
     $scope.page = Page.get({ pageId: $routeParams.pageId, objectId: $routeParams.courseId }, function(page) {
       $scope.course = new Course(page.course);
@@ -70,6 +70,13 @@ app.controller('EditCourseController', ['$scope', '$routeParams', '$location', '
     $scope.preview = function() {
       $scope.saveCourse();
       $location.path($scope.course.id + "/preview/" + $scope.page.order);
+    };
+
+    $scope.publish = function() {
+      $scope.saveCourse();
+      $http.put("api/courses/" + $routeParams.courseId + "/publish").success(function(response) {
+        $scope.course.published = !$scope.course.published
+      });
     };
 
     $scope.onFileSelect = function($files) {
