@@ -1,6 +1,6 @@
 <div id="show-course">
 
-  <h1>{{ course.name }}</h1>
+  <h1>{{ course.name }} <span class="favorite glyphicon" ng-click="favorite()" ng-class="course.favorite ? 'glyphicon-star' : 'glyphicon-star-empty'"></span></h1>
   <!-- http://www.w3schools.com/bootstrap/bootstrap_progressbars.asp -->
   <div class="progress">
     <div class="progress-bar" role="progressbar" style="width:{{ course.percentage }}%">

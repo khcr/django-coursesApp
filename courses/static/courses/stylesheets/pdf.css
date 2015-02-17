@@ -1,6 +1,7 @@
 #header {
     clear: both;
     margin-bottom: 20px;
+    font-size: 0.9em;
 }
 #author {
     float: right;
@@ -32,7 +33,7 @@ p {
 }
 .math {
     text-align: center;
-    padding: 10px;
+    padding: 25px;
 }
 .notice {
     font-size: 0.8em;

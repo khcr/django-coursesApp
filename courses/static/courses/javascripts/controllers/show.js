@@ -62,4 +62,10 @@ app.controller('ShowCourseController', ['$scope', '$routeParams', '$location', '
       })
   };
 
+  $scope.favorite = function() {
+    $http.post('api/courses/' + $routeParams.courseId + '/favorite').success(function(response) {
+      $scope.course.favorite = response.favorite;
+    });
+  };
+
 }]);

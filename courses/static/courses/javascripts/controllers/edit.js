@@ -75,7 +75,7 @@ app.controller('EditCourseController', ['$scope', '$routeParams', '$location', '
     $scope.publish = function() {
       $scope.saveCourse();
       $http.put("api/courses/" + $routeParams.courseId + "/publish").success(function(response) {
-        $scope.course.published = !$scope.course.published
+        $scope.course.published = response.published
       });
     };
 

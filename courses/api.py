@@ -130,6 +130,7 @@ class CommentList(ListEndpoint):
         comment_form = CommentForm(request.data)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
+            # TODO: use the current user
             comment.user = User.objects.first()
             comment.course_id = pk
             comment.save()
@@ -150,16 +151,19 @@ class CourseMenu(Endpoint):
 class CoursePageProgress(Endpoint):
 
     def put(self, request, pk):
+        # TODO: use the current user
+        user = User.objects.first()
         page = Page.objects.get(id=pk)
         if request.data['is_done'] == True:
             status = Status.objects.get(name="Compris")
         else:
             status = Status.objects.get(name="Relire")
-        if not page.state():
-            page.progression = Progression(status=status, user=User.objects.first())
+        if not page.state(user):
+            page.progression_set.create(status=status, user=user)
         else:
-            page.progression.status = status
-        page.progression.save()
+            progression = page.progression_set.get(user=user)
+            progression.status = status
+            progression.save()
         return Http200({"progression": status.name, "percentage": page.course.percentage()})
 
 class CoursePublish(Endpoint):
@@ -168,4 +172,17 @@ class CoursePublish(Endpoint):
         course = Course.objects.get(id=pk)
         course.published = not course.published
         course.save()
-        return Http200("OK")
+        return Http200({"published": course.published})
+
+class CourseFavorite(Endpoint):
+
+    def post(self, request, pk):
+        # TODO: use the current user
+        user = User.objects.first()
+        course = Course.objects.get(pk=pk)
+        is_favorite = course.has_favorite(user)
+        if is_favorite:
+            course.favorites.remove(user)
+        else:
+            course.favorites.add(user)
+        return Http201({"favorite": not is_favorite})

@@ -40,6 +40,9 @@ class Course(models.Model):
         percentage = done / self.total_pages() * 100
         return round(percentage/5) * 5
 
+    def has_favorite(self, user):
+        return user in self.favorites.all()
+
 
 class Page(models.Model):
     name = models.CharField(max_length=30)
@@ -56,11 +59,11 @@ class Page(models.Model):
     def __str__(self):
       return self.name
 
-    def state(self):
+    def state(self, user):
         try:
-            progession = self.progression
-        except Page.progression.RelatedObjectDoesNotExist:
-            return ""
+            progession = self.progression_set.get(user=user)
+        except ObjectDoesNotExist:
+            return None
         else:
             return progession.status.name
 
@@ -104,7 +107,7 @@ class CourseRequest(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 class Progression(models.Model):
-    page = models.OneToOneField(Page)
+    page = models.ForeignKey(Page)
     status = models.ForeignKey(Status)
     user = models.ForeignKey(User)
     

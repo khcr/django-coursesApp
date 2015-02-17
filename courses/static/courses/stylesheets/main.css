@@ -146,6 +146,10 @@ button:hover {
   margin-top: 15px;
 }
 
+#show-course .favorite {
+  cursor: pointer;
+}
+
 /*  ng-view Animation  */
 
 .view-slide-in.ng-enter {
