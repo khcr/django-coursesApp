@@ -62,7 +62,7 @@ class Page(models.Model):
     def state(self, user):
         try:
             progession = self.progression_set.get(user=user)
-        except ObjectDoesNotExist:
+        except Progression.DoesNotExist:
             return None
         else:
             return progession.status.name

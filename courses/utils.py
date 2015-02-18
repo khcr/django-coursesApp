@@ -21,3 +21,7 @@ def serialize_page(page, course):
             ('total_pages', lambda a: course.total_pages()),
             ('progression', lambda a: a.state(user)),
         ])
+
+def clear_tables(models):
+    for model in models:
+        model.objects.all().delete()
