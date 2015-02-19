@@ -17,7 +17,7 @@ class TestRouter(object):
     @staticmethod
     def test_db():
         try:
-            env = os.environ['ENV']
+            env = os.environ['WEBMATH_ENV']
         except KeyError:
             env = ""
         if env == "test":
