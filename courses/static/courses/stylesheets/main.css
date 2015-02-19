@@ -65,6 +65,11 @@ button:hover {
   border-top: 1px solid #BABABA;
 }
 
+.back-link {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
 /* New course */
 #course-form {
 	padding-top: 40px;
@@ -73,18 +78,13 @@ button:hover {
 
 /* Edit course */
 
-.course-title {
+#edit-course .course-title {
   display: inline-block;
   margin-right: 10px;
   margin-bottom: 40px;
 }
 
-.back-link {
-  display: inline-block;
-  margin-bottom: 30px;
-}
-
-.page-links a {
+#edit-course .page-links a {
   margin-right: 5px;
   margin-left: 5px;
   font-size: 1.3em;
@@ -102,22 +102,44 @@ button:hover {
 }
 
 /* Home */
-.course-block {
+#home .category {
+  padding: 20px;
+  display: inline-block;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#home .category.current {
+  cursor: default;
+  color: #F00000;
+}
+
+#home .categories {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #BABABA;
+  background-color: #FFF7F7;
+  width: 92%;
+}
+
+#home .course-block {
 	padding: 20px;
 	margin-right: 47px;
 	margin-left: 47px;
 	margin-bottom: 50px;
-	background-color: #F5FFFA;
+	background-color: #FFF7F7;
 	display: inline-block;
-	border-radius: 3px;
+  cursor: pointer;
 }
-.course-block:hover{
-	background-color: #BABABA;
+#home .course-block:hover{
+	background-color: #FCD9D9;
 }
 
 /* Show course */
 
-.comment {
+#comments .comment {
   border-top: 1px solid #DEDEDE;
   padding: 20px;
   margin: 15px 0 15px 0;

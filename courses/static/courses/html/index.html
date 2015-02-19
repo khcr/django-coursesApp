@@ -1,17 +1,20 @@
 <h1>Home</h1>
-<a href='#/new'><button class="btn btn-lg btn-primary" type="button">Rédiger un nouveau cours</button></a>
 <h2 class="text-center">Les cours</h2>
-<div class="categories">
-  <div>Favoris</div>
-  <div ng-repeat="theme in themes">
-    {{ theme.name }}
+<div id="home">
+  <div class="categories">
+    <div class="category"><strong>Choisir: </strong></div>
+    <div class="category" ng-class="{current: currentCategory('Tous')}" ng-click="changeCategory()">Tous</div>
+    <div class="category" ng-class="{current: currentCategory('Favoris')}" ng-click="selectFavorites()">Favoris</div>
+    <div class="category" ng-class="{current: currentCategory(theme.name)}" ng-repeat="theme in themes">
+      <div ng-click="changeCategory(theme.name)">{{ theme.name }}</div>
+    </div>
   </div>
-</div>
 
-<div ng-repeat="course in courses">
-  <div class="course-block col-md-5" ng-click="showCourse(course)">
-	 <h4>{{ course.name }}</h4>
-	 <p>{{ course.description }}</p>
-   <a ng-href="#/{{ course.id }}/edit/1">Editer</a>
+  <div ng-repeat="course in courses">
+    <div class="course-block col-md-5" ng-click="showCourse(course)">
+  	 <h4>{{ course.name }}</h4>
+  	 <p>{{ course.description }}</p>
+     <span class="glyphicon glyphicon-cog"></span><a ng-href="#/{{ course.id }}/edit/1"> Editer</a>
+    </div>
   </div>
 </div>

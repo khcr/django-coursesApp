@@ -13,6 +13,17 @@ class CourseList(ListEndpoint):
 
     # /courses
     # GET
+    def get(self, request):
+        # TODO: use the current user
+        user = User.objects.first()
+        if 'theme' in request.GET:
+            courses = Course.objects.filter(chapter__theme__name=request.GET['theme'])
+        elif 'favorite' in request.GET:
+            courses = user.favorite_courses.all()
+        else:
+            courses = Course.objects.all()
+        return serialize(courses)
+
 
     # POST: create a new course
     def post(self, request):

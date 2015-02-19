@@ -1,51 +1,45 @@
-<div>
-  <h1 class="course-title noline">{{ course.name }}</h1><a ng-href="#/{{ course.id }}/edit"><span class="glyphicon glyphicon-cog"><small></span> Editer</small></a>
-</div>
+<div id="edit-course">
+  <div>
+    <h1 class="course-title noline">{{ course.name }}</h1><a ng-href="#/{{ course.id }}/edit"><span class="glyphicon glyphicon-cog"></span><small>Editer</small></a>
+  </div>
 
-<div class="col-sm-4"><input id="page-name" class="form-control" type="text" ng-model="page.name"></div>
+  <div class="pull-right margin bottom">
+    <small><em>Dernière sauvegarde: {{ lastSave | date: "H 'h' mm 'min' et ss 'sec'" }}</em></small>
+    <button type="button" ng-click="saveCourse()" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk"></span> Enregistrer</button>
+    <button type="button" ng-click="preview()" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> Aperçu</button>
+    <button type="button" ng-hide="course.published" ng-click="publish()" class="btn btn-default"><span class="glyphicon glyphicon-globe"></span> Publier</button>
+    <button type="button" ng-show="course.published" ng-click="publish()" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span> Retirer</button>
+    <a href="#/help"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-question-sign"></span> Aide</button></a>
+  </div>
 
-<div class="pull-right margin bottom">
-  <span><small><em>Dernière sauvegarde: {{ lastSave | date: "H 'h' mm 'min' et ss 'sec'" }}</em></small></span>
-  <button type="button" ng-click="saveCourse()" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk"></span> Enregistrer</button>
-  <button type="button" ng-click="preview()" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> Aperçu</button>
-  <button type="button" ng-hide="course.published" ng-click="publish()" class="btn btn-default"><span class="glyphicon glyphicon-globe"></span> Publier</button>
-  <button type="button" ng-show="course.published" ng-click="publish()" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span> Retirer</button>
-  <a href="#/help"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-question-sign"></span> Aide</button></a>
-</div>
+  <div class="pull-left"><input id="page-name" class="form-control" type="text" ng-model="page.name"></div>
 
-<form class="form-horizontal" role="form" name="editCourse" novalidate>
+  <form class="form-horizontal" role="form" name="editCourse" novalidate>
 
-  <div class="margin bottom">
-    <div ng-repeat="(key, section) in page.sections" class="form-group">
-      <div class="col-sm-10 " id="input-margin"><input id="section-name" type="text" ng-model="section.name" class="form-control"></div>
-      <div>
-        <textarea class="col-sm-10" ng-model="section.markdown_content" msd-elastic="\n"></textarea>
-        <div class="col-sm-1 block">
-          <div><span class="glyphicon glyphicon-remove" ng-click="removeSection(key)"></span></div>
-          <div><span class="glyphicon glyphicon-chevron-up" ng-click="upSection(key)"></span></div>
-          <div><span class="glyphicon glyphicon-chevron-down" ng-click="downSection(key)"></span></div>
+    <div class="margin bottom">
+      <div ng-repeat="(key, section) in page.sections" class="form-group">
+        <div class="col-sm-10 " id="input-margin"><input id="section-name" type="text" ng-model="section.name" class="form-control"></div>
+        <div>
+          <textarea class="col-sm-10" ng-model="section.markdown_content" msd-elastic="\n"></textarea>
+          <div class="col-sm-1 block">
+            <div><span class="glyphicon glyphicon-remove" ng-click="removeSection(key)"></span></div>
+            <div><span class="glyphicon glyphicon-chevron-up" ng-click="upSection(key)"></span></div>
+            <div><span class="glyphicon glyphicon-chevron-down" ng-click="downSection(key)"></span></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="form-group">
-    <div class="pull-left"><button class="btn btn-default" ng-click="newSection()" type="button"><span class="glyphicon glyphicon-plus"></span></button></div>
-    <div class="pull-right page-links">
-      <span ng-repeat="page in pages"></span>
-      <span ng-repeat="number in [] | range:1:page.total_pages">
-        <a ng-class="{disabled: isCurrentPage(number)}" ng-href="#/{{ course.id }}/edit/{{ number }}">{{ number }}</a>
-      </span>
-      <button class="btn btn-default" ng-click="newPage()"><span class="glyphicon glyphicon-file"></span> Nouvelle page</button>
+    <div class="form-group">
+      <div class="pull-left"><button class="btn btn-default" ng-click="newSection()" type="button"><span class="glyphicon glyphicon-plus"></span></button></div>
+      <div class="pull-right page-links">
+        <span ng-repeat="page in pages"></span>
+        <span ng-repeat="number in [] | range:1:page.total_pages">
+          <a ng-class="{disabled: isCurrentPage(number)}" ng-href="#/{{ course.id }}/edit/{{ number }}">{{ number }}</a>
+        </span>
+        <button class="btn btn-default" ng-click="newPage()"><span class="glyphicon glyphicon-file"></span> Nouvelle page</button>
+      </div>
     </div>
-  </div>
 
-</form>
-
-<!--
-<div>
-  <input type="file" ng-file-select="onFileSelect($files)">
-  <div class="button" ng-file-select="onFileSelect($files)" data-multiple="true"></div>
-  <button ng-click="upload.abort()">Cancel Upload</button>
+  </form>
 </div>
--->
