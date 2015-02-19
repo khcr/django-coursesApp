@@ -26,6 +26,9 @@ app.config(function($routeProvider, $resourceProvider){
       templateUrl: basePath + 'preview.html',
       controller: 'PreviewCourseController'
     })
+    .when('/help', {
+      templateUrl: basePath + 'help.html'
+    })
     .otherwise({
       templateUrl: basePath + '404.html'
     });
