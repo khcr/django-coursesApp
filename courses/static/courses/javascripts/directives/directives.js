@@ -15,3 +15,10 @@ app.directive('mathjax', ['$timeout', function($timeout) {
     }
   };
 }]);
+
+app.directive('courseForm', function() {
+  return {
+    restrict: 'E',
+    templateUrl: '/static/courses/html/directives/course_form.html'
+  };
+});

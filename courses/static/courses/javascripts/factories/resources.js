@@ -5,6 +5,7 @@ app.factory('Course', ['$resource', function($resource) {
     'api/courses/:courseId/:resource',
     {courseId: '@id'},
     {
+      update: { method: 'PUT' },
       add_page: { method: 'POST', params: { resource: 'pages' }}
     }
   );

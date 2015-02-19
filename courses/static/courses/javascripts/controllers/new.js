@@ -5,7 +5,7 @@ app.controller('NewCourseController', ['$scope', '$location', '$http', 'Course',
     $scope.themes = themes;
   });
 
-  $scope.createCourse = function() {
+  $scope.saveCourse = function() {
     course = new Course($scope.course);
     course.$save(function(course) {
       $location.path(course.id + "/edit/1");

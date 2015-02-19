@@ -7,13 +7,18 @@ textarea.ng-dirty.ng-invalid, input.ng-dirty.ng-invalid {
 }
 
 /* Sitewide */
+#notice {
+  text-align: center;
+  color: green;
+}
+
 a.disabled {
    pointer-events: none;
    cursor: default;
    color: DarkSlateGray;
 }
 
-h1 {
+h1:not(.noline) {
 	margin-bottom: 40px;
 	padding-bottom: 20px;
 	border-bottom: 1px solid #BABABA;
@@ -61,12 +66,19 @@ button:hover {
 }
 
 /* New course */
-#new-course-form {
+#course-form {
 	padding-top: 40px;
 	padding-bottom: 20px;
 }
 
 /* Edit course */
+
+.course-title {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 40px;
+}
+
 .back-link {
   display: inline-block;
   margin-bottom: 30px;
