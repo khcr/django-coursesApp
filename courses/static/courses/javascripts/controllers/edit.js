@@ -1,15 +1,17 @@
-var app = angular.module('controllers');
+"use strict";
 
-app.controller('EditCourseController', ['$scope', '$routeParams', '$http','Course', function($scope, $routeParams, $http, Course) {
+var app = angular.module("controllers");
 
-  $scope.course = Course.get({courseId: $routeParams.courseId, resources: ''});
+app.controller("EditCourseController", ["$scope", "$routeParams", "$http","Course", function($scope, $routeParams, $http, Course) {
 
-  $http.get('api/themes').success(function(themes) {
+  $scope.course = Course.get({courseId: $routeParams.courseId, resources: ""});
+
+  $http.get("api/themes").success(function(themes) {
     $scope.themes = themes;
   });
 
   $scope.saveCourse = function() {
-    $scope.course.$update(function(course) {
+    $scope.course.$update(function() {
       $scope.message = "Sauvegardé";
     });
   };

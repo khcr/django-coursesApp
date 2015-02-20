@@ -1,4 +1,6 @@
-var app = angular.module('controllers');
+"use strict";
 
-app.controller('AboutController', function() {  
+var app = angular.module("controllers");
+
+app.controller("AboutController", function() {  
 });

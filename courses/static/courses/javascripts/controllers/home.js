@@ -1,17 +1,19 @@
-var app = angular.module('controllers');
+"use strict";
 
-app.controller('HomeCourseController', ['$scope', '$location', '$http', 'Course', function($scope, $location, $http, Course) {
+var app = angular.module("controllers");
+
+app.controller("HomeCourseController", ["$scope", "$location", "$http", "Course", function($scope, $location, $http, Course) {
 
   $scope.courses = Course.query();
 
-  $http.get('api/themes').success(function(themes) {
+  $http.get("api/themes").success(function(themes) {
     $scope.themes = themes;
   });
 
   var current = "Tous";
 
   $scope.selectFavorites = function() {
-    current = "Favoris"
+    current = "Favoris";
     $scope.courses = Course.query({favorite: "true"});
   };
 
@@ -21,7 +23,7 @@ app.controller('HomeCourseController', ['$scope', '$location', '$http', 'Course'
   };
 
   $scope.currentCategory = function(category) {
-    return category === current
+    return category === current;
   };
 
   $scope.showCourse = function(course) {

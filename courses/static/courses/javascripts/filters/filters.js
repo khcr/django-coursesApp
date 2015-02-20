@@ -1,6 +1,8 @@
-var app = angular.module('filters');
+"use strict";
 
-app.filter('range', function() {
+var app = angular.module("filters");
+
+app.filter("range", function() {
   return function(input, min, max) {
     min = parseInt(min);
     max = parseInt(max) + 1;
@@ -10,16 +12,16 @@ app.filter('range', function() {
   };
 });
 
-app.filter('markdown', function() {
+app.filter("markdown", function() {
   return function(input) {
-    var converter = new Showdown.converter({ extensions: ['courses'] });
+    var converter = new Showdown.converter({ extensions: ["courses"] });
     return converter.makeHtml(input);
   };
 });
 
-app.filter('parameterize', function() {
+app.filter("parameterize", function() {
   return function(input) {
-    input = input || '';
+    input = input || "";
     return input.replace(/\s/g, "_").toLowerCase();
   };
 });

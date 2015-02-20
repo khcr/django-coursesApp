@@ -1,8 +1,10 @@
-var app = angular.module('controllers');
+"use strict";
 
-app.controller('ShowCourseController', ['$scope', '$routeParams', '$location', 'Page', 'Comment', '$http', '$anchorScroll', '$timeout', function($scope, $routeParams, $location, Page, Comment, $http, $anchorScroll, $timeout) {
+var app = angular.module("controllers");
+
+app.controller("ShowCourseController", ["$scope", "$routeParams", "$location", "Page", "Comment", "$http", function($scope, $routeParams, $location, Page, Comment, $http) {
   $scope.page = Page.get({ pageId: $routeParams.pageId, objectId: $routeParams.courseId }, function(page) {
-    $scope.course = page.course
+    $scope.course = page.course;
     
     $scope.firstPage = function() {
       return $scope.page.order === 1;
@@ -38,12 +40,12 @@ app.controller('ShowCourseController', ['$scope', '$routeParams', '$location', '
     $scope.showComments = !$scope.showComments;
   };
 
-  $http.get('api/courses/' + $routeParams.courseId + '/menu').success(function(pages) {
+  $http.get("api/courses/" + $routeParams.courseId + "/menu").success(function(pages) {
     $scope.pages = pages;
   });
 
   $scope.isCurrentPage = function(page) {
-    return page.order === $scope.page.order
+    return page.order === $scope.page.order;
   };
 
   $scope.isProgress = function(name) {
@@ -51,7 +53,7 @@ app.controller('ShowCourseController', ['$scope', '$routeParams', '$location', '
   };
 
   $scope.saveProgress = function(isDone) {
-    $http.put('api/pages/' + $scope.page.id + '/progression', {is_done: isDone}).
+    $http.put("api/pages/" + $scope.page.id + "/progression", {is_done: isDone}).
       success(function(response) {
         if( !$scope.lastPage() ) {
           $scope.nextPage();
@@ -59,11 +61,11 @@ app.controller('ShowCourseController', ['$scope', '$routeParams', '$location', '
           $scope.page.progression = response.progression;
           $scope.page.course.percentage = response.percentage;
         }
-      })
+      });
   };
 
   $scope.favorite = function() {
-    $http.post('api/courses/' + $routeParams.courseId + '/favorite').success(function(response) {
+    $http.post("api/courses/" + $routeParams.courseId + "/favorite").success(function(response) {
       $scope.course.favorite = response.favorite;
     });
   };
