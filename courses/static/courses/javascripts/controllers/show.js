@@ -69,5 +69,9 @@ app.controller("ShowCourseController", ["$scope", "$routeParams", "$location", "
       $scope.course.favorite = response.favorite;
     });
   };
+  
+  $scope.wait = function() {
+    $scope.wait = "Merci de patienter..."
+  };
 
 }]);
