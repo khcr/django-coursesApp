@@ -114,6 +114,10 @@ button:hover {
   color: #F00000;
 }
 
+#home .category-container {
+  display: inline-block;
+}
+
 #home .categories {
   margin-bottom: 40px;
   margin-top: 40px;
