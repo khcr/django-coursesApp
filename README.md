@@ -14,10 +14,8 @@ Pour les commandes qui concernent l'application, veiller à les lancer à la rac
 ``pip3 install -r requirements.txt``
 
 De plus, il faut encore installer ces paquets sur la machine:
-* cairo
-* pango
-* GDK-PixBuf
-* Plus d'info: http://weasyprint.org/docs/install/
+* pandoc
+* pdflatex
 
 **Lancer les migrations**
 

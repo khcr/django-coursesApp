@@ -9,24 +9,20 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         clear_tables([Theme, Chapter, Teacher, Status, Course, Page, Section, Progression, CourseComment])
-        self.stdout.write('Data cleared')
         # Chapters & Themes
         theme = Theme(name="Géométrie")
         theme.save()
         chapter = Chapter(theme=theme, name="Les droites")
         chapter.save()
-        self.stdout.write('Themes & chapters created')
         # Teacher
         teacher = Teacher(first_name="John", last_name="Smith", email="john@smith.com", username="sjohn")
         teacher.save()
-        self.stdout.write('Teacher created')
         # Status
         Status(name="Compris").save()
         Status(name="Relire").save()
-        self.stdout.write('Statuses created')
         # Demo course
-        course = Course(name="Equations de droites", description=
-            "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+        course = Course(name="Equations de droites", 
+            description="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
             difficulty=1,
             author=teacher,
             chapter=chapter
@@ -50,6 +46,5 @@ class Command(BaseCommand):
         page_2 = Page(name="Les équations", course=course, order=2)
         page_2.save()
         Section(name="Pretium", html_content=text_2, markdown_content=text_2, order=1, page=page_2).save()
-        self.stdout.write('Course created')
 
-        self.stdout.write('Successfully terminated')
+        self.stdout.write('Data successfully created')

@@ -40,7 +40,6 @@ INSTALLED_APPS = (
     'teachers',
     'students',
     'restless',
-    'weasyprint',
 )
 
 MIDDLEWARE_CLASSES = (
