@@ -14,7 +14,7 @@ class Command(BaseCommand):
         # ask the app
         directory = input("\nIn which app would you like to run the tests? [default: courses]\n") or "courses"
         if directory not in settings.INSTALLED_APPS:
-            raise CommandError("App '{}'' does not exist".format(directory))
+            raise CommandError("App '{}' does not exist".format(directory))
 
         self.stdout.write('\n### SERVERS ###\n\n')
         server = subprocess.Popen(["python3", "manage.py", "runserver", "3333"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, preexec_fn=os.setsid)

@@ -38,6 +38,6 @@ Si besoin de se connecter à la zone d'administration ("/admin")
 
 **Tests**
 
-Pour lancer les tests, installer d'abord Protractor et lancer le serveur: http://angular.github.io/protractor/#/tutorial
+Pour lancer les tests, installer d'abord Protractor (ne pas lancer le serveur webdriver): http://angular.github.io/protractor/#/tutorial
 
 Ensuite lancer la commande ``python3 manage.py tests``
