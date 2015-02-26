@@ -4,7 +4,7 @@
   <div class="categories">
     <div class="category"><strong>Choisir: </strong></div>
     <div class="category" ng-class="{current: currentCategory('Tous')}" ng-click="changeCategory()">Tous</div>
-    <div class="category" ng-class="{current: currentCategory('Favoris')}" ng-click="selectFavorites()">Favoris</div>
+    <div id="favorites" class="category" ng-class="{current: currentCategory('Favoris')}" ng-click="selectFavorites()">Favoris</div>
     <div class="category-container" ng-repeat="theme in themes">
       <div ng-class="{current: currentCategory(theme.name)}" class="category" ng-click="changeCategory(theme.name)">{{ theme.name }}</div>
     </div>

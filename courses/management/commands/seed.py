@@ -47,4 +47,4 @@ class Command(BaseCommand):
         page_2.save()
         Section(name="Pretium", html_content=text_2, markdown_content=text_2, order=1, page=page_2).save()
 
-        self.stdout.write('Data successfully created')
+        self.stdout.write('Data created')

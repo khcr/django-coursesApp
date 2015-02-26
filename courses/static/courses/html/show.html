@@ -29,16 +29,16 @@
   </div>
 
   <div class="col-sm-12 nav">
-    <div class="pull-left"><button class="btn btn-primary" ng-disabled="firstPage()" ng-click="previousPage()">Précédent</button></div>
-    <div class="pull-right"><button class="btn btn-primary" ng-disabled="lastPage()" ng-click="nextPage()">Suivant</button></div>
-    <div class="pull-right"><button class="btn btn-success" ng-disabled="isProgress('Compris')" ng-click="saveProgress(true)">J'ai compris !</button></div>
-    <div class="pull-right"><button class="btn btn-danger" ng-disabled="isProgress('Relire')" ng-click="saveProgress(false)">A relire</button></div>
+    <div class="pull-left"><button id="previous-page" class="btn btn-primary" ng-disabled="firstPage()" ng-click="previousPage()">Précédent</button></div>
+    <div class="pull-right"><button id="next-page" class="btn btn-primary" ng-disabled="lastPage()" ng-click="nextPage()">Suivant</button></div>
+    <div class="pull-right"><button id="page-success" class="btn btn-success" ng-disabled="isProgress('Compris')" ng-click="saveProgress(true)">J'ai compris !</button></div>
+    <div class="pull-right"><button id="page-defeat" class="btn btn-danger" ng-disabled="isProgress('Relire')" ng-click="saveProgress(false)">A relire</button></div>
   </div>
 
 </div>
 
 <div class="col-sm-12 margin top">
-  <a ng-click="toggleComments()">Afficher/Masquer les commentaires</a>
+  <a id="show-comments" ng-click="toggleComments()">Afficher/Masquer les commentaires</a>
 </div>
 
 <div id="comments" ng-show="showComments" class="col-sm-12 margin top">
@@ -59,7 +59,7 @@
     <form class="form-horizontal col-sm-offset-3 col-sm-6" role="form" name="newComment" ng-submit="newComment.$valid && saveComment()" novalidate>
       <div class="form-group">
         <textarea placeholder="Ton commentaire" class="col-sm-12" msd-elastic="\n" ng-model="comment.content" ng-minlength=3 required></textarea>
-        <input type="submit" value="Envoyer" class="form-control btn-primary" ng-disabled="newComment.$invalid">
+        <input id="submit-comment" type="submit" value="Envoyer" class="form-control btn-primary" ng-disabled="newComment.$invalid">
       </div>
     </form>
   </div>
