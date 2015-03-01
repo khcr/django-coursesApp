@@ -24,3 +24,10 @@ app.directive("courseForm", function() {
     templateUrl: "/static/courses/html/directives/course_form.html"
   };
 });
+
+app.directive("backToCourse", function() {
+  return {
+    restrict: "E",
+    templateUrl: "/static/courses/html/directives/back_course.html"
+  };
+});

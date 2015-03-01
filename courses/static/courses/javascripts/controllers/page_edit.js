@@ -14,30 +14,27 @@ app.controller("EditPageController", ["$scope", "$routeParams", "$location", "$u
       $scope.page.$add_section();
     };
     $scope.removeSection = function(key) {
-      $scope.saveCourse();
       for(var i = key + 1; i < $scope.page.sections.length; i++) {
         $scope.page.sections[i].order -= 1;
       }
       var section = new Section($scope.page.sections[key]);
       section.$delete(function() {
         $scope.page.sections.splice(key, 1);
-        $scope.page.$update({ objectId: $scope.course.id });
+        $scope.saveCourse();
       });
     };
     $scope.upSection = function(key) {
-      $scope.saveCourse();
       if(key !== 0) {
         $scope.page.sections[key].order -= 1;
         $scope.page.sections[key - 1].order += 1;
-        $scope.page.$update({ objectId: $scope.course.id });
+        $scope.saveCourse();
       }
     };
     $scope.downSection = function(key) {
-      $scope.saveCourse();
       if($scope.page.sections[key + 1] !== undefined) {
         $scope.page.sections[key].order += 1;
         $scope.page.sections[key + 1].order -= 1;
-        $scope.page.$update({ objectId: $scope.course.id });
+        $scope.saveCourse();
       }
     };
     $scope.saveCourse = function() {
@@ -67,7 +64,7 @@ app.controller("EditPageController", ["$scope", "$routeParams", "$location", "$u
       
     };
     $scope.isCurrentPage = function(number) {
-      return number === $scope.page.id;
+      return number == $routeParams.pageId;
     };
     $scope.preview = function() {
       $scope.saveCourse();
