@@ -17,11 +17,11 @@ class CourseList(ListEndpoint):
         # TODO: use the current user
         user = User.objects.first()
         if 'theme' in request.GET:
-            courses = Course.objects.filter(chapter__theme__name=request.GET['theme'])
+            courses = Course.objects.filter(chapter__theme__name=request.GET['theme'], published=True)
         elif 'favorite' in request.GET:
-            courses = user.favorite_courses.all()
+            courses = user.favorite_courses.filter(published=True)
         else:
-            courses = Course.objects.all()
+            courses = Course.objects.filter(published=True)
         return serialize(courses)
 
 

@@ -1,6 +1,6 @@
 "use strict";
 
-describe("courses homepage", function() {
+describe("new course", function() {
   beforeEach(function() {
     browser.get("http://localhost:3333/courses/#/new");
   });

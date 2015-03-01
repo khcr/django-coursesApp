@@ -1,4 +1,6 @@
-<a class="back-link" ng-href='#/{{ course.id }}/edit/{{ page.order }}'><button class="btn btn-default" type="button">Retour</button></a>
+<back-to-course></back-to-course>
+
+<h2>{{ page.name }}</h2>
 
 <div mathjax class="margin bottom" ng-repeat="section in page.sections">
   <h3>{{ section.name }}</h3>

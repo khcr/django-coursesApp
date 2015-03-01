@@ -20,8 +20,13 @@ describe("course show", function() {
   });
 
   it("allows to navigate from the menu", function() {
-    element(by.css(".menu")).all(by.binding("page.name")).last().click();
-    expect(element.all(by.binding("page.name")).first().getText()).toEqual("Les équations");
+    element(by.css(".menu")).all(by.binding("page.name")).then(function(elements) {
+      var link = elements[elements.length - 1];
+      return [link, link.getText()];
+    }).then(function(arr) {
+      arr[0].click();
+      expect(element.all(by.binding("page.name")).first().getText()).toEqual(arr[1]);
+    });
   });
 
   it("allows to switch pages", function() {
@@ -34,7 +39,7 @@ describe("course show", function() {
   it("allows to mark a successful page", function() {
     element(by.id("page-success")).click();
     expect(element.all(by.binding("page.name")).first().getText()).toEqual("Les équations");
-    expect(element(by.css(".progress-bar")).getText()).toContain("50%");
+    expect(element(by.css(".progress-bar")).getText()).not.toEqual("0%");
   });
 
   it("allows to mark a not understood page", function() {
@@ -63,6 +68,6 @@ describe("course show", function() {
     var text = "J'ai adoré ce cours";
     element(by.id("show-comments")).click();
     element(by.model("comment.content")).sendKeys(text);
-    expect(element(by.binding("comment.content")).getText()).toEqual(text);
+    expect(element(by.css(".preview.comment")).element(by.binding("comment.content")).getText()).toEqual(text);
   });
 });

@@ -49,7 +49,7 @@
       <em><small>Posté le {{ comment.created_at | date : "d MMMM yyyy à H:mm" }}</small></em>
   </div>
 
-  <div class="comment col-sm-7">
+  <div class="preview comment col-sm-7">
       <p class="author">{{ comment.user }}</p>
       <p ng-hide="comment.content.length">{{ comment.placeholder }}<p>
       <p>{{ comment.content }}<p>

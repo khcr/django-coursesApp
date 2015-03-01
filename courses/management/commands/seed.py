@@ -5,7 +5,7 @@ from courses.utils import clear_tables
 import os
 
 class Command(BaseCommand):
-    help = 'Create demo data'
+    help = 'Create demo data for testing'
 
     def handle(self, *args, **options):
         clear_tables([Theme, Chapter, Teacher, Status, Course, Page, Section, Progression, CourseComment])
@@ -25,7 +25,8 @@ class Command(BaseCommand):
             description="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
             difficulty=1,
             author=teacher,
-            chapter=chapter
+            chapter=chapter,
+            published=True
             )
         course.save()
         page_1 = Page(name="Généralité", course=course, order=1)
