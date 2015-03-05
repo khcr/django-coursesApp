@@ -129,6 +129,137 @@
             
   <div class="section" id="guide-du-developpeur">
 <h1>Guide du développeur<a class="headerlink" href="#guide-du-developpeur" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Cette page permet de se retrouver dans la multitude de fichiers du projets et de pouvoir comprendre certain processus.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>courses/</dt>
+<dd><ul class="first last simple">
+<li><strong>admin.py</strong>: permet de rajouter les modèles qu&#8217;on veut voir apparaitre et modifier dans la zone d&#8217;administration Django. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/ref/contrib/admin/">Documentation officielle</a> <a class="footnote-reference" href="#f1" id="id1">[1]</a></li>
+<li><strong>api.py</strong>: regroupe toutes les vues génériques RestLess qui servent à construire l&#8217;API JSON nécessaire à l&#8217;application AngularJS. Les classés déclarées sont ensuite utilisées dans le fichier <cite>urls.py</cite>.</li>
+<li><strong>forms.py</strong>: déclare les formulaires Django nécessaire pour enregistrer les données d&#8217;une requête dans la base de données. Ils sont utilisé principalement dans le fichier <cite>api.py</cite>. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/forms/">Documentation officielle</a> <a class="footnote-reference" href="#f2" id="id2">[2]</a></li>
+<li><strong>models.py</strong>: déclare les modèles de notre application. Contient également des méthodes d&#8217;instance pour certains modèles. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/db/models/">Documentation officielle</a> <a class="footnote-reference" href="#f3" id="id3">[3]</a></li>
+<li><strong>urls.py</strong>: contient les urls spécifiques à l&#8217;application. Elles sont ensuite ajoutée dans le fichier principal <cite>webmath/urls.py</cite>. La première url, de nom <cite>index</cite>, est la point de départ de notre application AngularJS. Le reste des routes est défini directement par AngularJS dans le fichier <cite>courses/static/courses/javascripts/config/routes.js</cite>. Dans <cite>urls.py</cite> la deuxième url, de nom <cite>pdf</cite>, est celle qui génère le pdf d&#8217;un cours. Les routes qui suivent sont celle de l&#8217;API JSON qui utilisent les vues génériques du fichier <cite>api.py</cite>. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/http/urls/">Documentation officielle</a> <a class="footnote-reference" href="#f4" id="id4">[4]</a></li>
+<li><strong>utils.py</strong>: regroupe une série de fonctions utiles utilisées à travers l&#8217;application.</li>
+<li><strong>views.py</strong>: contient les vues Django. A l&#8217;instar des urls, il n&#8217;y a que deux fonctions, une qui est le point de départ de l&#8217;application et l&#8217;autre qui génère le pdf d&#8217;un cours. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/http/views/">Documentation officielle</a> <a class="footnote-reference" href="#f5" id="id5">[5]</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>courses/templates/courses/</strong>: contient le layout de base <cite>courses.html</cite> de notre application et le fichier markdown <cite>pdf.md</cite> servant à générer le pdf d&#8217;un cours.</p>
+</li>
+<li><dl class="first docutils">
+<dt>courses/static/courses/</dt>
+<dd><ul class="first last simple">
+<li><strong>html/</strong>: contient tous les fichiers html utilisés par AngularJS. Les pages html sont relié à une route dans le ficher <cite>courses/static/courses/javascripts/config/routes.js</cite> d&#8217;AngularJS qui s&#8217;occupe d&#8217;associer une route à un fichier html.</li>
+<li><strong>images/</strong>: contient les images utilisées dans le design de l&#8217;application.</li>
+<li><strong>stylesheets/</strong>: contient les feuilles de styles.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>courses/static/courses/javascripts/:</dt>
+<dd><ul class="first last simple">
+<li><strong>config/routes.js</strong>: déclare les routes principales de notre application avec AngularJS. <a class="reference external" href="https://docs.angularjs.org/tutorial/step_07">Documentation officielle</a> <a class="footnote-reference" href="#f6" id="id6">[6]</a></li>
+<li><strong>controllers/</strong>: déclare les controlleurs AngularJS. Un fichier correspond à une route et son controlleur. Ils sont utilisé dans le fichier <cite>courses/static/courses/javascripts/config/routes.js</cite>.</li>
+<li><strong>directives/</strong>: déclare des directives AngularJS. <a class="reference external" href="https://docs.angularjs.org/guide/directive">Documentation officielle</a> <a class="footnote-reference" href="#f7" id="id7">[7]</a></li>
+<li><strong>factories/resources.js</strong>: déclare des objets resources qui permettent de communiquer facilement avec l&#8217;API. <a class="reference external" href="https://docs.angularjs.org/api/ngResource/service/$resource">Documentation officielle</a> <a class="footnote-reference" href="#f8" id="id8">[8]</a></li>
+<li><strong>filters/</strong>: déclare des filtres AngularJS. <a class="reference external" href="https://docs.angularjs.org/guide/filter">Documentation officielle</a> <a class="footnote-reference" href="#f9" id="id9">[9]</a></li>
+<li><strong>app.js</strong>: point de départ, déclare l&#8217;application AngularJS et les modules avec leurs dépendances. C&#8217;est dans ces modules qu&#8217;on déclare ensuite les filtres, controlleurs, etc.</li>
+<li><strong>extensions.js</strong>: permet de personnaliser Showdown.js, la bibliothèque qui transforme le markdown en HTML. <a class="reference external" href="https://github.com/showdownjs/showdown">Documentation officielle</a> <a class="footnote-reference" href="#f10" id="id10">[10]</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>spec/conf.js</strong>: fichier de configuration de Protractor, le moteur de test.</p>
+</li>
+<li><p class="first"><strong>spec/</strong>: contient les fichiers de tests end-to-end Protractor. Chaque fichier correspond à une route de l&#8217;application.</p>
+</li>
+<li><dl class="first docutils">
+<dt>management/commands/</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/howto/custom-management-commands/">Documentation officielle</a> <a class="footnote-reference" href="#f11" id="id11">[11]</a></li>
+<li><strong>seed.py</strong>: commande qui crée des données de démonstration dans la base de données afin d&#8217;avoir une application fonctionnelle.</li>
+<li><strong>tests.py</strong>: commande qui lance les tests Protractor.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>webmath/test_router.py</strong>: Le router permet d&#8217;utiliser plusieurs bases de données avec Django. En l&#8217;occurence, le routeur permet d&#8217;utiliser une base de données différente lorsqu&#8217;on lance les tests de notre application. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/db/multi-db/">Documentation officielle</a> <a class="footnote-reference" href="#f12" id="id12">[12]</a></p>
+</li>
+</ul>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/ref/contrib/admin">https://docs.djangoproject.com/fr/1.7/ref/contrib/admin</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/forms/">https://docs.djangoproject.com/fr/1.7/topics/forms/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/db/models/">https://docs.djangoproject.com/fr/1.7/topics/db/models/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/http/urls/">https://docs.djangoproject.com/fr/1.7/topics/http/urls/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/http/views/">https://docs.djangoproject.com/fr/1.7/topics/http/views/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td><a class="reference external" href="https://docs.angularjs.org/tutorial/step_07">https://docs.angularjs.org/tutorial/step_07</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[7]</a></td><td><a class="reference external" href="https://docs.angularjs.org/guide/directive">https://docs.angularjs.org/guide/directive</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[8]</a></td><td><a class="reference external" href="https://docs.angularjs.org/api/ngResource/service/$resource">https://docs.angularjs.org/api/ngResource/service/$resource</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[9]</a></td><td><a class="reference external" href="https://docs.angularjs.org/guide/filter">https://docs.angularjs.org/guide/filter</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[10]</a></td><td><a class="reference external" href="https://github.com/showdownjs/showdown">https://github.com/showdownjs/showdown</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[11]</a></td><td><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/howto/custom-management-commands/">https://docs.djangoproject.com/fr/1.7/howto/custom-management-commands/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f12" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id12">[12]</a></td><td><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/db/multi-db/">https://docs.djangoproject.com/fr/1.7/topics/db/multi-db/</a></td></tr>
+</tbody>
+</table>
 </div>
 
 
