@@ -42,6 +42,7 @@ Cette page permet de se retrouver dans la multitude de fichiers du projets et de
 
 * **webmath/test_router.py**: Le router permet d'utiliser plusieurs bases de données avec Django. En l'occurence, le routeur permet d'utiliser une base de données différente lorsqu'on lance les tests de notre application. `Documentation officielle <https://docs.djangoproject.com/fr/1.7/topics/db/multi-db/>`__ [#f12]_
 
+.. rubric:: Notes
 
 .. [#f1] https://docs.djangoproject.com/fr/1.7/ref/contrib/admin
 .. [#f2] https://docs.djangoproject.com/fr/1.7/topics/forms/
