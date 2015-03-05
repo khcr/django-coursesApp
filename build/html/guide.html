@@ -31,6 +31,7 @@
 
   
     <link rel="top" title="Module de cours: guide" href="index.html"/>
+        <link rel="next" title="Bugs" href="bugs.html"/>
         <link rel="prev" title="Tests" href="tests.html"/> 
 
   
@@ -92,7 +93,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tests.html">Tests</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Guide du développeur</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Guide du développeur</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fichiers">Fichiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#concepts">Concepts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliographie.html">Bibliographie</a></li>
 </ul>
 
         
@@ -129,6 +136,8 @@
             
   <div class="section" id="guide-du-developpeur">
 <h1>Guide du développeur<a class="headerlink" href="#guide-du-developpeur" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="fichiers">
+<h2>Fichiers<a class="headerlink" href="#fichiers" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Cette page permet de se retrouver dans la multitude de fichiers du projets et de pouvoir comprendre certain processus.</p>
 <ul>
 <li><dl class="first docutils">
@@ -185,9 +194,15 @@
 </dd>
 </dl>
 </li>
-<li><p class="first"><strong>webmath/test_router.py</strong>: Le router permet d&#8217;utiliser plusieurs bases de données avec Django. En l&#8217;occurence, le routeur permet d&#8217;utiliser une base de données différente lorsqu&#8217;on lance les tests de notre application. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/db/multi-db/">Documentation officielle</a> <a class="footnote-reference" href="#f12" id="id12">[12]</a></p>
+<li><p class="first"><strong>webmath/test_router.py</strong>: Le routeur permet d&#8217;utiliser plusieurs bases de données avec Django. En l&#8217;occurence, le routeur permet d&#8217;utiliser une base de données différente lorsqu&#8217;on lance les tests de notre application. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/db/multi-db/">Documentation officielle</a> <a class="footnote-reference" href="#f12" id="id12">[12]</a></p>
 </li>
 </ul>
+</div>
+<div class="section" id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="integration-d-angularjs-avec-django">
+<h3>Intégration d&#8217;AngularJS avec Django<a class="headerlink" href="#integration-d-angularjs-avec-django" title="Lien permanent vers ce titre">¶</a></h3>
+<p>En dehors de l&#8217;API et des pdfs, Django ne fournit qu&#8217;une seule route dans l&#8217;application. En effet à partir de cette route Angular s&#8217;occupe de gérer les routes et les templates. Concrétement quand on charge une une page de notre application, la requête va d&#8217;abord passer par la vue Django <cite>index</cite> déclaré dans le fichier <cite>views.py</cite>. Cette vue s&#8217;occupe simplement d&#8217;afficher le template <cite>courses.html</cite>. Ce fichier HTML est un layout pour notre application, son contenu sera sur toutes les pages. Il contient le menu, l&#8217;inclusion des fichiers javascripts et des feuilles de syles ainsi que le pied de page. Dans la balise <cite>body</cite> on a ajouté la directive Angular <cite>ng-app=Courses</cite> pour déclarer qu&#8217;à l&#8217;intérieur de cette balise se trouve une application AngularJS nommée <cite>CoursesApp</cite>. Ainsi une fois que Django a affiché le template <cite>courses.html</cite>, Angular, grâce aux routes écrites dans le fichier <cite>routes.js</cite>, va insérer le contenu du bon fichier HTML dans la balise <cite>body</cite> selon l&#8217;URL. La page final est maintenant visible pour l&#8217;utilisateur. L&#8217;avantage de ce sytème est que lorsqu&#8217;on change de page, la vue Django ne sera pas rappelée mais seul le contenu de <cite>body</cite> sera mis à jour avec le contenu HTML approrié à l&#8217;URL. AngularJS rend notre site web plus rapide.</p>
 <p class="rubric">Notes</p>
 <table class="docutils footnote" frame="void" id="f1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -262,12 +277,16 @@
 </tbody>
 </table>
 </div>
+</div>
+</div>
 
 
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bugs.html" class="btn btn-neutral float-right" title="Bugs"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="tests.html" class="btn btn-neutral" title="Tests"><span class="fa fa-arrow-circle-left"></span> Previous</a>

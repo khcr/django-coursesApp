@@ -12,3 +12,5 @@ Développer avec AngularJS
    maths
    tests
    guide
+   bugs
+   bibliographie

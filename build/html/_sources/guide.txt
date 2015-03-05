@@ -2,6 +2,10 @@
 Guide du développeur
 ====================
 
+#########
+Fichiers
+#########
+
 Cette page permet de se retrouver dans la multitude de fichiers du projets et de pouvoir comprendre certain processus.
 
 * courses/
@@ -40,7 +44,18 @@ Cette page permet de se retrouver dans la multitude de fichiers du projets et de
     * **seed.py**: commande qui crée des données de démonstration dans la base de données afin d'avoir une application fonctionnelle.
     * **tests.py**: commande qui lance les tests Protractor.
 
-* **webmath/test_router.py**: Le router permet d'utiliser plusieurs bases de données avec Django. En l'occurence, le routeur permet d'utiliser une base de données différente lorsqu'on lance les tests de notre application. `Documentation officielle <https://docs.djangoproject.com/fr/1.7/topics/db/multi-db/>`__ [#f12]_
+* **webmath/test_router.py**: Le routeur permet d'utiliser plusieurs bases de données avec Django. En l'occurence, le routeur permet d'utiliser une base de données différente lorsqu'on lance les tests de notre application. `Documentation officielle <https://docs.djangoproject.com/fr/1.7/topics/db/multi-db/>`__ [#f12]_
+
+
+########
+Concepts
+########
+
+************************************
+Intégration d'AngularJS avec Django
+************************************
+
+En dehors de l'API et des pdfs, Django ne fournit qu'une seule route dans l'application. En effet à partir de cette route Angular s'occupe de gérer les routes et les templates. Concrétement quand on charge une une page de notre application, la requête va d'abord passer par la vue Django `index` déclaré dans le fichier `views.py`. Cette vue s'occupe simplement d'afficher le template `courses.html`. Ce fichier HTML est un layout pour notre application, son contenu sera sur toutes les pages. Il contient le menu, l'inclusion des fichiers javascripts et des feuilles de syles ainsi que le pied de page. Dans la balise `body` on a ajouté la directive Angular `ng-app=Courses` pour déclarer qu'à l'intérieur de cette balise se trouve une application AngularJS nommée `CoursesApp`. Ainsi une fois que Django a affiché le template `courses.html`, Angular, grâce aux routes écrites dans le fichier `routes.js`, va insérer le contenu du bon fichier HTML dans la balise `body` selon l'URL. La page final est maintenant visible pour l'utilisateur. L'avantage de ce sytème est que lorsqu'on change de page, la vue Django ne sera pas rappelée mais seul le contenu de `body` sera mis à jour avec le contenu HTML approrié à l'URL. AngularJS rend notre site web plus rapide.
 
 .. rubric:: Notes
 
