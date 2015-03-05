@@ -1,8 +1,6 @@
 Développer avec AngularJS
 ==================================
 
-Contenu:
-
 .. toctree::
    :maxdepth: 2
 
@@ -12,14 +10,5 @@ Contenu:
    models
    restless
    maths
+   tests
    guide
-
-
-
-Indices et tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-

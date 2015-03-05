@@ -8,13 +8,19 @@ Démarrage
 
 **Installer Django et les dépendences**
 
-``pip3 install -r requirement.txt``
+``pip3 install -r requirements.txt``
+
+De plus, il faut encore installer ces paquets sur la machine:
+* pandoc
+* pdflatex
 
 **Lancer les migrations**
 
 ``python3 manage.py migrate``
 
 **Créer un super utilisateur**
+
+Si besoin de se connecter à la zone d'administration ("/admin")
 
 ``python3 manage.py createsuperuser`` et suivre les instructions
 
@@ -24,4 +30,11 @@ Démarrage
 
 **Données**
 
-Se connecter à la zone admin - ``/admin`` - et ajouter au moins un thème (Themes) et un chapitre (Chapters) dans la base de données. Ensuite créer un professeur (dans la section Teachers sous le nom Users). Finalement vous pouvez vous rendre sur l'URL ``/courses`` et profiter des des fonctionnalités.
+* Créer les données nécessaires: ``python3 manage.py seed``
+* Finalement vous pouvez vous rendre sur l'URL ``/courses`` et profiter des des fonctionnalités.
+
+**Tests**
+
+Pour lancer les tests, installer d'abord Protractor (ne pas lancer le serveur webdriver): http://angular.github.io/protractor/#/tutorial
+
+Ensuite lancer la commande ``python3 manage.py tests``

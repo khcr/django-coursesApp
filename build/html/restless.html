@@ -1,56 +1,132 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>RestLess &mdash; Module de cours: guide</title>
-    
-    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RestLess &mdash; Module de cours: guide</title>
+  
+
+  
+  
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="Module de cours: guide" href="index.html" />
-    <link rel="next" title="Affichage des mathématiques" href="maths.html" />
-    <link rel="prev" title="Modèle relationnel" href="models.html" /> 
-  </head>
-  <body>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="Index général"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="maths.html" title="Affichage des mathématiques"
-             accesskey="N">suivant</a> |</li>
-        <li class="right" >
-          <a href="models.html" title="Modèle relationnel"
-             accesskey="P">précédent</a> |</li>
-        <li><a href="index.html">Module de cours: guide</a> &raquo;</li> 
-      </ul>
-    </div>  
+  
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Module de cours: guide" href="index.html"/>
+        <link rel="next" title="MathJax" href="maths.html"/>
+        <link rel="prev" title="Modèle relationnel" href="models.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> TM2014: Développer avec AngularJS</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Démarrage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angularjs.html">AngularJS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="angularjs.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angularjs.html#specificites-et-avantages">Spécificités et avantages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="functionalities.html">Fonctionnalités</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="functionalities.html#les-professeurs">Les professeurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionalities.html#les-etudiants">Les étudiants</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Modèle relationnel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="models.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#les-cours">Les cours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#les-chapitres">Les chapitres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#les-commentaires">Les commentaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#la-progression">La progression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#les-favoris">Les favoris</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#les-demandes">Les demandes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">RestLess</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#presentation">Présentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-vues-generiques">Les vues génériques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fonctionnement-de-restless">Fonctionnement de RestLess</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="maths.html">MathJax</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maths.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maths.html#personnalisation">Personnalisation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide.html">Guide du développeur</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">TM2014: Développer avec AngularJS</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>RestLess</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/restless.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
             
   <div class="section" id="restless">
 <h1>RestLess<a class="headerlink" href="#restless" title="Lien permanent vers ce titre">¶</a></h1>
@@ -155,12 +231,12 @@
 </ul>
 <p>Voici donc les deux vues génériques dont nos classes pourront hérités et qui permettent de réaliser les quatres opérations sur nos ressources. La différence entre les deux classes est que <tt class="docutils literal"><span class="pre">DetailEndpoint</span></tt> travaille une ressource en particulier, elle a donc besoin d&#8217;un identifiant dans l&#8217;URL pour savoir quelle ressource elle doit modifié, dans le style <tt class="docutils literal"><span class="pre">/courses/:id</span></tt>. Notez qu&#8217;évidemment toutes les actions - le code qui s&#8217;éxécute derrière une URL - RestLess retournent du JSON, étant donné que c&#8217;est sa particularité et son utilité. Comment concrétement utiliser ces classes dans le projet ? Comme précédement dans l&#8217;exemple avec les vues génériques Django, la première étape consiste à créer une classe qui hérite soit de <tt class="docutils literal"><span class="pre">ListEndpoint</span></tt> soit de <tt class="docutils literal"><span class="pre">DetailEndpoint</span></tt> et de spécifier le modèle. Ensuite il faut créer une url dans laquelle on spécifie qu&#8217;il faut utiliser notre classe précédemment déclarée. A partir de là, quand on fait une requête sur cette url, suivant le type, Django fera appelle aux méthodes provenant des vues génériques RestLess. Par exemple, on crée une classe <tt class="docutils literal"><span class="pre">CoursesList</span></tt> dans laquelle on spécifie le modèle <tt class="docutils literal"><span class="pre">Course</span></tt>. Ensuite on rattache cette classe à l&#8217;url <tt class="docutils literal"><span class="pre">/courses</span></tt>. Si on fait une requête de type POST sur <tt class="docutils literal"><span class="pre">/courses</span></tt>, Django va cherche la méthode <tt class="docutils literal"><span class="pre">post</span></tt> - même nom que le type de requête - dans la classe <tt class="docutils literal"><span class="pre">CoursesList</span></tt> puis dans son parent <tt class="docutils literal"><span class="pre">ListEndpoint</span></tt> et va l&#8217;exécuter, le résultat sera qu&#8217;une ressource sera créée dans la table <tt class="docutils literal"><span class="pre">courses</span></tt> avec les paramètres du client et une réponse en JSON contenant la ressource crée sera retournée. Ou alors on peut faire une requête GET sur <tt class="docutils literal"><span class="pre">/courses</span></tt> et le serveur retourne tous les cours en format JSON également. Rien de plus n&#8217;est nécessaire pour avoir notre API JSON fonctionnel.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="_images/requetes.png"><img alt="_images/requetes.png" src="_images/requetes.png" style="width: 896.0px; height: 490.0px;" /></a>
+<a class="reference internal image-reference" href="_images/requetes.png"><img alt="_images/requetes.png" src="_images/requetes.png" style="width: 896.0px; height: 489.99999999999994px;" /></a>
 <p class="caption">Schéma du traitement d&#8217;une requête à l&#8217;aide des vues génériques RestLess</p>
 </div>
 <p>Dans le cas de notre projet, il a fallu personnaliser les vues génériques pour répondre aux besoins spécifiques de la ressource. Pour ce faire on doit surcharger les methodes intégrées RestLess. Vous avez pu remarquer que les méthodes ont le nom de la requête auxquelle elles correspondent. Si on fait une requête PUT, la méthode <tt class="docutils literal"><span class="pre">put</span></tt> est appelée et ainsi de suite. C&#8217;est un principe dans les vues génériques Django. Concernant nos vues génériques, si notre une classe ne contient pas le méthode appelée par une requête, le framework va automatiquement chercher la méthode dans la classe parent, c&#8217;est-à-dire dans la classe RestLess qui contient les méthodes classiques et conventionnelles et qui nous évite un code redondant. Par contre si on ne veut plus utiliser ces méthodes classiques car elles ne sont plus adaptées, alors on crée une méthode de même nom dans la classe fille et c&#8217;est désormais cette méthode qui sera appelé lorsqu&#8217;elle est appelé d&#8217;une instance de notre classe fille. C&#8217;est ce qu&#8217;on appelle surcharger une méthode. Dans le projet, toutes les vues générques sont écrites dans le fichier <tt class="docutils literal"><span class="pre">api.py</span></tt>. On peut y observer que plusieurs méthodes de tout type, get, post, put, ont été surchargées. On peut s&#8217;inspirer des méthodes RestLess qu&#8217;on surcharge pour que notre fonction accèpte les bons arguments et retourne une réponse valide en se rendant sur le <a class="reference external" href="https://django-restless.readthedocs.org/en/latest/_modules/restless/modelviews.html">fichier source</a>.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="_images/surcharge.png"><img alt="_images/surcharge.png" src="_images/surcharge.png" style="width: 896.0px; height: 490.0px;" /></a>
+<a class="reference internal image-reference" href="_images/surcharge.png"><img alt="_images/surcharge.png" src="_images/surcharge.png" style="width: 896.0px; height: 489.99999999999994px;" /></a>
 <p class="caption">Surcharge d&#8217;une méthode</p>
 </div>
 <p>On doit parfois retourner des objets JSON personnalisés, c&#8217;est-à-dire pouvoir choisir les paires clé/valeur de notre dictionnaire, car par défaut RestLess retourne simplement les attributs de l&#8217;enregistrement en question. On accomplit cela généralement dans le but de choisir les attributs, d&#8217;en créer des nouveaux qui ne sont pas des champs de la table ou de joindre des enregistrements associés dans la BD. RestLess fournit la méthode <tt class="docutils literal"><span class="pre">serialize</span></tt> pour résoudre ce problème. Par exemple pour un cours nous avons besoin de joindre les pages associées (=objets associés) et leur contenu ainsi que le nombre total de pages (=nouvel attribut créé). Voir <a class="reference external" href="https://django-restless.readthedocs.org/en/latest/#">la documentation</a> pour plus d&#8217;informations et le fichier <tt class="docutils literal"><span class="pre">api.py</span></tt> pour des exemples d&#8217;utilisation.</p>
@@ -170,70 +246,69 @@
 
 
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table des Matières</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">RestLess</a><ul>
-<li><a class="reference internal" href="#presentation">Présentation</a></li>
-<li><a class="reference internal" href="#les-vues-generiques">Les vues génériques</a></li>
-<li><a class="reference internal" href="#fonctionnement-de-restless">Fonctionnement de RestLess</a><ul>
-<li><a class="reference internal" href="#http">HTTP</a></li>
-<li><a class="reference internal" href="#les-classes-restless">Les classes RestLess</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="maths.html" class="btn btn-neutral float-right" title="MathJax"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="models.html" class="btn btn-neutral" title="Modèle relationnel"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
-  <h4>Sujet précédent</h4>
-  <p class="topless"><a href="models.html"
-                        title="Chapitre précédent">Modèle relationnel</a></p>
-  <h4>Sujet suivant</h4>
-  <p class="topless"><a href="maths.html"
-                        title="Chapitre suivant">Affichage des mathématiques</a></p>
-  <h3>Cette page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/restless.txt"
-           rel="nofollow">Montrer la source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Recherche rapide</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Saisissez un mot clef ou un nom de module, classe ou fonction.
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Keran Kocher.
     </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="Index général"
-             >index</a></li>
-        <li class="right" >
-          <a href="maths.html" title="Affichage des mathématiques"
-             >suivant</a> |</li>
-        <li class="right" >
-          <a href="models.html" title="Modèle relationnel"
-             >précédent</a> |</li>
-        <li><a href="index.html">Module de cours: guide</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer">
-        &copy; Copyright 2014, Keran Kocher.
-      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>
