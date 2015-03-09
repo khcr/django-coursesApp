@@ -76,6 +76,12 @@ button:hover {
 	padding-bottom: 20px;
 }
 
+/* Teacher courses */
+
+#teacher-courses {
+  font-size: 1.3em;
+}
+
 /* Edit course */
 
 #edit-course .course-title {

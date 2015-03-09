@@ -1,0 +1,5 @@
+<h1>Tous les cours</h1>
+
+<div id="teacher-courses" ng-repeat="course in courses">
+  <span class="glyphicon glyphicon-cog"></span><a ng-href="#/{{ course.id }}/edit/1"> {{ course.name }}</a>
+</div>

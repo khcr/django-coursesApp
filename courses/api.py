@@ -37,6 +37,9 @@ class CourseList(ListEndpoint):
             page.sections.create(name="Première section", order=1)
             return Http201(self.serialize(course))
 
+class TeacherCourseList(ListEndpoint):
+    model = Course
+
 
 class CourseDetail(DetailEndpoint):
     model = Course

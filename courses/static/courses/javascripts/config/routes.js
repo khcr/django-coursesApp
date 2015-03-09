@@ -5,7 +5,7 @@ var app = angular.module("routes");
 app.config(function($routeProvider, $resourceProvider){
   var basePath = "/static/courses/html/";
   $routeProvider.when("/", {
-      templateUrl: basePath + "index.html",
+      templateUrl: basePath + "home.html",
       controller: "HomeCourseController"
     })
     .when("/about", {
@@ -34,6 +34,10 @@ app.config(function($routeProvider, $resourceProvider){
     })
     .when("/help", {
       templateUrl: basePath + "help.html"
+    })
+    .when("/teacher/courses", {
+      templateUrl: basePath + "teacher_course.html",
+      controller: "TeacherCourseController"
     })
     .otherwise({
       templateUrl: basePath + "404.html"
