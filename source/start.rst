@@ -4,13 +4,14 @@ Démarrage
 
 **Pré-requis**
 
-* Python 3 installé et pip
+* Python 3 et pip installé
 
 **Installer Django et les dépendences**
 
 ``pip3 install -r requirements.txt``
 
 De plus, il faut encore installer ces paquets sur la machine:
+
 * pandoc
 * pdflatex
 

@@ -7,6 +7,7 @@ Développer avec AngularJS
    start
    angularjs
    functionalities
+   schemas
    models
    restless
    maths
