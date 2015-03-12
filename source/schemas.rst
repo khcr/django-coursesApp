@@ -3,6 +3,16 @@ Schémas
 ========
 
 ##########
+Use cases
+##########
+
+.. figure:: images/use_cases.png
+    :scale: 80%
+    :align: center
+
+    Cas d'utilisation
+
+##########
 Navigation
 ##########
 
@@ -11,10 +21,6 @@ Navigation
     :align: center
 
     Schéma de navigation
-
-##########
-Use cases
-##########
 
 #####
 URLs
