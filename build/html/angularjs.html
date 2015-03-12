@@ -144,17 +144,17 @@
 <h1>AngularJS<a class="headerlink" href="#angularjs" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre">¶</a></h2>
-<p>AngularJS est un framework Javascript crée et maintenu depuis 2009 par Google, l&#8217;entreprise a l&#8217;origine du populaire moteur de recherche, du client Gmail mais aussi dans notre cas de beaucoup d&#8217;outils pour les développeurs. En effet outre le fait de créer des outils de programmation comme AngularJS, Google propose des outils d&#8217;analyse (<a class="reference external" href="http://google.com/analytics">Google Analytics</a>), des outils de stockage (<a class="reference external" href="https://cloud.google.com">Google Cloud</a>) ou encore des serveurs pour hébérger des applications. Une entreprise non seulement très présente dans le domaine public mais également dans de le soutien et la recherche dans les technologies informatiques. Pour revenir à ce qui nous intéresse, ils ont donc développé le framework AngularJS. Un framework est un ensemble de structures et d&#8217;outils programmés dans un language et reutilisables permettant de faciliter la programmation d&#8217;applications. On trouve par exemple chez PHP le framework <a class="reference external" href="http://symfony.com">Symfony</a>, chez Ruby <a class="reference external" href="http://rubyonrails.com">Ruby on Rails</a>, chez Python évidemment Django que nous utilisons pour notre site web et finalement chez Javascript AngularJS, mais encore comme concurrent <a class="reference external" href="http://emberjs.com">Ember</a> ou <a class="reference external" href="http://backbonejs.org">Backbone</a>.</p>
-<p>AngularJS permet de développer une application web complète. C&#8217;est-à-dire qu&#8217;il offre plusieurs outils indispensables. D&#8217;abord un système de routes qui permet de lier des URLs avec des pages différentes, en clair on peut dire à notre application que quand l&#8217;utilisateur entre <em>monsite.com/contact</em> dans son navigateur, il aille chercher et qu&#8217;il montre le fichier contact.html. Aussi la prise en charge de formulaire avec la possibilité de récupérer les informations entrées par l&#8217;utilisateur ou de faire une validation du formulaire, de vérifier les informations entrées. AngularJS ne sait pas comment communiquer directement avec une base de données - une base de données est l&#8217;endroit où sont stockées les données persistentes sous forme de tableaux comme par exemple les comptes utilisateurs d&#8217;un site -, par contre il est tout à fait capable d&#8217;utliser les données d&#8217;une base de données fournies par un serveur intermédiaire. Cela permet donc de concevoir des sites web dynamiques. Nous éclaircisserons ce concept plus tard quand nous étudierons l&#8217;intégration d&#8217;Angular avec Django.</p>
-<p>Pour bien comprendre la documentation du projet, il faut savoir ce qu&#8217;est Django. Comme mentionné précédement il s&#8217;agit d&#8217;un framework Python. Il est spécialisé dans la création de site web et est le leader face à ces concurrents comme <a class="reference external" href="http://www.turbogears.org/">Turbo Gears</a> et c&#8217;est ce que nous utilisons principalement pour créer notre application web. Créer un site web avec Python seulement et difficile et peu pratique, un framework est pratiquement indispensable. Effectivement Django fournit les outils nécessaires pour créer des pages HTML, communiquer avec une base de données, gérer les URLs, etc. Pour comprendre les examples Django qui apparaitront, sachez simplement qu&#8217;il utilise le modèle MVC - modèle, vue, controller - qui est expliqué dans la section suivante. La particularité est que Django a changé les termes: <em>modèle</em> reste <em>modèle</em>, <em>vue</em> est égale à <em>template</em> et <em>controlleur</em> est égale à <em>vue</em>.</p>
+<p>AngularJS est un framework Javascript crée et maintenu depuis 2009 par Google, l&#8217;entreprise a l&#8217;origine du populaire moteur de recherche, du client Gmail mais aussi de beaucoup d&#8217;outils pour les développeurs. Outre le fait de créer des outils de programmation comme AngularJS, Google propose des outils d&#8217;analyse (<a class="reference external" href="http://google.com/analytics">Google Analytics</a> <a class="footnote-reference" href="#f1" id="id1">[1]</a>), des outils de stockage (<a class="reference external" href="https://cloud.google.com">Google Cloud</a> <a class="footnote-reference" href="#f2" id="id2">[2]</a>) ou encore des serveurs pour hébérger des applications. Une entreprise non seulement très présente dans le domaine public mais également dans le soutien et la recherche des technologies informatiques. Pour revenir au sujet qui nous intéresse, l&#8217;équipe de Google a donc développé le framework AngularJS. Un framework est un ensemble de structures et d&#8217;outils programmés dans un language et réutilisables qui permettent de faciliter la construction d&#8217;applications. On trouve par exemple chez PHP le framework <a class="reference external" href="http://symfony.com">Symfony</a> <a class="footnote-reference" href="#f3" id="id3">[3]</a>, chez Ruby <a class="reference external" href="http://rubyonrails.com">Ruby on Rails</a> <a class="footnote-reference" href="#f4" id="id4">[4]</a>, chez Python Django que nous utilisons pour notre site web. Finalement chez Javascript on trouve AngularJS, mais encore comme concurrent <a class="reference external" href="http://emberjs.com">Ember</a> <a class="footnote-reference" href="#f5" id="id5">[5]</a> ou <a class="reference external" href="http://facebook.github.io/react/">React</a> <a class="footnote-reference" href="#f6" id="id6">[6]</a>.</p>
+<p>AngularJS permet de développer une application web complète. C&#8217;est-à-dire qu&#8217;il offre plusieurs outils indispensables. D&#8217;abord un système de routes qui permet de lier des URLs avec des pages différentes. En clair, on peut dire à notre application que quand l&#8217;utilisateur entre <tt class="docutils literal"><span class="pre">monsite.com/contact</span></tt> dans son navigateur, le fichier contact.html soit affiché. Il y a aussi la prise en charge des formulaires avec la possibilité de récupérer les informations entrées par l&#8217;utilisateur ou de faire une validation du formulaire, c&#8217;est-à-dire de vérifier les informations entrées. Par contre AngularJS ne sait pas comment communiquer directement avec une base de données - une base de données est l&#8217;endroit où sont stockées les données persistentes -, il est simplement capable d&#8217;utliser les données d&#8217;une base de données fournie par un serveur intermédiaire. Les bases de donnée sont souvent indispensables car elles permettent donc de concevoir des sites web dynamiques. Il est donc nécessaire d&#8217;utiliser un autre language avec AngularJS. Django jouera ce rôle mais nous éclaircisserons ce concept plus tard quand nous étudierons son intégration avec Angular.</p>
+<p>Pour bien comprendre la documentation du projet, il faut savoir ce qu&#8217;est Django. Comme mentionné précédement, il s&#8217;agit d&#8217;un framework Python. Il est spécialisé dans la création de site web et est le leader face à ces concurrents comme <a class="reference external" href="http://www.turbogears.org/">Turbo Gears</a> <a class="footnote-reference" href="#f7" id="id7">[7]</a>. Django est ce que nous utilisons principalement pour créer notre application web. Créer un site web avec Python seulement est difficile et peu pratique, un framework est pratiquement indispensable. Effectivement Django fournit les outils nécessaires pour créer des pages HTML, communiquer avec une base de données, gérer les URLs, etc. Pour comprendre les exemples Django qui apparaitront, sachez simplement qu&#8217;il utilise le modèle MVC - modèle, vue, controller - qui est expliqué dans la section suivante. La particularité est que Django a changé les termes: <em>modèle</em> reste <em>modèle</em>, <em>vue</em> est égale à <em>template</em> et <em>controlleur</em> est égale à <em>vue</em>.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="58%" />
-<col width="42%" />
+<col width="46%" />
+<col width="54%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">MVC</th>
-<th class="head">MVT</th>
+<th class="head">MVT (Django)</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -172,10 +172,11 @@
 </div>
 <div class="section" id="specificites-et-avantages">
 <h2>Spécificités et avantages<a class="headerlink" href="#specificites-et-avantages" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Qu&#8217;est-ce qui fait qu&#8217;AngularJS puisse se démarquer de ses concurrents ? En bref qu&#8217;elles sont ses fonctionnalités qui facilitent tant la vie des développeurs ? La première chose à connaitre sur AngularJS est qu&#8217;il encourage le modèle MVC - modèle, vue, controlleur. Il s&#8217;agit en fait de séparer dans notre application ces trois composants. Grossièrement, le modèle est la partie qui gère les données de l&#8217;application, la vue est ce qui sera affiché à l&#8217;utilisateur et le controlleur est la partie qui relie modèle et vue, c&#8217;est-à-dire qu&#8217;il va chercher les données dans les modèles pour les donner à la vue qui les affiche. Un principe très important dans ce motif de programmation et que le minimum de code logique doit se trouver dans les vues, elles doivent se contenter d&#8217;afficher car toutes les opérations se font idéalement dans les controlleurs ou les modèles. Intéressons aux quelques fonctionnalités principales d&#8217;AngularJS.</p>
+<p>Qu&#8217;est-ce qui démarque AngularJS de ses concurrents ? En bref, quelles sont ses fonctionnalités qui facilitent tant la vie des développeurs ? La première chose à connaitre sur AngularJS est qu&#8217;il encourage le modèle MVC - modèle, vue, controlleur. Il s&#8217;agit en fait de séparer dans notre application ces trois composants. Grossièrement, le modèle est la partie qui gère les données de l&#8217;application, la vue s&#8217;occupe de ce qui sera affiché à l&#8217;utilisateur et le controlleur est la partie qui relie le modèle et à la vue. Il va chercher les données dans les modèles pour les donner à la vue qui les affiche et, vice-versa, il reçoit les données de la vue, par un formulaire par exemple, pour mettre à jour le modèle. Un principe très important dans ce motif de programmation est que le minimum de code logique doit se trouver dans les vues. Elles doivent se contenter d&#8217;afficher car toutes les opérations se font idéalement dans les controlleurs ou les modèles. L&#8217;avantage est de cette organisation est une compréhension plus aisé et une modularité du code.</p>
+<p>Dans la suite de cette section nous allons nous intéressé à quelques fonctionnalités clés d&#8217;AngularJS</p>
 <div class="section" id="du-html-expressif">
 <h3>Du HTML expressif<a class="headerlink" href="#du-html-expressif" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Parlons d&#8217;abord des vues. Le premier &#8220;miracle&#8221; du framework est de transformer le HTML statique en un language expressif et dynamique. A la base le HTML est un syntaxe qui permet de structurer une page internet à l&#8217;aide de balises qui définissent leur contenu comme par exemple les balises qui délimitent des paragraphes, les tires ou encore des formulaires, des images, des vidéos, etc. Et tradionnellement on utilise un autre language comme Python ou autre pour transformer la page et y insérer notre contenu dynamique qui provient de la base de données, concrétement il pourrait s&#8217;agir d&#8217;afficher une liste d&#8217;articles dans la page. Si on travaille avec Django, on assignerait à une variable <tt class="docutils literal"><span class="pre">articles</span></tt> tous les articles avec une requête SQL - SQL est le language pour communiquer avec une base de données relationelles - et ferait ensuite une boucle dans la page HTML et on afficherait le titre et le contenu de chaque article.</p>
+<p>Abordons d&#8217;abord les vues. Le premier &#8220;miracle&#8221; du framework est de transformer le HTML statique en un language expressif et dynamique. A la base le HTML est un syntaxe qui permet de structurer une page web à l&#8217;aide de balises qui définissent leur contenu comme par exemple les balises qui délimitent les paragraphes, les titres, les images, etc. Tradionnellement on utilise un autre language comme Python pour transformer la page et y insérer notre contenu dynamique qui provient de la base de données. Concrétement il pourrait s&#8217;agir d&#8217;afficher une liste d&#8217;articles dans une page. Si on travaille avec Django, on assignerait à une variable <tt class="docutils literal"><span class="pre">articles</span></tt> tous les articles avec une requête SQL - SQL est le language pour communiquer avec une base de données relationelles - on ferait ensuite une boucle dans la page HTML et on afficherait le titre ainsi que le contenu de chaque article.</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
     <span class="nt">&lt;head&gt;&lt;/head&gt;</span>
     <span class="nt">&lt;body&gt;</span>
@@ -190,7 +191,7 @@
 </pre></div>
 </div>
 <p>Les balises <tt class="docutils literal"><span class="pre">{%</span> <span class="pre">%}</span></tt> et <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">}}</span></tt> signifie simplement que ce n&#8217;est plus du HTML mais que du code Django est à l&#8217;intérieur et doit être executé par le serveur.</p>
-<p>Avec AngularJS, le modèle est légérement différent. En effet il y a ce qu&#8217;on appelle des directives - c&#8217;est une nomenclature spécifique à Angular. Ce sont des balises ou des attributs HTML supplémentaires qui ont été crées par AngularJS et qui sont mis à disposition, on peut les ajouter à notre page et cela effectuera différentes actions selon la directive. Par exemple pour reprendre l&#8217;exemple des articles, pour faire une boucle, on utilise la directive <tt class="docutils literal"><span class="pre">ng-repeat</span></tt>. On l&#8217;utilise comme un simple attribut HTML:</p>
+<p>Avec AngularJS, le modèle est légérement différent. En effet on trouve dans le framework ce qu&#8217;on appelle des directives, un concept spécifique à Angular. Ce sont des balises ou des attributs HTML supplémentaires que fournit AngularJS. On peut les ajouter à notre page et elles effectueront différentes actions selon leur rôle. Par exemple pour reprendre l&#8217;exemple des articles, pour faire une boucle, on utilise la directive <tt class="docutils literal"><span class="pre">ng-repeat</span></tt>. On l&#8217;utilise comme un simple attribut HTML:</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
     <span class="nt">&lt;head&gt;&lt;/head&gt;</span>
     <span class="nt">&lt;body&gt;</span>
@@ -202,45 +203,110 @@
 <span class="nt">&lt;html&gt;</span>
 </pre></div>
 </div>
-<p>A l&#8217;instar de Django, les doubles accolades signifient qu&#8217;on veut exécuter du code Angular/Javascript à l&#8217;intérieur. Ici on affiche simple une variable, mais on pourrait également faire un calcul et afficher le résultat: <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">}}</span></tt>.</p>
-<p>Comme précédement, on a assigné une variable avec tous les articles, par contre cette fois la boucle se fait directement en utilisant la directive qui se confond avec la syntaxe HTML. A l&#8217;intérieur de l&#8217;attribut, il faut utiliser la syntaxe Angular pour faire les boucles <tt class="docutils literal"><span class="pre">article</span> <span class="pre">in</span> <span class="pre">articles</span></tt>, on lui dit ici de parcourir la variable articles et d&#8217;utiliser comme variable temporaire <tt class="docutils literal"><span class="pre">article</span></tt> pour chaque article parcouru. Il existe beaucoup d&#8217;autre directives dans avec AngularJS pour réagir au click d&#8217;une souris sur un élément, pour afficher ou cacher des parties, tout ce qui concerne les fonctionnalités des formulaires, etc. Il est aussi possible de créer des propres directives personnalisées avec le comportement désiré. Créer ses propres directives permet soit d&#8217;avoir un code plus clair soit d&#8217;éviter la répétion, dans les deux cas cette fonctionnalité est très utile et puissante.</p>
+<p>A l&#8217;instar de Django, les doubles accolades signifient qu&#8217;on veut exécuter du code Angular/Javascript à l&#8217;intérieur. Ici on affiche simplement une variable, mais on pourrait également faire un calcul et afficher le résultat: <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">}}</span></tt>. Par contre AngularJS est executé côté client contrairement à Django qui est côté serveur.</p>
+<p>Comme précédement, on a assigné une variable avec tous les articles. Par contre cette fois la boucle se fait directement en utilisant la directive <tt class="docutils literal"><span class="pre">ng-repeat</span></tt> qui se confond avec la syntaxe HTML. A l&#8217;intérieur de l&#8217;attribut, il faut utiliser la syntaxe Angular pour faire la boucle: <tt class="docutils literal"><span class="pre">article</span> <span class="pre">in</span> <span class="pre">articles</span></tt>. On lui demande de parcourir la variable <tt class="docutils literal"><span class="pre">articles</span></tt> et d&#8217;utiliser comme variable temporaire <tt class="docutils literal"><span class="pre">article</span></tt> pour chaque article parcouru. Il existe beaucoup d&#8217;autre directives dans AngularJS pour par exemple réagir au clique d&#8217;une souris sur un élément ou pour afficher ou cacher des sections. Il est aussi possible de créer ses directives personnalisées avec le comportement désiré. Créer ses propres directives permet soit d&#8217;avoir un code plus clair ou d&#8217;éviter la répétion. Dans les deux cas, cette fonctionnalité est très utile et puissante.</p>
 <p>C&#8217;est à cause de ces directives qu&#8217;on parle d&#8217;HTML expressif car en effet avec celles-ci le HTML ne décrit pas seulement le contenu, mais aussi le comportement de l&#8217;application web et sa manière de fonctionner. On sait ainsi clairement et rapidemment en regardant notre page HTML les fonctionnalités qu&#8217;on a implémenter sur celle-ci et c&#8217;est plus facile d&#8217;avoir une vue d&#8217;ensemble de son application.</p>
 </div>
 <div class="section" id="two-way-data-binding">
 <h3>Two-way data binding<a class="headerlink" href="#two-way-data-binding" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La deuxième fonctionnalité majeur d&#8217;AngularJS est ce qu&#8217;on appelle two-way data binding ou en français la liaison des données à double sens. Derrière cette mystérieuse phrase ce cache la manière que le framework utilise pour relier le modèle et la vue, ou reformulé, les données de l&#8217;application et ce que voit et entre l&#8217;utilisateur. Le système habituel est comme suit: on génère les vues en fonction de ce qui se trouve dans le modèle, comme dans l&#8217;exemple précédent où ou on cherche des articles dans la BD pour ensuite générer une page. Ensuite si on change le modèle, on ajoute un article par exemple, la vue ne se met pas à jour, on doit la rendre à nouveau pour voir les changements. Ou encore si l&#8217;utilisateur fait un changement dans la page, il remplit un formulaire pour ajouter un nouvelle article et l&#8217;envoie, le modèle a changé mais la page n&#8217;est pas mise à jour. On appelle ce sytème logiquement one-way data binding. Avec Angular le principe est plus intelligent, les vues se génèrent effectivement en fonction des modèles, par contre si le développeur change le modèle, la vue se mettra automatiquement à jour et c&#8217;est pareil si un utilisateur fait un changement dans la vue, le modèle se changera également. Les deux entitiés sont toujours syncronisé grâce au mécanisme du framework. Cette fonctionnalié facilitent énormément la vie du développeur. Imaginez un système de commentaire par exemple. Il y a une liste de commentaire et un formulaire pour en ajouter un. Pour le développeur il suffit de relier le formulaire au modèle - je n&#8217;entre pas dans les détails de la programmation - et ensuite au fur et à mesure que l&#8217;utilisateur tape son commentaire, le modèle contient déjà le commentaire partiel en question et il peut déjà s&#8217;afficher dans la liste. On peut aussi imaginé un bouton qui affiche ou cache une section: d&#8217;abord on affiche une section selon une variable booléenne <tt class="docutils literal"><span class="pre">affiche</span></tt> et on assigne par défaut à la variable <tt class="docutils literal"><span class="pre">false</span></tt>. En ensuite on a plus qu&#8217;à assigné au bouton une fonction que change la valeur de notre variable <tt class="docutils literal"><span class="pre">affiche</span></tt> de <tt class="docutils literal"><span class="pre">false</span></tt> à <tt class="docutils literal"><span class="pre">true</span></tt> et vice-versa et la section s&#8217;affichera ou se cachera selon. Je met l&#8217;exemple complet ci-dessous pour donner une idée d&#8217;un code AngularJS.</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html</span> <span class="na">ng-app=</span><span class="s">&quot;DemoApp&quot;</span><span class="nt">&gt;</span>
+<p>La deuxième fonctionnalité majeur d&#8217;AngularJS est ce qu&#8217;on appelle <em>two-way data binding</em> ou en français <em>la liaison des données à double sens</em>. Derrière cette mystérieuse expression se cache la manière qu&#8217;utilise le framework pour relier le modèle et la vue. Le système habituel est comme suit. On génère les vues en fonction de ce qui se trouve dans le modèle, comme dans l&#8217;exemple précédent où ou on cherche des articles dans la <em>BD</em> pour ensuite générer une page. Quand le modèle change, un article est ajouté par exemple, la vue ne se met pas à jour. On doit la générer à nouveau pour voir le nouvel article. De plus, si l&#8217;utilisateur remplit un formulaire pour ajouter un nouvel article, le modèle ne pas change pas tant que le formulaire n&#8217;a pas été traité. On appelle ce sytème logiquement <em>one-way data binding</em>. Le schéma qui suit illustre ce principe. Pour générer une vue pour l&#8217;utilisateur, le template et le modèle doivent être fusionné et chaque fois qu&#8217;un changement est fait, on doit refaire le même processus.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/One_Way_Data_Binding.png"><img alt="_images/One_Way_Data_Binding.png" src="_images/One_Way_Data_Binding.png" style="width: 400.0px; height: 255.0px;" /></a>
+<p class="caption">One-way data binding <a class="footnote-reference" href="#f8" id="id8">[8]</a></p>
+</div>
+<p>Avec Angular le principe est plus intelligent. Les vues se génèrent effectivement en fonction des modèles, par contre si le modèle change, la vue se mettra automatiquement à jour sans d&#8217;avoir effectuer un nouveau rendu de la page. Si un utilisateur fait un changement dans la vue, le modèle se changera également. Les deux entités sont donc toujours synchronisé grâce a ce mécanisme du framework.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/Two_Way_Data_Binding.png"><img alt="_images/Two_Way_Data_Binding.png" src="_images/Two_Way_Data_Binding.png" style="width: 400.0px; height: 290.0px;" /></a>
+<p class="caption">Two-way data binding</p>
+</div>
+<p>Cette fonctionnalié facilitent énormément la vie du développeur. Imaginons un système de commentaire. Il y a une liste de commentaires et un formulaire pour en ajouter un. Pour le développeur il suffit de relier le formulaire au modèle. Ensuite au fur et à mesure que l&#8217;utilisateur tape son commentaire, le modèle est mis à jour et contient le nouveau commentaire. Il peut déjà s&#8217;afficher dans la liste des commentaires. Voici un exemple de code qui permet de cacher ou afficher une portion de page à l&#8217;aide d&#8217;un bouton.</p>
+<div class="highlight-html"><div class="highlight"><pre># index.html
+<span class="nt">&lt;html</span> <span class="na">ng-app=</span><span class="s">&quot;DemoApp&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;head&gt;&lt;/head&gt;</span>
     <span class="nt">&lt;body</span> <span class="na">ng-controller=</span><span class="s">&quot;IndexController&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- section affichée selon la variable affiche grâce à la directive ng-show --&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">ng-show=</span><span class="s">&quot;affiche&quot;</span><span class="nt">&gt;</span>
            <span class="nt">&lt;h1&gt;</span>Je suis une section cachée !<span class="nt">&lt;/h1&gt;</span>
            <span class="nt">&lt;p&gt;</span>Mais je ne cache rien d&#39;intéressant...<span class="nt">&lt;p&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
+        <span class="c">&lt;!-- bouton qui affiche/cache la section. Appelle la fonction toogle() grâce à la directive ng-click --&gt;</span>
         <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">ng-click=</span><span class="s">&quot;toggle()&quot;</span><span class="nt">&gt;</span>Afficher/Cacher<span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;body&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// On crée une application Angular</span>
-<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s2">&quot;DemoApp&quot;</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre># index_controller.js
+// On crée une application Angular
+var app = angular.module(&quot;DemoApp&quot;);
 
-<span class="c1">// On crée un controlleur Angular</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s2">&quot;IndexController&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">)</span> <span class="p">{</span>
+// On crée un controlleur Angular
+app.controller(&quot;IndexController&quot;, function($scope) {
 
-    <span class="nx">$scope</span><span class="p">.</span><span class="nx">affiche</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    // variable utilisé dans ng-show=&quot;affiche&quot;
+    $scope.affiche = false;
 
-    <span class="nx">$scope</span><span class="p">.</span><span class="nx">toggle</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">$scope</span><span class="p">.</span><span class="nx">affiche</span> <span class="o">=</span> <span class="o">!</span><span class="nx">$scope</span><span class="p">.</span><span class="nx">affiche</span>
-    <span class="p">};</span>
+    // fonction appelée lorsqu&#39;on clique sur le bouton
+    $scope.toggle = function() {
+        $scope.affiche = !$scope.affiche
+    };
 
-<span class="p">};)</span>
+});
 </pre></div>
 </div>
-<p>Remarquez l&#8217;utilisation des directives: <tt class="docutils literal"><span class="pre">ng-app</span></tt> signale à AngularJS qu&#8217;il faut analyser et compiler cette page, <tt class="docutils literal"><span class="pre">ng-controller</span></tt> signale qu&#8217;il faut utiliser le controlleur <tt class="docutils literal"><span class="pre">IndexController</span></tt> définit dans le code JavaScript et donc d&#8217;éxécuter ce qui se trouve à l&#8217;intérieur, <tt class="docutils literal"><span class="pre">ng-show</span></tt> montre ou non la section selon la contenu de la variable booléenne <tt class="docutils literal"><span class="pre">affiche</span></tt> et <tt class="docutils literal"><span class="pre">ng-click</span></tt> exécute la fonction <tt class="docutils literal"><span class="pre">toggle()</span></tt> lorsque qu&#8217;on clique sur le bouton.</p>
+<p>D&#8217;abord on affiche une section selon une variable booléenne <tt class="docutils literal"><span class="pre">affiche</span></tt> et on assigne à la variable <tt class="docutils literal"><span class="pre">false</span></tt> par défaut. Puis on ajoute au bouton qui exécute une fonction qui change la valeur de notre variable <tt class="docutils literal"><span class="pre">affiche</span></tt> de <tt class="docutils literal"><span class="pre">false</span></tt> à <tt class="docutils literal"><span class="pre">true</span></tt> et vice-versa. La section s&#8217;affichera ou se cachera selon. Plusieurs directives sont utilisées dans l&#8217;exemple. <tt class="docutils literal"><span class="pre">ng-app</span></tt> signale à AngularJS qu&#8217;il faut analyser et compiler cette page. <tt class="docutils literal"><span class="pre">ng-controller</span></tt> signale qu&#8217;il faut utiliser le controlleur <tt class="docutils literal"><span class="pre">IndexController</span></tt> qui est défini dans le fichier JavaScript et d&#8217;éxécuter le code à l&#8217;intérieur. <tt class="docutils literal"><span class="pre">ng-show</span></tt> montre ou non la section selon la contenu de la variable booléenne <tt class="docutils literal"><span class="pre">affiche</span></tt> et <tt class="docutils literal"><span class="pre">ng-click</span></tt> exécute la fonction <tt class="docutils literal"><span class="pre">toggle()</span></tt> lorsque qu&#8217;on clique sur le bouton.</p>
 </div>
 <div class="section" id="et-plus-encore">
 <h3>Et plus encore...<a class="headerlink" href="#et-plus-encore" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Il y a évidemment encore d&#8217;autres avantages à utiliser ce framework, notament les injections et l&#8217;extensibilité d&#8217;AngularJS, mais nous avons vu les deux principales différences dans le monde des frameworks JavaScript.</p>
+<p>Il y a évidemment encore d&#8217;autres avantages à utiliser ce framework, notament les injections de dépendances et l&#8217;extensibilité d&#8217;AngularJS, mais nous avons vu les deux principales différences dans le monde des frameworks JavaScript.</p>
+<p class="rubric">Notes</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://google.com/analytics">http://google.com/analytics</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="https://cloud.google.com">https://cloud.google.com</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="http://symfony.com">http://symfony.com</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td><a class="reference external" href="http://rubyonrails.com">http://rubyonrails.com</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td><a class="reference external" href="http://emberjs.com">http://emberjs.com</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td><a class="reference external" href="http://facebook.github.io/react">http://facebook.github.io/react</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[7]</a></td><td><a class="reference external" href="http://www.turbogears.org">http://www.turbogears.org</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[8]</a></td><td>caca</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
