@@ -6,7 +6,7 @@ Guide du développeur
 Fichiers
 #########
 
-Cette page permet de se retrouver dans la multitude de fichiers du projets et de pouvoir comprendre certain processus.
+Cette section permet de se retrouver dans la multitude de fichiers du projets et de pouvoir comprendre certain processus.
 
 * courses/
     * **admin.py**: permet de rajouter les modèles qu'on veut voir apparaitre et modifier dans la zone d'administration Django. `Documentation officielle <https://docs.djangoproject.com/fr/1.7/ref/contrib/admin/>`__ [#f1]_
@@ -46,6 +46,90 @@ Cette page permet de se retrouver dans la multitude de fichiers du projets et de
 
 * **webmath/test_router.py**: Le routeur permet d'utiliser plusieurs bases de données avec Django. En l'occurence, le routeur permet d'utiliser une base de données différente lorsqu'on lance les tests de notre application. `Documentation officielle <https://docs.djangoproject.com/fr/1.7/topics/db/multi-db/>`__ [#f12]_
 
+####
+URLs
+####
+
+Cette section regroupe une explication de toutes les URLs de l'application. Toutes les URLs se trouvent dans l'espace de nom ``courses``, par exemple ``/courses/help``. Lorsque un ``#`` est dans l'URL, cela signifie que c'est une URL définit par AngularJS.
+
+*************
+Utilisateurs
+*************
+
+* **#/**: Page d'acceuil de l'application, on y trouve une liste des cours publiés. On peut les trier par catégories ou favoris.
+
+* **#/new**: Page qui permet aux enseignants de créer un nouveau cours.
+
+* **#/:course_id/edit/:page**: Page d'édition d'un cours. L'enseignant peut y éditer le contenu de son cours, le publier ou le retirer.
+
+* **#/:course_id/preview/:page**: Prévisualise une page d'un cours. Lorsqu'un enseigement rédige un cours, il peut voir le résultat final grâce à cette page.
+
+* **#/teacher/courses:** Liste de tous les cours du site, publié ou non.
+
+* **#/help**: Page qui fournit une aide pour les rédacteurs concernant la syntaxe Markdown et LaTex.
+
+* **#/:course_id/edit**: Page qui permet de modifier les informations de base d'un cours, telles que le nom, la description ou la difficulté.
+
+* **#/:course_id/show/:page**: Page pour lire un cours. Le cours y est affiché, on peut naviguer à travers les pages, commenter le cours, etc.
+
+* **/pdf/:course_id/*.pdf**: Renvoie un cours au format PDF pour pouvoir être télécharger.
+
+* **#/about**: Page d'information sur l'application.
+
+******
+API
+******
+
+Les URLs de l'API sont dans le namespace ``api``, par exemple ``/courses/api/themes``.
+
+* **/courses/all**: renvoie une liste de tous les cours, publiés ou non.
+
+* **/courses**
+
+    * GET: renvoie tous les cours publiés.
+    * POST: crée un nouveau cours.
+
+* **/courses/:id**
+
+    * PUT: met à jour un cours.
+
+* **/pages/:page_id/courses/:course_id**:
+
+    * GET: renvoie le contenu d'une page d'un cours.
+    * PUT: met à jour le contenu d'une page.
+
+* **/themes**: renvoie une liste de tous les thèmes en incluant leurs chapitres respectifs.
+
+* **/pages/:page_id/sections**
+
+    * POST: ajoute une section à une page d'un cours.
+
+* **/courses/:course_id/pages**
+
+    * POST: ajoute une page à un cours.
+
+* **/sections/:id**
+
+    * DELETE: supprime une section.
+
+* **/courses/:course_id/comments**
+
+    * GET: renvoie les commentaires d'un cours.
+    * POST: ajoute un commentaire au cours.
+
+* **/courses/:course_id/menu**: Permet de construire le menu d'un cours en renvoyant le nom de ses pages et de leurs sections.
+
+* **/courses/:course_id/publish**
+
+    * PUT: publie/retire un cours en changeant l'attribut ``published`` de ``True`` à ``False`` et vice-versa.
+
+* **/courses/:course_id/favorite**
+
+    * PUT: ajoute/retire un cours au/des favoris de l'utilisateur.
+
+* **/pages/:page_id/progression**
+
+    * POST: marque une page d'un cours comme compris ou à relire pour l'utilisateur.
 
 ########
 Concepts

@@ -46,7 +46,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="index.html" class="fa fa-home"> TM2014: Développer avec AngularJS</a>
+        <a href="index.html" class="fa fa-home"> TM 2014-25: Développement d'une application de gestions de cours avec AngularJS</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -72,9 +72,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="schemas.html">Schémas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="schemas.html#navigation">Navigation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="schemas.html#use-cases">Use cases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="schemas.html#urls">URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html#navigation">Navigation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="models.html">Modèle relationnel</a><ul>
@@ -101,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tests.html">Tests</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Guide du développeur</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#fichiers">Fichiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#urls">URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#concepts">Concepts</a></li>
 </ul>
 </li>
@@ -118,7 +118,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">TM2014: Développer avec AngularJS</a>
+        <a href="index.html">TM 2014-25: Développement d'une application de gestions de cours avec AngularJS</a>
       </nav>
 
 
@@ -144,7 +144,7 @@
 <h1>Guide du développeur<a class="headerlink" href="#guide-du-developpeur" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="fichiers">
 <h2>Fichiers<a class="headerlink" href="#fichiers" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Cette page permet de se retrouver dans la multitude de fichiers du projets et de pouvoir comprendre certain processus.</p>
+<p>Cette section permet de se retrouver dans la multitude de fichiers du projets et de pouvoir comprendre certain processus.</p>
 <ul>
 <li><dl class="first docutils">
 <dt>courses/</dt>
@@ -203,6 +203,110 @@
 <li><p class="first"><strong>webmath/test_router.py</strong>: Le routeur permet d&#8217;utiliser plusieurs bases de données avec Django. En l&#8217;occurence, le routeur permet d&#8217;utiliser une base de données différente lorsqu&#8217;on lance les tests de notre application. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/db/multi-db/">Documentation officielle</a> <a class="footnote-reference" href="#f12" id="id12">[12]</a></p>
 </li>
 </ul>
+</div>
+<div class="section" id="urls">
+<h2>URLs<a class="headerlink" href="#urls" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Cette section regroupe une explication de toutes les URLs de l&#8217;application. Toutes les URLs se trouvent dans l&#8217;espace de nom <tt class="docutils literal"><span class="pre">courses</span></tt>, par exemple <tt class="docutils literal"><span class="pre">/courses/help</span></tt>. Lorsque un <tt class="docutils literal"><span class="pre">#</span></tt> est dans l&#8217;URL, cela signifie que c&#8217;est une URL définit par AngularJS.</p>
+<div class="section" id="utilisateurs">
+<h3>Utilisateurs<a class="headerlink" href="#utilisateurs" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><strong>#/</strong>: Page d&#8217;acceuil de l&#8217;application, on y trouve une liste des cours publiés. On peut les trier par catégories ou favoris.</li>
+<li><strong>#/new</strong>: Page qui permet aux enseignants de créer un nouveau cours.</li>
+<li><strong>#/:course_id/edit/:page</strong>: Page d&#8217;édition d&#8217;un cours. L&#8217;enseignant peut y éditer le contenu de son cours, le publier ou le retirer.</li>
+<li><strong>#/:course_id/preview/:page</strong>: Prévisualise une page d&#8217;un cours. Lorsqu&#8217;un enseigement rédige un cours, il peut voir le résultat final grâce à cette page.</li>
+<li><strong>#/teacher/courses:</strong> Liste de tous les cours du site, publié ou non.</li>
+<li><strong>#/help</strong>: Page qui fournit une aide pour les rédacteurs concernant la syntaxe Markdown et LaTex.</li>
+<li><strong>#/:course_id/edit</strong>: Page qui permet de modifier les informations de base d&#8217;un cours, telles que le nom, la description ou la difficulté.</li>
+<li><strong>#/:course_id/show/:page</strong>: Page pour lire un cours. Le cours y est affiché, on peut naviguer à travers les pages, commenter le cours, etc.</li>
+<li><strong>/pdf/:course_id/*.pdf</strong>: Renvoie un cours au format PDF pour pouvoir être télécharger.</li>
+<li><strong>#/about</strong>: Page d&#8217;information sur l&#8217;application.</li>
+</ul>
+</div>
+<div class="section" id="api">
+<h3>API<a class="headerlink" href="#api" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Les URLs de l&#8217;API sont dans le namespace <tt class="docutils literal"><span class="pre">api</span></tt>, par exemple <tt class="docutils literal"><span class="pre">/courses/api/themes</span></tt>.</p>
+<ul>
+<li><p class="first"><strong>/courses/all</strong>: renvoie une liste de tous les cours, publiés ou non.</p>
+</li>
+<li><p class="first"><strong>/courses</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>GET: renvoie tous les cours publiés.</li>
+<li>POST: crée un nouveau cours.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/courses/:id</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>PUT: met à jour un cours.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/pages/:page_id/courses/:course_id</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>GET: renvoie le contenu d&#8217;une page d&#8217;un cours.</li>
+<li>PUT: met à jour le contenu d&#8217;une page.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/themes</strong>: renvoie une liste de tous les thèmes en incluant leurs chapitres respectifs.</p>
+</li>
+<li><p class="first"><strong>/pages/:page_id/sections</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>POST: ajoute une section à une page d&#8217;un cours.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/courses/:course_id/pages</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>POST: ajoute une page à un cours.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/sections/:id</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>DELETE: supprime une section.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/courses/:course_id/comments</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>GET: renvoie les commentaires d&#8217;un cours.</li>
+<li>POST: ajoute un commentaire au cours.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/courses/:course_id/menu</strong>: Permet de construire le menu d&#8217;un cours en renvoyant le nom de ses pages et de leurs sections.</p>
+</li>
+<li><p class="first"><strong>/courses/:course_id/publish</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>PUT: publie/retire un cours en changeant l&#8217;attribut <tt class="docutils literal"><span class="pre">published</span></tt> de <tt class="docutils literal"><span class="pre">True</span></tt> à <tt class="docutils literal"><span class="pre">False</span></tt> et vice-versa.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/courses/:course_id/favorite</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>PUT: ajoute/retire un cours au/des favoris de l&#8217;utilisateur.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/pages/:page_id/progression</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>POST: marque une page d&#8217;un cours comme compris ou à relire pour l&#8217;utilisateur.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
 </div>
 <div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Lien permanent vers ce titre">¶</a></h2>

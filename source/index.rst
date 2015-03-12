@@ -1,5 +1,5 @@
-Développer avec AngularJS
-==================================
+Développement d\'une application de gestions de cours avec AngularJS
+======================================================================
 
 .. toctree::
    :maxdepth: 2

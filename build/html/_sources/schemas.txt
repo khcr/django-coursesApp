@@ -21,7 +21,3 @@ Navigation
     :align: center
 
     Schéma de navigation
-
-#####
-URLs
-#####
