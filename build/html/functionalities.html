@@ -46,7 +46,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="index.html" class="fa fa-home"> TM 2014-25: Développement d'une application de gestions de cours avec AngularJS</a>
+        <a href="index.html" class="fa fa-home"> TM 2014-15: Développement d'une application de gestions de cours avec AngularJS</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -118,7 +118,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">TM 2014-25: Développement d'une application de gestions de cours avec AngularJS</a>
+        <a href="index.html">TM 2014-15: Développement d'une application de gestions de cours avec AngularJS</a>
       </nav>
 
 
@@ -144,55 +144,93 @@
 <h1>Fonctionnalités<a class="headerlink" href="#fonctionnalites" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="les-professeurs">
 <h2>Les professeurs<a class="headerlink" href="#les-professeurs" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Les comptes professeur du site web ont la possibilité de pouvoir rédiger des cours complets qui seront ensuite consultable par les autres utlisateurs du site, principalement les élèves. L&#8217;objectif est de pouvoir offrir du contenu théorique d&#8217;apprentissage en complément à la partie pratiques, c&#8217;est-à-dire les exercices.</p>
+<p>Les comptes professeur du site web ont la possibilité de rédiger des cours complets qui seront ensuite consultable par les autres utlisateurs du site, principalement des élèves. L&#8217;objectif est de pouvoir offrir du contenu théorique d&#8217;apprentissage en complément à la partie pratique. Les ensignants disposent d&#8217;un outils formidable pour écrire des compléments au cours de base, afin d&#8217;approndir des éléments ou alors de les clarifier pour les élèves en difficulté.</p>
 <div class="section" id="creation">
 <h3>Création<a class="headerlink" href="#creation" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La première étape du processeur de rédaction consiste à créer le cours en entrant les informations basiques du cours étant le nom, la description, la catégorie et la difficulté. Pour le nom et la description, ces champs parlent d&#8217;eux soi-même, il s&#8217;agit de rentrer des informations pertinentes afin que le cours puisse attirer les utlisateurs et puisse correspondre au contenu. Pour la catégorie, sur le site nous avons mis en place des thèmes qui contiennent eux-même des chapitres dans lequelles se placent des cours, par exemple un cours sur les tangentes qui se place dans le chapitre &#8220;Les cercles&#8221; qui lui-même est dans le thème &#8220;Géométrie&#8221;. Ainsi les différentes resources du site sont classée et l&#8217;élève retrouve facilement la matière qui l&#8217;intéresse. Et finalement le professeur rentre la difficulté, sur une échelle de 1 à 3, de facile à difficile.</p>
-<p>Une fois les champs dûment complétés, il suffit à l&#8217;auteur de cliquer sur le button &#8220;Créer&#8221; pour être rédiriger sur la page de rédaction où il pourra commencer à écrire.</p>
-<p>Si l&#8217;auteur veut éditer les informations rentré lors de la création, il doit se rendre sur la page prévue à cette effet en cliquant sur le bouton &#8220;Informations générales&#8221; en haut de l&#8217;interface de rédaction.</p>
+<p>La première étape du processeur de rédaction consiste à créer le cours en entrant les informations basiques du cours, à savoir le nom, la description, la catégorie et la difficulté. Pour le nom et la description, ces champs parlent d&#8217;eux-mêmes. Il s&#8217;agit de saisir les informations pertinentes qui correspondent au contenu du cours afin que celui-ci puisse attirer les utlisateurs. Pour la catégorie, il faut choisir parmi les chapitres proposés qui sont eux-même regroupé par thèmes. Par exemple un cours sur les tangentes se place dans le chapitre &#8220;Les cercles&#8221; qui lui-même est dans le thème &#8220;Géométrie&#8221;. Ainsi les différentes resources du site sont classées et l&#8217;élève retrouve facilement la matière qui l&#8217;intéresse. Finalement le professeur choisit la difficulté, sur une échelle de 1 à 3, de facile à difficile.</p>
+<p>Tous les champs sont obligatoires. Une fois les champs dûment complétés, il suffit à l&#8217;auteur de cliquer sur le bouton &#8220;Envoyer&#8221; (1) pour être rédiriger sur la page de rédaction où il pourra commencer à écrire.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/new.png"><img alt="_images/new.png" src="_images/new.png" style="width: 532.0px; height: 490.40000000000003px;" /></a>
+<p class="caption">Création d&#8217;un cours</p>
+</div>
 </div>
 <div class="section" id="redaction">
 <h3>Rédaction<a class="headerlink" href="#redaction" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="section" id="structurer-son-cours">
 <h4>Structurer son cours<a class="headerlink" href="#structurer-son-cours" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Pour structurer son cours, l&#8217;auteur peut tout d&#8217;abord créer plusieurs pages ayant chacune un titre. Ensuite dans chacune de ces pages, le contenu se découpe en plusieurs sections avec un titre et un contenu. L&#8217;avantage de cette structure est que le site génère automatiquement un sommaire interactif du cours en se basant sur le titre des pages et celui des sections.</p>
-<p>Le fait de créer des pages ou des sections et de modifier le contenu se fait de manière claire, simple et surtout rapide. Le professeur travaille sans jamais devoir recharger sa page, action généralement lente. Pour ajouter une section, un button se trouve en bas de page et en cliquant dessus une nouelle zone d&#8217;édition va simplement apparaître. En bas de la page se trouve également d&#8217;une part le button pour ajouter une nouvelle page ainsi que la liste des différentes pages déjà crées. Il peut donc soit créer une page en cliquant ce qui a pour effet de d&#8217;afficher une nouvelle page vierge, ou alors de naviguer entre les pages du cours pour editer le contenu en cliquant sur le numéro des pages. Il se peut qu&#8217;on veuille réorganiser les sections ou les pages dans un ordre différent ou des les supprimer. Cela est tout à fait possible. Pour les sections de la page, à côté de chacune d&#8217;entre elle se trouve trois boutons: celui pour supprimer la section et les deux autres pour monter ou descendre une section. Lorsqu&#8217;on clique sur l&#8217;un des trois la page est mise à jour automatiquement et instantanément. En ce qui concerne les pages, il suffit de se rendre sur la page spéciale en cliquer sur &#8220;Les pages&#8221; en haut de la page pour retrouver le même système que pour les sections.</p>
-<p>En ce qui concerne l&#8217;enregistrement, un se fait automatiquement toutes les minutes et si on veut quitter la page, un bouton en haut est prévu pour enregister le travail manuellement. De plus si on crée ou change de page, si on réorganise celles-ci ou les sections, le cours est aussi sauvegardé.</p>
+<p>Pour structurer son cours, l&#8217;auteur peut tout d&#8217;abord créer plusieurs pages ayant chacune un titre (1). Ensuite dans chacune de ces pages, le contenu se découpe en plusieurs sections avec un titre (2) et un contenu (3). L&#8217;avantage de cette structure est que le site génère automatiquement un sommaire interactif du cours en se basant sur le titre des pages et celui des sections.</p>
+<p>L&#8217;action de créer des pages ou des sections et de modifier leur contenu se fait de manière claire, simple et surtout rapide. Le professeur travaille sans jamais devoir recharger sa page, action généralement lente. Pour ajouter une section, un bouton se trouve en bas de page (4). En cliquant dessus, une nouvelle zone d&#8217;édition va simplement apparaître. En bas de la page se trouve d&#8217;une part le bouton (5) pour ajouter une nouvelle page ainsi que la liste des différentes pages déjà crées (6). Il peut donc soit créer une page en cliquant sur le bouton (5), ce qui a pour effet de d&#8217;afficher une nouvelle page vierge. Ou alors il peut naviguer entre les pages du cours pour editer leur contenu en cliquant sur le numéro des pages (6). Il se peut aussi qu&#8217;on veuille réorganiser les sections dans un ordre différent ou supprimer une section. Cette action est tout à fait possible. A côté de chacune des sections se trouve trois boutons (7): celui pour supprimer la section et les deux autres pour la monter ou la descendre. Lorsqu&#8217;on clique sur l&#8217;un des trois, la page est mise à jour automatiquement et instantanément.</p>
+<p>En ce qui concerne l&#8217;enregistrement, un se fait automatiquement toutes les 30 secondes. De plus si on crée ou change de page, on réorganise les sections, on prévisualise la cours, on le publie/retire ou on quitte le page, le cours est aussi sauvegardé. Il y a un bouton &#8220;Enregistrer&#8221; (8) en haut de la page pour faire une sauvegarde manuelle. L&#8217;heure du dernier enregistrement est affichée à la gauche du bouton.</p>
 </div>
 <div class="section" id="mise-en-forme">
 <h4>Mise en forme<a class="headerlink" href="#mise-en-forme" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Pour mettre en forme le texte, le rédacteur utlise la syntaxe populaire Markdown. La syntaxe consiste à mettre des marques avec des symboles dans le texte qui seront ensuite interprétés. Par exemple pour mettre en italique on entoure le mot de &#8220;*&#8221;. Ainsi il peut facilement mettre en gras, ajouter des images, faire des tableaux et des listes, etc. Si il n&#8217;est pas encore à l&#8217;aise avec la syntaxe, le professeur peut à tout moment cliquer sur le button d&#8217;aide, représenté par un point d&#8217;interogation, pour avoir un rapide aperçu de l&#8217;ensemble des fonctionnalités du Markdown.</p>
-<p>De plus, comme les cours visant avant tout un contenu mathématique, l&#8217;auteur peut (et doit) baliser le contenu mathématique afin que celui-ci soit formaté pour le rendu final. La notation et l&#8217;affichage des formules mathématique est celui du populaire format Latex. Par conséquent, il suffit au professeur, dans son texte, de mettre les balises et ensuite d&#8217;écrire sa formule mathématique en utilisant la syntaxe. Il y a deux types de balises: &#8220;(...)&#8221; est utilisé pour intégrer des mathématiques directement dans le texte tandis que la balise &#8220;||&#8221; est utlisé pour un affichage en block, c&#8217;est-à-dire sur une nouvelle ligne, séparée. A l&#8217;instar du Markdown, on peut se référer à la section d&#8217;aide pour se familiariser avec la syntaxe.</p>
-<p>L&#8217;auteur n&#8217;ayant pas un aperçu direct du rendu de son texte, il peut donc cliquer sur le bouton en haut &#8220;Aperçu&#8221; pour regarder comment le contenu sera réellement. Il n&#8217;a pas besoin de sauvegarder avant de faire l&#8217;aperçu.</p>
+<p>Pour mettre en forme le texte de son cours, le rédacteur utlise la syntaxe populaire <em>Markdown</em>. La syntaxe consiste à mettre dans le texte des marques avec des symboles qui seront ensuite interprétés comme des titres, images, du texte gras, etc. Par exemple pour mettre en italique on entoure un mot avec &#8220;*&#8221;. Ainsi il peut facilement souligné du texte, ajouter des images, faire des tableaux et des listes, etc. S&#8217;il n&#8217;est pas encore à l&#8217;aise avec la syntaxe, le professeur peut à tout moment cliquer sur le bouton d&#8217;aide (9) en haut de la page, représenté par un point d&#8217;interogation. Il découvrira des liens pour avoir un rapide aperçu de l&#8217;ensemble des fonctionnalités du <em>Markdown</em>.</p>
+<p>De plus, comme les cours visent avant tout un contenu mathématique, l&#8217;auteur peut (et doit) baliser le contenu mathématique. Ainsi celui-ci sera formaté pour le rendu final et donc correctement affiché. La notation à utilisé pour les formules mathématique est celle du populaire format <em>LaTex</em>. Par conséquent, il suffit au professeur de mettre les balises et ensuite d&#8217;écrire sa formule mathématique en utilisant la syntaxe <em>LaTex</em> (10). Il y a deux types de balises. <tt class="docutils literal"><span class="pre">\(</span></tt> ... <tt class="docutils literal"><span class="pre">\)</span></tt> est utilisé pour intégrer des mathématiques directement dans le texte. La balise &#8220;||&#8221; est utilisée pour un affichage en bloc, c&#8217;est-à-dire que la forumule sera sur une nouvelle ligne, séparée du texte. A l&#8217;instar du <em>Markdown</em>, on peut se référer à la section d&#8217;aide pour se familiariser avec la syntaxe <em>LaTex</em> (9).</p>
+<p>L&#8217;auteur n&#8217;ayant pas un aperçu direct du rendu de son texte, il peut cliquer sur le bouton en haut &#8220;Aperçu&#8221; (11) pour regarder comment le contenu sera réellement affiché. Il n&#8217;a pas besoin de sauvegarder avant de faire l&#8217;aperçu. Une fois sur la page de prévisualisation, il peut retourner à la rédaction du cours en cliquant sur &#8220;Retour&#8221; en haut à gauche.</p>
 </div>
 <div class="section" id="ajouter-des-medias">
 <h4>Ajouter des médias<a class="headerlink" href="#ajouter-des-medias" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Evidemment l&#8217;auteur peut aisément inclure des vidéos et des images pour enrichir son contenu. Pour se faire, il y a d&#8217;abord la possibilité d&#8217;inclure une image provenant d&#8217;internet en utilisant la syntaxe Markdown et le lien de l&#8217;image, tandis que pour la vidéo on peut églalement inclure une de Youtube du même procédé que l&#8217;image (voir aide Markdown). L&#8217;autre possibilité est de directement téléverser l&#8217;image sur le site. Cliquer simplement sur l&#8217;icône vidéo ou image en haut de la page, une fenêtre pop-up s&#8217;ouvirira pour téléverser le fichier. Une fois l&#8217;upload terminé, le lien à inclure dans le texte est automatiquement généré et il suffit donc de le copier et de le coller à l&#8217;endroit désiré.</p>
+<p>Evidemment l&#8217;auteur peut inclure des vidéos et des images pour enrichir son contenu. Il peut inclure une image provenant d&#8217;internet en utilisant la syntaxe <em>Markdown</em> et le lien de l&#8217;image, tandis que pour la vidéo on peut églalement en inclure une de Youtube avec le même procédé que pour l&#8217;image (voir aide <em>Markdown</em>).</p>
+</div>
+<div class="section" id="modifier-les-informations-de-base">
+<h4>Modifier les informations de base<a class="headerlink" href="#modifier-les-informations-de-base" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Lorsque l&#8217;ensignant désire modifier les informations saisies lors du processus de création, il peut cliquer sur le lien &#8220;Editer&#8221; (12) à côté du titre du cours. Il sera alors sur une page avec le même formulaire qu&#8217;à la création du cours. L&#8217;auteur peut alors éditer le titre, la description, la catégorie et la difficulté et cliquer sur &#8220;Envoyer&#8221;. Finalement il est possible de retourner sur la page de rédaction en cliquant sur &#8220;Retour&#8221; en haut à gauche.</p>
 </div>
 <div class="section" id="publier-un-cours">
 <h4>Publier un cours<a class="headerlink" href="#publier-un-cours" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Par défaut, le cours créé par un professeur n&#8217;est pas visible par les utilisateurs du site afin de laisser le temps à l&#8217;auteur de rédiger l&#8217;entier du cours. Lorsque il estime que le cours est prêt à être lu, il peut tout simplement cliquer sur le bouton &#8220;Publier&#8221; tout en haut de la page et le cours sera visible. Il peut bien sûr à tout moment retirer son cours de la liste, le rendre non visionnable, s&#8217;il désire y apporter des modifications ou estime que son cours ne doit plus être sur le site.</p>
+<p>Par défaut, le cours créé par un professeur n&#8217;est pas visible par les utilisateurs du site afin de laisser le temps à l&#8217;auteur de rédiger l&#8217;entier du cours. Lorsque il estime que le cours est prêt à être lu, il peut tout simplement cliquer sur le bouton &#8220;Publier&#8221; (13) tout en haut de la page et le cours sera visible. Il peut bien sûr à tout moment retirer son cours de la liste s&#8217;il désire y apporter des modifications ou estime que son cours ne doit plus être lisible sur le site.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/edit.png"><img alt="_images/edit.png" src="_images/edit.png" style="width: 1191.0px; height: 777.0px;" /></a>
+<p class="caption">Edition d&#8217;un cours</p>
 </div>
-<div class="section" id="editer-son-cours">
-<h4>Editer son cours<a class="headerlink" href="#editer-son-cours" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Dans son dashboard, le professeur voit tous les cours qu&#8217;il a créés. S&#8217;il clique sur le bouton éditer d&#8217;un de ceux-là, il retournera sur l&#8217;interface d&#8217;édition de son cours pour pouvoir y apporter les modifications désirées.</p>
+</div>
+<div class="section" id="retrouver-son-cours">
+<h4>Retrouver son cours<a class="headerlink" href="#retrouver-son-cours" title="Lien permanent vers ce titre">¶</a></h4>
+<p>En se rendant sur &#8220;Tous les cours&#8221; (1), le professeur voit la liste de tous les cours, qu&#8217;ils soient publiés ou non. S&#8217;il clique sur le titre d&#8217;un de ceux-là (2), il retournera sur l&#8217;interface d&#8217;édition de son cours et pourra y apporter les modifications désirées.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/all_courses.png"><img alt="_images/all_courses.png" src="_images/all_courses.png" style="width: 1050.0px; height: 484.0px;" /></a>
+<p class="caption">Tous les cours des professeurs</p>
+</div>
 </div>
 </div>
 </div>
 <div class="section" id="les-etudiants">
 <h2>Les étudiants<a class="headerlink" href="#les-etudiants" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Tous les cours publiés sont donc consultable par les étudiants du site. Ils se rendent sur la section du site dédié aux cours et ont une liste du contenu disponible, dans lequelle ils peuvent faire une recherche ou trier par catégorie. Outre la possibilité de lire le cours et d&#8217;en feuilleter les pages, l&#8217;élève a quelques autres possibilités.</p>
-<div class="section" id="les-favoris">
-<h3>Les favoris<a class="headerlink" href="#les-favoris" title="Lien permanent vers ce titre">¶</a></h3>
-<p>S&#8217;il apprécie particulièrement un cours, le trouve utile ou veut le retrouver par la suite, l&#8217;étudiant peut l&#8217;ajouter en favoris comme les favoris d&#8217;un navigateur par exemple. Pour ce faire, il y a une étoile en haut de chaque page lorsqu&#8217;on lit un cours et qu&#8217;on est connecté au site. Elle est d&#8217;abord vide, ce qui signifie que le cours n&#8217;appartient pas aux favoris de la personne, et si on clique, l&#8217;étoile sera pleine et donc signifie que le cours est ajouté à sa liste. Il retrouvera ensuite dans son dashbord cette liste qui lui permet d&#8217;accéder rapidement à ses cours préférés. L&#8217;élève peut évidemment retiré un favoris de la même manière qu&#8217;il l&#8217;a ajouté.</p>
+<p>La plupart des fonctionnalités nécessitent d&#8217;être connecté au site.</p>
+<div class="section" id="trouver-un-cours">
+<h3>Trouver un cours<a class="headerlink" href="#trouver-un-cours" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Tous les cours publiés sont consultables par les utilisateurs du site. S&#8217;ils se rendent sur la page &#8220;Home&#8221; du site, les étudiants ont une liste du contenu mis à leur disposition. Ils peuvent afficher tous les cours (1), seulement leurs favoris (2) ou alors touver un cours par thème (3). Grâce à cette organisation, Chaque élève peut trouver rapidement et efficacement le cours qui répond à ses besoins. Quand un cours l&#8217;intéresse, il lui suffit de cliquer dessus (4) et il sera alors redirigé sur la page de lecture du cours.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/home.png"><img alt="_images/home.png" src="_images/home.png" style="width: 1129.0px; height: 739.0px;" /></a>
+<p class="caption">Tous les cours</p>
 </div>
-<div class="section" id="les-commentaires">
-<h3>Les commentaires<a class="headerlink" href="#les-commentaires" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Une autre fonctionnalité est de pouvoir commenter un cours. En bas de chaque page du cours se trouve la section de commentaire qui rassemble tous les messages des utilisateurs. Il peut s&#8217;agir de remarques, compliments ou questions des lecteurs. Il y a en dessous des commentaires une zone de texte où l&#8217;on peut écrire son propre commentaire et ensuite le poster pour qu&#8217;il soit instantanément visible par les autres. Pour viser un contenu plus spécifique, il y a aussi la possibilité de commenter une section seule. En cliquant sur l&#8217;icône en forme de message en bas à gauche d&#8217;une section du cours une fenêtre s&#8217;ouvrira avec d&#8217;affiché seulement les commentaires de la section et dès lors le système est le même que pour les commentaires normaux.</p>
+</div>
+<div class="section" id="lire-un-cours">
+<h3>Lire un cours<a class="headerlink" href="#lire-un-cours" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="les-favoris">
+<h4>Les favoris<a class="headerlink" href="#les-favoris" title="Lien permanent vers ce titre">¶</a></h4>
+<p>S&#8217;il apprécie particulièrement un cours, le trouve utile ou veut le retrouver facilement par la suite, l&#8217;étudiant peut l&#8217;ajouter en favoris, à l&#8217;instar des favoris d&#8217;un navigateur par exemple. Pour ce faire, il y a une étoile en haut de chaque page (1) de lecture d&#8217;un cours. Elle est d&#8217;abord vide, ce qui signifie que le cours n&#8217;appartient pas aux favoris de l&#8217;étudiant. Si on clique dessus, l&#8217;étoile deviendra pleine et signifie que le cours est ajouté à sa liste de favoris. A l&#8217;inverse, l&#8217;élève peut évidemment retirer un favoris de la même manière qu&#8217;il l&#8217;a ajouté. Sa liste de favoris peut être retouvée sur la page d&#8217;accueil comme expliqué précédemment.</p>
 </div>
 <div class="section" id="la-progression">
-<h3>La progression<a class="headerlink" href="#la-progression" title="Lien permanent vers ce titre">¶</a></h3>
-<p>L&#8217;élève peut aussi profiter d&#8217;un système de d&#8217;indication de progression. L&#8217;objectif est de pouvoir faciliter l&#8217;apprentissage de l&#8217;élève à travers le cours et de pouvoir l&#8217;aider à suivre les cours et à identifier les zones de faiblesse. A l&#8217;instar des commentaires, en bas de chaque page d&#8217;un cours se situent deux bouton intitulés &#8220;Compris&#8221; et &#8220;A relire&#8221;. A la fin de sa lecture de la page, il est conseillé à l&#8217;élève de cliquer sur l&#8217;un des deux car cela lui permettra ensuite de se situer. D&#8217;une part le site se chargera de calculer le pourcentage du cours effectué en se basant sur les pages comprises et d&#8217;autre part le site lui proposera les pages qu&#8217;il faut relire. Toutes ces informations sont disponibles dans son dashboard.</p>
+<h4>La progression<a class="headerlink" href="#la-progression" title="Lien permanent vers ce titre">¶</a></h4>
+<p>L&#8217;élève profite églament d&#8217;un système d&#8217;indication de sa progression. L&#8217;objectif est de pouvoir faciliter l&#8217;apprentissage de l&#8217;élève à travers le cours, l&#8217;aider à le suivre et identifier ses zones de faiblesse. En bas de chaque page d&#8217;un cours se situent deux boutons intitulés &#8220;Compris&#8221; et &#8220;A relire&#8221; (2). A la fin de sa lecture de la page, il est conseillé à l&#8217;élève de cliquer sur l&#8217;un des deux boutons. En effet cela lui permettra ensuite de situer sa progression dans le cours. En se basant sur les indications de l&#8217;utilisateur, une barre de progression en haut de la page (3) indique le nombre de pages comprises par rapport aux nombres totales de page du cours. Quand il clique sur l&#8217;un des deux boutons, le lecteur est directement dirigé vers la page suivante et sa barre de progression est mise à jour. Il est évidement possible de simplement cliquer sur &#8220;Suivant&#8221; (4) pour aller à la page suivante sans marquer la progression. Il y a aussi un bouton &#8220;Précédent&#8221; (5) pour se rendre à la page précédente.</p>
+</div>
+<div class="section" id="telecharger-le-cours">
+<h4>Télécharger le cours<a class="headerlink" href="#telecharger-le-cours" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Il est souvent pratique de pouvoir lire un cours sans connexion internet ou de pouvoir l&#8217;imprimer pour le lire sans ordinateur. C&#8217;est pourquoi il est possible d&#8217;obtenir le cours en version PDF ! Lorsque l&#8217;étudiant lit un cours, il peut voir un lien &#8220;Télécharger le cours&#8221; dans le menu à droite (6). Il suffit de cliquer sur le lien et après quelques instants on obtient le PDF.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/view.png"><img alt="_images/view.png" src="_images/view.png" style="width: 1185.0px; height: 775.0px;" /></a>
+<p class="caption">Lire un cours</p>
+</div>
+</div>
+<div class="section" id="les-commentaires">
+<h4>Les commentaires<a class="headerlink" href="#les-commentaires" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Chaque lecteur a le pouvoir de commenter un cours pour le complimenter, émettre une critique ou poser une question. En bas de chaque page du cours se trouve un lien &#8220;Afficher/masquer les commentaires&#8221; (1). Il permet de montrer tous les commentaires ou de les cacher en cliquant dessus. Dans cette section, l&#8217;utilisateur verra chaque commentaire du cours avec son auteur et la date de publication (2). Il y a en dessous des commentaires une zone de texte (3) dans laquelle on peut écrire son propre commentaire. Au fur et à mesure qu&#8217;on tape notre message, le commentaire s&#8217;affiche déjà dans la liste (4), mais n&#8217;est pas encore envoyé. Une fois le texte rédigé, il faut le poster en cliquant sur le bouton &#8220;Envoyer&#8221; (5) pour qu&#8217;il soit instantanément visible par les autres lecteurs.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/comments.png"><img alt="_images/comments.png" src="_images/comments.png" style="width: 1162.0px; height: 593.0px;" /></a>
+<p class="caption">Les commentaires</p>
+</div>
+</div>
 </div>
 </div>
 </div>

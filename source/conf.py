@@ -53,7 +53,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'TM 2014-25: Développement d\'une application de gestions de cours avec AngularJS'
+project = u'TM 2014-15: Développement d\'une application de gestions de cours avec AngularJS'
 copyright = u'2014, Keran Kocher'
 
 # The version info for the project you're documenting, acts as replacement for
