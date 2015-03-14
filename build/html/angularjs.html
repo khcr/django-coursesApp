@@ -214,10 +214,10 @@
 <a class="reference internal image-reference" href="_images/One_Way_Data_Binding.png"><img alt="_images/One_Way_Data_Binding.png" src="_images/One_Way_Data_Binding.png" style="width: 400.0px; height: 255.0px;" /></a>
 <p class="caption">One-way data binding <a class="footnote-reference" href="#f8" id="id8">[8]</a></p>
 </div>
-<p>Avec Angular le principe est plus intelligent. Les vues se génèrent effectivement en fonction des modèles, par contre si le modèle change, la vue se mettra automatiquement à jour sans d&#8217;avoir effectuer un nouveau rendu de la page. Si un utilisateur fait un changement dans la vue, le modèle se changera également. Les deux entités sont donc toujours synchronisé grâce a ce mécanisme du framework.</p>
+<p>Avec Angular le principe est plus intelligent. Les vues se génèrent effectivement en fonction des modèles, par contre si le modèle change, la vue se mettra automatiquement à jour sans d&#8217;avoir effectuer un nouveau rendu de la page. Si un utilisateur fait un changement dans la vue, le modèle se changera également. Les deux entités sont donc toujours synchronisé grâce a ce mécanisme du framework. Le vue met à jour le modèle et le modèle met à jour la vue continuellement.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/Two_Way_Data_Binding.png"><img alt="_images/Two_Way_Data_Binding.png" src="_images/Two_Way_Data_Binding.png" style="width: 400.0px; height: 290.0px;" /></a>
-<p class="caption">Two-way data binding</p>
+<p class="caption">Two-way data binding <a class="footnote-reference" href="#f8" id="id9">[8]</a></p>
 </div>
 <p>Cette fonctionnalié facilitent énormément la vie du développeur. Imaginons un système de commentaire. Il y a une liste de commentaires et un formulaire pour en ajouter un. Pour le développeur il suffit de relier le formulaire au modèle. Ensuite au fur et à mesure que l&#8217;utilisateur tape son commentaire, le modèle est mis à jour et contient le nouveau commentaire. Il peut déjà s&#8217;afficher dans la liste des commentaires. Voici un exemple de code qui permet de cacher ou afficher une portion de page à l&#8217;aide d&#8217;un bouton.</p>
 <div class="highlight-html"><div class="highlight"><pre># index.html
@@ -304,7 +304,7 @@ app.controller(&quot;IndexController&quot;, function($scope) {
 <table class="docutils footnote" frame="void" id="f8" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[8]</a></td><td>caca</td></tr>
+<tr><td class="label">[8]</td><td><em>(<a class="fn-backref" href="#id8">1</a>, <a class="fn-backref" href="#id9">2</a>)</em> <a class="reference external" href="https://docs.angularjs.org/guide/databinding">https://docs.angularjs.org/guide/databinding</a></td></tr>
 </tbody>
 </table>
 </div>

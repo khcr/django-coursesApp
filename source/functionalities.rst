@@ -6,7 +6,7 @@ Fonctionnalités
 Les professeurs
 ###############
 
-Les comptes professeur du site web ont la possibilité de pouvoir rédiger des cours complets qui seront ensuite consultable par les autres utlisateurs du site, principalement les élèves. L'objectif est de pouvoir offrir du contenu théorique d'apprentissage en complément à la partie pratiques, c'est-à-dire les exercices.
+Les comptes professeur du site web ont la possibilité de rédiger des cours complets qui seront ensuite consultable par les autres utlisateurs du site, principalement des élèves. L'objectif est de pouvoir offrir du contenu théorique d'apprentissage en complément à la partie pratique. Les ensignants disposent d'un outils formidable pour écrire des compléments au cours de base, afin d'approndir des éléments ou alors de les clarifier pour les élèves en difficulté.
 
 *********
 Création

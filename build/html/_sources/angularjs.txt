@@ -82,13 +82,13 @@ La deuxième fonctionnalité majeur d'AngularJS est ce qu'on appelle *two-way da
 
     One-way data binding [#f8]_
 
-Avec Angular le principe est plus intelligent. Les vues se génèrent effectivement en fonction des modèles, par contre si le modèle change, la vue se mettra automatiquement à jour sans d'avoir effectuer un nouveau rendu de la page. Si un utilisateur fait un changement dans la vue, le modèle se changera également. Les deux entités sont donc toujours synchronisé grâce a ce mécanisme du framework.
+Avec Angular le principe est plus intelligent. Les vues se génèrent effectivement en fonction des modèles, par contre si le modèle change, la vue se mettra automatiquement à jour sans d'avoir effectuer un nouveau rendu de la page. Si un utilisateur fait un changement dans la vue, le modèle se changera également. Les deux entités sont donc toujours synchronisé grâce a ce mécanisme du framework. Le vue met à jour le modèle et le modèle met à jour la vue continuellement.
 
 .. figure:: images/Two_Way_Data_Binding.png
     :scale: 100%
     :align: center
 
-    Two-way data binding
+    Two-way data binding [#f8]_
 
 Cette fonctionnalié facilitent énormément la vie du développeur. Imaginons un système de commentaire. Il y a une liste de commentaires et un formulaire pour en ajouter un. Pour le développeur il suffit de relier le formulaire au modèle. Ensuite au fur et à mesure que l'utilisateur tape son commentaire, le modèle est mis à jour et contient le nouveau commentaire. Il peut déjà s'afficher dans la liste des commentaires. Voici un exemple de code qui permet de cacher ou afficher une portion de page à l'aide d'un bouton.
 
@@ -145,4 +145,4 @@ Il y a évidemment encore d'autres avantages à utiliser ce framework, notament 
 .. [#f5] http://emberjs.com
 .. [#f6] http://facebook.github.io/react
 .. [#f7] http://www.turbogears.org
-.. [#f8] caca
+.. [#f8] https://docs.angularjs.org/guide/databinding
