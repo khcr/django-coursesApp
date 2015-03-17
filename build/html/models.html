@@ -102,7 +102,11 @@
 <li class="toctree-l2"><a class="reference internal" href="guide.html#concepts">Concepts</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bugs.html">Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">Bugs et améliorations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bugs.html#bugs">Bugs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bugs.html#ameliorations">Améliorations</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="bibliographie.html">Bibliographie</a></li>
 </ul>
 
@@ -251,7 +255,7 @@
 </div>
 <div class="section" id="les-chapitres">
 <h2>Les chapitres<a class="headerlink" href="#les-chapitres" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Pour pouvoir organiser le contenu du site, chaque cours est toujours associé à un chapitre. Deux tables servent cette objectif. Tout d&#8217;abord il y a la table <tt class="docutils literal"><span class="pre">themes</span></tt> avec un champs <tt class="docutils literal"><span class="pre">name</span></tt>. Il y a également la table <tt class="docutils literal"><span class="pre">chapters</span></tt> avec un champ <tt class="docutils literal"><span class="pre">name</span></tt> et <tt class="docutils literal"><span class="pre">theme_id</span></tt>. <tt class="docutils literal"><span class="pre">theme_id</span></tt> associe chaque chapitre à un thème. Ensuite la table <tt class="docutils literal"><span class="pre">courses</span></tt> a un champ <tt class="docutils literal"><span class="pre">chapter_id</span></tt>. Celui-ci contient l&#8217;<tt class="docutils literal"><span class="pre">id</span></tt> d&#8217;un chapitre. Il relie chaque cours à un chapitre et par conséquent à un thème. Par exemple, il peut y avoir un cours sur les tangentes. On le placerais dans le chapitre &#8220;les cercles&#8221; et le chapitre se trouverait lui-même dans le thème &#8220;Géométrie&#8221;. On peut légitement se demander pourquoi ces deux niveaux et ces deux tables ? Le système est construit pour laisser une plus grande souplesse et liberté pour organiser le contenu. En effet imaginons qu&#8217;il y ait 10, 20, 30 ou plus chapitres, comment s&#8217;y retrouver ? En les regroupant sous une idée plus générale et c&#8217;est précisement le rôle de la table <tt class="docutils literal"><span class="pre">themes</span></tt>.</p>
+<p>Pour pouvoir organiser le contenu du site, chaque cours est associé à un chapitre. Deux tables servent cette objectif. Tout d&#8217;abord il y a la table <tt class="docutils literal"><span class="pre">themes</span></tt> avec un champs <tt class="docutils literal"><span class="pre">name</span></tt>. Il y a également la table <tt class="docutils literal"><span class="pre">chapters</span></tt> avec un champ <tt class="docutils literal"><span class="pre">name</span></tt> et <tt class="docutils literal"><span class="pre">theme_id</span></tt>. <tt class="docutils literal"><span class="pre">theme_id</span></tt> associe chaque chapitre à un thème. Ensuite la table <tt class="docutils literal"><span class="pre">courses</span></tt> a un champ <tt class="docutils literal"><span class="pre">chapter_id</span></tt>. Celui-ci contient l&#8217;<tt class="docutils literal"><span class="pre">id</span></tt> d&#8217;un chapitre. Il relie chaque cours à un chapitre et par conséquent à un thème. Par exemple, il peut y avoir un cours sur les tangentes. On le placerais dans le chapitre &#8220;les cercles&#8221; et le chapitre se trouverait lui-même dans le thème &#8220;Géométrie&#8221;. On peut légitement se demander pourquoi ces deux niveaux et ces deux tables ? Le système est construit pour laisser une plus grande souplesse et liberté pour organiser le contenu. En effet imaginons qu&#8217;il y ait 10, 20, 30 ou plus chapitres, comment s&#8217;y retrouver ? En les regroupant sous une idée plus générale et c&#8217;est précisement le rôle de la table <tt class="docutils literal"><span class="pre">themes</span></tt>.</p>
 </div>
 <div class="section" id="les-commentaires">
 <h2>Les commentaires<a class="headerlink" href="#les-commentaires" title="Lien permanent vers ce titre">¶</a></h2>
