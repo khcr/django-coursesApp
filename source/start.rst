@@ -2,7 +2,7 @@
 Démarrage
 ==========
 
-**Pré-requis**
+**Prérequis**
 
 * Python 3 et pip installé
 

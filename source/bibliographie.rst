@@ -2,11 +2,19 @@
 Bibliographie
 ===============
 
+#############
+Bibliographie
+##############
+
 Brad Green & Shyam Seshadri, AngularJS, Sebastopol, O’Reilly Media, 2013, 183 p.
 
 Pierre Alexis & Hugues Bersini, Apprendre la programmation web avec Python et Django, Paris, Eyrolles, 2012, 319 p.
 
 Vincent Le Goff, Apprenez à programmer en Python
+
+#############
+Webographie
+##############
 
 Python: https://docs.python.org/3/
 

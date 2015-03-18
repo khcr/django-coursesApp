@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="Module de cours: guide" href="index.html"/>
-        <link rel="next" title="Bugs" href="bugs.html"/>
+        <link rel="next" title="Bugs et améliorations" href="bugs.html"/>
         <link rel="prev" title="Tests" href="tests.html"/> 
 
   
@@ -82,8 +82,6 @@
 <li class="toctree-l2"><a class="reference internal" href="models.html#les-chapitres">Les chapitres</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html#les-commentaires">Les commentaires</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html#la-progression">La progression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#les-favoris">Les favoris</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#les-demandes">Les demandes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="restless.html">RestLess</a><ul>
@@ -104,7 +102,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#concepts">Concepts</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bugs.html">Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">Bugs et améliorations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bugs.html#bugs">Bugs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bugs.html#ameliorations">Améliorations</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="bibliographie.html">Bibliographie</a></li>
 </ul>
 
@@ -144,13 +146,13 @@
 <h1>Guide du développeur<a class="headerlink" href="#guide-du-developpeur" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="fichiers">
 <h2>Fichiers<a class="headerlink" href="#fichiers" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Cette section permet de se retrouver dans la multitude de fichiers du projets et de pouvoir comprendre certain processus.</p>
+<p>Cette section permet de se retrouver dans la multitude de fichiers du projets et de comprendre certains processus.</p>
 <ul>
 <li><dl class="first docutils">
 <dt>courses/</dt>
 <dd><ul class="first last simple">
 <li><strong>admin.py</strong>: permet de rajouter les modèles qu&#8217;on veut voir apparaitre et modifier dans la zone d&#8217;administration Django. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/ref/contrib/admin/">Documentation officielle</a> <a class="footnote-reference" href="#f1" id="id1">[1]</a></li>
-<li><strong>api.py</strong>: regroupe toutes les vues génériques RestLess qui servent à construire l&#8217;API JSON nécessaire à l&#8217;application AngularJS. Les classés déclarées sont ensuite utilisées dans le fichier <cite>urls.py</cite>.</li>
+<li><strong>api.py</strong>: regroupe toutes les vues génériques RestLess qui servent à construire l&#8217;API JSON nécessaire à l&#8217;application AngularJS. Les classés déclarées sont ensuite utilisées dans le fichier <tt class="docutils literal"><span class="pre">urls.py</span></tt>.</li>
 <li><strong>forms.py</strong>: déclare les formulaires Django nécessaire pour enregistrer les données d&#8217;une requête dans la base de données. Ils sont utilisé principalement dans le fichier <cite>api.py</cite>. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/forms/">Documentation officielle</a> <a class="footnote-reference" href="#f2" id="id2">[2]</a></li>
 <li><strong>models.py</strong>: déclare les modèles de notre application. Contient également des méthodes d&#8217;instance pour certains modèles. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/db/models/">Documentation officielle</a> <a class="footnote-reference" href="#f3" id="id3">[3]</a></li>
 <li><strong>urls.py</strong>: contient les urls spécifiques à l&#8217;application. Elles sont ensuite ajoutée dans le fichier principal <cite>webmath/urls.py</cite>. La première url, de nom <cite>index</cite>, est la point de départ de notre application AngularJS. Le reste des routes est défini directement par AngularJS dans le fichier <cite>courses/static/courses/javascripts/config/routes.js</cite>. Dans <cite>urls.py</cite> la deuxième url, de nom <cite>pdf</cite>, est celle qui génère le pdf d&#8217;un cours. Les routes qui suivent sont celle de l&#8217;API JSON qui utilisent les vues génériques du fichier <cite>api.py</cite>. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/http/urls/">Documentation officielle</a> <a class="footnote-reference" href="#f4" id="id4">[4]</a></li>
@@ -396,7 +398,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="bugs.html" class="btn btn-neutral float-right" title="Bugs"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="bugs.html" class="btn btn-neutral float-right" title="Bugs et améliorations"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="tests.html" class="btn btn-neutral" title="Tests"><span class="fa fa-arrow-circle-left"></span> Previous</a>
