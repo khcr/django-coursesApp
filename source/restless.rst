@@ -75,7 +75,7 @@ Avec la seconde méthode, le code est plus concis. L'exemple montre comment gén
 Fonctionnement de RestLess
 ##########################
 
-Si nous avons étudié ce qu'étaient les vues génériques dans Django, c'est parce que RestLess se base exclusivement sur ce concept pour construire une API JSON. En fait, RestLess fournit également des vues génériques qui sont des dérivées des classes Django. Les classes de RestLess fonctionnent en effet exactement le même travail que celle de Django, à la différence qu'elles travaillent avec le format JSON. Ainsi on peut construire facilement et rapidement notre API, en économisant du code et du temps. Par contre, Django possède beaucoup de vues génériques et RestLess n'offrent que les plus utiles. Avant de que nous nous intéressions aux classes que nous pouvons utiliser avec RestLess, il faut d'abord voir les différents types de requêtes qui existent dans le monde du web.
+Nous avons étudié ce qu'étaient les vues génériques dans Django parce que RestLess se base exclusivement sur ce concept pour construire une API JSON. En fait, RestLess fournit également des vues génériques qui sont des dérivées des classes Django. Les classes de RestLess fonctionnent en effet exactement le même travail que celle de Django, à la différence qu'elles travaillent avec le format JSON. Ainsi on peut construire facilement et rapidement notre API, en économisant du code et du temps. Par contre, Django possède beaucoup de vues génériques et RestLess n'offrent que les plus utiles. Avant de que nous nous intéressions aux classes que nous pouvons utiliser avec RestLess, il faut d'abord voir les différents types de requêtes qui existent dans le monde du web.
 
 *****
 HTTP

@@ -75,7 +75,7 @@ Avec la seconde méthode, le code est plus concis. L'exemple montre comment gén
 Fonctionnement de RestLess
 ##########################
 
-Si nous avons étudié ce qu'étaient les vues génériques dans Django, c'est parce que RestLess se base exclusivement sur ce concept pour construire une API JSON. En fait, RestLess fournit également des vues génériques qui sont des dérivées des classes Django. Les classes de RestLess fonctionnent en effet exactement le même travail que celle de Django, à la différence qu'elles travaillent avec le format JSON. Ainsi on peut construire facilement et rapidement notre API, en économisant du code et du temps. Par contre, Django possède beaucoup de vues génériques et RestLess n'offrent que les plus utiles. Avant de que nous nous intéressions aux classes que nous pouvons utiliser avec RestLess, il faut d'abord voir les différents types de requêtes qui existent dans le monde du web.
+Nous avons étudié ce qu'étaient les vues génériques dans Django parce que RestLess se base exclusivement sur ce concept pour construire une API JSON. En fait, RestLess fournit également des vues génériques qui sont des dérivées des classes Django. Les classes de RestLess fonctionnent en effet exactement le même travail que celle de Django, à la différence qu'elles travaillent avec le format JSON. Ainsi on peut construire facilement et rapidement notre API, en économisant du code et du temps. Par contre, Django possède beaucoup de vues génériques et RestLess n'offrent que les plus utiles. Avant de que nous nous intéressions aux classes que nous pouvons utiliser avec RestLess, il faut d'abord voir les différents types de requêtes qui existent dans le monde du web.
 
 *****
 HTTP
@@ -133,7 +133,7 @@ Dans le cas de notre projet, il a fallu personnaliser les vues génériques pour
 
     Surcharge d'une méthode
 
-On doit parfois retourner des objets JSON personnalisés, c'est-à-dire pouvoir choisir les paires clé/valeur de notre dictionnaire. Par défaut RestLess retourne simplement tous les attributs de l'enregistrement en question. On accomplit cette personnalisation généralement dans le but de choisir certains attributs, d'en créer des nouveaux qui ne sont pas des champs de la table ou de joindre des enregistrements associés. RestLess fournit la méthode ``serialize`` pour résoudre ce problème. Par exemple pour un cours nous avons besoin de joindre les pages associées et leur contenu ainsi que le nombre total de pages. On peut se rendre sur `la documentation <https://django-restless.readthedocs.org/en/latest/#>`_ [#f4]_ pour plus d'informations et sur le fichier ``api.py`` pour des exemples d'utilisation.
+On doit parfois retourner des objets JSON personnalisés, c'est-à-dire pouvoir choisir les paires clé/valeur de notre dictionnaire. Par défaut RestLess retourne simplement tous les attributs de l'enregistrement en question. On accomplit cette personnalisation généralement dans le but de choisir certains attributs, d'en créer des nouveaux qui ne sont pas des champs de la table ou de joindre des enregistrements associés. RestLess fournit la méthode ``serialize`` pour résoudre ce problème. Par exemple, pour un cours nous avons besoin de joindre les pages associées et leur contenu ainsi que le nombre total de pages. On peut se rendre sur `la documentation <https://django-restless.readthedocs.org/en/latest/#>`_ [#f4]_ pour plus d'informations et sur le fichier ``api.py`` pour des exemples d'utilisation.
 
 .. rubric:: Notes
 
