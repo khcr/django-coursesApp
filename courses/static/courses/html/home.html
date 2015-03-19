@@ -2,9 +2,9 @@
 <h2 class="text-center">Les cours</h2>
 <div id="home">
   <div class="categories">
-    <div class="category"><strong>Choisir: </strong></div>
+    <div class="category"><strong>Choisir <span class="glyphicon glyphicon-search"></span></strong></div>
     <div class="category" ng-class="{current: currentCategory('Tous')}" ng-click="changeCategory()">Tous</div>
-    <div id="favorites" class="category" ng-class="{current: currentCategory('Favoris')}" ng-click="selectFavorites()">Favoris</div>
+    <div id="favorites" class="category" ng-class="{current: currentCategory('Favoris')}" ng-click="selectFavorites()">Favoris <span class="glyphicon glyphicon-heart"></span></div>
     <div class="category-container" ng-repeat="theme in themes">
       <div ng-class="{current: currentCategory(theme.name)}" class="category" ng-click="changeCategory(theme.name)">{{ theme.name }}</div>
     </div>
@@ -12,9 +12,13 @@
 
   <div ng-repeat="course in courses">
     <div class="course-block col-md-5" ng-click="showCourse(course)">
-  	 <h4>{{ course.name }}</h4>
-  	 <p>{{ course.description }}</p>
-     <span class="glyphicon glyphicon-cog"></span><a ng-href="#/{{ course.id }}/edit/1"> Editer</a>
+  	  <h4 class="course-name">{{ course.name }}</h4>
+      <div class="pull-right">
+        <div>{{ course.chapter.name }}</div>
+        <span class="glyphicon glyphicon-signal"></span>
+        {{ course.difficulty }}/3
+      </div>
+  	  <p>{{ course.description }}</p>
     </div>
   </div>
 </div>

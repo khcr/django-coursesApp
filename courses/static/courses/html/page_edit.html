@@ -12,15 +12,21 @@
     <a target="_blank" href="#/help"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-question-sign"></span> Aide</button></a>
   </div>
 
-  <div class="pull-left"><input id="page-name" class="form-control" type="text" ng-model="page.name"></div>
+  <div class="pull-left">
+    <input id="page-name" class="form-control" type="text" ng-model="page.name" ng-maxlength=50 
+      ng-pattern="/^[\w\sáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]+$/" required>
+  </div>
 
   <form class="form-horizontal" role="form" name="editCourse" novalidate>
 
     <div class="margin bottom">
       <div ng-repeat="(key, section) in page.sections" class="form-group sections">
-        <div class="col-sm-10" id="input-margin"><input id="section-name" type="text" ng-model="section.name" class="form-control"></div>
+        <div class="col-sm-10" id="input-margin">
+          <input id="section-name" type="text" ng-model="section.name" class="form-control" ng-maxlength=50 
+            ng-pattern="/^[\w\sáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]+$/" required>
+        </div>
         <div>
-          <textarea class="col-sm-10" ng-model="section.markdown_content" msd-elastic="\n"></textarea>
+          <textarea class="col-sm-10" ng-model="section.markdown_content" msd-elastic="\n" required></textarea>
           <div class="col-sm-1 block">
             <div><span class="glyphicon glyphicon-remove remove-section" ng-click="removeSection(key)"></span></div>
             <div><span class="glyphicon glyphicon-chevron-up up-section" ng-click="upSection(key)"></span></div>

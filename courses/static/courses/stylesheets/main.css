@@ -1,8 +1,11 @@
 /* Ng style */
-textarea.ng-dirty.ng-valid, input.ng-dirty.ng-valid {
+#course-form textarea.ng-dirty.ng-valid, #course-form input.ng-dirty.ng-valid {
   border: 1.5px solid green;
 }
-textarea.ng-dirty.ng-invalid, input.ng-dirty.ng-invalid {
+#course-form textarea.ng-dirty.ng-invalid, 
+#course-form input.ng-dirty.ng-invalid,
+#edit-course textarea.ng-dirty.ng-invalid,
+#edit-course input.ng-dirty.ng-invalid{
   border: 1.5px solid red;
 }
 
@@ -148,6 +151,10 @@ button:hover {
 }
 #home .course-block:hover{
 	background-color: #FCD9D9;
+}
+
+#home .course-name {
+  display: inline-block;
 }
 
 /* Show course */

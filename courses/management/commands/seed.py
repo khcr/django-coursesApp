@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
+from django.contrib.auth.models import User, Group
 from courses.models import *
-from teachers.models import *
 from courses.utils import clear_tables
 import os
 
@@ -8,22 +8,31 @@ class Command(BaseCommand):
     help = 'Create demo data for testing'
 
     def handle(self, *args, **options):
-        clear_tables([Theme, Chapter, Teacher, Status, Course, Page, Section, Progression, CourseComment])
+        clear_tables([Group, Theme, Chapter, User, Status, Course, Page, Section, Progression, CourseComment])
         # Chapters & Themes
         theme = Theme(name="Géométrie")
         theme.save()
         chapter = Chapter(theme=theme, name="Les droites")
         chapter.save()
         # Teacher
-        teacher = Teacher(first_name="John", last_name="Smith", email="john@smith.com", username="sjohn")
+        teachers = Group(name="Teacher")
+        teachers.save()
+        teacher = User(first_name="John", last_name="Smith", email="john@smith.com", username="smith.john", password="12341")
         teacher.save()
+        teacher.groups.add(teachers)
+        # Student
+        students = Group(name="Student")
+        students.save()
+        student = User(first_name="Alfred", last_name="Dupont", email="alfred@dupont.com", username="dupont.alfred", password="12341")
+        student.save()
+        student.groups.add(students)
         # Status
         Status(name="Compris").save()
         Status(name="Relire").save()
         # Demo course
         course = Course(name="Equations de droites", 
             description="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-            difficulty=1,
+            difficulty=2,
             author=teacher,
             chapter=chapter,
             published=True

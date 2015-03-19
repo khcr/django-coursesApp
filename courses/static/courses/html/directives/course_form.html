@@ -1,14 +1,15 @@
-<form class="form-horizontal" name="CourseForm" id="course-form" role="form" novalidate>
+<form class="form-horizontal" name="CourseForm" id="course-form" novalidate>
   <div class="form-group">
     <label for="name" class="col-sm-offset-2 col-sm-2 control-label">Nom</label>
     <div class="col-sm-5">
-      <input id="name" type="text" class="form-control" ng-model="course.name" ng-minlength=3 ng-maxlength=20 ng-pattern="/^[a-zA-z\s]+$/" required>
+      <input id="name" type="text" class="form-control" ng-model="course.name" ng-maxlength=50 
+      ng-pattern="/^[\w\sáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]+$/" required>
     </div>
   </div>
   <div class="form-group">
     <label for="description" class="col-sm-offset-2 col-sm-2 control-label">Description</label>
     <div class="col-sm-5">
-      <textarea msd-elastic="\n" id="description" class="form-control" ng-model="course.description" ng-minlength=10 ng-maxlength=100 required>{{ course.description }}</textarea>
+      <textarea msd-elastic="\n" id="description" class="form-control" ng-model="course.description" ng-maxlength=200 required>{{ course.description }}</textarea>
     </div>
   </div>
   <div class="form-group">

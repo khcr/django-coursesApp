@@ -2,10 +2,9 @@ from restless.modelviews import ListEndpoint, DetailEndpoint, Endpoint
 from restless.models import serialize
 from restless.http import Http201, Http200
 
-from courses.models import Course, Page, Section, CourseComment, Status, Progression
+from courses.models import Course, Page, Section, CourseComment, Status, Progression, Theme
 from courses.forms import CourseForm, PageForm, SectionForm, CommentForm
 from courses.utils import serialize_page
-from teachers.models import Theme, Teacher
 from django.contrib.auth.models import User
 
 class CourseList(ListEndpoint):
@@ -22,7 +21,9 @@ class CourseList(ListEndpoint):
             courses = user.favorite_courses.filter(published=True)
         else:
             courses = Course.objects.filter(published=True)
-        return serialize(courses)
+        return serialize(courses, include=[
+                ('chapter', dict(fields=['name']))
+            ])
 
 
     # POST: create a new course
@@ -30,7 +31,8 @@ class CourseList(ListEndpoint):
         course_form = CourseForm(request.data)
         if course_form.is_valid():
             course = course_form.save(commit=False)
-            course.author = Teacher.objects.first()
+            # TODO: current user
+            course.author = User.objects.first()
             course.save()
             page = Page(name="Première page", order=1, course_id=course.id)
             page.save()

@@ -58,7 +58,7 @@
   <div class="new col-sm-12">
     <form class="form-horizontal col-sm-offset-3 col-sm-6" role="form" name="newComment" ng-submit="newComment.$valid && saveComment()" novalidate>
       <div class="form-group">
-        <textarea placeholder="Ton commentaire" class="col-sm-12" msd-elastic="\n" ng-model="comment.content" ng-minlength=3 required></textarea>
+        <textarea placeholder="Ton commentaire" class="col-sm-12" msd-elastic="\n" ng-model="comment.content" ng-minlength=3 ng-maxlength=300 required></textarea>
         <input id="submit-comment" type="submit" value="Envoyer" class="form-control btn-primary" ng-disabled="newComment.$invalid">
       </div>
     </form>
