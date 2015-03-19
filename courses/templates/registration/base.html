@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="coursesApp">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>Cours</title>
+
+  {% load staticfiles %}
+  <!-- Website's CSS -->
+  <link rel="stylesheet" href="{% static "courses/stylesheets/main.css" %}" />
+
+  <!-- Bootstrap: Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+  <!-- Bootstrap: Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+</head>
+  <body>
+    <!-- http://getbootstrap.com/components/#navbar -->
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="/courses/#/">Home</a></li>
+            {% if user.is_teacher %}
+              <li><a href="/courses/#/new">Ajouter un cours</a></li>
+              <li><a href="/courses/#/teacher/courses">Tous les cours</a></li>
+            {% endif %}
+            <li><a href="/courses/#/about">About</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+              <li><a href="{% url 'django.contrib.auth.views.logout' %}">Logout</a></li>
+              <a class="navbar-brand">{{ user.username }}</a>
+            {% else %}
+              <li><a href="/login">Login</a></li>
+            {% endif %}
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>  
+
+  </body>
+</html>

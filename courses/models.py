@@ -124,3 +124,12 @@ class Progression(models.Model):
 
     def __str__(self):
         return "status: {}, page: {}".format(self.status.name, self.page.name)
+
+#
+# Méthodes d'utilisateurs
+#
+
+def is_teacher(self):
+    return self.groups.filter(name="Teacher").exists()
+
+User.add_to_class('is_teacher', is_teacher)

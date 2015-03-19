@@ -1,19 +1,20 @@
-# TM2014 Keran Kocher
+# TM 2014-15 Keran Kocher
 
 Application de gestion de cours.
 Pour les commandes qui concernent l'application, veiller à les lancer à la racine du projet.
 
 ## Démarrage
 
-**Pré-requis**
+**Prérequis**
 
-* Python 3 installé et pip
+* Python 3 et pip installé
 
-**Installer Django et les dépendences**
+**Installer Django et les dépendances**
 
 ``pip3 install -r requirements.txt``
 
 De plus, il faut encore installer ces paquets sur la machine:
+
 * pandoc
 * pdflatex
 
@@ -34,7 +35,7 @@ Si besoin de se connecter à la zone d'administration ("/admin")
 **Données**
 
 * Créer les données nécessaires: ``python3 manage.py seed``
-* Finalement vous pouvez vous rendre sur l'URL ``/courses`` et profiter des des fonctionnalités.
+* Finalement vous pouvez vous rendre sur l'URL ``/courses`` et profiter des fonctionnalités.
 
 **Tests**
 

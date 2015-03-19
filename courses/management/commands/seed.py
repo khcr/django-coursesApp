@@ -17,13 +17,17 @@ class Command(BaseCommand):
         # Teacher
         teachers = Group(name="Teacher")
         teachers.save()
-        teacher = User(first_name="John", last_name="Smith", email="john@smith.com", username="smith.john", password="12341")
+        teacher = User.objects.create_user('smith.john', 'john@smith.com', '12341')
+        teacher.first_name = "John"
+        teacher.last_name = "Smith"
         teacher.save()
         teacher.groups.add(teachers)
         # Student
         students = Group(name="Student")
         students.save()
-        student = User(first_name="Alfred", last_name="Dupont", email="alfred@dupont.com", username="dupont.alfred", password="12341")
+        student = User.objects.create_user('dupont.alfred', 'alfred@dupont.com', '12341')
+        student.first_name = "Alfred"
+        student.last_name = "Dupont"
         student.save()
         student.groups.add(students)
         # Status
