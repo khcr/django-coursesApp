@@ -6,7 +6,7 @@ Démarrage
 
 * Python 3 et pip installé
 
-**Installer Django et les dépendences**
+**Installer Django et les dépendances**
 
 ``pip3 install -r requirements.txt``
 
@@ -32,7 +32,7 @@ Si besoin de se connecter à la zone d'administration ("/admin")
 **Données**
 
 * Créer les données nécessaires: ``python3 manage.py seed``
-* Finalement vous pouvez vous rendre sur l'URL ``/courses`` et profiter des des fonctionnalités.
+* Finalement vous pouvez vous rendre sur l'URL ``/courses`` et profiter des fonctionnalités.
 
 **Tests**
 

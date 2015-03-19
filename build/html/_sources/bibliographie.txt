@@ -2,7 +2,7 @@
 Bibliographie
 ===============
 
-#############
+##############
 Bibliographie
 ##############
 
@@ -12,7 +12,7 @@ Pierre Alexis & Hugues Bersini, Apprendre la programmation web avec Python et Dj
 
 Vincent Le Goff, Apprenez à programmer en Python
 
-#############
+##############
 Webographie
 ##############
 
