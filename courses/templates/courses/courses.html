@@ -4,9 +4,11 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <title>Cours</title>
 
+  <link rel="shortcut icon" type="image/png" href="/static/courses/images/favicon.png">
+
   {% load staticfiles %}
   <!-- Website's CSS -->
-  <link rel="stylesheet" href="{% static "courses/stylesheets/main.css" %}" />
+  <link rel="stylesheet" href="{% static "courses/stylesheets/main.css" %}">
 
   <!-- Bootstrap: Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -76,7 +78,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
-              <li><a href="{% url 'django.contrib.auth.views.logout' %}">Logout</a></li>
+              <li><a href="{% url 'django.contrib.auth.views.logout' %}">Déconnecter</a></li>
               <a class="navbar-brand">{{ user.username }}</a>
             {% else %}
               <li><a href="/login">Login</a></li>
