@@ -53,7 +53,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'TM 2014-15: Développement d\'une application de gestions de cours avec AngularJS'
+project = u'TM 2014-15: Développement d\'une application de gestion de cours avec AngularJS'
 copyright = u'2014, Keran Kocher'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -209,7 +209,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'tm2014.tex', u'Développement d\'une application de gestions de cours avec AngularJS',
+  ('index', 'tm2014.tex', u'Développement d\'une application de gestion de cours avec AngularJS',
    u'Keran Kocher', 'manual'),
 ]
 
@@ -239,7 +239,7 @@ latex_domain_indices = False
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'Développement d\'une application de gestions de cours avec AngularJS', u"Apprennez les bases d'AngularJS et développer un module de création et visionnage de cours en suivant ce manuscrit.",
+    ('index', 'Développement d\'une application de gestion de cours avec AngularJS', u"Apprennez les bases d'AngularJS et développer un module de création et visionnage de cours en suivant ce manuscrit.",
      [u'Keran Kocher'], 1)
 ]
 
@@ -253,8 +253,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'index', u'Développement d\'une application de gestions de cours avec AngularJS',
-   u'Keran Kocher', 'Développement d\'une application de gestions de cours avec AngularJS', "Apprennez les bases d'AngularJS et développer un module de création et visionnage de cours en suivant ce manuscrit.",
+  ('index', 'index', u'Développement d\'une application de gestion de cours avec AngularJS',
+   u'Keran Kocher', 'Développement d\'une application de gestion de cours avec AngularJS', "Apprennez les bases d'AngularJS et développer un module de création et visionnage de cours en suivant ce manuscrit.",
    'Framework JavaScript'),
 ]
 
