@@ -195,14 +195,8 @@ htmlhelp_basename = 'tm2014doc'
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
-# The paper size ('letterpaper' or 'a4paper').
-#'papersize': 'letterpaper',
-
-# The font size ('10pt', '11pt' or '12pt').
-#'pointsize': '10pt',
-
-# Additional stuff for the LaTeX preamble.
-#'preamble': '',
+  'classoptions': ',oneside',
+  'babel': '\\usepackage[french]{babel}'
 }
 
 # Grouping the document tree into LaTeX files. List of tuples

@@ -46,7 +46,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="index.html" class="fa fa-home"> TM 2014-15: Développement d'une application de gestions de cours avec AngularJS</a>
+        <a href="index.html" class="fa fa-home"> TM 2014-15: Développement d'une application de gestion de cours avec AngularJS</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -107,7 +107,11 @@
 <li class="toctree-l2"><a class="reference internal" href="bugs.html#ameliorations">Améliorations</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bibliographie.html">Bibliographie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliographie.html">Bibliographie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bibliographie.html#id1">Bibliographie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliographie.html#webographie">Webographie</a></li>
+</ul>
+</li>
 </ul>
 
         
@@ -120,7 +124,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">TM 2014-15: Développement d'une application de gestions de cours avec AngularJS</a>
+        <a href="index.html">TM 2014-15: Développement d'une application de gestion de cours avec AngularJS</a>
       </nav>
 
 
@@ -151,11 +155,11 @@
 <li><dl class="first docutils">
 <dt>courses/</dt>
 <dd><ul class="first last simple">
-<li><strong>admin.py</strong>: permet de rajouter les modèles qu&#8217;on veut voir apparaitre et modifier dans la zone d&#8217;administration Django. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/ref/contrib/admin/">Documentation officielle</a> <a class="footnote-reference" href="#f1" id="id1">[1]</a></li>
+<li><strong>admin.py</strong>: permet de rajouter les modèles que l&#8217;on veut voir apparaitre et modifier dans la zone d&#8217;administration Django. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/ref/contrib/admin/">Documentation officielle</a> <a class="footnote-reference" href="#f1" id="id1">[1]</a></li>
 <li><strong>api.py</strong>: regroupe toutes les vues génériques RestLess qui servent à construire l&#8217;API JSON nécessaire à l&#8217;application AngularJS. Les classés déclarées sont ensuite utilisées dans le fichier <tt class="docutils literal"><span class="pre">urls.py</span></tt>.</li>
-<li><strong>forms.py</strong>: déclare les formulaires Django nécessaire pour enregistrer les données d&#8217;une requête dans la base de données. Ils sont utilisés principalement dans le fichier <cite>api.py</cite>. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/forms/">Documentation officielle</a> <a class="footnote-reference" href="#f2" id="id2">[2]</a></li>
+<li><strong>forms.py</strong>: déclare les formulaires Django nécessaires pour enregistrer les données d&#8217;une requête dans la base de données. Ils sont utilisés principalement dans le fichier <cite>api.py</cite>. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/forms/">Documentation officielle</a> <a class="footnote-reference" href="#f2" id="id2">[2]</a></li>
 <li><strong>models.py</strong>: déclare les modèles de notre application. Contient également des méthodes d&#8217;instance pour certains modèles. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/db/models/">Documentation officielle</a> <a class="footnote-reference" href="#f3" id="id3">[3]</a></li>
-<li><strong>urls.py</strong>: contient les URL spécifiques à l&#8217;application. Elles sont ensuite ajoutée dans le fichier principal <tt class="docutils literal"><span class="pre">webmath/urls.py</span></tt>. La première url, de nom <tt class="docutils literal"><span class="pre">index</span></tt>, est la point de départ de notre application AngularJS. Le reste des routes est défini directement par AngularJS dans le fichier <tt class="docutils literal"><span class="pre">courses/static/courses/javascripts/config/routes.js</span></tt>. Dans <tt class="docutils literal"><span class="pre">urls.py</span></tt>, la deuxième url, de nom <tt class="docutils literal"><span class="pre">pdf</span></tt>, est celle qui génère le PDF d&#8217;un cours. Les routes qui suivent sont celle de l&#8217;API JSON qui utilisent les vues génériques du fichier <tt class="docutils literal"><span class="pre">api.py</span></tt>. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/http/urls/">Documentation officielle</a> <a class="footnote-reference" href="#f4" id="id4">[4]</a></li>
+<li><strong>urls.py</strong>: contient les URL spécifiques à l&#8217;application. Elles sont ensuite ajoutées dans le fichier principal <tt class="docutils literal"><span class="pre">webmath/urls.py</span></tt>. La première url, de nom <tt class="docutils literal"><span class="pre">index</span></tt>, est le point de départ de notre application AngularJS. Le reste des routes est défini directement par AngularJS dans le fichier <tt class="docutils literal"><span class="pre">courses/static/courses/javascripts/config/routes.js</span></tt>. Dans <tt class="docutils literal"><span class="pre">urls.py</span></tt>, la deuxième url, de nom <tt class="docutils literal"><span class="pre">pdf</span></tt>, est celle qui génère le PDF d&#8217;un cours. Les routes qui suivent sont celles de l&#8217;API JSON qui utilisent les vues génériques du fichier <tt class="docutils literal"><span class="pre">api.py</span></tt>. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/http/urls/">Documentation officielle</a> <a class="footnote-reference" href="#f4" id="id4">[4]</a></li>
 <li><strong>utils.py</strong>: regroupe une série de fonctions utiles utilisées à travers l&#8217;application.</li>
 <li><strong>views.py</strong>: contient les vues Django. A l&#8217;instar des URL, il n&#8217;y a que deux fonctions, une qui est le point de départ de l&#8217;application et l&#8217;autre qui génère le PDF d&#8217;un cours. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/http/views/">Documentation officielle</a> <a class="footnote-reference" href="#f5" id="id5">[5]</a></li>
 </ul>
@@ -167,7 +171,7 @@
 <li><dl class="first docutils">
 <dt>courses/static/courses/</dt>
 <dd><ul class="first last simple">
-<li><strong>html/</strong>: contient tous les fichiers HTML utilisés par AngularJS. Les pages HTML sont relié à une route dans le ficher <tt class="docutils literal"><span class="pre">courses/static/courses/javascripts/config/routes.js</span></tt> d&#8217;AngularJS qui s&#8217;occupe d&#8217;associer une route à un fichier HTML.</li>
+<li><strong>html/</strong>: contient tous les fichiers HTML utilisés par AngularJS. Les pages HTML sont reliées à une route dans le ficher <tt class="docutils literal"><span class="pre">courses/static/courses/javascripts/config/routes.js</span></tt> d&#8217;AngularJS qui s&#8217;occupe d&#8217;associer une route à un fichier HTML.</li>
 <li><strong>images/</strong>: contient les images utilisées pour le design de l&#8217;application.</li>
 <li><strong>stylesheets/</strong>: contient les feuilles de styles.</li>
 </ul>
@@ -178,7 +182,7 @@
 <dt>courses/static/courses/javascripts/:</dt>
 <dd><ul class="first last simple">
 <li><strong>config/routes.js</strong>: déclare les routes principales de notre application avec AngularJS. <a class="reference external" href="https://docs.angularjs.org/tutorial/step_07">Documentation officielle</a> <a class="footnote-reference" href="#f6" id="id6">[6]</a></li>
-<li><strong>controllers/</strong>: déclare les contrôleurs AngularJS. Un fichier correspond à une route et son controlleur. Ils sont utilisés dans le fichier <tt class="docutils literal"><span class="pre">courses/static/courses/javascripts/config/routes.js</span></tt>.</li>
+<li><strong>controllers/</strong>: déclare les contrôleurs AngularJS. Un fichier correspond à une route et son contrôleur. Ils sont utilisés dans le fichier <tt class="docutils literal"><span class="pre">courses/static/courses/javascripts/config/routes.js</span></tt>.</li>
 <li><strong>directives/</strong>: déclare des directives AngularJS. <a class="reference external" href="https://docs.angularjs.org/guide/directive">Documentation officielle</a> <a class="footnote-reference" href="#f7" id="id7">[7]</a></li>
 <li><strong>factories/resources.js</strong>: déclare des objets ressources qui permettent de communiquer facilement avec l&#8217;API. <a class="reference external" href="https://docs.angularjs.org/api/ngResource/service/$resource">Documentation officielle</a> <a class="footnote-reference" href="#f8" id="id8">[8]</a></li>
 <li><strong>filters/</strong>: déclare des filtres AngularJS. <a class="reference external" href="https://docs.angularjs.org/guide/filter">Documentation officielle</a> <a class="footnote-reference" href="#f9" id="id9">[9]</a></li>
@@ -215,9 +219,9 @@
 <li><strong>#/</strong>: Page d&#8217;accueil de l&#8217;application, on y trouve une liste des cours publiés. On peut les trier par catégories ou favoris.</li>
 <li><strong>#/new</strong>: Page qui permet aux enseignants de créer un nouveau cours.</li>
 <li><strong>#/:course_id/edit/:page</strong>: Page d&#8217;édition d&#8217;un cours. L&#8217;enseignant peut y éditer le contenu de son cours, le publier ou le retirer.</li>
-<li><strong>#/:course_id/preview/:page</strong>: Prévisualise une page d&#8217;un cours. Lorsqu&#8217;un enseigement rédige un cours, il peut voir le résultat final grâce à cette page.</li>
-<li><strong>#/teacher/courses:</strong> Liste de tous les cours du site, publié ou non.</li>
-<li><strong>#/help</strong>: Page qui fournit une aide pour les rédacteurs concernant la syntaxe Markdown et LaTex.</li>
+<li><strong>#/:course_id/preview/:page</strong>: Prévisualise une page d&#8217;un cours. Lorsqu&#8217;un enseignant rédige un cours, il peut voir le résultat final grâce à cette page.</li>
+<li><strong>#/teacher/courses:</strong> Liste de tous les cours du site, publiés ou non.</li>
+<li><strong>#/help</strong>: Page qui fournit une aide aux rédacteurs concernant la syntaxe <em>Markdown</em> et <em>LaTex</em>.</li>
 <li><strong>#/:course_id/edit</strong>: Page qui permet de modifier les informations de base d&#8217;un cours, telles que le nom, la description ou la difficulté.</li>
 <li><strong>#/:course_id/show/:page</strong>: Page pour lire un cours. Le cours y est affiché, on peut naviguer à travers les pages, commenter le cours, etc.</li>
 <li><strong>/pdf/:course_id/*.pdf</strong>: Renvoie un cours au format PDF pour pouvoir être téléchargé.</li>
@@ -303,7 +307,7 @@
 <li><p class="first"><strong>/pages/:page_id/progression</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li>POST: marque une page d&#8217;un cours comme compris ou à relire pour l&#8217;utilisateur.</li>
+<li>POST: marque une page d&#8217;un cours comme comprise ou à relire pour l&#8217;utilisateur.</li>
 </ul>
 </div></blockquote>
 </li>
@@ -314,8 +318,7 @@
 <h2>Concepts<a class="headerlink" href="#concepts" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="integration-d-angularjs-avec-django">
 <h3>Intégration d&#8217;AngularJS avec Django<a class="headerlink" href="#integration-d-angularjs-avec-django" title="Lien permanent vers ce titre">¶</a></h3>
-<p>En dehors de l&#8217;API et des PDF, Django ne fournit qu&#8217;une seule route dans l&#8217;application. En effet, à partir de cette route, Angular s&#8217;occupe de gérer les autres routes et les templates. Concrètement, quand on charge une page de notre application, la requête va d&#8217;abord passer par la vue Django <tt class="docutils literal"><span class="pre">index</span></tt> déclaré dans le fichier <cite>views.py</cite>. Cette vue s&#8217;occupe simplement d&#8217;afficher le template <tt class="docutils literal"><span class="pre">courses.html</span></tt>. Ce fichier HTML est un layout pour notre application, c&#8217;est-à-dire que son contenu sera sur toutes les pages. Il contient le menu, l&#8217;inclusion des fichiers JavaScript et des feuilles de syles ainsi que le pied de page. Dans la balise <tt class="docutils literal"><span class="pre">body</span></tt>, on a ajouté la directive Angular <tt class="docutils literal"><span class="pre">ng-app=Courses</span></tt>. On déclare qu&#8217;à l&#8217;intérieur de cette balise se trouve une application AngularJS nommée <tt class="docutils literal"><span class="pre">CoursesApp</span></tt>. Ainsi, une fois que Django a affiché le template <tt class="docutils literal"><span class="pre">courses.html</span></tt>, Angular va insérer le contenu du bon fichier HTML dans la balise <tt class="docutils literal"><span class="pre">body</span></tt> selon l&#8217;URL et les routes écrites dans le fichier <tt class="docutils literal"><span class="pre">routes.js</span></tt>. La page finale est maintenant visible par l&#8217;utilisateur. Par exemple, si on se rend sur <tt class="docutils literal"><span class="pre">courses/help</span></tt>, Angular s&#8217;occupe de chercher le fichier <tt class="docutils literal"><span class="pre">help.html</span></tt> et d&#8217;insérer son contenu dans la balise <tt class="docutils literal"><span class="pre">body</span></tt> de <tt class="docutils literal"><span class="pre">courses.html</span></tt>. L&#8217;avantage de ce système est que lorsqu&#8217;on change de page, la vue Django ne sera pas rappelée, mais seul le contenu de <cite>body</cite> sera mis à jour avec le contenu HTML approprié à l&#8217;URL. AngularJS rend ainsi notre site web plus rapide.</p>
-<p class="rubric">Notes</p>
+<p>En dehors de l&#8217;API et des PDF, Django ne fournit qu&#8217;une seule route dans l&#8217;application. En effet, à partir de cette route, Angular s&#8217;occupe de gérer les autres routes et les templates. Concrètement, quand on charge une page de notre application, la requête va d&#8217;abord passer par la vue Django <tt class="docutils literal"><span class="pre">index</span></tt> déclarée dans le fichier <cite>views.py</cite>. Cette vue s&#8217;occupe simplement d&#8217;afficher le template <tt class="docutils literal"><span class="pre">courses.html</span></tt>. Ce fichier HTML est un layout pour notre application, c&#8217;est-à-dire que son contenu est sur toutes les pages. Il contient le menu, l&#8217;inclusion des fichiers JavaScript et des feuilles de syle ainsi que le pied de page. Dans la balise <tt class="docutils literal"><span class="pre">body</span></tt>, on a ajouté la directive Angular <tt class="docutils literal"><span class="pre">ng-app=Courses</span></tt>. On déclare qu&#8217;à l&#8217;intérieur de cette balise se trouve une application AngularJS nommée <tt class="docutils literal"><span class="pre">CoursesApp</span></tt>. Ainsi, une fois que Django a affiché le template <tt class="docutils literal"><span class="pre">courses.html</span></tt>, Angular va insérer le contenu du bon fichier HTML dans la balise <tt class="docutils literal"><span class="pre">body</span></tt> selon l&#8217;URL et les routes écrites dans le fichier <tt class="docutils literal"><span class="pre">routes.js</span></tt>. La page finale est maintenant visible par l&#8217;utilisateur. Par exemple, si l&#8217;on se rend sur <tt class="docutils literal"><span class="pre">courses/help</span></tt>, Angular s&#8217;occupe de chercher le fichier <tt class="docutils literal"><span class="pre">help.html</span></tt> et d&#8217;insérer son contenu dans la balise <tt class="docutils literal"><span class="pre">body</span></tt> de <tt class="docutils literal"><span class="pre">courses.html</span></tt>. L&#8217;avantage de ce système est que lorsqu&#8217;on change de page, la vue Django n&#8217;est pas rappelée, mais seul le contenu de <cite>body</cite> est mis à jour avec le contenu HTML approprié à l&#8217;URL. AngularJS rend ainsi notre site web plus rapide.</p>
 <table class="docutils footnote" frame="void" id="f1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">

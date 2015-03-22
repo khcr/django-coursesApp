@@ -9,18 +9,18 @@ Fichiers
 Cette section permet de se retrouver dans la multitude de fichiers du projet et de comprendre certains processus.
 
 * courses/
-    * **admin.py**: permet de rajouter les modèles qu'on veut voir apparaitre et modifier dans la zone d'administration Django. `Documentation officielle <https://docs.djangoproject.com/fr/1.7/ref/contrib/admin/>`__ [#f1]_
+    * **admin.py**: permet de rajouter les modèles que l'on veut voir apparaitre et modifier dans la zone d'administration Django. `Documentation officielle <https://docs.djangoproject.com/fr/1.7/ref/contrib/admin/>`__ [#f1]_
     * **api.py**: regroupe toutes les vues génériques RestLess qui servent à construire l'API JSON nécessaire à l'application AngularJS. Les classés déclarées sont ensuite utilisées dans le fichier ``urls.py``.
-    * **forms.py**: déclare les formulaires Django nécessaire pour enregistrer les données d'une requête dans la base de données. Ils sont utilisés principalement dans le fichier `api.py`. `Documentation officielle <https://docs.djangoproject.com/fr/1.7/topics/forms/>`__ [#f2]_
+    * **forms.py**: déclare les formulaires Django nécessaires pour enregistrer les données d'une requête dans la base de données. Ils sont utilisés principalement dans le fichier `api.py`. `Documentation officielle <https://docs.djangoproject.com/fr/1.7/topics/forms/>`__ [#f2]_
     * **models.py**: déclare les modèles de notre application. Contient également des méthodes d'instance pour certains modèles. `Documentation officielle <https://docs.djangoproject.com/fr/1.7/topics/db/models/>`__ [#f3]_
-    * **urls.py**: contient les URL spécifiques à l'application. Elles sont ensuite ajoutée dans le fichier principal ``webmath/urls.py``. La première url, de nom ``index``, est la point de départ de notre application AngularJS. Le reste des routes est défini directement par AngularJS dans le fichier ``courses/static/courses/javascripts/config/routes.js``. Dans ``urls.py``, la deuxième url, de nom ``pdf``, est celle qui génère le PDF d'un cours. Les routes qui suivent sont celle de l'API JSON qui utilisent les vues génériques du fichier ``api.py``. `Documentation officielle <https://docs.djangoproject.com/fr/1.7/topics/http/urls/>`__ [#f4]_
+    * **urls.py**: contient les URL spécifiques à l'application. Elles sont ensuite ajoutées dans le fichier principal ``webmath/urls.py``. La première url, de nom ``index``, est le point de départ de notre application AngularJS. Le reste des routes est défini directement par AngularJS dans le fichier ``courses/static/courses/javascripts/config/routes.js``. Dans ``urls.py``, la deuxième url, de nom ``pdf``, est celle qui génère le PDF d'un cours. Les routes qui suivent sont celles de l'API JSON qui utilisent les vues génériques du fichier ``api.py``. `Documentation officielle <https://docs.djangoproject.com/fr/1.7/topics/http/urls/>`__ [#f4]_
     * **utils.py**: regroupe une série de fonctions utiles utilisées à travers l'application.
     * **views.py**: contient les vues Django. A l'instar des URL, il n'y a que deux fonctions, une qui est le point de départ de l'application et l'autre qui génère le PDF d'un cours. `Documentation officielle <https://docs.djangoproject.com/fr/1.7/topics/http/views/>`__ [#f5]_
 
 * **courses/templates/courses/**: contient le gabarit de base ``courses.html`` de notre application et le fichier Markdown ``pdf.md`` servant à générer le PDF d'un cours.
 
 * courses/static/courses/
-    * **html/**: contient tous les fichiers HTML utilisés par AngularJS. Les pages HTML sont relié à une route dans le ficher ``courses/static/courses/javascripts/config/routes.js`` d'AngularJS qui s'occupe d'associer une route à un fichier HTML.
+    * **html/**: contient tous les fichiers HTML utilisés par AngularJS. Les pages HTML sont reliées à une route dans le ficher ``courses/static/courses/javascripts/config/routes.js`` d'AngularJS qui s'occupe d'associer une route à un fichier HTML.
 
     * **images/**: contient les images utilisées pour le design de l'application.
 
@@ -28,7 +28,7 @@ Cette section permet de se retrouver dans la multitude de fichiers du projet et 
 
 * courses/static/courses/javascripts/:
     * **config/routes.js**: déclare les routes principales de notre application avec AngularJS. `Documentation officielle <https://docs.angularjs.org/tutorial/step_07>`__ [#f6]_
-    * **controllers/**: déclare les contrôleurs AngularJS. Un fichier correspond à une route et son controlleur. Ils sont utilisés dans le fichier ``courses/static/courses/javascripts/config/routes.js``.
+    * **controllers/**: déclare les contrôleurs AngularJS. Un fichier correspond à une route et son contrôleur. Ils sont utilisés dans le fichier ``courses/static/courses/javascripts/config/routes.js``.
     * **directives/**: déclare des directives AngularJS. `Documentation officielle <https://docs.angularjs.org/guide/directive>`__ [#f7]_
     * **factories/resources.js**: déclare des objets ressources qui permettent de communiquer facilement avec l'API. `Documentation officielle <https://docs.angularjs.org/api/ngResource/service/$resource>`__ [#f8]_
     * **filters/**: déclare des filtres AngularJS. `Documentation officielle <https://docs.angularjs.org/guide/filter>`__ [#f9]_
@@ -62,11 +62,11 @@ Utilisateurs
 
 * **#/:course_id/edit/:page**: Page d'édition d'un cours. L'enseignant peut y éditer le contenu de son cours, le publier ou le retirer.
 
-* **#/:course_id/preview/:page**: Prévisualise une page d'un cours. Lorsqu'un enseigement rédige un cours, il peut voir le résultat final grâce à cette page.
+* **#/:course_id/preview/:page**: Prévisualise une page d'un cours. Lorsqu'un enseignant rédige un cours, il peut voir le résultat final grâce à cette page.
 
-* **#/teacher/courses:** Liste de tous les cours du site, publié ou non.
+* **#/teacher/courses:** Liste de tous les cours du site, publiés ou non.
 
-* **#/help**: Page qui fournit une aide pour les rédacteurs concernant la syntaxe Markdown et LaTex.
+* **#/help**: Page qui fournit une aide aux rédacteurs concernant la syntaxe *Markdown* et *LaTex*.
 
 * **#/:course_id/edit**: Page qui permet de modifier les informations de base d'un cours, telles que le nom, la description ou la difficulté.
 
@@ -129,7 +129,7 @@ Les URLs de l'API sont dans l'espace de nom ``api``, par exemple ``/courses/api/
 
 * **/pages/:page_id/progression**
 
-    * POST: marque une page d'un cours comme compris ou à relire pour l'utilisateur.
+    * POST: marque une page d'un cours comme comprise ou à relire pour l'utilisateur.
 
 ########
 Concepts
@@ -139,9 +139,7 @@ Concepts
 Intégration d'AngularJS avec Django
 ************************************
 
-En dehors de l'API et des PDF, Django ne fournit qu'une seule route dans l'application. En effet, à partir de cette route, Angular s'occupe de gérer les autres routes et les templates. Concrètement, quand on charge une page de notre application, la requête va d'abord passer par la vue Django ``index`` déclaré dans le fichier `views.py`. Cette vue s'occupe simplement d'afficher le template ``courses.html``. Ce fichier HTML est un layout pour notre application, c'est-à-dire que son contenu sera sur toutes les pages. Il contient le menu, l'inclusion des fichiers JavaScript et des feuilles de syles ainsi que le pied de page. Dans la balise ``body``, on a ajouté la directive Angular ``ng-app=Courses``. On déclare qu'à l'intérieur de cette balise se trouve une application AngularJS nommée ``CoursesApp``. Ainsi, une fois que Django a affiché le template ``courses.html``, Angular va insérer le contenu du bon fichier HTML dans la balise ``body`` selon l'URL et les routes écrites dans le fichier ``routes.js``. La page finale est maintenant visible par l'utilisateur. Par exemple, si on se rend sur ``courses/help``, Angular s'occupe de chercher le fichier ``help.html`` et d'insérer son contenu dans la balise ``body`` de ``courses.html``. L'avantage de ce système est que lorsqu'on change de page, la vue Django ne sera pas rappelée, mais seul le contenu de `body` sera mis à jour avec le contenu HTML approprié à l'URL. AngularJS rend ainsi notre site web plus rapide.
-
-.. rubric:: Notes
+En dehors de l'API et des PDF, Django ne fournit qu'une seule route dans l'application. En effet, à partir de cette route, Angular s'occupe de gérer les autres routes et les templates. Concrètement, quand on charge une page de notre application, la requête va d'abord passer par la vue Django ``index`` déclarée dans le fichier `views.py`. Cette vue s'occupe simplement d'afficher le template ``courses.html``. Ce fichier HTML est un layout pour notre application, c'est-à-dire que son contenu est sur toutes les pages. Il contient le menu, l'inclusion des fichiers JavaScript et des feuilles de syle ainsi que le pied de page. Dans la balise ``body``, on a ajouté la directive Angular ``ng-app=Courses``. On déclare qu'à l'intérieur de cette balise se trouve une application AngularJS nommée ``CoursesApp``. Ainsi, une fois que Django a affiché le template ``courses.html``, Angular va insérer le contenu du bon fichier HTML dans la balise ``body`` selon l'URL et les routes écrites dans le fichier ``routes.js``. La page finale est maintenant visible par l'utilisateur. Par exemple, si l'on se rend sur ``courses/help``, Angular s'occupe de chercher le fichier ``help.html`` et d'insérer son contenu dans la balise ``body`` de ``courses.html``. L'avantage de ce système est que lorsqu'on change de page, la vue Django n'est pas rappelée, mais seul le contenu de `body` est mis à jour avec le contenu HTML approprié à l'URL. AngularJS rend ainsi notre site web plus rapide.
 
 .. [#f1] https://docs.djangoproject.com/fr/1.7/ref/contrib/admin
 .. [#f2] https://docs.djangoproject.com/fr/1.7/topics/forms/

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.2.20)  19 MAR 2015 14:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.2.20)  22 MAR 2015 23:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -816,35 +816,35 @@ Writing index file tm2014.idx
 (./tm2014.aux)
 \openout1 = `tm2014.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 119.
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 119.
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 119.
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 119.
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 119.
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 119.
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 119.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 119.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 120.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 120.
 
  (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 119.
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 119.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 120.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-LaTeX Info: Redefining \degres on input line 119.
-LaTeX Info: Redefining \dots on input line 119.
-LaTeX Info: Redefining \up on input line 119.
+LaTeX Info: Redefining \degres on input line 120.
+LaTeX Info: Redefining \dots on input line 120.
+LaTeX Info: Redefining \up on input line 120.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -875,7 +875,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box41
-Package hyperref Info: Link coloring ON on input line 119.
+Package hyperref Info: Link coloring ON on input line 120.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -885,113 +885,137 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count131
 )
-LaTeX Info: Redefining \ref on input line 119.
-LaTeX Info: Redefining \pageref on input line 119.
-LaTeX Info: Redefining \nameref on input line 119.
+LaTeX Info: Redefining \ref on input line 120.
+LaTeX Info: Redefining \pageref on input line 120.
+LaTeX Info: Redefining \nameref on input line 120.
 
 (./tm2014.out) (./tm2014.out)
 \@outlinefile=\write6
 \openout6 = `tm2014.out'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--122
+Underfull \hbox (badness 10000) in paragraph at lines 123--123
 
  []
 
-LaTeX Font Info:    Try loading font information for T1+phv on input line 122.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 123.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 122.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 123.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <17.28> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 122.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 123.
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <17.28> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 122.
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 123.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <17.28> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 122.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 123.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 122.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 123.
 <<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>> [1
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-] (./tm2014.toc
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 123.
+
+(./tm2014.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 58.
+
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 63.
- [1
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 58.
+[1
+
 
 ])
 \tf@toc=\write7
 \openout7 = `tm2014.toc'.
 
  [2]
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 123.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 123.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 123.
+
 Chapitre 1.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 127.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 128.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 127.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 128.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 127.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 138.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 128.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 139.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
 []\T1/ptm/m/n/10 Pour lan-cer les tests, ins-tal-ler d'abord Pro-trac-tor (ne p
 as lan-cer le ser-veur web-dri-ver) :
  []
 
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 182.
+
 [1
 
 
-] [2
-
 ]
 Chapitre 2.
-[3]
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 233.
+
+[2
+
+]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 239.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 240.
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <9> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 244.
- [4] <One_Way_Data_Binding.png, id=253, 401.5pt x 255.95625pt>
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 245.
+ [3] <One_Way_Data_Binding.png, id=245, 401.5pt x 255.95625pt>
 File: One_Way_Data_Binding.png Graphic file (type png)
 
 <use One_Way_Data_Binding.png>
-Package pdftex.def Info: One_Way_Data_Binding.png used on input line 287.
+Package pdftex.def Info: One_Way_Data_Binding.png used on input line 288.
 (pdftex.def)             Requested size: 401.49901pt x 255.95561pt.
 File: One_Way_Data_Binding.png Graphic file (type png)
  <use One_Way_Data_Binding.png>
-Package pdftex.def Info: One_Way_Data_Binding.png used on input line 287.
+Package pdftex.def Info: One_Way_Data_Binding.png used on input line 288.
 (pdftex.def)             Requested size: 401.49901pt x 255.95561pt.
 
-<Two_Way_Data_Binding.png, id=257, 401.5pt x 291.0875pt>
+<Two_Way_Data_Binding.png, id=249, 401.5pt x 291.0875pt>
 File: Two_Way_Data_Binding.png Graphic file (type png)
 
 <use Two_Way_Data_Binding.png>
-Package pdftex.def Info: Two_Way_Data_Binding.png used on input line 299.
+Package pdftex.def Info: Two_Way_Data_Binding.png used on input line 300.
 (pdftex.def)             Requested size: 401.49901pt x 291.08678pt.
 File: Two_Way_Data_Binding.png Graphic file (type png)
  <use Two_Way_Data_Binding.png>
-Package pdftex.def Info: Two_Way_Data_Binding.png used on input line 299.
+Package pdftex.def Info: Two_Way_Data_Binding.png used on input line 300.
 (pdftex.def)             Requested size: 401.49901pt x 291.08678pt.
+ [4 <./One_Way_Data_Binding.png>]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <9> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 311.
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 314.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 312.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 315.
 
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ts1pcr.fd
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-) [5] [6 <./One_Way_Data_Binding.png> <./Two_Way_Data_Binding.png>]
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 347.
- [7] [8
-
-]
+) [5 <./Two_Way_Data_Binding.png>] [6]
 Chapitre 3.
-<new.png, id=283, 667.49374pt x 615.29875pt>
+<new.png, id=271, 667.49374pt x 615.29875pt>
 File: new.png Graphic file (type png)
  <use new.png>
 Package pdftex.def Info: new.png used on input line 367.
@@ -1001,7 +1025,13 @@ File: new.png Graphic file (type png)
 Package pdftex.def Info: new.png used on input line 367.
 (pdftex.def)             Requested size: 469.755pt x 433.03458pt.
 
-[9] [10 <./new.png>] <edit.png, id=297, 1195.46625pt x 779.91376pt>
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 380.
+
+[7
+
+] [8 <./new.png>] <edit.png, id=285, 1195.46625pt x 779.91376pt>
 File: edit.png Graphic file (type png)
 
 <use edit.png>
@@ -1012,7 +1042,7 @@ File: edit.png Graphic file (type png)
 Package pdftex.def Info: edit.png used on input line 409.
 (pdftex.def)             Requested size: 469.755pt x 306.46194pt.
 
-<all_courses.png, id=298, 1053.9375pt x 485.815pt>
+<all_courses.png, id=286, 1053.9375pt x 485.815pt>
 File: all_courses.png Graphic file (type png)
  <use all_courses.png>
 Package pdftex.def Info: all_courses.png used on input line 420.
@@ -1022,41 +1052,40 @@ File: all_courses.png Graphic file (type png)
 <use all_courses.png>
 Package pdftex.def Info: all_courses.png used on input line 420.
 (pdftex.def)             Requested size: 469.755pt x 216.53911pt.
- [11] [12 <./edit.png>]
-<home.png, id=313, 1133.23375pt x 741.77126pt>
+ <home.png, id=287, 1133.23375pt x 741.77126pt>
 File: home.png Graphic file (type png)
- <use home.png>
+
+<use home.png>
 Package pdftex.def Info: home.png used on input line 436.
 (pdftex.def)             Requested size: 1133.23099pt x 741.76945pt.
 File: home.png Graphic file (type png)
  <use home.png>
 Package pdftex.def Info: home.png used on input line 436.
 (pdftex.def)             Requested size: 469.755pt x 307.47847pt.
-
-[13 <./all_courses.png>] [14 <./home.png>]
-<view.png, id=328, 1189.44376pt x 777.90625pt>
+ [9 <./edit.png>] [10 <./all_courses.png> <./home.png>] <view.png, id=308, 1189
+.44376pt x 777.90625pt>
 File: view.png Graphic file (type png)
  <use view.png>
 Package pdftex.def Info: view.png used on input line 460.
 (pdftex.def)             Requested size: 1189.44086pt x 777.90434pt.
 File: view.png Graphic file (type png)
- <use view.png>
+
+<use view.png>
 Package pdftex.def Info: view.png used on input line 460.
 (pdftex.def)             Requested size: 469.755pt x 307.21619pt.
-
-<comments.png, id=329, 1166.3575pt x 595.22375pt>
-File: comments.png Graphic file (type png)
- <use comments.png>
-Package pdftex.def Info: comments.png used on input line 471.
-(pdftex.def)             Requested size: 1166.35466pt x 595.2223pt.
+ <comments.png, id=309, 1166.3575pt x 595.22375pt>
 File: comments.png Graphic file (type png)
 
 <use comments.png>
 Package pdftex.def Info: comments.png used on input line 471.
+(pdftex.def)             Requested size: 1166.35466pt x 595.2223pt.
+File: comments.png Graphic file (type png)
+ <use comments.png>
+Package pdftex.def Info: comments.png used on input line 471.
 (pdftex.def)             Requested size: 469.755pt x 239.72919pt.
- [15 <./view.png>] [16 <./comments.png>]
+ [11 <./view.png>] [12 <./comments.png>]
 Chapitre 4.
-<use_cases.png, id=344, 192.72pt x 253.4268pt>
+<use_cases.png, id=323, 192.72pt x 253.4268pt>
 File: use_cases.png Graphic file (type png)
  <use use_cases.png>
 Package pdftex.def Info: use_cases.png used on input line 483.
@@ -1066,7 +1095,7 @@ File: use_cases.png Graphic file (type png)
 <use use_cases.png>
 Package pdftex.def Info: use_cases.png used on input line 483.
 (pdftex.def)             Requested size: 192.71951pt x 253.42618pt.
- <navigation_schema.png, id=345, 192.72pt x 321.3606pt>
+ <navigation_schema.png, id=324, 192.72pt x 321.3606pt>
 File: navigation_schema.png Graphic file (type png)
 
 <use navigation_schema.png>
@@ -1076,12 +1105,16 @@ File: navigation_schema.png Graphic file (type png)
  <use navigation_schema.png>
 Package pdftex.def Info: navigation_schema.png used on input line 492.
 (pdftex.def)             Requested size: 192.71951pt x 321.3598pt.
- [17
 
- <./use_cases.png>]
-[18 <./navigation_schema.png>]
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 496.
+
+[13
+
+ <./use_cases.png>] [14 <./navigation_schema.png>]
 Chapitre 5.
-<bd.png, id=356, 308.352pt x 120.45pt>
+<bd.png, id=335, 308.352pt x 120.45pt>
 File: bd.png Graphic file (type png)
  <use bd.png>
 Package pdftex.def Info: bd.png used on input line 506.
@@ -1091,7 +1124,7 @@ File: bd.png Graphic file (type png)
 Package pdftex.def Info: bd.png used on input line 506.
 (pdftex.def)             Requested size: 308.35124pt x 120.44969pt.
 
-<uml_courses.png, id=357, 897.3525pt x 589.20125pt>
+<uml_courses.png, id=336, 897.3525pt x 589.20125pt>
 File: uml_courses.png Graphic file (type png)
  <use uml_courses.png>
 Package pdftex.def Info: uml_courses.png used on input line 522.
@@ -1101,132 +1134,164 @@ File: uml_courses.png Graphic file (type png)
 <use uml_courses.png>
 Package pdftex.def Info: uml_courses.png used on input line 522.
 (pdftex.def)             Requested size: 469.755pt x 308.43623pt.
- [19
 
- <./bd.png>]
-<schema_cours.png, id=363, 308.352pt x 120.45pt>
-File: schema_cours.png Graphic file (type png)
- <use schema_cours.png>
-Package pdftex.def Info: schema_cours.png used on input line 530.
-(pdftex.def)             Requested size: 308.35124pt x 120.44969pt.
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 523.
+
+[15
+
+ <./bd.png>] <schema_cours.png, id=342, 308.352pt x 120.45pt>
 File: schema_cours.png Graphic file (type png)
 
 <use schema_cours.png>
 Package pdftex.def Info: schema_cours.png used on input line 530.
 (pdftex.def)             Requested size: 308.35124pt x 120.44969pt.
- [20 <./uml_courses.png>]
+File: schema_cours.png Graphic file (type png)
+ <use schema_cours.png>
+Package pdftex.def Info: schema_cours.png used on input line 530.
+(pdftex.def)             Requested size: 308.35124pt x 120.44969pt.
+ [16 <./uml_courses.png>]
 LaTeX Font Info:    Font shape `TS1/pcr/m/it' in size <9> not available
-(Font)              Font shape `TS1/pcr/m/sl' tried instead on input line 570.
- [21 <./schema_cours.png>]
-[22] [23] [24]
+(Font)              Font shape `TS1/pcr/m/sl' tried instead on input line 572.
+ [17 <./schema_cours.png>] [18] [19] [20]
 Chapitre 6.
-[25
 
-] [26] <http.png, id=409, 308.352pt x 120.45pt>
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 714.
+
+[21
+
+] [22] <http.png, id=388, 308.352pt x 120.45pt>
 File: http.png Graphic file (type png)
  <use http.png>
-Package pdftex.def Info: http.png used on input line 790.
+Package pdftex.def Info: http.png used on input line 797.
 (pdftex.def)             Requested size: 308.35124pt x 120.44969pt.
 File: http.png Graphic file (type png)
 
 <use http.png>
-Package pdftex.def Info: http.png used on input line 790.
+Package pdftex.def Info: http.png used on input line 797.
 (pdftex.def)             Requested size: 308.35124pt x 120.44969pt.
- [27 <./http.png>] <requetes.png, id=418, 308.352pt x 168.63pt>
+ [23 <./http.png>] <requetes.png, id=396, 308.352pt x 168.63pt>
 File: requetes.png Graphic file (type png)
 
 <use requetes.png>
-Package pdftex.def Info: requetes.png used on input line 840.
+Package pdftex.def Info: requetes.png used on input line 847.
 (pdftex.def)             Requested size: 308.35124pt x 168.62958pt.
 File: requetes.png Graphic file (type png)
  <use requetes.png>
-Package pdftex.def Info: requetes.png used on input line 840.
+Package pdftex.def Info: requetes.png used on input line 847.
 (pdftex.def)             Requested size: 308.35124pt x 168.62958pt.
 
-<surcharge.png, id=422, 308.352pt x 168.63pt>
+<surcharge.png, id=400, 308.352pt x 168.63pt>
 File: surcharge.png Graphic file (type png)
  <use surcharge.png>
-Package pdftex.def Info: surcharge.png used on input line 850.
+Package pdftex.def Info: surcharge.png used on input line 857.
 (pdftex.def)             Requested size: 308.35124pt x 168.62958pt.
 File: surcharge.png Graphic file (type png)
 
 <use surcharge.png>
-Package pdftex.def Info: surcharge.png used on input line 850.
+Package pdftex.def Info: surcharge.png used on input line 857.
 (pdftex.def)             Requested size: 308.35124pt x 168.62958pt.
- [28 <./requetes.png>] [29 <./surcharge.png>] [30
-
-]
+ [24 <./requetes.png>]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 863.
+ [25 <./surcharge.png>]
 Chapitre 7.
-<mathjax.png, id=452, 218.8175pt x 94.3525pt>
+<mathjax.png, id=425, 218.8175pt x 94.3525pt>
 File: mathjax.png Graphic file (type png)
  <use mathjax.png>
-Package pdftex.def Info: mathjax.png used on input line 892.
+Package pdftex.def Info: mathjax.png used on input line 899.
 (pdftex.def)             Requested size: 218.81696pt x 94.35225pt.
 File: mathjax.png Graphic file (type png)
 
 <use mathjax.png>
-Package pdftex.def Info: mathjax.png used on input line 892.
+Package pdftex.def Info: mathjax.png used on input line 899.
 (pdftex.def)             Requested size: 218.81696pt x 94.35225pt.
- [31] [32 <./mathjax.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 955--956
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 906.
+
+[26
+
+] [27 <./mathjax.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 962--963
 []\T1/ptm/b/n/10 restrict \T1/ptm/m/n/10 : `AE' si-gni-fie que notre di-rec-tiv
 e peut être un at-tri-but (A = At-tri-but), avec le
  []
 
 
-Underfull \hbox (badness 8094) in paragraph at lines 955--956
+Underfull \hbox (badness 8094) in paragraph at lines 962--963
 \T1/ptm/m/n/10 forme \T1/pcr/m/n/10 <directive></directive> \T1/ptm/m/n/10 ou u
 n élé-ment (E = Ele-ment), avec la forme \T1/pcr/m/n/10 <div
  []
 
-[33] [34]
+[28] [29]
 Chapitre 8.
-[35
 
-] [36]
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 1020.
+
+[30
+
+] [31]
 Chapitre 9.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1085--1086
+Underfull \hbox (badness 10000) in paragraph at lines 1090--1091
 []\T1/ptm/b/n/10 controllers/ \T1/ptm/m/n/10 : dé-clare les contrô-leurs An-gu-
 larJS. Un fi-chier cor-res-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1085--1086
-\T1/ptm/m/n/10 pond à une route et son control-leur. Ils sont uti-li-sés dans l
-e fi-chier
+Underfull \hbox (badness 10000) in paragraph at lines 1090--1091
+\T1/ptm/m/n/10 pond à une route et son contrô-leur. Ils sont uti-li-sés dans le
+ fi-chier
  []
 
-[37
 
-] [38] [39] [40
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 1091.
 
-]
+[32
+
+] [33] [34]
 Chapitre 10.
-[41] [42
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 1342.
+
+[35
 
 ]
 Chapitre 11.
 (./tm2014.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1378.
- [43]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1378.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1382.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 1382.
+
+[36
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1382.
  (./tm2014.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1378.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1378.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1382.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1382.
 
 Package rerunfilecheck Info: File `tm2014.out' has not changed.
 (rerunfilecheck)             Checksum: 044544D5D20D64EBC3F8CE9529C41B2F;1942.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1378.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1382.
  ) 
 Here is how much of TeX's memory you used:
- 10092 strings out of 493117
- 142078 string characters out of 6135433
- 241005 words of memory out of 5000000
- 13085 multiletter control sequences out of 15000+600000
- 82936 words of font info for 89 fonts, out of 8000000 for 9000
+ 10083 strings out of 493117
+ 141990 string characters out of 6135433
+ 240971 words of memory out of 5000000
+ 13087 multiletter control sequences out of 15000+600000
+ 84096 words of font info for 90 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 37i,12n,49p,2172b,606s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,12n,49p,2184b,606s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1235,13 +1300,14 @@ live/2014/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/201
 4/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/texmf-
 dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/local/texlive/2014/texmf-dist/fo
 nts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
-e1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
-times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr
-8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on tm2014.pdf (47 pages, 912798 bytes).
+e1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw
+/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/
+utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on tm2014.pdf (39 pages, 916476 bytes).
 PDF statistics:
- 658 PDF objects out of 1000 (max. 8388607)
- 570 compressed objects within 6 object streams
- 161 named destinations out of 1000 (max. 500000)
+ 622 PDF objects out of 1000 (max. 8388607)
+ 541 compressed objects within 6 object streams
+ 148 named destinations out of 1000 (max. 500000)
  378 words of extra memory for PDF output out of 10000 (max. 10000000)
 

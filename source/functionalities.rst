@@ -125,7 +125,7 @@ Les commentaires
 Chaque lecteur a la possibilité de commenter un cours, pour le complimenter, émettre une critique ou poser une question. En bas de chaque page du cours se trouve un lien "Afficher/masquer les commentaires" (1). Cela permet de montrer tous les commentaires ou de les cacher en cliquant dessus. Dans cette section, l'utilisateur voit chaque commentaire du cours avec son auteur et la date de publication (2). En dessous des commentaires se trouve une zone de texte (3) dans laquelle l'on peut écrire son propre commentaire. Au fur et à mesure que l'on tape son message, le commentaire s'affiche dans la liste (4), mais n'est pas encore envoyé. Une fois le texte rédigé, il faut le poster en cliquant sur le bouton "Envoyer" (5) pour qu'il soit instantanément visible par les autres lecteurs.
 
 .. figure:: images/comments.png
-    :scale: 100%
+    :scale: 60%
     :align: center
 
     Les commentaires

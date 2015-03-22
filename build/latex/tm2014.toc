@@ -1,65 +1,60 @@
 \select@language {french}
 \contentsline {chapter}{\numberline {1}D\IeC {\'e}marrage}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}AngularJS}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Introduction}{3}{section.2.1}
-\contentsline {section}{\numberline {2.2}Sp\IeC {\'e}cificit\IeC {\'e}s et avantages}{4}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Du HTML expressif}{4}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Two-way data binding}{5}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Et plus encore...}{7}{subsection.2.2.3}
-\contentsline {paragraph}{Notes}{7}{paragraph*.3}
-\contentsline {chapter}{\numberline {3}Fonctionnalit\IeC {\'e}s}{9}{chapter.3}
-\contentsline {section}{\numberline {3.1}Les professeurs}{9}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Cr\IeC {\'e}ation}{9}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}R\IeC {\'e}daction}{9}{subsection.3.1.2}
-\contentsline {subsubsection}{Structurer son cours}{9}{subsubsection*.4}
-\contentsline {subsubsection}{Mise en forme}{11}{subsubsection*.5}
-\contentsline {subsubsection}{Ajouter des m\IeC {\'e}dias}{11}{subsubsection*.6}
-\contentsline {subsubsection}{Modifier les informations de base}{11}{subsubsection*.7}
-\contentsline {subsubsection}{Publier un cours}{11}{subsubsection*.8}
-\contentsline {subsubsection}{Retrouver son cours}{13}{subsubsection*.9}
-\contentsline {section}{\numberline {3.2}Les \IeC {\'e}tudiants}{13}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Trouver un cours}{13}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Lire un cours}{13}{subsection.3.2.2}
-\contentsline {subsubsection}{Les favoris}{13}{subsubsection*.10}
-\contentsline {subsubsection}{La progression}{15}{subsubsection*.11}
-\contentsline {subsubsection}{T\IeC {\'e}l\IeC {\'e}charger le cours}{15}{subsubsection*.12}
-\contentsline {subsubsection}{Les commentaires}{15}{subsubsection*.13}
-\contentsline {chapter}{\numberline {4}Sch\IeC {\'e}mas}{17}{chapter.4}
-\contentsline {section}{\numberline {4.1}Use cases}{17}{section.4.1}
-\contentsline {section}{\numberline {4.2}Navigation}{17}{section.4.2}
-\contentsline {chapter}{\numberline {5}Mod\IeC {\`e}le relationnel}{19}{chapter.5}
-\contentsline {section}{\numberline {5.1}Introduction}{19}{section.5.1}
-\contentsline {section}{\numberline {5.2}Les cours}{20}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}La structure}{20}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Utilisation}{20}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Les chapitres}{22}{section.5.3}
-\contentsline {section}{\numberline {5.4}Les commentaires}{23}{section.5.4}
-\contentsline {section}{\numberline {5.5}La progression}{23}{section.5.5}
-\contentsline {paragraph}{Notes}{24}{paragraph*.14}
-\contentsline {chapter}{\numberline {6}RestLess}{25}{chapter.6}
-\contentsline {section}{\numberline {6.1}Pr\IeC {\'e}sentation}{25}{section.6.1}
-\contentsline {section}{\numberline {6.2}Les vues g\IeC {\'e}n\IeC {\'e}riques}{25}{section.6.2}
-\contentsline {section}{\numberline {6.3}Fonctionnement de RestLess}{27}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}HTTP}{27}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Les classes RestLess}{28}{subsection.6.3.2}
-\contentsline {paragraph}{Notes}{29}{paragraph*.15}
-\contentsline {chapter}{\numberline {7}MathJax}{31}{chapter.7}
-\contentsline {section}{\numberline {7.1}Installation}{31}{section.7.1}
-\contentsline {section}{\numberline {7.2}Personnalisation}{32}{section.7.2}
-\contentsline {paragraph}{Notes}{34}{paragraph*.16}
-\contentsline {chapter}{\numberline {8}Tests}{35}{chapter.8}
-\contentsline {paragraph}{Notes}{36}{paragraph*.17}
-\contentsline {chapter}{\numberline {9}Guide du d\IeC {\'e}veloppeur}{37}{chapter.9}
-\contentsline {section}{\numberline {9.1}Fichiers}{37}{section.9.1}
-\contentsline {section}{\numberline {9.2}URL}{38}{section.9.2}
-\contentsline {subsection}{\numberline {9.2.1}Utilisateurs}{38}{subsection.9.2.1}
-\contentsline {subsection}{\numberline {9.2.2}API}{39}{subsection.9.2.2}
-\contentsline {section}{\numberline {9.3}Concepts}{39}{section.9.3}
-\contentsline {subsection}{\numberline {9.3.1}Int\IeC {\'e}gration d'AngularJS avec Django}{39}{subsection.9.3.1}
-\contentsline {paragraph}{Notes}{39}{paragraph*.18}
-\contentsline {chapter}{\numberline {10}Bugs et am\IeC {\'e}liorations}{41}{chapter.10}
-\contentsline {section}{\numberline {10.1}Bugs}{41}{section.10.1}
-\contentsline {section}{\numberline {10.2}Am\IeC {\'e}liorations}{41}{section.10.2}
-\contentsline {chapter}{\numberline {11}Bibliographie}{43}{chapter.11}
-\contentsline {section}{\numberline {11.1}Bibliographie}{43}{section.11.1}
-\contentsline {section}{\numberline {11.2}Webographie}{43}{section.11.2}
+\contentsline {chapter}{\numberline {2}AngularJS}{2}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{2}{section.2.1}
+\contentsline {section}{\numberline {2.2}Sp\IeC {\'e}cificit\IeC {\'e}s et avantages}{3}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Du HTML expressif}{3}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Two-way data binding}{4}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Et plus encore...}{6}{subsection.2.2.3}
+\contentsline {chapter}{\numberline {3}Fonctionnalit\IeC {\'e}s}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Les professeurs}{7}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Cr\IeC {\'e}ation}{7}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}R\IeC {\'e}daction}{7}{subsection.3.1.2}
+\contentsline {subsubsection}{Structurer son cours}{7}{subsubsection*.3}
+\contentsline {subsubsection}{Mise en forme}{8}{subsubsection*.4}
+\contentsline {subsubsection}{Ajouter des m\IeC {\'e}dias}{9}{subsubsection*.5}
+\contentsline {subsubsection}{Modifier les informations de base}{9}{subsubsection*.6}
+\contentsline {subsubsection}{Publier un cours}{9}{subsubsection*.7}
+\contentsline {subsubsection}{Retrouver son cours}{9}{subsubsection*.8}
+\contentsline {section}{\numberline {3.2}Les \IeC {\'e}tudiants}{9}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Trouver un cours}{10}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Lire un cours}{10}{subsection.3.2.2}
+\contentsline {subsubsection}{Les favoris}{10}{subsubsection*.9}
+\contentsline {subsubsection}{La progression}{11}{subsubsection*.10}
+\contentsline {subsubsection}{T\IeC {\'e}l\IeC {\'e}charger le cours}{11}{subsubsection*.11}
+\contentsline {subsubsection}{Les commentaires}{11}{subsubsection*.12}
+\contentsline {chapter}{\numberline {4}Sch\IeC {\'e}mas}{13}{chapter.4}
+\contentsline {section}{\numberline {4.1}Use cases}{13}{section.4.1}
+\contentsline {section}{\numberline {4.2}Navigation}{13}{section.4.2}
+\contentsline {chapter}{\numberline {5}Mod\IeC {\`e}le relationnel}{15}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{15}{section.5.1}
+\contentsline {section}{\numberline {5.2}Les cours}{16}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}La structure}{16}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Utilisation}{16}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Les chapitres}{19}{section.5.3}
+\contentsline {section}{\numberline {5.4}Les commentaires}{19}{section.5.4}
+\contentsline {section}{\numberline {5.5}La progression}{19}{section.5.5}
+\contentsline {chapter}{\numberline {6}RestLess}{21}{chapter.6}
+\contentsline {section}{\numberline {6.1}Pr\IeC {\'e}sentation}{21}{section.6.1}
+\contentsline {section}{\numberline {6.2}Les vues g\IeC {\'e}n\IeC {\'e}riques}{21}{section.6.2}
+\contentsline {section}{\numberline {6.3}Fonctionnement de RestLess}{23}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}HTTP}{23}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Les classes RestLess}{24}{subsection.6.3.2}
+\contentsline {paragraph}{Notes}{25}{paragraph*.13}
+\contentsline {chapter}{\numberline {7}MathJax}{26}{chapter.7}
+\contentsline {section}{\numberline {7.1}Installation}{26}{section.7.1}
+\contentsline {section}{\numberline {7.2}Personnalisation}{27}{section.7.2}
+\contentsline {chapter}{\numberline {8}Tests}{30}{chapter.8}
+\contentsline {chapter}{\numberline {9}Guide du d\IeC {\'e}veloppeur}{32}{chapter.9}
+\contentsline {section}{\numberline {9.1}Fichiers}{32}{section.9.1}
+\contentsline {section}{\numberline {9.2}URL}{33}{section.9.2}
+\contentsline {subsection}{\numberline {9.2.1}Utilisateurs}{33}{subsection.9.2.1}
+\contentsline {subsection}{\numberline {9.2.2}API}{34}{subsection.9.2.2}
+\contentsline {section}{\numberline {9.3}Concepts}{34}{section.9.3}
+\contentsline {subsection}{\numberline {9.3.1}Int\IeC {\'e}gration d'AngularJS avec Django}{34}{subsection.9.3.1}
+\contentsline {chapter}{\numberline {10}Bugs et am\IeC {\'e}liorations}{35}{chapter.10}
+\contentsline {section}{\numberline {10.1}Bugs}{35}{section.10.1}
+\contentsline {section}{\numberline {10.2}Am\IeC {\'e}liorations}{35}{section.10.2}
+\contentsline {chapter}{\numberline {11}Bibliographie}{36}{chapter.11}
+\contentsline {section}{\numberline {11.1}Bibliographie}{36}{section.11.1}
+\contentsline {section}{\numberline {11.2}Webographie}{36}{section.11.2}
