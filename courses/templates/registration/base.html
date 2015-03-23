@@ -4,16 +4,17 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <title>Cours</title>
 
+  <!-- Favicon -->
   <link rel="shortcut icon" type="image/png" href="/static/courses/images/favicon.png">
 
   {% load staticfiles %}
-  <!-- Website's CSS -->
+  <!-- CSS du site -->
   <link rel="stylesheet" href="{% static "courses/stylesheets/main.css" %}">
 
-  <!-- Bootstrap: Latest compiled and minified CSS -->
+  <!-- Bootstrap: CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
-  <!-- Bootstrap: Latest compiled and minified JavaScript -->
+  <!-- Bootstrap: JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 </head>
@@ -52,6 +53,7 @@
       </div><!-- /.container-fluid -->
     </nav>
 
+    <!-- Contenu ajouté dans cette div -->
     <div class="container">
       {% block content %}{% endblock %}
     </div>  

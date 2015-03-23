@@ -1,8 +1,11 @@
 <div id="edit-course">
+
+  <!-- Titre du cours -->
   <div>
     <h1 class="course-title noline">{{ course.name }}</h1><a ng-href="#/{{ course.id }}/edit"><span class="glyphicon glyphicon-cog"></span><small>Editer</small></a>
   </div>
 
+  <!-- Barre de boutons -->
   <div class="pull-right margin bottom">
     <small id="last-save"><em>Dernière sauvegarde: {{ lastSave | date: "H 'h' mm 'min' et ss 'sec'" }}</em></small>
     <button id="save-page" type="button" ng-click="saveCourse()" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk"></span> Enregistrer</button>
@@ -12,11 +15,13 @@
     <a target="_blank" href="#/help"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-question-sign"></span> Aide</button></a>
   </div>
 
+  <!-- Titre de la page -->
   <div class="pull-left">
     <input id="page-name" class="form-control" type="text" ng-model="page.name" ng-maxlength=50 
       ng-pattern="/^[\w\sáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]+$/" required>
   </div>
 
+  <!-- Sections -->
   <form class="form-horizontal" role="form" name="editCourse" novalidate>
 
     <div class="margin bottom">
@@ -27,7 +32,9 @@
         </div>
         <div>
           <textarea class="col-sm-10" ng-model="section.markdown_content" msd-elastic="\n" required></textarea>
+          
           <div class="col-sm-1 block">
+            <!-- Boutons pour déplacer ou supprimer une section -->
             <div><span class="glyphicon glyphicon-remove remove-section" ng-click="removeSection(key)"></span></div>
             <div><span class="glyphicon glyphicon-chevron-up up-section" ng-click="upSection(key)"></span></div>
             <div><span class="glyphicon glyphicon-chevron-down down-section" ng-click="downSection(key)"></span></div>
@@ -36,9 +43,14 @@
       </div>
     </div>
 
+    <!-- Barre de boutons -->
     <div class="form-group">
+
+      <!-- Ajouter une section -->
       <div class="pull-left"><button id="new-section" class="btn btn-default" ng-click="newSection()" type="button"><span class="glyphicon glyphicon-plus"></span></button></div>
+
       <div class="pull-right page-links">
+        <!-- Liste des pages et boutons pour en ajouter une -->
         <span ng-repeat="page in pages"></span>
         <span ng-repeat="number in [] | range:1:page.total_pages">
           <a ng-class="{disabled: isCurrentPage(number)}" ng-href="#/{{ course.id }}/edit/{{ number }}">{{ number }}</a>

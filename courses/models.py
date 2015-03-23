@@ -19,7 +19,7 @@ class Chapter(models.Model):
       return self.name
 
 #
-# Status progressions
+# Statuts
 #
 class Status(models.Model):
     name = models.CharField(max_length=50, unique=True)
@@ -28,7 +28,7 @@ class Status(models.Model):
         return self.name
 
 #
-# Course build
+# Cours
 #
 class Course(models.Model):
     name = models.CharField(max_length=50, unique=True)
@@ -39,9 +39,6 @@ class Course(models.Model):
     author = models.ForeignKey(User, related_name="courses")
     chapter = models.ForeignKey(Chapter, related_name="courses")
     favorites = models.ManyToManyField(User, related_name="favorite_courses", blank=True, null=True)
-    # videos = models.ManyToManyField(Video)
-    # images = models.ManyToManyField(Image)
-    # definitions = models.ManyToManyField(Definition)
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -49,14 +46,20 @@ class Course(models.Model):
     def __str__(self):
       return self.name
 
+    # retourne le nombre total de pages du cours
     def total_pages(self):
         return self.pages.count()
 
+    # calcule le pourcentage lu du cours en fonction de la progression et du nombre total de pages
     def percentage(self):
+        # pages marquées comme "comprises"
         done = self.pages.filter(progression__status__name="Compris").count()
+        # pourcentage
         percentage = done / self.total_pages() * 100
+        # arrondit le pourcentage
         return round(percentage/5) * 5
 
+    # retourne si le cours fait parti des favoris d'un utilisateur
     def has_favorite(self, user):
         return user in self.favorites.all()
 
@@ -71,11 +74,14 @@ class Page(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
+        # Par défautm retourne les pages triées par la colonne "order"
         ordering = ['order']
 
     def __str__(self):
       return self.name
 
+    # retourne le statut d'une page pour un utilisateur
+    # Par exemple "Compris" ou "Relire"
     def state(self, user):
         try:
             progession = self.progression_set.get(user=user)
@@ -96,14 +102,17 @@ class Section(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
+        # Par défaut, retourne les sections triées par la colonne "order"
         ordering = ['order']
 
     def __str__(self):
       return self.name
 
 #
-# User functionalities
+# Fonctionnalité pour les utilisateurs
 #
+
+# Commentaires dans un cours
 class CourseComment(models.Model):
     content = models.TextField(max_length=300)
     
@@ -114,6 +123,7 @@ class CourseComment(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
+# Progression dans un cours
 class Progression(models.Model):
     page = models.ForeignKey(Page)
     status = models.ForeignKey(Status)
@@ -129,6 +139,7 @@ class Progression(models.Model):
 # Méthodes d'utilisateurs
 #
 
+# teste si l'utilisateur est un professeur
 def is_teacher(self):
     return self.groups.filter(name="Teacher").exists()
 

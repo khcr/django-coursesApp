@@ -1,3 +1,5 @@
+# Router Django pour indiquer quelle base de données utiliser
+# ce router indique s'il faut utiliser la base de données de test
 import os
 
 class TestRouter(object):
@@ -16,10 +18,14 @@ class TestRouter(object):
 
     @staticmethod
     def test_db():
+        # voir la commande de tests dans courses/management/commands/tests.py
+        # on y assigne une variable d'environnement pour indiquer que les tests sont en cours
         try:
+            # variable d'environnement
             env = os.environ['WEBMATH_ENV']
         except KeyError:
             env = ""
+        # teste si l'application est en environnement de test
         if env == "test":
             return "test"
         else:

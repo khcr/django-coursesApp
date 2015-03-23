@@ -5,16 +5,17 @@ from courses.utils import clear_tables
 import os
 
 class Command(BaseCommand):
-    help = 'Create demo data for testing'
+    help = 'Crée des données de démonstration'
 
     def handle(self, *args, **options):
+        # nettoie les tables
         clear_tables([Group, Theme, Chapter, User, Status, Course, Page, Section, Progression, CourseComment])
-        # Chapters & Themes
+        # Ajoute un thème et un chapitre
         theme = Theme(name="Géométrie")
         theme.save()
         chapter = Chapter(theme=theme, name="Les droites")
         chapter.save()
-        # Teacher
+        # Ajoute un enseignant
         teachers = Group(name="Teacher")
         teachers.save()
         teacher = User.objects.create_user('smith.john', 'john@smith.com', '12341')
@@ -22,7 +23,7 @@ class Command(BaseCommand):
         teacher.last_name = "Smith"
         teacher.save()
         teacher.groups.add(teachers)
-        # Student
+        # Ajoute un étudiant
         students = Group(name="Student")
         students.save()
         student = User.objects.create_user('dupont.alfred', 'alfred@dupont.com', '12341')
@@ -30,10 +31,10 @@ class Command(BaseCommand):
         student.last_name = "Dupont"
         student.save()
         student.groups.add(students)
-        # Status
+        # Ajoute les statuts nécessaires
         Status(name="Compris").save()
         Status(name="Relire").save()
-        # Demo course
+        # Crée un cours
         course = Course(name="Equations de droites", 
             description="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
             difficulty=2,
@@ -61,4 +62,4 @@ class Command(BaseCommand):
         page_2.save()
         Section(name="Pretium", html_content=text_2, markdown_content=text_2, order=1, page=page_2).save()
 
-        self.stdout.write('data created')
+        self.stdout.write('Données créées')

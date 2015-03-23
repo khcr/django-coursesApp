@@ -63,6 +63,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     },
+    # ajoute une base de données pour les tests
     'test': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'test.sqlite3'),
@@ -94,5 +95,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
+# URL de redirection après que l'utilisateur s'est authentifié
 LOGIN_REDIRECT_URL = "/courses/#"
+# URL pour se connecter
 LOGIN_URL = "/login"

@@ -1,7 +1,9 @@
 <h1>Home</h1>
 <h2 class="text-center">Les cours</h2>
 <div id="home">
+  
   <div class="categories">
+    <!-- Liens pour trier les cours -->
     <div class="category"><strong>Choisir <span class="glyphicon glyphicon-search"></span></strong></div>
     <div class="category" ng-class="{current: currentCategory('Tous')}" ng-click="changeCategory()">Tous</div>
     <div id="favorites" class="category" ng-class="{current: currentCategory('Favoris')}" ng-click="selectFavorites()">Favoris <span class="glyphicon glyphicon-heart"></span></div>
@@ -10,6 +12,7 @@
     </div>
   </div>
 
+  <!-- Liste des cours -->
   <div ng-repeat="course in courses">
     <div class="course-block col-md-5" ng-click="showCourse(course)">
   	  <h4 class="course-name">{{ course.name }}</h4>

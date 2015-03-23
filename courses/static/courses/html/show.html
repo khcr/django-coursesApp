@@ -1,12 +1,17 @@
 <div id="show-course">
 
+  <!-- Titre du cours + favoris -->
   <h1>{{ course.name }} <span class="favorite glyphicon" ng-click="favorite()" ng-class="course.favorite ? 'glyphicon-star' : 'glyphicon-star-empty'"></span></h1>
+
+  <!-- Barre de progression -->
   <!-- http://www.w3schools.com/bootstrap/bootstrap_progressbars.asp -->
   <div class="progress">
     <div class="progress-bar" role="progressbar" style="width:{{ course.percentage }}%">
       <span>{{ course.percentage }}%</span>
     </div>
   </div>
+
+  <!-- Contenu du cours -->
   <h2>{{ page.name }}</h2>
   <div class="col-sm-10">
     <div mathjax class="margin bottom" ng-repeat="section in page.sections">
@@ -17,9 +22,14 @@
     </div>
   </div>
 
+  <!-- Menu -->
   <div class="menu col-sm-2">
+
+    <!-- PDF -->
     <p><span class="glyphicon glyphicon-download"></span><a ng-click="wait()" ng-href="/courses/pdf/{{ course.id }}/{{ course.name | parameterize }}.pdf"> Télécharger le cours</a></p>
     <p><em>{{ wait }}</em></p>
+
+    <!-- Lien vers les autres pages et sections -->
     <div ng-repeat="page in pages">
       <div class="page-name"><a ng-href="/courses/#/{{ course.id }}/view/{{ page.order }}" ng-class="{ disabled: isCurrentPage(page) }">{{ page.name }}  <span ng-show="isCurrentPage(page)" class="glyphicon glyphicon-tag"></span></a></div>
       <div class="section-name" ng-repeat="section in page.sections">
@@ -28,6 +38,7 @@
     </div>
   </div>
 
+  <!-- Barre de boutons -->
   <div class="col-sm-12 nav">
     <div class="pull-left"><button id="previous-page" class="btn btn-primary" ng-disabled="firstPage()" ng-click="previousPage()">Précédent</button></div>
     <div class="pull-right"><button id="next-page" class="btn btn-primary" ng-disabled="lastPage()" ng-click="nextPage()">Suivant</button></div>
@@ -41,20 +52,25 @@
   <a id="show-comments" ng-click="toggleComments()">Afficher/Masquer les commentaires</a>
 </div>
 
+<!-- Commentaires -->
 <div id="comments" ng-show="showComments" class="col-sm-12 margin top">
   <h3>Commentaires</h3>
+
+  <!-- Liste -->
   <div class="comment col-sm-7" ng-repeat="comment in comments">
       <p class="author"><span class="glyphicon glyphicon-user"></span>  {{ comment.user }}</p>
       <p>{{ comment.content }}<p><br>
       <em><small>Posté le {{ comment.created_at | date : "d MMMM yyyy à H:mm" }}</small></em>
   </div>
 
+  <!-- Prévisualisation -->
   <div class="preview comment col-sm-7">
       <p class="author">{{ comment.user }}</p>
       <p ng-hide="comment.content.length">{{ comment.placeholder }}<p>
       <p>{{ comment.content }}<p>
   </div>
 
+  <!-- Formulaire pour ajouter un commentaire -->
   <div class="new col-sm-12">
     <form class="form-horizontal col-sm-offset-3 col-sm-6" role="form" name="newComment" ng-submit="newComment.$valid && saveComment()" novalidate>
       <div class="form-group">

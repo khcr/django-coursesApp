@@ -2,7 +2,6 @@ from django.forms import ModelForm
 
 from courses.models import Course, Page, Section, CourseComment
 
-# Create the form class.
 class CourseForm(ModelForm):
     class Meta:
         model = Course

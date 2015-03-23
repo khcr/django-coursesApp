@@ -1,11 +1,13 @@
-/* Ng style */
-#course-form textarea.ng-dirty.ng-valid, #course-form input.ng-dirty.ng-valid {
+/* Validation des formulaires */
+
+#course-form textarea.ng-dirty.ng-valid, 
+#course-form input.ng-dirty.ng-valid {
   border: 1.5px solid green;
 }
 #course-form textarea.ng-dirty.ng-invalid, 
 #course-form input.ng-dirty.ng-invalid,
 #edit-course textarea.ng-dirty.ng-invalid,
-#edit-course input.ng-dirty.ng-invalid{
+#edit-course input.ng-dirty.ng-invalid {
   border: 1.5px solid red;
 }
 
@@ -73,44 +75,21 @@ button:hover {
   margin-bottom: 30px;
 }
 
-/* New course */
+/* Nouveau cours */
+
 #course-form {
 	padding-top: 40px;
 	padding-bottom: 20px;
 }
 
-/* Teacher courses */
+/* Liste de cours pour les enseignants */
 
 #teacher-courses {
   font-size: 1.3em;
 }
 
-/* Edit course */
-
-#edit-course .course-title {
-  display: inline-block;
-  margin-right: 10px;
-  margin-bottom: 40px;
-}
-
-#edit-course .page-links a {
-  margin-right: 5px;
-  margin-left: 5px;
-  font-size: 1.3em;
-}
-
-#section-name {
-  font-size: 16px;
-} 
-#page-name {
-  font-size: 24px;
-}
-#input-margin {
-  margin: 10px 0px 10px 0px;
-  padding: 0;
-}
-
 /* Home */
+
 #home .category {
   padding: 20px;
   display: inline-block;
@@ -141,23 +120,48 @@ button:hover {
 #home .course-block {
   border-top: 1px solid #FFCCCC;
   border-bottom: 1px solid #FFCCCC;
-	padding: 20px;
-	margin-right: 47px;
-	margin-left: 47px;
-	margin-bottom: 50px;
-	background-color: #FFF7F7;
-	display: inline-block;
+  padding: 20px;
+  margin-right: 47px;
+  margin-left: 47px;
+  margin-bottom: 50px;
+  background-color: #FFF7F7;
+  display: inline-block;
   cursor: pointer;
 }
 #home .course-block:hover{
-	background-color: #FCD9D9;
+  background-color: #FCD9D9;
 }
 
 #home .course-name {
   display: inline-block;
 }
 
-/* Show course */
+/* Edition d'un cours */
+
+#edit-course .course-title {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 40px;
+}
+
+#edit-course .page-links a {
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 1.3em;
+}
+
+#section-name {
+  font-size: 16px;
+} 
+#page-name {
+  font-size: 24px;
+}
+#input-margin {
+  margin: 10px 0px 10px 0px;
+  padding: 0;
+}
+
+/* Lecture d'un cours */
 
 #comments .comment {
   border-top: 1px solid #DEDEDE;
@@ -204,7 +208,7 @@ button:hover {
   cursor: pointer;
 }
 
-/*  ng-view Animation  */
+/*  Animations  */
 
 .view-slide-in.ng-enter {
   transition: all 0.5s ease;

@@ -1,10 +1,11 @@
 from restless.models import serialize
-# TODO: use the current user
+# TODO: utiliser l'utilisateur connecté
 from django.contrib.auth.models import User
 
-# api.py: return a valid page JSON object included course and sections
+# retourne un objet JSON contenant les informations du cours, la page du cours et ses sections, le nombre total de page et la progression
+# serialize est une méthode RestLess
 def serialize_page(page, course):
-    # TODO: use the current user
+    # TODO: utiliser l'utilisateur connecté
     user = User.objects.first()
     return serialize(page, include=[
         (
@@ -22,6 +23,8 @@ def serialize_page(page, course):
             ('progression', lambda a: a.state(user)),
         ])
 
+# efface les enregistrements de plusieurs tables
+# prend un tableau en argument
 def clear_tables(models):
     for model in models:
         model.objects.all().delete()

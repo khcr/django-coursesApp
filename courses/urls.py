@@ -4,7 +4,12 @@ from courses import views
 from courses.api import CourseList, TeacherCourseList, CourseDetail, PageCourseDetail, PageSectionList, CoursePageList, SectionDetail, ThemeList, CommentList, CourseMenu, CoursePageProgress, CoursePublish, CourseFavorite
 
 urlpatterns = patterns('',
+    # point de départ de l'application
     url(r'^$', views.index, name='index'),
+    # génère le PDF d'un cours
+    url(r"^pdf/(?P<pk>\d+)/.*\.pdf$", views.pdf, name="pdf"),
+
+    # API
     url(r'^api/courses$', CourseList.as_view()),
     url(r'^api/courses/all$', TeacherCourseList.as_view()),
     url(r'^api/courses/(?P<pk>\d+)$', CourseDetail.as_view()),
@@ -18,5 +23,4 @@ urlpatterns = patterns('',
     url(r'^api/courses/(?P<pk>\d+)/publish$', CoursePublish.as_view()),
     url(r'^api/courses/(?P<pk>\d+)/favorite$', CourseFavorite.as_view()),
     url(r'^api/pages/(?P<pk>\d+)/progression$', CoursePageProgress.as_view()),
-    url(r"^pdf/(?P<pk>\d+)/.*\.pdf$", views.pdf, name="pdf")
 )

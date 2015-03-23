@@ -11,10 +11,12 @@ class CourseList(ListEndpoint):
     model = Course
 
     # /courses
-    # GET
+    # GET: renvoie une liste de cours
     def get(self, request):
-        # TODO: use the current user
+        # TODO: utiliser l'utilisateur connecté
         user = User.objects.first()
+        # Trie les cours par thème, sélectionne les favoris ou renvoie tous les cours
+        # Retourne seulement les cours publiés
         if 'theme' in request.GET:
             courses = Course.objects.filter(chapter__theme__name=request.GET['theme'], published=True)
         elif 'favorite' in request.GET:
@@ -26,27 +28,33 @@ class CourseList(ListEndpoint):
             ])
 
 
-    # POST: create a new course
+    # POST: crée un nouveau cours
     def post(self, request):
         course_form = CourseForm(request.data)
         if course_form.is_valid():
             course = course_form.save(commit=False)
-            # TODO: current user
+            # TODO: utiliser l'utilisateur connecté
             course.author = User.objects.first()
             course.save()
+            # Crée une page vierge
             page = Page(name="Première page", order=1, course_id=course.id)
             page.save()
+            # Crée une section dans la page
             page.sections.create(name="Première section", order=1)
             return Http201(self.serialize(course))
 
 class TeacherCourseList(ListEndpoint):
     model = Course
 
+    # /courses/all
+    # GET
+    # POST
+
 
 class CourseDetail(DetailEndpoint):
     model = Course
 
-    # /courses/id
+    # /courses/:id
     # GET
     # PUT
     # DELETE
@@ -54,54 +62,71 @@ class CourseDetail(DetailEndpoint):
 class CoursePageList(ListEndpoint):
     model = Course
 
-    # /courses/id/pages
+    # /courses/:id/pages
     # GET
 
-    # POST: add a new page to a course
+    # POST: ajoute une page à un cours
     def post(self, request, course_id):
         course = Course.objects.get(id=course_id)
+        # Crée une page à la suite des autres
         order = course.pages.count() + 1
         page = Page(name="Titre de la page", order=order, course_id=course.id)
         page.save()
+        # Crée une section dans la nouvelle page
         page.sections.create(name="Première section", order=1)
         return Http201(serialize_page(page, course))
 
 class PageCourseDetail(DetailEndpoint):
     model = Page
 
-    # /pages/id/courses/id
+    # /pages/:id/courses/:id
     # DELETE
 
-    # GET: get all pages for a course
+    # GET: renvoie une page d'un cours
     def get(self, request, page_id, course_id):
+        # /!\ l'argument "page_id" représente le champ "order" du modèle Page, pas l'"id"
         course = Course.objects.get(id=course_id)
         page = course.pages.get(order=page_id)
         return serialize_page(page, course)
 
-    # PUT: save the page's content
+    # PUT: sauvegarde le contenu d'une page
     def put(self, request, page_id, course_id):
         course = Course.objects.get(id=course_id)
+        # Récupère la page à éditer
         page = Page.objects.get(id=page_id)
+        # On utilise un formulaire (PageForm)
+        # request.data est un dictionnaire contenant les données soumise par l'utilisateur
+        # ici le contenu de la page
         page_form = PageForm(request.data, instance=page)
+        # On vérifie si les informations sont présentes et valides
         if page_form.is_valid():
+            # On enregistre la page - sauvegarde le titre
             page_form.save()
+        # On récupère le dictionnaire contenant les données des sections
         sections_params = request.data['sections']
+        # On fait une boucle pour chaque section
         for section_params in sections_params:
+            # On récupère la section
             section = Section.objects.get(id=section_params['id'])
+            # On utilise un formulaire (SectionForm)
+            # section_params est un dictionnaire contenant le titre et le contenu de la section
             section_form = SectionForm(section_params, instance=section)
+            # On vérifie si les informations sont présentes et valides
             if section_form.is_valid():
+                # On enregistre la section
                 section_form.save()
         return Http200(serialize_page(page, course))
 
 class PageSectionList(ListEndpoint):
     model = Section
 
-    # /pages/id/sections
+    # /pages/:id/sections
     # GET
     
-    # POST: Add a new section to a page
+    # POST: Crée une nouvelle section dans une page
     def post(self, request, page_id):
         page = Page.objects.get(id=page_id)
+        # Crée une section à la suite des autres
         order = page.sections.count() + 1
         section = page.sections.create(name="Editer ici", markdown_content="Et ici", order=order)
         section.save()
@@ -110,7 +135,7 @@ class PageSectionList(ListEndpoint):
 class SectionDetail(DetailEndpoint):
     model = Section
 
-    # /section/id
+    # /section/:id
     # GET
     # PUT
     # DELETE
@@ -122,7 +147,7 @@ class ThemeList(ListEndpoint):
     # /themes
     # POST
 
-    # GET: get all themes included the chapters
+    # GET: renvoie tous les thèmes et leurs chapitres
     def get(self, request):
         themes = Theme.objects.all()
         return serialize(themes, include=[
@@ -132,8 +157,8 @@ class ThemeList(ListEndpoint):
 class CommentList(ListEndpoint):
     model = CourseComment
 
-    # /comments
-    # GET
+    # courses/:id/comments
+    # GET: renvoie les commentaires d'un cours
     def get(self, request, pk):
         comments = CourseComment.objects.filter(course_id=pk)
         return serialize(comments, include=[
@@ -141,12 +166,12 @@ class CommentList(ListEndpoint):
             ])
 
 
-    # POST: get all comments for a course
+    # POST: crée un commentaire dans un cours
     def post(self, request, pk):
         comment_form = CommentForm(request.data)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
-            # TODO: use the current user
+            # TODO: utiliser l'utilisateur connecté
             comment.user = User.objects.first()
             comment.course_id = pk
             comment.save()
@@ -156,8 +181,10 @@ class CommentList(ListEndpoint):
 
 class CourseMenu(Endpoint):
 
+    # Renvoie les titres des pages et de leurs sections pour faire le menu du cours
     def get(self, request, pk):
         pages = Page.objects.filter(course_id=pk)
+        # on inclut le champs "order" pour marquer la page active dans le menu
         return serialize(pages, fields=[
                 'name',
                 'order',
@@ -166,39 +193,59 @@ class CourseMenu(Endpoint):
 
 class CoursePageProgress(Endpoint):
 
+    # Marque la progression d'un utilisateur
     def put(self, request, pk):
-        # TODO: use the current user
+        # TODO: utiliser l'utilisateur connecté
         user = User.objects.first()
+        # On récupère la page concernée
         page = Page.objects.get(id=pk)
+
+        # request.data est un dictionnaire contenant les données soumises par l'utilisateur
+        # ici, si l'utilisateur a compris ou non la page
+        # On choisit le statut en fonction
         if request.data['is_done'] == True:
             status = Status.objects.get(name="Compris")
         else:
             status = Status.objects.get(name="Relire")
+
+        # Si l'utilisateur n'a pas encore marqué sa progression sur cette page
         if not page.state(user):
+            # On crée une progression avec la page, le statut et l'utilisateur
             page.progression_set.create(status=status, user=user)
+        # si l'utilisateur a déjà marqué sa progression sur cette page
         else:
+            # On récupère sa progression
             progression = page.progression_set.get(user=user)
+            # On met à jour avec le nouveau statut
             progression.status = status
             progression.save()
         return Http200({"progression": status.name, "percentage": page.course.percentage()})
 
 class CoursePublish(Endpoint):
 
+    # Publie ou retire un cours
     def put(self, request, pk):
         course = Course.objects.get(id=pk)
+        # on inverse le booléen "published" qui détermine si le cours est publié ou non
         course.published = not course.published
         course.save()
         return Http200({"published": course.published})
 
 class CourseFavorite(Endpoint):
 
+    # Ajoute ou retire un cours des favoris de l'utilisateur
     def post(self, request, pk):
-        # TODO: use the current user
+        # TODO: utiliser l'utilisateur connecté
         user = User.objects.first()
         course = Course.objects.get(pk=pk)
+        # teste si l'utilisateur a déjà le cours dans ses favoris
         is_favorite = course.has_favorite(user)
+        # si oui
         if is_favorite:
+            # on retire le cours des favoris
             course.favorites.remove(user)
+        # sinon
         else:
+            # on ajoute le cours aux favoris
             course.favorites.add(user)
         return Http201({"favorite": not is_favorite})

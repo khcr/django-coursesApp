@@ -4,23 +4,23 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <title>Cours</title>
 
+  <!-- Favicon -->
   <link rel="shortcut icon" type="image/png" href="/static/courses/images/favicon.png">
 
   {% load staticfiles %}
-  <!-- Website's CSS -->
+  <!-- CSS du site -->
   <link rel="stylesheet" href="{% static "courses/stylesheets/main.css" %}">
 
-  <!-- Bootstrap: Latest compiled and minified CSS -->
+  <!-- Bootstrap: CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-  <!-- Bootstrap: Latest compiled and minified JavaScript -->
+  <!-- Bootstrap: JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-  <!-- AngularJS components -->
-  <script src="{% static "javascripts/angularjs/angular-file-upload-shim.min.js" %}"></script>
+  <!-- modules AngularJS -->
   <script src="{% static "javascripts/angularjs/angular.min.js" %}"></script>
   <script src="{% static "javascripts/angularjs/angular-locale_fr-ch.js" %}"></script>
   <script src="{% static "javascripts/angularjs/angular-resource.min.js" %}"></script>
@@ -28,16 +28,15 @@
   <script src="{% static "javascripts/angularjs/angular-elastic.min.js" %}"></script>
   <script src="{% static "javascripts/angularjs/angular-sanitize.min.js" %}"></script>
   <script src="{% static "javascripts/angularjs/angular-animate.min.js" %}"></script>
-  <script src="{% static "javascripts/angularjs/angular-file-upload.min.js" %}"></script>
 
-  <!-- Showdown markdown converter and extensions -->
+  <!-- Showdown.js -->
   <script src="{% static "javascripts/showdown.js" %}"></script>
   <script src="{% static "courses/javascripts/extensions.js" %}"></script>
 
   <!-- MathJax -->
   <script src="/static/MathJax/MathJax.js?config=TeX-AMS_HTML,local/local"></script>
 
-  <!-- Website's JS -->
+  <!-- JavaScript du site -->
   <script src="{% static "courses/javascripts/app.js" %}"></script>
   <script src="{% static "courses/javascripts/config/routes.js" %}"></script>
   <script src="{% static "courses/javascripts/controllers/show.js" %}"></script>
@@ -70,6 +69,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="#/">Home</a></li>
+            <!-- Affiche les liens seulement aux enseignants -->
             {% if user.is_teacher %}
               <li><a href="#/new">Ajouter un cours</a></li>
               <li><a href="#/teacher/courses">Tous les cours</a></li>
@@ -77,6 +77,7 @@
             <li><a href="#/about">About</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            <!-- Affiche soit le lien pour se connecter, soit le nom de l'utilisateur -->
             {% if user.is_authenticated %}
               <li><a href="{% url 'django.contrib.auth.views.logout' %}">Déconnecter</a></li>
               <a class="navbar-brand">{{ user.username }}</a>
@@ -88,7 +89,9 @@
       </div><!-- /.container-fluid -->
     </nav>
 
+    <!-- Contenu ajouté dans cette div -->
     <div class="container">
+      <!-- Animations AngularJS -->
       <div ng-view class="view-slide-in"></div>
     </div>  
 
