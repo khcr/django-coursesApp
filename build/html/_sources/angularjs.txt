@@ -76,23 +76,19 @@ Two-way data binding
 
 La deuxième fonctionnalité majeure d'AngularJS est ce que l'on appelle *two-way data binding* ou en français *la liaison des données à double sens*. Derrière cette mystérieuse expression se cache la manière qu'utilise le framework pour relier le modèle et la vue. Le système habituel est comme suit. L'on génère les vues en fonction de ce qui se trouve dans le modèle, comme dans l'exemple précédent où l'on cherche des articles dans la *BD* pour ensuite générer une page. Quand le modèle change, un article est ajouté par exemple, la vue ne se met pas à jour. On doit la générer à nouveau pour voir le nouvel article. De plus, si l'utilisateur remplit un formulaire pour ajouter un nouvel article, le modèle ne change pas, tant que le formulaire n'a pas été traité. On appelle logiquement ce système *one-way data binding*. Le schéma qui suit illustre ce principe. Pour générer une vue pour l'utilisateur, le template et le modèle doivent être fusionnés et chaque fois qu'un changement est fait, l'on doit refaire le même processus.
 
-.. figure:: images/One_Way_Data_Binding.png
+.. figure:: images/One_Way_Data_Binding.jpg
     :scale: 60%
     :align: center
 
     One-way data binding 
 
-    source [#f8]_
-
 Avec Angular, le principe est plus intelligent. Les vues se génèrent effectivement en fonction des modèles, en revanche, si le modèle change, la vue se mettra automatiquement à jour sans avoir effectué un nouveau rendu de la page. Si un utilisateur fait un changement dans la vue, le modèle se change également. Les deux entités sont donc toujours synchronisées grâce a ce mécanisme du framework. La vue met à jour le modèle et le modèle met à jour la vue, continuellement.
 
-.. figure:: images/Two_Way_Data_Binding.png
+.. figure:: images/Two_Way_Data_Binding.jpg
     :scale: 60%
     :align: center
 
     Two-way data binding 
-
-    source [#f8]_
 
 Cette fonctionnalité facilite énormément la vie du développeur. Imaginons un système de commentaires. Il y a une liste de commentaires et un formulaire pour en ajouter un. Pour le développeur, il suffit de relier le formulaire au modèle. Ensuite, au fur et à mesure que l'utilisateur tape son commentaire, le modèle est mis à jour et contient le nouveau commentaire. Il peut déjà s'afficher dans la liste des commentaires. Voici un exemple de code qui permet de cacher ou d'afficher une portion de page à l'aide d'un bouton.
 
@@ -147,4 +143,3 @@ Il y a évidemment encore d'autres avantages à utiliser ce framework, notamment
 .. [#f5] http://emberjs.com
 .. [#f6] http://facebook.github.io/react
 .. [#f7] http://www.turbogears.org
-.. [#f8] https://docs.angularjs.org/guide/databinding

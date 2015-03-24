@@ -80,7 +80,7 @@ Créer un nouveau cours. On crée d'abord le cours, puis une page associée cont
     # api.py - CourseList
     
     # on utilise un formulaire (CourseForm)
-    # request.data est un dictionnaire contenant les données soumise par l'utilisateur 
+    # request.data est un dictionnaire contenant les données soumises par l'utilisateur 
     # ici les informations du cours
     course_form = CourseForm(request.data)
     # on vérifie si les informations sont présentes et valides
@@ -116,7 +116,7 @@ Mettre à jour le contenu d'une page d'un cours. Le titre de la page, le titre e
     # Récupère la page à éditer
     page = Page.objects.get(id=page_id)
     # On utilise un formulaire (PageForm)
-    # request.data est un dictionnaire contenant les données soumise par l'utilisateur
+    # request.data est un dictionnaire contenant les données soumises par l'utilisateur
     # ici le contenu de la page
     page_form = PageForm(request.data, instance=page)
     # On vérifie si les informations sont présentes et valides
@@ -174,7 +174,7 @@ L'utilisateur a la possibilité de marquer sa progression quand il lit un cours.
     # On récupère la page concernée
     page = Page.objects.get(id=pk)
 
-    # request.data est un dictionnaire contenant les données soumise par l'utilisateur
+    # request.data est un dictionnaire contenant les données soumises par l'utilisateur
     # ici, si l'utilisateur a compris ou non la page
     # On choisit le status en fonction
     if request.data['is_done'] == True:

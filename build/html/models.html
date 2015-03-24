@@ -199,7 +199,7 @@
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># api.py - CourseList</span>
 
 <span class="c"># on utilise un formulaire (CourseForm)</span>
-<span class="c"># request.data est un dictionnaire contenant les données soumise par l&#39;utilisateur</span>
+<span class="c"># request.data est un dictionnaire contenant les données soumises par l&#39;utilisateur</span>
 <span class="c"># ici les informations du cours</span>
 <span class="n">course_form</span> <span class="o">=</span> <span class="n">CourseForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 <span class="c"># on vérifie si les informations sont présentes et valides</span>
@@ -232,7 +232,7 @@
 <span class="c"># Récupère la page à éditer</span>
 <span class="n">page</span> <span class="o">=</span> <span class="n">Page</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">page_id</span><span class="p">)</span>
 <span class="c"># On utilise un formulaire (PageForm)</span>
-<span class="c"># request.data est un dictionnaire contenant les données soumise par l&#39;utilisateur</span>
+<span class="c"># request.data est un dictionnaire contenant les données soumises par l&#39;utilisateur</span>
 <span class="c"># ici le contenu de la page</span>
 <span class="n">page_form</span> <span class="o">=</span> <span class="n">PageForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">instance</span><span class="o">=</span><span class="n">page</span><span class="p">)</span>
 <span class="c"># On vérifie si les informations sont présentes et valides</span>
@@ -282,7 +282,7 @@
 <span class="c"># On récupère la page concernée</span>
 <span class="n">page</span> <span class="o">=</span> <span class="n">Page</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span>
 
-<span class="c"># request.data est un dictionnaire contenant les données soumise par l&#39;utilisateur</span>
+<span class="c"># request.data est un dictionnaire contenant les données soumises par l&#39;utilisateur</span>
 <span class="c"># ici, si l&#39;utilisateur a compris ou non la page</span>
 <span class="c"># On choisit le status en fonction</span>
 <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;is_done&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>

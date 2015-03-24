@@ -217,17 +217,13 @@
 <h3>Two-way data binding<a class="headerlink" href="#two-way-data-binding" title="Lien permanent vers ce titre">¶</a></h3>
 <p>La deuxième fonctionnalité majeure d&#8217;AngularJS est ce que l&#8217;on appelle <em>two-way data binding</em> ou en français <em>la liaison des données à double sens</em>. Derrière cette mystérieuse expression se cache la manière qu&#8217;utilise le framework pour relier le modèle et la vue. Le système habituel est comme suit. L&#8217;on génère les vues en fonction de ce qui se trouve dans le modèle, comme dans l&#8217;exemple précédent où l&#8217;on cherche des articles dans la <em>BD</em> pour ensuite générer une page. Quand le modèle change, un article est ajouté par exemple, la vue ne se met pas à jour. On doit la générer à nouveau pour voir le nouvel article. De plus, si l&#8217;utilisateur remplit un formulaire pour ajouter un nouvel article, le modèle ne change pas, tant que le formulaire n&#8217;a pas été traité. On appelle logiquement ce système <em>one-way data binding</em>. Le schéma qui suit illustre ce principe. Pour générer une vue pour l&#8217;utilisateur, le template et le modèle doivent être fusionnés et chaque fois qu&#8217;un changement est fait, l&#8217;on doit refaire le même processus.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="_images/One_Way_Data_Binding.png"><img alt="_images/One_Way_Data_Binding.png" src="_images/One_Way_Data_Binding.png" style="width: 240.0px; height: 153.0px;" /></a>
+<a class="reference internal image-reference" href="_images/One_Way_Data_Binding.jpg"><img alt="_images/One_Way_Data_Binding.jpg" src="_images/One_Way_Data_Binding.jpg" style="width: 240.0px; height: 153.0px;" /></a>
 <p class="caption">One-way data binding</p>
-<div class="legend">
-source <a class="footnote-reference" href="#f8" id="id8">[8]</a></div>
 </div>
 <p>Avec Angular, le principe est plus intelligent. Les vues se génèrent effectivement en fonction des modèles, en revanche, si le modèle change, la vue se mettra automatiquement à jour sans avoir effectué un nouveau rendu de la page. Si un utilisateur fait un changement dans la vue, le modèle se change également. Les deux entités sont donc toujours synchronisées grâce a ce mécanisme du framework. La vue met à jour le modèle et le modèle met à jour la vue, continuellement.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="_images/Two_Way_Data_Binding.png"><img alt="_images/Two_Way_Data_Binding.png" src="_images/Two_Way_Data_Binding.png" style="width: 240.0px; height: 174.0px;" /></a>
+<a class="reference internal image-reference" href="_images/Two_Way_Data_Binding.jpg"><img alt="_images/Two_Way_Data_Binding.jpg" src="_images/Two_Way_Data_Binding.jpg" style="width: 240.0px; height: 198.6px;" /></a>
 <p class="caption">Two-way data binding</p>
-<div class="legend">
-source <a class="footnote-reference" href="#f8" id="id9">[8]</a></div>
 </div>
 <p>Cette fonctionnalité facilite énormément la vie du développeur. Imaginons un système de commentaires. Il y a une liste de commentaires et un formulaire pour en ajouter un. Pour le développeur, il suffit de relier le formulaire au modèle. Ensuite, au fur et à mesure que l&#8217;utilisateur tape son commentaire, le modèle est mis à jour et contient le nouveau commentaire. Il peut déjà s&#8217;afficher dans la liste des commentaires. Voici un exemple de code qui permet de cacher ou d&#8217;afficher une portion de page à l&#8217;aide d&#8217;un bouton.</p>
 <div class="highlight-html"><div class="highlight"><pre># index.html
@@ -308,12 +304,6 @@ app.controller(&quot;IndexController&quot;, function($scope) {
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id7">[7]</a></td><td><a class="reference external" href="http://www.turbogears.org">http://www.turbogears.org</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="f8" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[8]</td><td><em>(<a class="fn-backref" href="#id8">1</a>, <a class="fn-backref" href="#id9">2</a>)</em> <a class="reference external" href="https://docs.angularjs.org/guide/databinding">https://docs.angularjs.org/guide/databinding</a></td></tr>
 </tbody>
 </table>
 </div>
