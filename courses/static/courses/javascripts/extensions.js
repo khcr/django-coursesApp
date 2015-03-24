@@ -1,5 +1,6 @@
 "use strict";
 
+// pour ajouter des balises personnalisées au Markdown
 (function(){
   var courses = function(converter) {
     return [

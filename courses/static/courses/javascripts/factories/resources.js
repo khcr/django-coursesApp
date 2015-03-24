@@ -1,5 +1,7 @@
 "use strict";
 
+// https://docs.angularjs.org/api/ngResource/service/$resource
+
 var app = angular.module("resources");
 
 app.factory("Course", ["$resource", function($resource) {
@@ -8,6 +10,7 @@ app.factory("Course", ["$resource", function($resource) {
     {courseId: "@id"},
     {
       update: { method: "PUT" },
+      // ajoute une page au cours
       add_page: { method: "POST", params: { resource: "pages" }}
     }
   );
@@ -19,6 +22,7 @@ app.factory("Page", ["$resource", function($resource) {
     {pageId: "@id", resource: "courses"},
     {
       update: { method: "PUT" },
+      // ajoute une section à la page
       add_section: { method: "POST", params: {resource: "sections" }}
     }
   );

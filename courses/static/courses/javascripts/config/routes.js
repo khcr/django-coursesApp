@@ -2,6 +2,7 @@
 
 var app = angular.module("routes");
 
+// routes de l'application
 app.config(function($routeProvider, $resourceProvider){
   var basePath = "/static/courses/html/";
   $routeProvider.when("/", {
@@ -9,8 +10,7 @@ app.config(function($routeProvider, $resourceProvider){
       controller: "HomeCourseController"
     })
     .when("/about", {
-      templateUrl: basePath + "about.html",
-      controller: "AboutController"
+      templateUrl: basePath + "about.html"
     })
     .when("/new", {
       templateUrl: basePath + "new.html",
@@ -39,7 +39,7 @@ app.config(function($routeProvider, $resourceProvider){
       templateUrl: basePath + "teacher_course.html",
       controller: "TeacherCourseController"
     })
-    .otherwise({
+    .otherwise({ // Page 404
       templateUrl: basePath + "404.html"
     });
     $resourceProvider.defaults.stripTrailingSlashes = true;

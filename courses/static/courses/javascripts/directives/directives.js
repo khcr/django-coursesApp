@@ -1,7 +1,10 @@
 "use strict";
 
+// https://docs.angularjs.org/guide/directive
+
 var app = angular.module("directives");
 
+// directive qui formate son contenu avec MathJax
 app.directive("mathjax", ["$timeout", function($timeout) {
   return {
     restrict: "AE",
@@ -18,6 +21,7 @@ app.directive("mathjax", ["$timeout", function($timeout) {
   };
 }]);
 
+// directive qui affiche un formulaire pour les informations de base d'un cours
 app.directive("courseForm", function() {
   return {
     restrict: "E",
@@ -25,6 +29,7 @@ app.directive("courseForm", function() {
   };
 });
 
+// directive qui affiche un bouton pour retourner à l'édition d'un cours
 app.directive("backToCourse", function() {
   return {
     restrict: "E",

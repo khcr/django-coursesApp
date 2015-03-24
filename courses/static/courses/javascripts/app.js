@@ -1,6 +1,9 @@
-// Main module 
+// https://docs.angularjs.org/guide/module
+
+// Application principale et ses dépendances
 angular.module('coursesApp', ['ngSanitize', 'ngAnimate', 'monospaced.elastic', 'controllers', 'routes', 'resources', 'filters', 'directives']);
-// define modules
+
+// définit les modules
 angular.module('controllers', ['angularFileUpload']);
 angular.module('resources', ['ngResource']);
 angular.module('directives', []);
