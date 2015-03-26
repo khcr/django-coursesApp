@@ -141,37 +141,16 @@ Intégration d'AngularJS avec Django
 
 En dehors de l'API et des PDF, Django ne fournit qu'une seule route dans l'application. En effet, à partir de cette route, Angular s'occupe de gérer les autres routes et les templates. Concrètement, lorsqu'on charge une page de notre application, la requête va d'abord passer par la vue Django ``index`` déclarée dans le fichier `views.py`. Cette vue s'occupe simplement d'afficher le template ``courses.html``. Ce fichier HTML est un layout pour notre application, c'est-à-dire que son contenu est sur toutes les pages. Il contient le menu, l'inclusion des fichiers JavaScript et des feuilles de syle, ainsi que le pied de page. Dans la balise ``body``, on a ajouté la directive Angular ``ng-app=Courses``. On déclare qu'à l'intérieur de cette balise se trouve une application AngularJS nommée ``CoursesApp``. Ainsi, une fois que Django a affiché le template ``courses.html``, Angular va insérer le contenu du bon fichier HTML dans la balise ``body`` selon l'URL et les routes écrites dans le fichier ``routes.js``. La page finale est maintenant visible par l'utilisateur. Par exemple, si l'on se rend sur ``courses/help``, Angular s'occupe de chercher le fichier ``help.html`` et d'insérer son contenu dans la balise ``body`` de ``courses.html``. L'avantage de ce système est que lorsqu'on change de page, la vue Django n'est pas rappelée, mais seul le contenu de `body` est mis à jour avec le contenu HTML approprié à l'URL. AngularJS rend ainsi notre site web plus rapide.
 
-*************************
-Communication avec l'API
-*************************
 
-Nous avons construit une API JSON afin qu'AngularJS puisse communiquer avec une base de données. Pour effectuer les requêtes sur l'API, on trouve deux méthodes utilisées dans le projet. La première consiste à utiliser l'objet Angular ``$http``. Celui-ci permet de construire une requête et de récupérer la réponse ainsi que les éventuelles erreurs. On trouve toutes les spécifications sur la `documentation AngularJS <https://docs.angularjs.org/api/ng/service/$http>`_ [#f13]_. La seconde méthode est d'utiliser l'objet ``$resource``. Si l'on possède une table sur laquelle on veut effectuer les opérations CRUD, ``$resource`` nous évite d'écrire toutes les requêtes avec ``$http``. En effet, ``$resource`` est un objet qui fournit directement les méthodes pour effectuer les différents types de requêtes sur l'API. Pour générer les URL, on fournit d'abord à l'objet une URL de base. Puis, en se basant sur les conventions du web, l'objet est capable d'effectuer les requêtes servant à agir sur la table. Ci-dessous se trouve un exemple d'un objet ``$resource`` et de son utilisation partielle.
-
-.. code-block:: javascript
-        
-    var Section = $resource(
-        "api/sections/:sectionId"    
-    );
-
-    Section.query();
-    // => GET /api/sections
-    var section = Section.get({sectionId: 1});
-    // => GET /api/sections/1
-    card.$save;
-    // => POST /api/sections/1
-
-Dans notre application, tous les objets ``$resource`` sont définis dans le fichier ``/courses/static/courses/javascripts/factories/resources.js``. La `documentation <https://docs.angularjs.org/api/ngResource/service/$resource>`_  [#f8]_ fournit toutes les explications concernant ``$resource``.
-
-.. [#f1] https://docs.djangoproject.com/fr/1.7/ref/contrib/admin
-.. [#f2] https://docs.djangoproject.com/fr/1.7/topics/forms/
-.. [#f3] https://docs.djangoproject.com/fr/1.7/topics/db/models/
-.. [#f4] https://docs.djangoproject.com/fr/1.7/topics/http/urls/
-.. [#f5] https://docs.djangoproject.com/fr/1.7/topics/http/views/
-.. [#f6] https://docs.angularjs.org/tutorial/step_07
-.. [#f7] https://docs.angularjs.org/guide/directive
-.. [#f8] https://docs.angularjs.org/api/ngResource/service/$resource
-.. [#f9] https://docs.angularjs.org/guide/filter
-.. [#f10] https://github.com/showdownjs/showdown
-.. [#f11] https://docs.djangoproject.com/fr/1.7/howto/custom-management-commands/
-.. [#f12] https://docs.djangoproject.com/fr/1.7/topics/db/multi-db/
-.. [#f13] https://docs.angularjs.org/api/ng/service/$http 
+.. [#f1] https://docs.djangoproject.com/fr/1.7/ref/contrib/admin. Consulté le 14 mars 15.
+.. [#f2] https://docs.djangoproject.com/fr/1.7/topics/forms/. Consulté le 14 mars 15.
+.. [#f3] https://docs.djangoproject.com/fr/1.7/topics/db/models/. Consulté le 14 mars 15.
+.. [#f4] https://docs.djangoproject.com/fr/1.7/topics/http/urls/. Consulté le 14 mars 15.
+.. [#f5] https://docs.djangoproject.com/fr/1.7/topics/http/views/. Consulté le 14 mars 15.
+.. [#f6] https://docs.angularjs.org/tutorial/step_07. Consulté le 14 mars 15.
+.. [#f7] https://docs.angularjs.org/guide/directive. Consulté le 14 mars 15.
+.. [#f8] https://docs.angularjs.org/api/ngResource/service/$resource. Consulté le 14 mars 15.
+.. [#f9] https://docs.angularjs.org/guide/filter. Consulté le 14 mars 15.
+.. [#f10] https://github.com/showdownjs/showdown. Consulté le 14 mars 15.
+.. [#f11] https://docs.djangoproject.com/fr/1.7/howto/custom-management-commands/. Consulté le 14 mars 15.
+.. [#f12] https://docs.djangoproject.com/fr/1.7/topics/db/multi-db/. Consulté le 15 mars 15.

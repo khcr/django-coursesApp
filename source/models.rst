@@ -208,4 +208,4 @@ L'utilisateur a la possibilité de marquer sa progression quand il lit un cours.
     -- Met à jour une progression
     UPDATE "progressions" SET status_id = 1 WHERE id = 1
 
-.. [#f1] https://docs.djangoproject.com/fr/1.7/topics/forms
+.. [#f1] https://docs.djangoproject.com/fr/1.7/topics/forms. Consulté le 20 décembre.

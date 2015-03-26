@@ -129,7 +129,7 @@ Cette fonctionnalité facilite énormément la vie du développeur. Imaginons un
     });
 
 
-D'abord l'on affiche une section selon une variable booléenne ``affiche`` et l'on assigne à la variable la valeur ``false`` par défaut. Puis l'on ajoute au bouton qui exécute une fonction qui change la valeur de notre variable ``affiche`` de ``false`` à ``true`` et vice-versa. La section s'affiche ou se cache selon. Plusieurs directives sont utilisées dans l'exemple. ``ng-app`` signale à AngularJS qu'il faut analyser et compiler cette page. ``ng-controller`` signale qu'il faut utiliser le contrôleur ``IndexController`` qui est défini dans le fichier JavaScript et exécuter le code à l'intérieur. ``ng-show`` montre ou non la section selon la contenu de la variable booléenne ``affiche`` et ``ng-click`` exécute la fonction ``toggle()`` lorsque que l'on clique sur le bouton.
+Tout d'abord, l'on affiche une section selon une variable booléenne ``affiche`` et l'on assigne à la variable la valeur ``false`` par défaut. La section est donc cachée. Puis l'on ajoute un bouton qui exécute une fonction qui change la valeur de notre variable ``affiche`` de ``false`` à ``true`` et vice-versa. La section s'affiche ou se cache selon son état lorsqu'on clique sur le bouton. Plusieurs directives sont utilisées dans l'exemple. ``ng-app`` signale à AngularJS qu'il faut analyser et compiler cette page. ``ng-controller`` signale qu'il faut utiliser le contrôleur ``IndexController`` qui est défini dans le fichier JavaScript et exécuter le code à l'intérieur. ``ng-show`` montre ou non la section selon la contenu de la variable booléenne ``affiche`` et ``ng-click`` exécute la fonction ``toggle()`` lorsque que l'on clique sur le bouton.
 
 ******************
 Et plus encore...
@@ -137,10 +137,10 @@ Et plus encore...
 
 Il y a évidemment encore d'autres avantages à utiliser ce framework, notamment les injections de dépendances et l'extensibilité d'AngularJS, mais nous avons vu les deux principales différences dans le monde des frameworks JavaScript.
 
-.. [#f1] http://google.com/analytics
-.. [#f2] https://cloud.google.com
-.. [#f3] http://symfony.com
-.. [#f4] http://rubyonrails.com
-.. [#f5] http://emberjs.com
-.. [#f6] http://facebook.github.io/react
-.. [#f7] http://www.turbogears.org
+.. [#f1] http://google.com/analytics. Consulté le 25 décembre 14.
+.. [#f2] https://cloud.google.com. Consulté le 25 décembre 14.
+.. [#f3] http://symfony.com. Consulté le 25 décembre 14.
+.. [#f4] http://rubyonrails.com. Consulté le 25 décembre 14.
+.. [#f5] http://emberjs.com. Consulté le 25 décembre 14.
+.. [#f6] http://facebook.github.io/react. Consulté le 10 mars 15.
+.. [#f7] http://www.turbogears.org. Consulté le 25 décembre 14.

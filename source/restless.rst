@@ -135,9 +135,29 @@ Dans le cas de notre projet, il a fallu personnaliser les vues génériques pour
 
 On doit parfois retourner des objets JSON personnalisés, c'est-à-dire pouvoir choisir les paires clé/valeur de notre dictionnaire. Par défaut RestLess retourne simplement tous les attributs de l'enregistrement en question. On accomplit cette personnalisation généralement dans le but de choisir certains attributs, d'en créer des nouveaux qui ne sont pas des champs de la table ou de joindre des enregistrements associés. RestLess fournit la méthode ``serialize`` pour résoudre ce problème. Par exemple, pour un cours nous avons besoin de joindre les pages associées et leur contenu ainsi que le nombre total de pages. On peut se rendre sur `la documentation <https://django-restless.readthedocs.org/en/latest/#>`_ [#f4]_ pour plus d'informations et sur le fichier ``api.py`` pour des exemples d'utilisation.
 
-.. rubric:: Notes
+*************************
+Communication avec l'API
+*************************
 
-.. [#f1] https://github.com/dobarkod/django-restless
-.. [#f2] https://docs.djangoproject.com/fr/1.7/topics/class-based-views/generic-display
-.. [#f3] https://django-restless.readthedocs.org/en/latest/_modules/restless/modelviews.html
-.. [#f4] https://django-restless.readthedocs.org/en/latest/#
+Nous avons construit une API JSON afin qu'AngularJS puisse communiquer avec une base de données. Pour effectuer les requêtes sur l'API, on trouve deux méthodes utilisées dans le projet. La première consiste à utiliser l'objet Angular ``$http``. Celui-ci permet de construire une requête et de récupérer la réponse ainsi que les éventuelles erreurs. On trouve toutes les spécifications sur la `documentation AngularJS <https://docs.angularjs.org/api/ng/service/$http>`_ [#f13]_. La seconde méthode est d'utiliser l'objet ``$resource``. Si l'on possède une table sur laquelle on veut effectuer les opérations CRUD, ``$resource`` nous évite d'écrire toutes les requêtes avec ``$http``. En effet, ``$resource`` est un objet qui fournit directement les méthodes pour effectuer les différents types de requêtes sur l'API. Pour générer les URL, on fournit d'abord à l'objet une URL de base. Puis, en se basant sur les conventions du web, l'objet est capable d'effectuer les requêtes servant à agir sur la table. Ci-dessous se trouve un exemple d'un objet ``$resource`` et de son utilisation partielle.
+
+.. code-block:: javascript
+        
+    var Section = $resource(
+        "api/sections/:sectionId"    
+    );
+
+    Section.query();
+    // => GET /api/sections
+    var section = Section.get({sectionId: 1});
+    // => GET /api/sections/1
+    card.$save;
+    // => POST /api/sections/1
+
+Dans notre application, tous les objets ``$resource`` sont définis dans le fichier ``/courses/static/courses/javascripts/factories/resources.js``. La `documentation <https://docs.angularjs.org/api/ngResource/service/$resource>`_  [#f5]_ fournit toutes les explications concernant ``$resource``.
+
+.. [#f1] https://github.com/dobarkod/django-restless. Consulté le 04 javier 15.
+.. [#f2] https://docs.djangoproject.com/fr/1.7/topics/class-based-views/generic-display. Consulté le 04 javier 15.
+.. [#f3] https://django-restless.readthedocs.org/en/latest/_modules/restless/modelviews.html. Consulté le 04 javier 15.
+.. [#f4] https://django-restless.readthedocs.org/en/latest/#. Consulté le 04 javier 15.
+.. [#f13] https://docs.angularjs.org/api/ng/service/$http. Consulté le 21 mars 15.

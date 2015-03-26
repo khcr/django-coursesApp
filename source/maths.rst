@@ -31,7 +31,7 @@ Une fois le plugin MathJax installé, il va automatiquement scanner les pages HT
     :align: center
     :scale: 50%
 
-    Résultat
+    Résultat de MathJax
 
 #################
 Personnalisation
@@ -63,7 +63,7 @@ Etudions ce fichier qui a été modifié pour les besoins du projet.
 
     MathJax.Ajax.loadComplete("[MathJax]/config/local/local.js");
 
-Premièrement, le groupe d'options commenté ``Apparence`` sert à supprimer les messages inutiles de MathJax, c'est-à-dire les messages de chargements par exemple. On supprime également le menu MathJax que celui-ci ajoute aux expressions qu'il transforme et que l'on affiche avec un clic droit. Ce menu est jugé inutile et surchargeant. Ensuite le dictionnaire ``styles`` permet d'ajouter du CSS en plus de celui que génère MathJax. On ajoute à la classe ``MathJax_Display``, une classe utilisée sur toutes les expressions qu'il transforme, le style ``clear: "both"``. Il s'agit d'une correction d'un bug du plugin, car par défaut MathJax pouvait interférer avec le style déjà en place sur le site web. Ce problème créait des problèmes gênants pour l'interface. Finalement, la dernière configuration faite n'est pas la plus simple. Nous avons vu que MathJax analysait automatiquement toute la page HTML pour transformer le contenu balisé. Nous avons modifié ce comportement par défaut de MathJax. Il s'agit d'une part d'une question de performance. En effet, nous n'avons pas envie que des pages qui n'ont pas de contenu mathématique soient analysées par le lourd code JavaScript de MathJax. D'autre part, pour des questions de contrôle, l'on ne veut savoir qu'exactement où il agit. L'option ``skipStartupTypeset`` permet donc de désactiver l'exécution automatique du processus MathJax. Le prochain défi est de trouver un moyen facilement utilisable pour indiquer quelle partie du code HTML doit être analysée. AngularJS a un outil très pratique pour accomplir ce genre de tâches. Nous avons déjà eu l'occasion de le découvrir dans le premier chapitre: :doc:`les directives <angularjs>`. Ce sont des attributs ou éléments HTML qui exécutent des actions spécifiques, comme ``ng-repeat`` ou ``ng-show``.
+Premièrement, le groupe d'options commenté ``Apparence`` sert à supprimer les messages inutiles de MathJax, c'est-à-dire les messages de chargements par exemple. On supprime également le menu MathJax que celui-ci ajoute aux expressions qu'il transforme et que l'on affiche avec un clic droit. Ce menu est jugé inutile et surchargeant. Ensuite le dictionnaire ``styles`` permet d'ajouter du CSS en plus de celui que génère MathJax. On ajoute à la classe ``MathJax_Display``, une classe utilisée sur toutes les expressions qu'il transforme, le style ``clear: "both"``. Il s'agit d'une correction d'un bug du plugin, car par défaut MathJax pouvait interférer avec le style déjà en place sur le site web. Ce problème créait des problèmes gênants pour l'interface. Finalement, la dernière configuration faite n'est pas la plus simple. Nous avons vu que MathJax analysait automatiquement toute la page HTML pour transformer le contenu balisé. Nous avons modifié ce comportement par défaut de MathJax. Il s'agit d'une part d'une question de performance. En effet, nous n'avons pas envie que des pages qui n'ont pas de contenu mathématique soient analysées par le lourd code JavaScript de MathJax. D'autre part, pour des questions de contrôle, l'on veut savoir exactement où il agit. L'option ``skipStartupTypeset`` permet donc de désactiver l'exécution automatique du processus MathJax. Le prochain défi est de trouver un moyen facilement utilisable pour indiquer quelle partie du code HTML doit être analysée. AngularJS a un outil très pratique pour accomplir ce genre de tâches. Nous avons déjà eu l'occasion de le découvrir dans le premier chapitre: :doc:`les directives <angularjs>`. Ce sont des attributs ou éléments HTML qui exécutent des actions spécifiques, comme ``ng-repeat`` ou ``ng-show``.
 
 Nous allons donc créer une directive ``mathjax``. Le code ci-dessous déclare simplement la directive.
 
@@ -113,7 +113,7 @@ Notre directive est prête à être utilisée ! Maintenant, il suffit de l'utili
         </mathjax>
     </body>
 
-.. [#f1] http://mathjax.org
-.. [#f2] http://docs.mathjax.org/en/latest/config-files.html
-.. [#f3] https://docs.angularjs.org/guide/directive
-.. [#f4] http://docs.mathjax.org/en/latest/typeset.html
+.. [#f1] http://mathjax.org. Consulté le 27 décembre.
+.. [#f2] http://docs.mathjax.org/en/latest/config-files.html.  Consulté le 27 décembre 14.
+.. [#f3] https://docs.angularjs.org/guide/directive. Consulté le 28 décembre 14.
+.. [#f4] http://docs.mathjax.org/en/latest/typeset.html.  Consulté le 28 décembre 14.

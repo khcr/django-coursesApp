@@ -23,4 +23,4 @@ Pour lancer les tests écrits pour notre application, on lance la commande `pyth
 
 La commande exécutera par défaut tous les tests se trouvant dans le dossier ``courses/spec``. Pour changer ce comportement, on peut spécifier le fichier en argument: ``python3 manage.py tests home_spec.js``. Pour changer le dossier, par défaut ``courses``, il faut le spécifier avec l'option ``--app``. Par exemple: ``python3 manage.py tests --app teachers``.
 
-.. [#f1] http://angular.github.io/protractor/#/
+.. [#f1] http://angular.github.io/protractor/#/. Consulté le 18 mars 15.
