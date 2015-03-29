@@ -74,7 +74,7 @@ class Page(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        # Par défautm retourne les pages triées par la colonne "order"
+        # Par défaut, retourne les pages triées par la colonne "order"
         ordering = ['order']
 
     def __str__(self):
@@ -92,7 +92,9 @@ class Page(models.Model):
 
 class Section(models.Model):
     name = models.CharField(max_length=50)
+    # contient le texte du cours en Markdown
     markdown_content = models.TextField(default="")
+    # contient le texte du cours en HTML
     html_content = models.TextField(blank=True)
     order = models.IntegerField()
     
@@ -109,10 +111,10 @@ class Section(models.Model):
       return self.name
 
 #
-# Fonctionnalité pour les utilisateurs
+# Fonctionnalités pour les utilisateurs
 #
 
-# Commentaires dans un cours
+# Commentaires des cours
 class CourseComment(models.Model):
     content = models.TextField(max_length=300)
     
@@ -136,7 +138,7 @@ class Progression(models.Model):
         return "status: {}, page: {}".format(self.status.name, self.page.name)
 
 #
-# Méthodes d'utilisateurs
+# Méthodes ajoutées au modèle User
 #
 
 # teste si l'utilisateur est un professeur

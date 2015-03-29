@@ -4,7 +4,7 @@
 angular.module('coursesApp', ['ngSanitize', 'ngAnimate', 'monospaced.elastic', 'controllers', 'routes', 'resources', 'filters', 'directives']);
 
 // définit les modules
-angular.module('controllers', ['angularFileUpload']);
+angular.module('controllers', []);
 angular.module('resources', ['ngResource']);
 angular.module('directives', []);
 angular.module('filters', []);

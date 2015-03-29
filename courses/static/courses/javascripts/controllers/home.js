@@ -16,13 +16,13 @@ app.controller("HomeCourseController", ["$scope", "$location", "$http", "Course"
   // triage par défaut des cours = "Tous"
   var current = "Tous";
 
-  // trier les cours par favoris de l'utilisateur
+  // trie les cours en affichant les favoris de l'utilisateur
   $scope.selectFavorites = function() {
     current = "Favoris";
     $scope.courses = Course.query({favorite: "true"});
   };
 
-  // trier les cours par thèmes
+  // trie les cours par thème
   $scope.changeCategory = function(theme) {
     current = theme || "Tous";
     $scope.courses = Course.query({theme: theme});

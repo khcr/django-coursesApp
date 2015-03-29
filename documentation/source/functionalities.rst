@@ -17,7 +17,7 @@ La première étape du processeur de rédaction consiste à créer le cours en e
 Tous les champs sont obligatoires. Une fois les champs dûment complétés, il suffit à l'auteur de cliquer sur le bouton "Envoyer" (1) pour être redirigé sur la page de rédaction où il peut commencer à écrire. 
 
 .. figure:: images/new.png
-    :scale: 60%
+    :scale: 50%
     :align: center
 
     Création d'un cours
@@ -29,9 +29,9 @@ Rédaction
 Structurer son cours
 ====================
 
-Pour structurer son cours, l'auteur peut tout d'abord créer plusieurs pages ayant chacune un titre (1). Ensuite dans chacune de ces pages, le contenu se découpe en plusieurs sections avec un titre (2) et un contenu (3). L'avantage de cette structure est que le site génère automatiquement un sommaire interactif du cours, en se basant sur le titre des pages et celui des sections.
+Pour structurer son cours, l'auteur peut tout d'abord créer plusieurs pages ayant chacune un titre (1). Ensuite, dans chacune de ces pages, le contenu se découpe en plusieurs sections avec un titre (2) et un contenu (3). L'avantage de cette structure est que le site génère automatiquement un sommaire interactif du cours, en se basant sur le titre des pages et celui des sections.
 
-L'action de créer des pages ou des sections et de modifier leur contenu se fait de manière claire, simple et surtout rapide. Le professeur travaille sans jamais devoir recharger sa page, action généralement lente. Pour ajouter une section, un bouton se trouve en bas de page (4). En cliquant dessus, une nouvelle zone d'édition va simplement apparaître. En bas de la page se trouvent le bouton (5) pour ajouter une nouvelle page, ainsi que la liste des différentes pages déjà créées (6). L'on peut donc, soit créer une page en cliquant sur le bouton (5), ce qui a pour effet d'afficher une nouvelle page vierge, soit alors naviguer entre les pages du cours pour éditer leur contenu en cliquant sur le numéro des pages (6). Il se peut aussi que l'on veuille réorganiser les sections dans un ordre différent, ou supprimer une section. Cette action est tout à fait possible; à côté de chacune des sections se trouve trois boutons (7): celui pour supprimer la section et les deux autres pour la monter ou la descendre. Lorsque l'on clique sur l'un des trois, la page est mise à jour automatiquement et instantanément.
+L'action de créer des pages ou des sections et de modifier leur contenu se fait de manière claire, simple et surtout rapide. Le professeur travaille sans jamais devoir recharger sa page, action généralement lente. Pour ajouter une section, un bouton se trouve en bas de page (4). En cliquant dessus, une nouvelle zone d'édition va simplement apparaître. En bas de la page se trouvent le bouton (5) pour ajouter une nouvelle page, ainsi que la liste des différentes pages déjà créées (6). L'on peut donc, soit créer une page en cliquant sur le bouton (5), ce qui a pour effet d'afficher une nouvelle page vierge, soit encore naviguer entre les pages du cours pour éditer leur contenu en cliquant sur le numéro des pages (6). Il se peut aussi que l'on veuille réorganiser les sections dans un ordre différent, ou supprimer une section. Cette action est tout à fait possible; à côté de chacune des sections se trouve trois boutons (7): celui pour supprimer la section et les deux autres pour la monter ou la descendre. Lorsque l'on clique sur l'un des trois, la page est mise à jour automatiquement et instantanément.
 
 En ce qui concerne l'enregistrement, il se fait automatiquement toutes les 30 secondes. De plus, au cas où l'on crée ou change une page, ou réorganise les sections, lorsque l'on prévisualise le cours, publie ou retire, de même que si l'on quitte la page, le cours est aussi sauvegardé. Il y a un bouton "Enregistrer" (8) en haut de la page pour faire une sauvegarde manuelle. L'heure du dernier enregistrement est affichée à la gauche du bouton.
 
@@ -80,7 +80,7 @@ En se rendant sur "Tous les cours" (1), le professeur voit la liste de tous les 
 Les étudiants
 ##############
 
-La plupart des fonctionnalités nécessitent d'être connecté au site.
+La plupart des fonctionnalités nécessitent que l'on soit connecté au site.
 
 ****************
 Trouver un cours
@@ -106,7 +106,7 @@ S'il apprécie particulièrement un cours, le trouve utile ou veut le retrouver 
 La progression
 ==============
 
-L'élève profite également d'un système d'indication de sa progression. L'objectif est de pouvoir faciliter son apprentissage à travers le cours, l'aider à suivre et identifier ses zones de faiblesse. En bas de chaque page d'un cours se situent deux boutons intitulés "Compris" et "A relire" (2). A la fin de sa lecture de la page, il est conseillé à l'élève de cliquer sur l'un des deux boutons. En effet cela lui permettra ensuite de situer sa progression dans le cours. Basée sur les indications de l'utilisateur, une barre de progression en haut de la page (3) indique le nombre de pages comprises par rapport aux nombres de pages totale du cours. Quand il clique sur l'un des deux boutons, le lecteur est directement dirigé vers la page suivante et sa barre de progression est mise à jour. Il est évidemment possible de simplement cliquer sur "Suivant" (4) pour aller à la page suivante sans marquer la progression. Il y a aussi un bouton "Précédent" (5) pour se rendre à la page précédente.
+L'élève profite également d'un système d'indication de sa progression. L'objectif est de pouvoir faciliter son apprentissage à travers le cours, l'aider à suivre et identifier ses zones de faiblesse. En bas de chaque page d'un cours se situent deux boutons intitulés "Compris" et "A relire" (2). A la fin de sa lecture de la page, il est conseillé à l'élève de cliquer sur l'un des deux boutons. En effet, cela lui permettra ensuite de situer sa progression dans le cours. Basée sur les indications de l'utilisateur, une barre de progression en haut de la page (3) indique le nombre de pages comprises par rapport au nombre total de pages du cours. Quand il clique sur l'un des deux boutons, le lecteur est directement dirigé vers la page suivante et sa barre de progression est mise à jour. Il est évidemment possible de simplement cliquer sur "Suivant" (4) pour aller à la page suivante sans marquer la progression. Il y a aussi un bouton "Précédent" (5) pour se rendre à la page précédente.
 
 Télécharger le cours
 ====================

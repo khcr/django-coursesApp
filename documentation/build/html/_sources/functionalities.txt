@@ -6,7 +6,7 @@ Fonctionnalités
 Les professeurs
 ###############
 
-Les comptes professeur du site web ont la possibilité de rédiger des cours complets qui seront ensuite consultables par les autres utilisateurs du site, principalement des élèves. L'objectif est de pouvoir offrir du contenu théorique d'apprentissage en complément de partie pratique. Les enseignants disposent d'un outil formidable pour écrire des compléments au cours de base, afin d'approfondir des éléments ou de les clarifier pour les élèves en difficulté.
+Les comptes "professeurs" du site web ont la possibilité de rédiger des cours complets qui sont ensuite consultables par les autres utilisateurs du site, principalement des élèves. L'objectif est de pouvoir offrir du contenu théorique d'apprentissage en complément de partie pratique. Les enseignants disposent d'un outil formidable pour écrire des compléments au cours de base, afin d'approfondir des éléments ou de les clarifier pour les élèves en difficulté.
 
 *********
 Création
@@ -17,7 +17,7 @@ La première étape du processeur de rédaction consiste à créer le cours en e
 Tous les champs sont obligatoires. Une fois les champs dûment complétés, il suffit à l'auteur de cliquer sur le bouton "Envoyer" (1) pour être redirigé sur la page de rédaction où il peut commencer à écrire. 
 
 .. figure:: images/new.png
-    :scale: 60%
+    :scale: 50%
     :align: center
 
     Création d'un cours
@@ -29,16 +29,16 @@ Rédaction
 Structurer son cours
 ====================
 
-Pour structurer son cours, l'auteur peut tout d'abord créer plusieurs pages ayant chacune un titre (1). Ensuite dans chacune de ces pages, le contenu se découpe en plusieurs sections avec un titre (2) et un contenu (3). L'avantage de cette structure est que le site génère automatiquement un sommaire interactif du cours en se basant sur le titre des pages et celui des sections.
+Pour structurer son cours, l'auteur peut tout d'abord créer plusieurs pages ayant chacune un titre (1). Ensuite, dans chacune de ces pages, le contenu se découpe en plusieurs sections avec un titre (2) et un contenu (3). L'avantage de cette structure est que le site génère automatiquement un sommaire interactif du cours, en se basant sur le titre des pages et celui des sections.
 
-L'action de créer des pages ou des sections et de modifier leur contenu se fait de manière claire, simple et surtout rapide. Le professeur travaille sans jamais devoir recharger sa page, action généralement lente. Pour ajouter une section, un bouton se trouve en bas de page (4). En cliquant dessus, une nouvelle zone d'édition va simplement apparaître. En bas de la page se trouvent le bouton (5) pour ajouter une nouvelle page ainsi que la liste des différentes pages déjà créées (6). L'on peut donc, soit créer une page en cliquant sur le bouton (5), ce qui a pour effet d'afficher une nouvelle page vierge, soit alors naviguer entre les pages du cours pour éditer leur contenu en cliquant sur le numéro des pages (6). Il se peut aussi que l'on veuille réorganiser les sections dans un ordre différent, ou supprimer une section. Cette action est tout à fait possible; à côté de chacune des sections se trouve trois boutons (7): celui pour supprimer la section et les deux autres pour la monter ou la descendre. Lorsque l'on clique sur l'un des trois, la page est mise à jour automatiquement et instantanément.
+L'action de créer des pages ou des sections et de modifier leur contenu se fait de manière claire, simple et surtout rapide. Le professeur travaille sans jamais devoir recharger sa page, action généralement lente. Pour ajouter une section, un bouton se trouve en bas de page (4). En cliquant dessus, une nouvelle zone d'édition va simplement apparaître. En bas de la page se trouvent le bouton (5) pour ajouter une nouvelle page, ainsi que la liste des différentes pages déjà créées (6). L'on peut donc, soit créer une page en cliquant sur le bouton (5), ce qui a pour effet d'afficher une nouvelle page vierge, soit encore naviguer entre les pages du cours pour éditer leur contenu en cliquant sur le numéro des pages (6). Il se peut aussi que l'on veuille réorganiser les sections dans un ordre différent, ou supprimer une section. Cette action est tout à fait possible; à côté de chacune des sections se trouve trois boutons (7): celui pour supprimer la section et les deux autres pour la monter ou la descendre. Lorsque l'on clique sur l'un des trois, la page est mise à jour automatiquement et instantanément.
 
 En ce qui concerne l'enregistrement, il se fait automatiquement toutes les 30 secondes. De plus, au cas où l'on crée ou change une page, ou réorganise les sections, lorsque l'on prévisualise le cours, publie ou retire, de même que si l'on quitte la page, le cours est aussi sauvegardé. Il y a un bouton "Enregistrer" (8) en haut de la page pour faire une sauvegarde manuelle. L'heure du dernier enregistrement est affichée à la gauche du bouton.
 
 Mise en forme
 ==============
 
-Pour mettre en forme le texte de son cours, le rédacteur utilise la syntaxe populaire *Markdown*. La syntaxe consiste à mettre dans le texte des marques avec des symboles qui seront ensuite interprétés comme des titres, images, du texte gras, etc. Par exemple, pour mettre en italique, on entoure un mot avec "*". Ainsi l'on peut facilement souligner du texte, ajouter des images, faire des tableaux et des listes, etc. S'il n'est pas encore à l'aise avec la syntaxe, le professeur peut à tout moment cliquer sur le bouton d'aide (9) en haut de la page, représenté par un point d'interrogation. Il découvre alors des liens pour avoir un rapide aperçu de l'ensemble des fonctionnalités du *Markdown*. 
+Pour mettre en forme le texte de son cours, le rédacteur utilise la syntaxe populaire *Markdown*. La syntaxe consiste à mettre dans le texte des marques avec des symboles qui sont ensuite interprétés, soit comme des titres, des images, du texte gras, etc. Par exemple, pour mettre en italique, on entoure un mot avec "*". Ainsi l'on peut facilement souligner du texte, ajouter des images, faire des tableaux et des listes, etc. S'il n'est pas encore à l'aise avec la syntaxe, le professeur peut à tout moment cliquer sur le bouton d'aide (9) en haut de la page, représenté par un point d'interrogation. Il découvre alors des liens pour avoir un rapide aperçu de l'ensemble des fonctionnalités du *Markdown*. 
 
 De plus, comme les cours visent avant tout un contenu mathématique, l'auteur peut (et doit) baliser le contenu mathématique. Ainsi celui-ci est formaté pour le rendu final et donc correctement affiché. La notation à utiliser pour les formules mathématique est celle du populaire format *LaTex*. Par conséquent, il suffit au professeur de mettre les balises et d'écrire ensuite sa formule mathématique en utilisant la syntaxe *LaTex* (10). Il y a deux types de balises. ``\(`` ... ``\)`` est utilisée pour intégrer des mathématiques directement dans le texte. La balise ``||`` est utilisée pour un affichage en bloc, c'est-à-dire que la formule est sur une nouvelle ligne, séparée du texte. A l'instar du *Markdown*, on peut se référer à la section d'aide pour se familiariser avec la syntaxe *LaTex* (9).
 
@@ -47,7 +47,7 @@ L'auteur n'ayant pas un aperçu direct du rendu de son texte, il peut cliquer su
 Ajouter des médias
 ==================
 
-Evidemment, l'auteur peut inclure des vidéos et des images pour enrichir son contenu. Il peut ajouter une image provenant d'internet en utilisant la syntaxe *Markdown* et le lien de l'image, tandis que pour la vidéo il peut en inclure une de Youtube avec le même procédé que pour l'image (voir aide *Markdown*).
+Evidemment, l'auteur peut inclure des vidéos et des images pour enrichir son contenu. Il peut ajouter une image provenant d'internet en utilisant la syntaxe *Markdown* et le lien de l'image, tandis que pour la vidéo il peut en inclure une provenant de Youtube avec le même procédé que pour l'image (voir aide *Markdown*).
 
 Modifier les informations de base
 =================================
@@ -80,7 +80,7 @@ En se rendant sur "Tous les cours" (1), le professeur voit la liste de tous les 
 Les étudiants
 ##############
 
-La plupart des fonctionnalités nécessitent d'être connecté au site.
+La plupart des fonctionnalités nécessitent que l'on soit connecté au site.
 
 ****************
 Trouver un cours
@@ -106,7 +106,7 @@ S'il apprécie particulièrement un cours, le trouve utile ou veut le retrouver 
 La progression
 ==============
 
-L'élève profite également d'un système d'indication de sa progression. L'objectif est de pouvoir faciliter son apprentissage à travers le cours, l'aider à suivre et identifier ses zones de faiblesse. En bas de chaque page d'un cours se situent deux boutons intitulés "Compris" et "A relire" (2). A la fin de sa lecture de la page, il est conseillé à l'élève de cliquer sur l'un des deux boutons. En effet cela lui permettra ensuite de situer sa progression dans le cours. En se basant sur les indications de l'utilisateur, une barre de progression en haut de la page (3) indique le nombre de pages comprises par rapport aux nombres de pages totale du cours. Quand il clique sur l'un des deux boutons, le lecteur est directement dirigé vers la page suivante et sa barre de progression est mise à jour. Il est évidement possible de simplement cliquer sur "Suivant" (4) pour aller à la page suivante sans marquer la progression. Il y a aussi un bouton "Précédent" (5) pour se rendre à la page précédente.
+L'élève profite également d'un système d'indication de sa progression. L'objectif est de pouvoir faciliter son apprentissage à travers le cours, l'aider à suivre et identifier ses zones de faiblesse. En bas de chaque page d'un cours se situent deux boutons intitulés "Compris" et "A relire" (2). A la fin de sa lecture de la page, il est conseillé à l'élève de cliquer sur l'un des deux boutons. En effet, cela lui permettra ensuite de situer sa progression dans le cours. Basée sur les indications de l'utilisateur, une barre de progression en haut de la page (3) indique le nombre de pages comprises par rapport au nombre total de pages du cours. Quand il clique sur l'un des deux boutons, le lecteur est directement dirigé vers la page suivante et sa barre de progression est mise à jour. Il est évidemment possible de simplement cliquer sur "Suivant" (4) pour aller à la page suivante sans marquer la progression. Il y a aussi un bouton "Précédent" (5) pour se rendre à la page précédente.
 
 Télécharger le cours
 ====================

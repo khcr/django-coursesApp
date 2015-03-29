@@ -24,7 +24,7 @@ app.filter("markdown", function() {
   };
 });
 
-// remplace les espaces par des underscore et enlève les majuscules
+// remplace les espaces par des underscores et enlève les majuscules
 // pour formater une URL par exemple
 app.filter("parameterize", function() {
   return function(input) {

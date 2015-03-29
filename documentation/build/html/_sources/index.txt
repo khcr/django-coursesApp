@@ -1,9 +1,10 @@
-Développement d\'une application de gestions de cours avec AngularJS
+Développement d'une application de gestions de cours avec AngularJS
 ======================================================================
 
 .. toctree::
    :maxdepth: 2
 
+   introduction
    start
    angularjs
    functionalities
@@ -14,4 +15,7 @@ Développement d\'une application de gestions de cours avec AngularJS
    tests
    guide
    bugs
+   conclusion
    bibliographie
+   illustration
+   code

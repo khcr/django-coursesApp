@@ -18,7 +18,7 @@ Lorsqu'on développe une application web, cela donne souvent un code redondant, 
 
 .. code-block:: python
     
-    # url.py - fichier qui gère les URL du site
+    # urls.py - fichier qui gère les URL du site
 
     from django.conf.urls import patterns, url, include
 
@@ -29,7 +29,7 @@ Lorsqu'on développe une application web, cela donne souvent un code redondant, 
         url(r'^articles$', views.index),
     )
 
-    # views.py - fichier qui contient les fonctions liées aux URLs
+    # views.py - fichier qui contient les fonctions liées aux URL
     # = vue ou contrôleur
 
     from django.shortcuts import render
@@ -46,7 +46,7 @@ La deuxième méthode consiste à utiliser les vues génériques. Ce sont des cl
 
 .. code-block:: python
     
-    # url.py - fichier qui gère les URL du site
+    # urls.py - fichier qui gère les URL du site
 
     from django.conf.urls import patterns, url, include
 
@@ -89,10 +89,10 @@ HTTP est l'abréviation de *HyperText Transfer Protocol* qui veut dire *protocol
 * DELETE: supprime une ressource.
 
 .. figure:: images/http.png
-    :scale: 90%
+    :scale: 100%
     :align: center
 
-    Schéma de la communication entre un client et un serveur
+    Schéma de la communication avec HTTP entre un client et un serveur
 
 Nous devons utiliser ces requêtes lorsqu'il s'agit de modifier nos ressources, c'est-à-dire les enregistrements de notre base de données. Par exemple on crée un cours, on le modifie ou on le supprime. Le travail de RestLess est de supporter ces requêtes. En clair, il doit fournir une URL et une fonction qui s'occupent de traiter les différents types de requêtes. Attention à ne pas confondre, une requête n'agit pas directement sur une ressource, c'est le serveur qui s'en occupe. La requête consiste juste en un transfert de données entre le client et le serveur et ainsi elle déclenche des actions.
 
@@ -120,15 +120,15 @@ Maintenant que les bases sont en place, nous pouvons enfin nous intéresser à l
 La liste ci-dessus regroupe les trois vues génériques dont nos classes peuvent hériter. Elles permettent de réaliser les quatre opérations sur nos ressources ainsi que des actions personnalisées. La différence entre la classe ``DetailEndpoint`` et ``ListEndpoint`` est que la première agit sur une ressource particulière. Elle a donc besoin d'un identifiant dans l'URL pour savoir quelle ressource elle doit modifier, dans le style ``/courses/:id``. Notons qu'évidemment toutes les actions, le code qui s'exécute derrière une URL, retournent du JSON. En effet, il s'agit de la particularité et de l'utilité de RestLess. Comment concrètement utiliser ces classes dans le projet ? On fait comme précédemment dans l'exemple sur les vues génériques Django. La première étape consiste à créer une classe qui hérite soit de ``ListEndpoint``, de ``DetailEndpoint`` ou de ``Endpoint``. La seconde étape consiste à spécifier le modèle. Ensuite il faut créer une URL dans laquelle l'on spécifie qu'il faut utiliser notre classe précédemment déclarée. Ainsi. quand on fait une requête sur cette URL, suivant le type de requête, Django fait appel aux méthodes provenant des vues génériques RestLess. Par exemple, on crée une classe ``CoursesList`` dans laquelle on spécifie le modèle ``Course``. Ensuite on rattache cette classe à l'url ``/courses``. Si l'on fait une requête de type POST sur ``/courses``, Django va chercher la méthode ``post``, même nom que le type de requête, dans la classe ``CoursesList``. Comme il ne la trouve pas dans notre classe, il la cherche dans la classe parente ``ListEndpoint`` et l'exécute. On appelle ce principe l'héritage. Le résultat est qu'une ressource est créée dans la table ``courses`` avec les paramètres du client. Une réponse en JSON contenant la ressource créée est retournée. On peut également faire une requête GET sur ``/courses`` et le serveur retourne tous les cours en format JSON également. Rien n'est plus nécessaire pour avoir notre API JSON fonctionnelle.
 
 .. figure:: images/requetes.png
-    :scale: 80%
+    :scale: 90%
     :align: center
 
-    API: schéma du traitement d'une requête à l'aide des vues génériques RestLess
+    Schéma du traitement d'une requête à l'aide des vues génériques RestLess
 
-Dans le cas de notre projet, il a fallu personnaliser les vues génériques pour répondre aux besoins spécifiques des ressources. Pour ce faire, il faut surcharger les méthodes héritées des classes RestLess. Comme mentionné précédemment, les méthodes ont le nom de la requête à laquelle elles correspondent. Si l'on fait une requête PUT, la méthode ``put`` est appelée et ainsi de suite. C'est un principe des vues génériques Django. Concernant les vues génériques, si notre classe ne contient pas le méthode appelée par une requête, le framework va automatiquement chercher la méthode dans la classe parente. Celle-ci est la classe RestLess qui contient les méthodes classiques et conventionnelles qui nous évitent un code redondant. En revanche, si l'on ne veut plus utiliser ces méthodes classiques car elles ne sont plus adaptées, l'on crée alors une méthode de même nom dans la classe fille. Cette méthode est desormais appelée à la place de celle de la classe mère. On appelle cela surcharger une méthode. Dans le projet, toutes les vues génériques sont écrites dans le fichier ``api.py``. On peut y observer que plusieurs méthodes de tous types ont été surchargées. Il faut s'inspirer des méthodes RestLess que l'on surcharge pour que la nouvelle méthode accepte les bons arguments et retourne une réponse valide. On retrouve le fichier source sur `la documentation RestLess <https://django-restless.readthedocs.org/en/latest/_modules/restless/modelviews.html>`_ [#f3]_.
+Dans le cas de notre projet, il a fallu personnaliser les vues génériques pour répondre aux besoins spécifiques des ressources. Pour ce faire, il faut surcharger les méthodes héritées des classes RestLess. Comme mentionné précédemment, les méthodes ont le nom de la requête à laquelle elles correspondent. Si l'on fait une requête PUT, la méthode ``put`` est appelée et ainsi de suite. C'est un principe des vues génériques Django. En ce qui concerne les vues génériques, si notre classe ne contient pas le méthode appelée par une requête, le framework va automatiquement chercher la méthode dans la classe parente. Celle-ci est la classe RestLess qui contient les méthodes classiques et conventionnelles qui nous évitent un code redondant. En revanche, si l'on ne veut plus utiliser ces méthodes classiques car elles ne sont plus adaptées, l'on crée alors une méthode de même nom dans la classe fille. Cette méthode est desormais appelée à la place de celle de la classe mère. On appelle cela surcharger une méthode. Dans le projet, toutes les vues génériques sont écrites dans le fichier ``api.py``. On peut y observer que plusieurs méthodes de tous types ont été surchargées. Il faut s'inspirer des méthodes RestLess que l'on surcharge pour que la nouvelle méthode accepte les bons arguments et retourne une réponse valide. On retrouve le fichier source sur `la documentation RestLess <https://django-restless.readthedocs.org/en/latest/_modules/restless/modelviews.html>`_ [#f3]_.
 
 .. figure:: images/surcharge.png
-    :scale: 80%
+    :scale: 90%
     :align: center
 
     Surcharge d'une méthode
@@ -139,7 +139,7 @@ On doit parfois retourner des objets JSON personnalisés, c'est-à-dire pouvoir 
 Communication avec l'API
 *************************
 
-Nous avons construit une API JSON afin qu'AngularJS puisse communiquer avec une base de données. Pour effectuer les requêtes sur l'API, on trouve deux méthodes utilisées dans le projet. La première consiste à utiliser l'objet Angular ``$http``. Celui-ci permet de construire une requête et de récupérer la réponse ainsi que les éventuelles erreurs. On trouve toutes les spécifications sur la `documentation AngularJS <https://docs.angularjs.org/api/ng/service/$http>`_ [#f13]_. La seconde méthode est d'utiliser l'objet ``$resource``. Si l'on possède une table sur laquelle on veut effectuer les opérations CRUD, ``$resource`` nous évite d'écrire toutes les requêtes avec ``$http``. En effet, ``$resource`` est un objet qui fournit directement les méthodes pour effectuer les différents types de requêtes sur l'API. Pour générer les URL, on fournit d'abord à l'objet une URL de base. Puis, en se basant sur les conventions du web, l'objet est capable d'effectuer les requêtes servant à agir sur la table. Ci-dessous se trouve un exemple d'un objet ``$resource`` et de son utilisation partielle.
+Nous avons construit une API JSON afin qu'AngularJS puisse communiquer avec une base de données. Pour effectuer les requêtes sur l'API, on trouve deux méthodes utilisées dans le projet. La première consiste à utiliser l'objet Angular ``$http``. Celui-ci permet de construire une requête et de récupérer la réponse ainsi que les éventuelles erreurs. On trouve toutes les spécifications sur la `documentation AngularJS <https://docs.angularjs.org/api/ng/service/$http>`_ [#f5]_. La seconde méthode est d'utiliser l'objet ``$resource``. Si l'on possède une table sur laquelle on veut effectuer les opérations CRUD, ``$resource`` nous évite d'écrire toutes les requêtes avec ``$http``. En effet, ``$resource`` est un objet qui fournit directement les méthodes pour effectuer les différents types de requêtes sur l'API. Pour générer les URL, on fournit d'abord à l'objet une URL de base. Puis, en se basant sur les conventions du web, l'objet est capable d'effectuer les requêtes servant à agir sur la table. Ci-dessous se trouve un exemple d'un objet ``$resource`` et de son utilisation partielle.
 
 .. code-block:: javascript
         
@@ -154,10 +154,10 @@ Nous avons construit une API JSON afin qu'AngularJS puisse communiquer avec une 
     card.$save;
     // => POST /api/sections/1
 
-Dans notre application, tous les objets ``$resource`` sont définis dans le fichier ``/courses/static/courses/javascripts/factories/resources.js``. La `documentation <https://docs.angularjs.org/api/ngResource/service/$resource>`_  [#f5]_ fournit toutes les explications concernant ``$resource``.
+Dans notre application, tous les objets ``$resource`` sont définis dans le fichier ``/courses/static/courses/javascripts/factories/resources.js``. La `documentation <https://docs.angularjs.org/api/ngResource/service/$resource>`_ [#f5]_ fournit toutes les explications concernant ``$resource``.
 
-.. [#f1] https://github.com/dobarkod/django-restless. Consulté le 04 javier 15.
-.. [#f2] https://docs.djangoproject.com/fr/1.7/topics/class-based-views/generic-display. Consulté le 04 javier 15.
-.. [#f3] https://django-restless.readthedocs.org/en/latest/_modules/restless/modelviews.html. Consulté le 04 javier 15.
-.. [#f4] https://django-restless.readthedocs.org/en/latest/#. Consulté le 04 javier 15.
-.. [#f13] https://docs.angularjs.org/api/ng/service/$http. Consulté le 21 mars 15.
+.. [#f1] https://github.com/dobarkod/django-restless. Consulté le 4 janvier 15.
+.. [#f2] https://docs.djangoproject.com/fr/1.7/topics/class-based-views/generic-display. Consulté le 4 janvier 15.
+.. [#f3] https://django-restless.readthedocs.org/en/latest/_modules/restless/modelviews.html. Consulté le 4 janvier 15.
+.. [#f4] https://django-restless.readthedocs.org/en/latest. Consulté le 4 janvier 15.
+.. [#f5] https://docs.angularjs.org/api/ng/service/$http. Consulté le 21 mars 15.

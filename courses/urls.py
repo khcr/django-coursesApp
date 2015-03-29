@@ -1,13 +1,14 @@
 from django.conf.urls import patterns, url, include
 
 from courses import views
-from courses.api import CourseList, TeacherCourseList, CourseDetail, PageCourseDetail, PageSectionList, CoursePageList, SectionDetail, ThemeList, CommentList, CourseMenu, CoursePageProgress, CoursePublish, CourseFavorite
+from courses.api import (CourseList, TeacherCourseList, CourseDetail, PageCourseDetail, PageSectionList, 
+    CoursePageList, SectionDetail, ThemeList, CommentList, CourseMenu, CoursePageProgress, CoursePublish, CourseFavorite)
 
 urlpatterns = patterns('',
     # point de départ de l'application
     url(r'^$', views.index, name='index'),
     # génère le PDF d'un cours
-    url(r"^pdf/(?P<pk>\d+)/.*\.pdf$", views.pdf, name="pdf"),
+    url(r'^pdf/(?P<pk>\d+)/.*\.pdf$', views.pdf, name='pdf'),
 
     # API
     url(r'^api/courses$', CourseList.as_view()),

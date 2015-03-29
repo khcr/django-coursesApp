@@ -1,5 +1,5 @@
-# Router Django pour indiquer quelle base de données utiliser
-# ce router indique s'il faut utiliser la base de données de test
+# Routeur Django pour indiquer quelle base de données utiliser
+# ce router indique s'il faut utiliser la base de données de test ou la normale
 import os
 
 class TestRouter(object):

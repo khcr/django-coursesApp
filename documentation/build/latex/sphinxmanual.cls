@@ -1,7 +1,7 @@
 %
 % sphinxmanual.cls for Sphinx (http://sphinx-doc.org/)
 %
-
+\usepackage[utf8]{inputenc}
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{sphinxmanual}[2009/06/02 Document class (Sphinx manual)]
 
@@ -52,6 +52,7 @@
       \endgroup
     \fi
     \begin{flushright}%
+      {\rm\Huge\py@HeaderFamily Développement d'une plateforme Web d'e-learning \\[2.5cm] \par}%
       \sphinxlogo%
       {\rm\Huge\py@HeaderFamily \@title \par}%
       {\em\LARGE\py@HeaderFamily \py@release\releaseinfo \par}
@@ -62,6 +63,8 @@
         \end{tabular}
         \par}
       \vfill\vfill
+      {\large Collège du sud \par}%
+      {\large Travail de maturité \par}%
       {\large
        \@date \par
        \vfill

@@ -70,6 +70,8 @@ DATABASES = {
     }
 }
 
+# ajoute un routeur
+# voir webmath/test_router.py
 DATABASE_ROUTERS = ['webmath.test_router.TestRouter']
 
 # Internationalization
@@ -95,7 +97,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
-# URL de redirection après que l'utilisateur s'est authentifié
+# URL de redirection quand l'utilisateur s'est authentifié
 LOGIN_REDIRECT_URL = "/courses/#"
 # URL pour se connecter
 LOGIN_URL = "/login"

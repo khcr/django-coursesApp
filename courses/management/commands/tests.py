@@ -28,13 +28,13 @@ class Command(BaseCommand):
             if directory not in settings.INSTALLED_APPS:
                 raise CommandError("L'application '{}' n'existe pas".format(directory))
 
-            # teste si le fichier existe
+            # teste si le fichier spécifié existe
             if args and not os.path.isfile("{}/spec/{}".format(directory, args[0])): 
                 raise CommandError("Le fichier spec '{}' n'existe pas".format(args[0]))
 
             self.stdout.write('\nlance les tests dans le dossier {} (utilisez l\'option --app pour changer ce comportement)\n'.format(directory))
 
-            # lance le serveur Django et Webdriver
+            # lance les serveur Django et Webdriver
             server = subprocess.Popen(["python3", "manage.py", "runserver", "3333"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, preexec_fn=os.setsid)
             webdriver = subprocess.Popen(["webdriver-manager", "start"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, preexec_fn=os.setsid)
             self.stdout.write('\n# SERVEURS: serveurs Django et Webdriver lancés\n')
@@ -55,7 +55,7 @@ class Command(BaseCommand):
                 cmd = cmd + ["--specs", "{}/spec/{}".format(directory, args[0])]
             subprocess.call(cmd)
 
-            # supprime la base de données
+            # supprime la base de données de test
             subprocess.call(["rm", "test.sqlite3"])
             self.stdout.write('\n# BASE DE DONNEES: nettoyée\n')
 

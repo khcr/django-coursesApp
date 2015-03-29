@@ -8,7 +8,7 @@ app.controller("ShowCourseController", ["$scope", "$routeParams", "$location", "
   $scope.page = Page.get({ pageId: $routeParams.pageId, objectId: $routeParams.courseId }, function(page) {
     $scope.course = page.course;
 
-    // pour désactiver les liens pour changer de page
+    // pour désactiver les liens de changement de page
     // teste si la page actuelle est la première page
     $scope.firstPage = function() {
       return $scope.page.order === 1;
@@ -21,12 +21,12 @@ app.controller("ShowCourseController", ["$scope", "$routeParams", "$location", "
 
   });
 
-  // va à la prochaine page du cours
+  // redirige vers la prochaine page du cours
   $scope.nextPage = function() {
     $location.path($scope.course.id + "/view/" + ($scope.page.order + 1));
   };
 
-  // va à la précédente page du cours
+  // redirige vers la précédente page du cours
   $scope.previousPage = function() {
     $location.path($scope.course.id + "/view/" + ($scope.page.order - 1));
   };

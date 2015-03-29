@@ -9,7 +9,7 @@ Introduction
 Une base de données est un outil permettant de stocker des données persistantes pour ensuite les réutiliser ou les conserver. Dans le domaine du web, on utilise principalement les bases de données relationnelles. Traditionnellement, elles se découpent en plusieurs tableaux que l'on appelle tables, contenant des colonnes et des lignes. On crée des tables pour représenter des entités, des cours par exemple, qui ont des attributs représentés par des colonnes. Ensuite, chaque ligne correspond à un enregistrement, c'est-à-dire une entité, un cours dans notre exemple. Une table a pratiquement toujours une colonne ``id`` qui est un nombre, un identifiant unique qui permet d'identifier un enregistrement parmi les autres de la table. On l'appelle *clé primaire*. Ils servent aussi à créer des relations entre les tables, à lier un enregistrement à un autre. Nous verrons ces relations dans la construction du module de cours. Pour communiquer avec une base de données relationnelles, notamment chercher des enregistrements dans une table, créer ou mettre à jour un enregistrement, etc. l'on utilise le langage *SQL*, *Structured Query Language*.
 
 .. figure:: images/bd.png
-    :scale: 80%
+    :scale: 90%
     :align: center
 
     Schéma résumant une base de données relationnelle
@@ -32,7 +32,7 @@ La structure
 
     Schéma de toutes les tables du modèle relationnel
 
-La structure des tables relationnelles reflète la structure que perçoit le rédacteur et cela facilite grandement la compréhension. Nous avons vu qu'un cours se compose de plusieurs pages. Elles-mêmes contiennent plusieurs sections, avec un titre et un contenu, que l'auteur peut éditer ou retirer à sa guise. C'est exactement la même chose dans la structure du modèle. Tout d'abord on trouve une tables ``courses`` qui contient les informations de base que le professeur entre à la création du cours. Elle contient les colonnes suivantes: ``name``, ``description``, ``difficulty``. Il reste le champ ``chapter`` que nous verrons plus tard. Ensuite, il y a la table ``pages`` avec la colonne ``name``, ``order`` et ``course_id``. ``name`` est le titre de la page. ``order`` est un nombre qui permet de trier les pages d'un cours entre elles et de les réorganiser par la suite. ``course_id`` indique la relation avec un cours. Elle contient l'``id`` du cours auquel appartient la page. En effet, chaque page appartient à un cours et, vice-versa, un cours possède donc plusieurs pages. L'utilisation plus précise de cette relation est expliquée dans la partie suivante. Finalement, pour compléter l'ensemble, il reste la table ``sections``. Elle possède les colonnes ``name``, ``content``, ``order`` et ``page_id``. On retrouve un titre et un contenu. Il y également l'ordre qui fonctionne comme pour les pages. ``page_id`` indique la relation avec une page. Elle contient l'``id`` de la page à laquelle appartient la section. Par conséquent, une section appartient à une page et une page possède plusieurs sections. A noter que ces trois tables ont également les champs ``created_at`` et ``updated_at``. Elles enregistrent la date et l'heure de la création et la dernière mise à jour de l'entité. Pour résumer les relations qui lient les tables, un cours a plusieurs pages, et chacune des pages a plusieurs sections. Comme dit précédemment, l'on comprend facilement les relations en observant l'implémentation de l'interface de rédaction d'un cours.
+La structure des tables relationnelles reflète la structure que perçoit le rédacteur et cela facilite grandement la compréhension. Nous avons vu qu'un cours se compose de plusieurs pages. Elles-mêmes contiennent plusieurs sections, avec un titre et un contenu, que l'auteur peut éditer ou retirer à sa guise. C'est exactement la même chose dans la structure du modèle. Tout d'abord on trouve une table ``courses`` qui contient les informations de base que le professeur entre à la création du cours. Elle contient les colonnes suivantes: ``name``, ``description``, ``difficulty``. Il reste le champ ``chapter`` que nous verrons plus tard. Ensuite, il y a la table ``pages`` avec la colonne ``name``, ``order`` et ``course_id``. ``name`` est le titre de la page. ``order`` est un nombre qui permet de trier les pages d'un cours entre elles et de les réorganiser par la suite. ``course_id`` indique la relation avec un cours. Elle contient l'``id`` du cours auquel appartient la page. En effet, chaque page appartient à un cours et, vice-versa, un cours possède donc plusieurs pages. L'utilisation plus précise de cette relation est expliquée dans la partie suivante. Finalement, pour compléter l'ensemble, il reste la table ``sections``. Elle possède les colonnes ``name``, ``content``, ``order`` et ``page_id``. On retrouve un titre et un contenu. Il y également l'ordre qui fonctionne comme pour les pages. ``page_id`` indique la relation avec une page. Elle contient l'``id`` de la page à laquelle appartient la section. Par conséquent, une section appartient à une page et une page possède plusieurs sections. A noter que ces trois tables ont également les champs ``created_at`` et ``updated_at``. Elles enregistrent la date et l'heure de la création et la dernière mise à jour de l'entité. Pour résumer les relations qui lient les tables, un cours a plusieurs pages, et chacune des pages a plusieurs sections. Comme dit précédemment, l'on comprend facilement les relations en observant l'implémentation de l'interface de rédaction d'un cours.
 
 .. figure:: images/schema_cours.png
     :scale: 80%
@@ -69,11 +69,13 @@ Récupère tous les cours publiés ayant un thème particulier.
 
 .. code-block:: sql
 
+    -- SQL
+
     SELECT * FROM "courses_course" INNER JOIN "teachers_chapter" ON ( "courses_course"."chapter_id" = "teachers_chapter"."id" ) 
     INNER JOIN "teachers_theme" ON ( "teachers_chapter"."theme_id" = "teachers_theme"."id" ) 
     WHERE ("teachers_theme"."name" = "Géométrie" AND "courses_course"."published" = True)
 
-Créer un nouveau cours. On crée d'abord le cours, puis une page associée contenant une section vierge.
+Crée un nouveau cours. On crée d'abord le cours, puis une page associée contenant une section vierge.
 
 .. code-block:: python
 
@@ -94,6 +96,8 @@ Créer un nouveau cours. On crée d'abord le cours, puis une page associée cont
         page.sections.create(name="Première section", order=1)
 
 .. code-block:: sql
+
+    -- SQL
     
     -- on crée le cours
     INSERT INTO courses (name, description, difficulty, author_id, chapter_id, created_at, updated_at) 
@@ -138,6 +142,8 @@ Mettre à jour le contenu d'une page d'un cours. Le titre de la page, le titre e
             section_form.save()
 
 .. code-block:: sql
+
+    -- SQL
     
     -- Récupère la page à éditer
     SELECT * FROM pages WHERE id = 1
@@ -176,7 +182,7 @@ L'utilisateur a la possibilité de marquer sa progression quand il lit un cours.
 
     # request.data est un dictionnaire contenant les données soumises par l'utilisateur
     # ici, si l'utilisateur a compris ou non la page
-    # On choisit le status en fonction
+    # On choisit le statut en fonction
     if request.data['is_done'] == True:
         status = Status.objects.get(name="Compris")
     else:
@@ -195,6 +201,8 @@ L'utilisateur a la possibilité de marquer sa progression quand il lit un cours.
         progression.save()
 
 .. code-block:: sql
+
+    -- SQL
     
     -- Récupère la page à éditer
     SELECT * FROM pages WHERE id = 1
@@ -208,4 +216,4 @@ L'utilisateur a la possibilité de marquer sa progression quand il lit un cours.
     -- Met à jour une progression
     UPDATE "progressions" SET status_id = 1 WHERE id = 1
 
-.. [#f1] https://docs.djangoproject.com/fr/1.7/topics/forms. Consulté le 20 décembre.
+.. [#f1] https://docs.djangoproject.com/fr/1.7/topics/forms. Consulté le 20 décembre 14.

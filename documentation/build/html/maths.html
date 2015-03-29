@@ -60,6 +60,7 @@
         
         
             <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="start.html">Démarrage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="angularjs.html">AngularJS</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="angularjs.html#introduction">Introduction</a></li>
@@ -71,11 +72,7 @@
 <li class="toctree-l2"><a class="reference internal" href="functionalities.html#les-etudiants">Les étudiants</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="schemas.html">Schémas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="schemas.html#use-cases">Use cases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="schemas.html#navigation">Navigation</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="schemas.html">Schémas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="models.html">Modèle relationnel</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="models.html#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html#les-cours">Les cours</a></li>
@@ -102,16 +99,19 @@
 <li class="toctree-l2"><a class="reference internal" href="guide.html#concepts">Concepts</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bugs.html">Bugs et améliorations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bugs.html#bugs">Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">Bogues et améliorations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bugs.html#bogues">Bogues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bugs.html#ameliorations">Améliorations</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="conclusion.html">Conclusion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliographie.html">Bibliographie</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="bibliographie.html#id1">Bibliographie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bibliographie.html#webographie">Webographie</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="illustration.html">Source des illustrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">Code source</a></li>
 </ul>
 
         
@@ -159,7 +159,9 @@
         <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/MathJax/MathJax.js?config=TeX-AMS_HTML&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
         <span class="c">&lt;!-- CDN --&gt;</span>
-        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script</span>
+<span class="nt">            </span><span class="na">src=</span><span class="s">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/script&gt;</span>
     <span class="nt">&lt;/head&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         $$ f(x) = 5x + 4 $$
@@ -169,7 +171,7 @@
 </div>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/mathjax.png"><img alt="_images/mathjax.png" src="_images/mathjax.png" style="width: 109.0px; height: 47.0px;" /></a>
-<p class="caption">Résultat</p>
+<p class="caption">Résultat de MathJax</p>
 </div>
 </div>
 <div class="section" id="personnalisation">
@@ -197,7 +199,7 @@
 <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Ajax</span><span class="p">.</span><span class="nx">loadComplete</span><span class="p">(</span><span class="s2">&quot;[MathJax]/config/local/local.js&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Premièrement, le groupe d&#8217;options commenté <tt class="docutils literal"><span class="pre">Apparence</span></tt> sert à supprimer les messages inutiles de MathJax, c&#8217;est-à-dire les messages de chargements par exemple. On supprime également le menu MathJax que celui-ci ajoute aux expressions qu&#8217;il transforme et que l&#8217;on affiche avec un clic droit. Ce menu est jugé inutile et surchargeant. Ensuite le dictionnaire <tt class="docutils literal"><span class="pre">styles</span></tt> permet d&#8217;ajouter du CSS en plus de celui que génère MathJax. On ajoute à la classe <tt class="docutils literal"><span class="pre">MathJax_Display</span></tt>, une classe utilisée sur toutes les expressions qu&#8217;il transforme, le style <tt class="docutils literal"><span class="pre">clear:</span> <span class="pre">&quot;both&quot;</span></tt>. Il s&#8217;agit d&#8217;une correction d&#8217;un bug du plugin, car par défaut MathJax pouvait interférer avec le style déjà en place sur le site web. Ce problème créait des problèmes gênants pour l&#8217;interface. Finalement, la dernière configuration faite n&#8217;est pas la plus simple. Nous avons vu que MathJax analysait automatiquement toute la page HTML pour transformer le contenu balisé. Nous avons modifié ce comportement par défaut de MathJax. Il s&#8217;agit d&#8217;une part d&#8217;une question de performance. En effet, nous n&#8217;avons pas envie que des pages qui n&#8217;ont pas de contenu mathématique soient analysées par le lourd code JavaScript de MathJax. D&#8217;autre part, pour des questions de contrôle, l&#8217;on veut que savoir exactement où il agit. L&#8217;option <tt class="docutils literal"><span class="pre">skipStartupTypeset</span></tt> permet donc de désactiver l&#8217;exécution automatique du processus MathJax. Le prochain défi est de trouver un moyen facilement utilisable d&#8217;indiquer quelle partie du code HTML doit être analysée. AngularJS a un outil très pratique pour accomplir ce genre de tâches. Nous avons déjà eu l&#8217;occasion de le découvrir dans le premier chapitre: <a class="reference internal" href="angularjs.html"><em>les directives</em></a>. Ce sont des attributs ou éléments HTML qui exécutent des actions spécifiques, comme <tt class="docutils literal"><span class="pre">ng-repeat</span></tt> ou <tt class="docutils literal"><span class="pre">ng-show</span></tt>.</p>
+<p>Premièrement, le groupe d&#8217;options commenté <tt class="docutils literal"><span class="pre">Apparence</span></tt> sert à supprimer les messages inutiles de MathJax, c&#8217;est-à-dire les messages de chargements par exemple. On supprime également le menu MathJax que celui-ci ajoute aux expressions qu&#8217;il transforme et que l&#8217;on affiche avec un clic droit. Ce menu est jugé inutile et surchargeant. Ensuite le dictionnaire <tt class="docutils literal"><span class="pre">styles</span></tt> permet d&#8217;ajouter du CSS en plus de celui que génère MathJax. On ajoute à la classe <tt class="docutils literal"><span class="pre">MathJax_Display</span></tt>, une classe utilisée sur toutes les expressions qu&#8217;il transforme, le style <tt class="docutils literal"><span class="pre">clear:</span> <span class="pre">&quot;both&quot;</span></tt>. Il s&#8217;agit d&#8217;une correction d&#8217;un bug du plugin, car par défaut MathJax pouvait interférer avec le style déjà en place sur le site web. Ce problème créait des problèmes gênants pour l&#8217;interface. Finalement, la dernière configuration faite n&#8217;est pas la plus simple. Nous avons vu que MathJax analysait automatiquement toute la page HTML pour transformer le contenu balisé. Nous avons modifié ce comportement par défaut de MathJax. Il s&#8217;agit d&#8217;une part d&#8217;une question de performance. En effet, nous n&#8217;avons pas envie que des pages qui n&#8217;ont pas de contenu mathématique soient analysées par le lourd code JavaScript de MathJax. D&#8217;autre part, pour des questions de contrôle, l&#8217;on veut savoir exactement où il agit. L&#8217;option <tt class="docutils literal"><span class="pre">skipStartupTypeset</span></tt> permet donc de désactiver l&#8217;exécution automatique du processus MathJax. Le prochain défi est de trouver un moyen facilement utilisable pour indiquer quelle partie du code HTML doit être analysée. AngularJS a un outil très pratique pour accomplir ce genre de tâches. Nous avons déjà eu l&#8217;occasion de le découvrir dans le premier chapitre: <a class="reference internal" href="angularjs.html"><em>les directives</em></a>. Ce sont des attributs ou éléments HTML qui exécutent des actions spécifiques, comme <tt class="docutils literal"><span class="pre">ng-repeat</span></tt> ou <tt class="docutils literal"><span class="pre">ng-show</span></tt>.</p>
 <p>Nous allons donc créer une directive <tt class="docutils literal"><span class="pre">mathjax</span></tt>. Le code ci-dessous déclare simplement la directive.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// on déclare la directive</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">&#39;mathjax&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -228,20 +230,20 @@ Pour définir la directive et son comportement, il faut retourner un objet JavaS
             <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Queue</span><span class="p">([</span><span class="s2">&quot;Typeset&quot;</span><span class="p">,</span> <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">,</span> <span class="nx">element</span><span class="p">[</span><span class="mi">0</span><span class="p">]]);</span>
             <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Queue</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
                 <span class="nx">element</span><span class="p">.</span><span class="nx">children</span><span class="p">().</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">&quot;ng-hide&quot;</span><span class="p">);</span>
-            <span class="p">})</span>
+            <span class="p">});</span>
         <span class="p">});</span>
     <span class="p">}</span>
-<span class="p">}]);</span>
+<span class="p">});</span>
 </pre></div>
 </td></tr></table></div>
 <ul class="simple">
 <li><strong>restrict</strong>: &#8216;AE&#8217; signifie que notre directive peut être un attribut (A = Attribut), avec le forme <tt class="docutils literal"><span class="pre">&lt;directive&gt;&lt;/directive&gt;</span></tt> ou un élément (E = Element), avec la forme <tt class="docutils literal"><span class="pre">&lt;div</span> <span class="pre">directive&gt;&lt;/div&gt;</span></tt>. On peut aussi ajouter l&#8217;option C pour utiliser la directive en tant que classe (C = Class), avec la forme <tt class="docutils literal"><span class="pre">&lt;div</span> <span class="pre">class=&quot;directive&quot;&gt;&lt;/div&gt;</span></tt>.</li>
 <li><strong>template</strong>: Le contenu HTML dans notre directive.</li>
-<li><strong>tranclude</strong>: Cette option permet de récupérer le contenu qui est dans la directive et de le réinjecter dans le template. En fait, par défaut, qu&#8217;importe le contenu de la directive sur la page HTML, celui-ci est de toute façon remplacé par la chaine de caractère de l&#8217;option <tt class="docutils literal"><span class="pre">template</span></tt>. Par exemple, si on écrit <tt class="docutils literal"><span class="pre">&lt;mathjax&gt;{{</span> <span class="pre">cours.contenu</span> <span class="pre">}}&lt;/mathjax&gt;</span></tt>, le contenu du cours est supprimé. Par contre, quand on utilise l&#8217;option <tt class="docutils literal"><span class="pre">transclude</span></tt>, Angular récupère le contenu de la directive et l&#8217;injecte dans notre template, à l&#8217;endroit où on spécifie <tt class="docutils literal"><span class="pre">ng-tranclude</span></tt>. Ainsi on trouve dans l&#8217;option <tt class="docutils literal"><span class="pre">template</span></tt> le code HTML <tt class="docutils literal"><span class="pre">&lt;div</span> <span class="pre">ng-transclude&gt;&lt;/div&gt;</span></tt>. Le contenu de la directive est donc ajouté dans la <tt class="docutils literal"><span class="pre">div</span></tt>.</li>
-<li><strong>link</strong>: c&#8217;est la fonction qui est exécutée une fois que la page est compilée. En clair, quand AngularJS a transformé la page HTML et ses directives, le DOM est totalement généré. Ensuite seulement peut agir JavaScript sur celui-ci. Par conséquent, avec la fonction que l&#8217;on passe à <tt class="docutils literal"><span class="pre">link</span></tt>, on peut manipuler le contenu de notre directive. La fonction prend trois arguments. <tt class="docutils literal"><span class="pre">scope</span></tt> est basiquement l&#8217;objet qui contient les données du modèle. <tt class="docutils literal"><span class="pre">element</span></tt> est l&#8217;élément HTML lui-même et <tt class="docutils literal"><span class="pre">attrs</span></tt> contient les attributs HTML supplémentaires de notre directive.</li>
+<li><strong>tranclude</strong>: Cette option permet de récupérer le contenu qui est dans la directive et de le réinjecter dans le gabarit. En fait, par défaut, qu&#8217;importe le contenu de la directive sur la page HTML, celui-ci est de toute façon remplacé par la chaine de caractère de l&#8217;option <tt class="docutils literal"><span class="pre">template</span></tt>. Par exemple, si on écrit <tt class="docutils literal"><span class="pre">&lt;mathjax&gt;{{</span> <span class="pre">cours.contenu</span> <span class="pre">}}&lt;/mathjax&gt;</span></tt>, le contenu du cours est supprimé. Par contre, quand on utilise l&#8217;option <tt class="docutils literal"><span class="pre">transclude</span></tt>, Angular récupère le contenu de la directive et l&#8217;injecte dans le gabarit de la directive, à l&#8217;endroit où l&#8217;on spécifie <tt class="docutils literal"><span class="pre">ng-tranclude</span></tt>. Ainsi on trouve dans l&#8217;option <tt class="docutils literal"><span class="pre">template</span></tt> le code HTML <tt class="docutils literal"><span class="pre">&lt;div</span> <span class="pre">ng-transclude&gt;&lt;/div&gt;</span></tt>. Le contenu de la directive est donc ajouté dans la <tt class="docutils literal"><span class="pre">div</span></tt>.</li>
+<li><strong>link</strong>: c&#8217;est la fonction qui est exécutée une fois que la page est compilée. En clair, quand AngularJS a transformé la page HTML et ses directives, le DOM est totalement généré. Ensuite seulement JavaScript peut agir sur celui-ci. Par conséquent, avec la fonction que l&#8217;on passe à <tt class="docutils literal"><span class="pre">link</span></tt>, on peut manipuler le contenu de notre directive. La fonction prend trois arguments. <tt class="docutils literal"><span class="pre">scope</span></tt> est basiquement l&#8217;objet qui contient les données du modèle. <tt class="docutils literal"><span class="pre">element</span></tt> est l&#8217;élément HTML lui-même et <tt class="docutils literal"><span class="pre">attrs</span></tt> contient les attributs HTML supplémentaires de notre directive.</li>
 </ul>
 <p>Il y a encore beaucoup d&#8217;autres options disponibles pour personnaliser une directive, elles sont listées sur <a class="reference external" href="https://docs.angularjs.org/guide/directive">la documentation</a> <a class="footnote-reference" href="#f3" id="id5">[3]</a>.</p>
-<p>Intéressons nous maintenant au code qui se trouve à l&#8217;intérieur de la fonction <tt class="docutils literal"><span class="pre">link</span></tt>. La difficulté se trouve surtout dans le code spécifique à MathJax, <tt class="docutils literal"><span class="pre">MathJax.Hub.Queue</span></tt>. En fait, cette expression permet d&#8217;exécuter des fonctions en lien avec MathJax au bon moment. Elle permet tout simplement d&#8217;assurer que les fonctions que l&#8217;on passe à <tt class="docutils literal"><span class="pre">Queue</span></tt> s&#8217;exécutent une fois que MathJax est complétement chargé et qu&#8217;il est prêt à être utilisé. La première expression MathJax, à la ligne 7, indique qu&#8217;il faut analyser et mettre en forme le contenu de l&#8217;élément qu&#8217;on passe en argument, dans notre cas <tt class="docutils literal"><span class="pre">element[0]</span></tt>. On peut remarquer que l&#8217;on utilise <tt class="docutils literal"><span class="pre">element[0]</span></tt> et pas <tt class="docutils literal"><span class="pre">element</span></tt>. <tt class="docutils literal"><span class="pre">element</span></tt> est un objet contenant plusieurs informations tandis que <tt class="docutils literal"><span class="pre">element[0]</span></tt> retourne l&#8217;élément du DOM. Ensuite dans la deuxième expression, ligne 8, on enlève simplement la classe <tt class="docutils literal"><span class="pre">ng-hide</span></tt> de notre élément. Par défaut on cache le contenu de la directive, comme on peut l&#8217;observer dans l&#8217;option <tt class="docutils literal"><span class="pre">template</span></tt> qui contient la classe <tt class="docutils literal"><span class="pre">ng-hide</span></tt>. Cette expression sert à afficher la directive seulement une fois que les expressions mathématiques ont été transformées. Ainsi l&#8217;utilisateur ne voit pas du contenu qui n&#8217;a pas encore été formaté par MathJax. Pour plus d&#8217;informations sur la <tt class="docutils literal"><span class="pre">Queue</span></tt> MathJax, on peut se rendre sur <a class="reference external" href="http://docs.mathjax.org/en/latest/typeset.html">la documentation officielle</a> <a class="footnote-reference" href="#f4" id="id6">[4]</a>. Finalement le code est enveloppé dans une fonction <tt class="docutils literal"><span class="pre">$timeout</span></tt> qui permet simplement d&#8217;assurer, lorsque notre directive est utilisée dans une boucle, que la boucle soit terminée avant que nous exécutions les transformations.</p>
+<p>Intéressons nous maintenant au code qui se trouve à l&#8217;intérieur de la fonction <tt class="docutils literal"><span class="pre">link</span></tt>. La difficulté se trouve surtout dans le code spécifique à MathJax, <tt class="docutils literal"><span class="pre">MathJax.Hub.Queue</span></tt>. En fait, cette expression permet d&#8217;exécuter des fonctions en lien avec MathJax au bon moment. Elle permet tout simplement d&#8217;assurer que les fonctions que l&#8217;on passe à <tt class="docutils literal"><span class="pre">Queue</span></tt> s&#8217;exécutent une fois que MathJax est complétement chargé et qu&#8217;il est prêt à être utilisé. La première expression MathJax, à la ligne 7, indique qu&#8217;il faut analyser et mettre en forme le contenu de l&#8217;élément qu&#8217;on passe en argument, dans notre cas <tt class="docutils literal"><span class="pre">element[0]</span></tt>. On peut remarquer que l&#8217;on utilise <tt class="docutils literal"><span class="pre">element[0]</span></tt> et pas <tt class="docutils literal"><span class="pre">element</span></tt>. <tt class="docutils literal"><span class="pre">element</span></tt> est un objet contenant plusieurs informations tandis que <tt class="docutils literal"><span class="pre">element[0]</span></tt> retourne l&#8217;élément du DOM. Ensuite dans la deuxième expression, ligne 8, on enlève simplement la classe <tt class="docutils literal"><span class="pre">ng-hide</span></tt> de notre élément. Par défaut on cache le contenu de la directive, comme on peut l&#8217;observer dans l&#8217;option <tt class="docutils literal"><span class="pre">template</span></tt> qui contient la classe <tt class="docutils literal"><span class="pre">ng-hide</span></tt>. Cette expression sert à afficher la directive seulement une fois que les expressions mathématiques ont été transformées. Ainsi, l&#8217;utilisateur ne voit pas du contenu qui n&#8217;a pas encore été formaté par MathJax. Pour plus d&#8217;informations sur la <tt class="docutils literal"><span class="pre">Queue</span></tt> MathJax, on peut se rendre sur <a class="reference external" href="http://docs.mathjax.org/en/latest/typeset.html">la documentation officielle</a> <a class="footnote-reference" href="#f4" id="id6">[4]</a>. Finalement, le code est enveloppé dans une fonction <tt class="docutils literal"><span class="pre">$timeout</span></tt> qui permet simplement d&#8217;assurer, lorsque notre directive est utilisée dans une boucle, que la boucle soit terminée avant que nous exécutions les transformations.</p>
 <p>Notre directive est prête à être utilisée ! Maintenant, il suffit de l&#8217;utiliser pour mettre en forme notre contenu mathématique à l&#8217;endroit où on le désire.</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;mathjax&gt;</span>
@@ -253,25 +255,25 @@ Pour définir la directive et son comportement, il faut retourner un objet JavaS
 <table class="docutils footnote" frame="void" id="f1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> <a class="reference external" href="http://mathjax.org">http://mathjax.org</a></td></tr>
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> <a class="reference external" href="http://mathjax.org">http://mathjax.org</a>. Consulté le 27 décembre 14.</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="f2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[2]</a></td><td><a class="reference external" href="http://docs.mathjax.org/en/latest/config-files.html">http://docs.mathjax.org/en/latest/config-files.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id4">[2]</a></td><td><a class="reference external" href="http://docs.mathjax.org/en/latest/config-files.html">http://docs.mathjax.org/en/latest/config-files.html</a>.  Consulté le 27 décembre 14.</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="f3" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[3]</a></td><td><a class="reference external" href="https://docs.angularjs.org/guide/directive">https://docs.angularjs.org/guide/directive</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id5">[3]</a></td><td><a class="reference external" href="https://docs.angularjs.org/guide/directive">https://docs.angularjs.org/guide/directive</a>. Consulté le 28 décembre 14.</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="f4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[4]</a></td><td><a class="reference external" href="http://docs.mathjax.org/en/latest/typeset.html">http://docs.mathjax.org/en/latest/typeset.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id6">[4]</a></td><td><a class="reference external" href="http://docs.mathjax.org/en/latest/typeset.html">http://docs.mathjax.org/en/latest/typeset.html</a>.  Consulté le 28 décembre 14.</td></tr>
 </tbody>
 </table>
 </div>
@@ -315,7 +317,7 @@ Pour définir la directive et son comportement, il faut retourner un objet JavaS
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.2',
+            VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

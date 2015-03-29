@@ -10,11 +10,11 @@
 \contentsline {chapter}{\numberline {4}Fonctionnalit\IeC {\'e}s}{13}{chapter.4}
 \contentsline {section}{\numberline {4.1}Les professeurs}{13}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Cr\IeC {\'e}ation}{13}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}R\IeC {\'e}daction}{13}{subsection.4.1.2}
-\contentsline {subsubsection}{Structurer son cours}{13}{subsubsection*.3}
+\contentsline {subsection}{\numberline {4.1.2}R\IeC {\'e}daction}{14}{subsection.4.1.2}
+\contentsline {subsubsection}{Structurer son cours}{14}{subsubsection*.3}
 \contentsline {subsubsection}{Mise en forme}{14}{subsubsection*.4}
 \contentsline {subsubsection}{Ajouter des m\IeC {\'e}dias}{14}{subsubsection*.5}
-\contentsline {subsubsection}{Modifier les informations de base}{15}{subsubsection*.6}
+\contentsline {subsubsection}{Modifier les informations de base}{14}{subsubsection*.6}
 \contentsline {subsubsection}{Publier un cours}{15}{subsubsection*.7}
 \contentsline {subsubsection}{Retrouver son cours}{15}{subsubsection*.8}
 \contentsline {section}{\numberline {4.2}Les \IeC {\'e}tudiants}{15}{section.4.2}
@@ -30,7 +30,7 @@
 \contentsline {section}{\numberline {6.2}Les cours}{24}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}La structure}{24}{subsection.6.2.1}
 \contentsline {subsection}{\numberline {6.2.2}Utilisation}{24}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}Les chapitres}{26}{section.6.3}
+\contentsline {section}{\numberline {6.3}Les chapitres}{27}{section.6.3}
 \contentsline {section}{\numberline {6.4}Les commentaires}{27}{section.6.4}
 \contentsline {section}{\numberline {6.5}La progression}{27}{section.6.5}
 \contentsline {chapter}{\numberline {7}RestLess}{29}{chapter.7}

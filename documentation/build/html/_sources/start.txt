@@ -4,7 +4,7 @@ Démarrage
 
 **Prérequis**
 
-* Python 3 et pip installé
+* Python 3 et pip installés
 
 **Installer Django et les dépendances**
 
@@ -21,9 +21,9 @@ De plus, il faut encore installer ces paquets sur la machine:
 
 **Créer un super utilisateur**
 
-Si besoin de se connecter à la zone d'administration ("/admin")
+S'il y a besoin de se connecter à la zone d'administration (``/admin``)
 
-``python3 manage.py createsuperuser`` et suivre les instructions
+``python3 manage.py createsuperuser``
 
 **Lancer le serveur Django**
 
@@ -32,10 +32,12 @@ Si besoin de se connecter à la zone d'administration ("/admin")
 **Données**
 
 * Créer les données nécessaires: ``python3 manage.py seed``
-* Finalement vous pouvez vous rendre sur l'URL ``/courses`` et profiter des fonctionnalités.
+* Finalement, vous pouvez vous rendre sur l'URL ``/courses`` et profiter des fonctionnalités.
+* Identifiant pour se connecter en tant qu'enseignant: ``smith.john`` et ``12341``
+* Identifiant pour se connecter en tant qu'étudiant: ``dupont.alfred`` et ``12341``
 
 **Tests**
 
 Pour lancer les tests, installer d'abord Protractor (ne pas lancer le serveur webdriver): http://angular.github.io/protractor/#/tutorial
 
-Ensuite lancer la commande ``python3 manage.py tests``
+Ensuite, lancer la commande ``python3 manage.py tests``.

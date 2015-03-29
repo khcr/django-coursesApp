@@ -15,7 +15,7 @@ class CourseList(ListEndpoint):
     def get(self, request):
         # TODO: utiliser l'utilisateur connecté
         user = User.objects.first()
-        # Trie les cours par thème, sélectionne les favoris ou renvoie tous les cours
+        # Trie les cours par thème, sélectionne les cours favoris d'un utilisateur ou renvoie tous les cours
         # Retourne seulement les cours publiés
         if 'theme' in request.GET:
             courses = Course.objects.filter(chapter__theme__name=request.GET['theme'], published=True)
@@ -135,7 +135,7 @@ class PageSectionList(ListEndpoint):
 class SectionDetail(DetailEndpoint):
     model = Section
 
-    # /section/:id
+    # /sections/:id
     # GET
     # PUT
     # DELETE
@@ -181,10 +181,10 @@ class CommentList(ListEndpoint):
 
 class CourseMenu(Endpoint):
 
-    # Renvoie les titres des pages et de leurs sections pour faire le menu du cours
+    # Renvoie le titre des pages et de leurs sections pour faire le menu du cours
     def get(self, request, pk):
         pages = Page.objects.filter(course_id=pk)
-        # on inclut le champs "order" pour marquer la page active dans le menu
+        # on inclut le champs "order" pour mettre en évidence la page active dans le menu
         return serialize(pages, fields=[
                 'name',
                 'order',
@@ -240,11 +240,9 @@ class CourseFavorite(Endpoint):
         course = Course.objects.get(pk=pk)
         # teste si l'utilisateur a déjà le cours dans ses favoris
         is_favorite = course.has_favorite(user)
-        # si oui
         if is_favorite:
             # on retire le cours des favoris
             course.favorites.remove(user)
-        # sinon
         else:
             # on ajoute le cours aux favoris
             course.favorites.add(user)

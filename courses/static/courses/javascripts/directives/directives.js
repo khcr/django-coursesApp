@@ -21,7 +21,7 @@ app.directive("mathjax", ["$timeout", function($timeout) {
   };
 }]);
 
-// directive qui affiche un formulaire pour les informations de base d'un cours
+// directive qui affiche un formulaire pour éditer les informations de base d'un cours
 app.directive("courseForm", function() {
   return {
     restrict: "E",

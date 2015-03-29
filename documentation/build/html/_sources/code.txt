@@ -1,0 +1,5 @@
+================
+Code source
+================
+
+.. literalinclude:: ../../courses/urls.py

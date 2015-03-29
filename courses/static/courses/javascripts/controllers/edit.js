@@ -17,7 +17,7 @@ app.controller("EditCourseController", ["$scope", "$routeParams", "$http","Cours
 
   $scope.saveCourse = function() {
     $scope.course.$update(function() {
-      // message affiché dans la page
+      // message affiché sur la page
       $scope.message = "Sauvegardé";
     });
   };

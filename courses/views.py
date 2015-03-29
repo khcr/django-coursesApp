@@ -14,9 +14,9 @@ from courses.models import Course
 def index(request):
     return render(request, "courses/courses.html", locals())
 
-# returne un cours en format PDF
+# retourne un cours au format PDF
 def pdf(request, pk):
-    # réponse PDF
+    # réponse HTTP en PDF
     response = HttpResponse(content_type='application/pdf')
 
     # récupère le cours
@@ -29,13 +29,15 @@ def pdf(request, pk):
     # REGEX: on remplace les balises "||" du cours avec l'expression LaTex \begin{math}\end{math}. Besoin de Pandoc.
     content = re.sub(r"\|{2}(?P<content>[^|]*)\|{2}", r"\\begin{math}\g<content>\end{math}", content)
 
+    # Inspiré de Pypandoc: https://github.com/bebraw/pypandoc
     # Rendu PDF avec Pandoc
     # On utilise un fichier temporaire pour écrire le PDF
     output_file = NamedTemporaryFile(suffix='.pdf')
-    p = subprocess.Popen(['pandoc', '--from=markdown', '--to=latex', '-o', output_file.name, '--latex-engine=xelatex', '-s', "-V" ,"geometry:margin=1in"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    p = subprocess.Popen(['pandoc', '--from=markdown', '--to=latex', '-o', output_file.name, 
+        '--latex-engine=xelatex', '-s', "-V" ,"geometry:margin=1in"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
     c = p.communicate(content.encode('utf-8'))[0].decode('utf-8')
 
     # ajoute le PDF à notre objet réponse
     response.write(output_file.read())
-    # returne la réponse, le PDF du cours
+    # retourne la réponse, le PDF du cours
     return response

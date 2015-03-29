@@ -28,7 +28,7 @@ Cette section permet de s'y retrouver dans la multitude de fichiers du projet et
 
 * courses/static/courses/javascripts/:
     * **config/routes.js**: déclare les routes principales de notre application avec AngularJS. `Documentation officielle <https://docs.angularjs.org/tutorial/step_07>`__ [#f6]_
-    * **controllers/**: déclare les contrôleurs AngularJS. Un fichier correspond à une route et son contrôleur. Ils sont utilisés dans le fichier ``courses/static/courses/javascripts/config/routes.js``.
+    * **controllers/**: déclare les contrôleurs AngularJS. Un fichier correspond à une route et son contrôleur. Ils sont utilisés dans le fichier ``routes.js``.
     * **directives/**: déclare des directives AngularJS. `Documentation officielle <https://docs.angularjs.org/guide/directive>`__ [#f7]_
     * **factories/resources.js**: déclare des objets ressources qui permettent de communiquer facilement avec l'API. `Documentation officielle <https://docs.angularjs.org/api/ngResource/service/$resource>`__ [#f8]_
     * **filters/**: déclare des filtres AngularJS. `Documentation officielle <https://docs.angularjs.org/guide/filter>`__ [#f9]_
@@ -70,7 +70,7 @@ Utilisateurs
 
 * **#/:course_id/edit**: Page qui permet de modifier les informations de base d'un cours, telles que le nom, la description ou la difficulté.
 
-* **#/:course_id/show/:page**: Page pour lire un cours. Le cours y est affiché, on peut naviguer à travers les pages, commenter le cours, etc.
+* **#/:course_id/view/:page**: Page pour lire un cours. Le cours y est affiché, on peut naviguer à travers les pages, commenter le cours, etc.
 
 * **/pdf/:course_id/*.pdf**: Renvoie un cours au format PDF pour pouvoir être téléchargé.
 
@@ -139,7 +139,7 @@ Concepts
 Intégration d'AngularJS avec Django
 ************************************
 
-En dehors de l'API et des PDF, Django ne fournit qu'une seule route dans l'application. En effet, à partir de cette route, Angular s'occupe de gérer les autres routes et les gabarits. Concrètement, lorsqu'on charge une page de notre application, la requête va d'abord passer par la vue Django ``index`` déclarée dans le fichier `views.py`. Cette vue s'occupe simplement d'afficher le gabarit ``courses.html``. Ce fichier HTML est une maquette pour notre application, c'est-à-dire que son contenu est sur toutes les pages. Il contient le menu, l'inclusion des fichiers JavaScript et des feuilles de syle, ainsi que le pied de page. Dans la balise ``body``, on a ajouté la directive Angular ``ng-app=Courses``. On déclare qu'à l'intérieur de cette balise se trouve une application AngularJS nommée ``CoursesApp``. Ainsi, une fois que Django a affiché le gabarit ``courses.html``, Angular va insérer le contenu du bon fichier HTML dans la balise ``body`` selon l'URL et les routes écrites dans le fichier ``routes.js``. La page finale est maintenant visible par l'utilisateur. Par exemple, si l'on se rend sur ``courses/help``, Angular s'occupe de chercher le fichier ``help.html`` et d'insérer son contenu dans la balise ``body`` de ``courses.html``. L'avantage de ce système est que lorsqu'on change de page, la vue Django n'est pas rappelée, mais seul le contenu de `body` est mis à jour avec le contenu HTML approprié à l'URL. AngularJS rend ainsi notre site web plus rapide.
+En dehors de l'API et des PDF, Django ne fournit qu'une seule route dans l'application. En effet, à partir de cette route, Angular s'occupe de gérer les autres routes et les gabarits. Concrètement, lorsque l'on charge une page de notre application, la requête va d'abord passer par la vue Django ``index`` déclarée dans le fichier `views.py`. Cette vue s'occupe simplement d'afficher le gabarit ``courses.html``. Ce fichier HTML est une maquette pour notre application, c'est-à-dire que son contenu est sur toutes les pages. Il contient le menu, l'inclusion des fichiers JavaScript et des feuilles de syle, ainsi que le pied de page. Dans la balise ``body``, on a ajouté la directive Angular ``ng-app=Courses``. On déclare qu'à l'intérieur de cette balise se trouve une application AngularJS nommée ``CoursesApp``. Ainsi, une fois que Django a affiché le gabarit ``courses.html``, Angular va insérer le contenu du bon fichier HTML dans la balise ``body`` selon l'URL et les routes écrites dans le fichier ``routes.js``. La page finale est maintenant visible par l'utilisateur. Par exemple, si l'on se rend sur ``courses/help``, Angular s'occupe de chercher le fichier ``help.html`` et d'insérer son contenu dans la balise ``body`` de ``courses.html``. L'avantage de ce système est que lorsque l'on change de page, la vue Django n'est pas rappelée, mais seul le contenu de `body` est mis à jour avec le contenu HTML approprié à l'URL. AngularJS rend ainsi notre site web plus rapide.
 
 
 .. [#f1] https://docs.djangoproject.com/fr/1.7/ref/contrib/admin. Consulté le 14 mars 15.

@@ -26,12 +26,15 @@
 
     <div class="margin bottom">
       <div ng-repeat="(key, section) in page.sections" class="form-group sections">
-        <div class="col-sm-10" id="input-margin">
-          <input id="section-name" type="text" ng-model="section.name" class="form-control" ng-maxlength=50 
-            ng-pattern="/^[\w\sáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]+$/" required>
-        </div>
-        <div>
-          <textarea class="col-sm-10" ng-model="section.markdown_content" msd-elastic="\n" required></textarea>
+        <div id="input-margin">
+          <div class="section-name col-sm-12">
+            <input id="section-name" type="text" ng-model="section.name" class="form-control" ng-maxlength=50 
+              ng-pattern="/^[\w\sáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]+$/" required>
+          </div>
+    
+          <div class="col-sm-11">
+            <textarea ng-model="section.markdown_content" msd-elastic="\n" required></textarea>
+          </div>
           
           <div class="col-sm-1 block">
             <!-- Boutons pour déplacer ou supprimer une section -->
@@ -44,13 +47,13 @@
     </div>
 
     <!-- Barre de boutons -->
-    <div class="form-group">
+    <div class="form-group col-sm-12">
 
       <!-- Ajouter une section -->
       <div class="pull-left"><button id="new-section" class="btn btn-default" ng-click="newSection()" type="button"><span class="glyphicon glyphicon-plus"></span></button></div>
 
       <div class="pull-right page-links">
-        <!-- Liste des pages et boutons pour en ajouter une -->
+        <!-- Lien vers les autres pages et bouton pour en rajouter -->
         <span ng-repeat="page in pages"></span>
         <span ng-repeat="number in [] | range:1:page.total_pages">
           <a ng-class="{disabled: isCurrentPage(number)}" ng-href="#/{{ course.id }}/edit/{{ number }}">{{ number }}</a>

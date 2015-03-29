@@ -12,6 +12,7 @@
 }
 
 /* Sitewide */
+
 #notice {
   text-align: center;
   color: green;
@@ -148,6 +149,14 @@ button:hover {
   margin-right: 5px;
   margin-left: 5px;
   font-size: 1.3em;
+}
+
+#edit-course textarea {
+  width: 100%
+}
+
+#edit-course .section-name {
+  margin-bottom: 10px;
 }
 
 #section-name {

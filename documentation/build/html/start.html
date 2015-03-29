@@ -32,7 +32,7 @@
   
     <link rel="top" title="Module de cours: guide" href="index.html"/>
         <link rel="next" title="AngularJS" href="angularjs.html"/>
-        <link rel="prev" title="Développement d’une application de gestions de cours avec AngularJS" href="index.html"/> 
+        <link rel="prev" title="Introduction" href="introduction.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -60,6 +60,7 @@
         
         
             <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Démarrage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="angularjs.html">AngularJS</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="angularjs.html#introduction">Introduction</a></li>
@@ -71,11 +72,7 @@
 <li class="toctree-l2"><a class="reference internal" href="functionalities.html#les-etudiants">Les étudiants</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="schemas.html">Schémas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="schemas.html#use-cases">Use cases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="schemas.html#navigation">Navigation</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="schemas.html">Schémas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="models.html">Modèle relationnel</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="models.html#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html#les-cours">Les cours</a></li>
@@ -102,16 +99,19 @@
 <li class="toctree-l2"><a class="reference internal" href="guide.html#concepts">Concepts</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bugs.html">Bugs et améliorations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bugs.html#bugs">Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">Bogues et améliorations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bugs.html#bogues">Bogues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bugs.html#ameliorations">Améliorations</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="conclusion.html">Conclusion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliographie.html">Bibliographie</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="bibliographie.html#id1">Bibliographie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bibliographie.html#webographie">Webographie</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="illustration.html">Source des illustrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">Code source</a></li>
 </ul>
 
         
@@ -150,7 +150,7 @@
 <h1>Démarrage<a class="headerlink" href="#demarrage" title="Lien permanent vers ce titre">¶</a></h1>
 <p><strong>Prérequis</strong></p>
 <ul class="simple">
-<li>Python 3 et pip installé</li>
+<li>Python 3 et pip installés</li>
 </ul>
 <p><strong>Installer Django et les dépendances</strong></p>
 <p><tt class="docutils literal"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></tt></p>
@@ -162,18 +162,20 @@
 <p><strong>Lancer les migrations</strong></p>
 <p><tt class="docutils literal"><span class="pre">python3</span> <span class="pre">manage.py</span> <span class="pre">migrate</span></tt></p>
 <p><strong>Créer un super utilisateur</strong></p>
-<p>Si besoin de se connecter à la zone d&#8217;administration (&#8220;/admin&#8221;)</p>
-<p><tt class="docutils literal"><span class="pre">python3</span> <span class="pre">manage.py</span> <span class="pre">createsuperuser</span></tt> et suivre les instructions</p>
+<p>S&#8217;il y a besoin de se connecter à la zone d&#8217;administration (<tt class="docutils literal"><span class="pre">/admin</span></tt>)</p>
+<p><tt class="docutils literal"><span class="pre">python3</span> <span class="pre">manage.py</span> <span class="pre">createsuperuser</span></tt></p>
 <p><strong>Lancer le serveur Django</strong></p>
 <p><tt class="docutils literal"><span class="pre">python3</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></tt></p>
 <p><strong>Données</strong></p>
 <ul class="simple">
 <li>Créer les données nécessaires: <tt class="docutils literal"><span class="pre">python3</span> <span class="pre">manage.py</span> <span class="pre">seed</span></tt></li>
-<li>Finalement vous pouvez vous rendre sur l&#8217;URL <tt class="docutils literal"><span class="pre">/courses</span></tt> et profiter des fonctionnalités.</li>
+<li>Finalement, vous pouvez vous rendre sur l&#8217;URL <tt class="docutils literal"><span class="pre">/courses</span></tt> et profiter des fonctionnalités.</li>
+<li>Identifiant pour se connecter en tant qu&#8217;enseignant: <tt class="docutils literal"><span class="pre">smith.john</span></tt> et <tt class="docutils literal"><span class="pre">12341</span></tt></li>
+<li>Identifiant pour se connecter en tant qu&#8217;étudiant: <tt class="docutils literal"><span class="pre">dupont.alfred</span></tt> et <tt class="docutils literal"><span class="pre">12341</span></tt></li>
 </ul>
 <p><strong>Tests</strong></p>
 <p>Pour lancer les tests, installer d&#8217;abord Protractor (ne pas lancer le serveur webdriver): <a class="reference external" href="http://angular.github.io/protractor/#/tutorial">http://angular.github.io/protractor/#/tutorial</a></p>
-<p>Ensuite lancer la commande <tt class="docutils literal"><span class="pre">python3</span> <span class="pre">manage.py</span> <span class="pre">tests</span></tt></p>
+<p>Ensuite, lancer la commande <tt class="docutils literal"><span class="pre">python3</span> <span class="pre">manage.py</span> <span class="pre">tests</span></tt>.</p>
 </div>
 
 
@@ -185,7 +187,7 @@
         <a href="angularjs.html" class="btn btn-neutral float-right" title="AngularJS"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Développement d’une application de gestions de cours avec AngularJS"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="introduction.html" class="btn btn-neutral" title="Introduction"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -214,7 +216,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.2',
+            VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

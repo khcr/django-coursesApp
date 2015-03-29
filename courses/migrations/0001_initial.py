@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Chapter',
             fields=[
-                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
+                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
                 ('name', models.CharField(max_length=50)),
             ],
             options={
@@ -25,8 +25,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Course',
             fields=[
-                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
-                ('name', models.CharField(unique=True, max_length=50)),
+                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
+                ('name', models.CharField(max_length=50, unique=True)),
                 ('description', models.TextField(max_length=200)),
                 ('difficulty', models.IntegerField()),
                 ('published', models.BooleanField(default=False)),
@@ -34,7 +34,7 @@ class Migration(migrations.Migration):
                 ('updated_at', models.DateTimeField(auto_now=True)),
                 ('author', models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='courses')),
                 ('chapter', models.ForeignKey(to='courses.Chapter', related_name='courses')),
-                ('favorites', models.ManyToManyField(blank=True, to=settings.AUTH_USER_MODEL, related_name='favorite_courses', null=True)),
+                ('favorites', models.ManyToManyField(related_name='favorite_courses', to=settings.AUTH_USER_MODEL, blank=True, null=True)),
             ],
             options={
             },
@@ -43,8 +43,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='CourseComment',
             fields=[
-                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
-                ('content', models.TextField()),
+                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
+                ('content', models.TextField(max_length=300)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
                 ('course', models.ForeignKey(to='courses.Course')),
@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Page',
             fields=[
-                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
+                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
                 ('name', models.CharField(max_length=50)),
                 ('order', models.IntegerField()),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
@@ -72,7 +72,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Progression',
             fields=[
-                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
+                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
                 ('page', models.ForeignKey(to='courses.Page')),
@@ -84,7 +84,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Section',
             fields=[
-                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
+                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
                 ('name', models.CharField(max_length=50)),
                 ('markdown_content', models.TextField(default='')),
                 ('html_content', models.TextField(blank=True)),
@@ -101,8 +101,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Status',
             fields=[
-                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
-                ('name', models.CharField(unique=True, max_length=50)),
+                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
+                ('name', models.CharField(max_length=50, unique=True)),
             ],
             options={
             },
@@ -111,7 +111,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Theme',
             fields=[
-                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
+                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
                 ('name', models.CharField(max_length=50)),
             ],
             options={

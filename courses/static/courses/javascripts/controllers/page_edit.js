@@ -61,7 +61,11 @@ app.controller("EditPageController", ["$scope", "$routeParams", "$location", "Se
     $scope.saveCourse = function() {
       // convertit le contenu de Markdown à HTML
       angular.forEach($scope.page.sections, function(value, key) {
-        $scope.page.sections[key].html_content = $filter("markdown")($scope.page.sections[key].markdown_content);
+        var section = $scope.page.sections[key];
+        // teste si la section n'est pas vide
+        if(section.markdown_content !== undefined) {
+          section.html_content = $filter("markdown")(section.markdown_content);
+        }
       });
       // sauvegarde la page dans la base de données
       $scope.page.$update({ objectId: $scope.course.id }, function() {
@@ -74,7 +78,7 @@ app.controller("EditPageController", ["$scope", "$routeParams", "$location", "Se
     var interval = $interval($scope.saveCourse, 30000);
     $scope.lastSave = new Date();
 
-    // sauvgarde la page quand l'utilisateur quitte la page
+    // sauvegarde la page quand l'utilisateur quitte la page
     $scope.$on("$destroy", function(){
       // stop la sauvegarde automatique
       $interval.cancel(interval);
