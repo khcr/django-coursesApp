@@ -1,0 +1,494 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Guide du développeur &mdash; Module de cours: guide</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Module de cours: guide" href="index.html"/>
+        <link rel="next" title="Bugs et améliorations" href="bugs.html"/>
+        <link rel="prev" title="Tests" href="tests.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> TM 2014-15: Développement d'une application de gestion de cours avec AngularJS</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Démarrage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angularjs.html">AngularJS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="angularjs.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angularjs.html#specificites-et-avantages">Spécificités et avantages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="functionalities.html">Fonctionnalités</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="functionalities.html#les-professeurs">Les professeurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionalities.html#les-etudiants">Les étudiants</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="schemas.html">Schémas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html#use-cases">Use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html#navigation">Navigation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Modèle relationnel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="models.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#les-cours">Les cours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#les-chapitres">Les chapitres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#les-commentaires">Les commentaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#la-progression">La progression</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="restless.html">RestLess</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="restless.html#presentation">Présentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restless.html#les-vues-generiques">Les vues génériques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restless.html#fonctionnement-de-restless">Fonctionnement de RestLess</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="maths.html">MathJax</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maths.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maths.html#personnalisation">Personnalisation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Guide du développeur</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fichiers">Fichiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#url">URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#concepts">Concepts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">Bugs et améliorations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bugs.html#bugs">Bugs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bugs.html#ameliorations">Améliorations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bibliographie.html">Bibliographie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bibliographie.html#id1">Bibliographie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliographie.html#webographie">Webographie</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">TM 2014-15: Développement d'une application de gestion de cours avec AngularJS</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Guide du développeur</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/guide.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="guide-du-developpeur">
+<h1>Guide du développeur<a class="headerlink" href="#guide-du-developpeur" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="fichiers">
+<h2>Fichiers<a class="headerlink" href="#fichiers" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Cette section permet de se retrouver dans la multitude de fichiers du projet et de comprendre certains processus.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>courses/</dt>
+<dd><ul class="first last simple">
+<li><strong>admin.py</strong>: permet de rajouter les modèles que l&#8217;on veut voir apparaitre et modifier dans la zone d&#8217;administration Django. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/ref/contrib/admin/">Documentation officielle</a> <a class="footnote-reference" href="#f1" id="id1">[1]</a></li>
+<li><strong>api.py</strong>: regroupe toutes les vues génériques RestLess qui servent à construire l&#8217;API JSON nécessaire à l&#8217;application AngularJS. Les classés déclarées sont ensuite utilisées dans le fichier <tt class="docutils literal"><span class="pre">urls.py</span></tt>.</li>
+<li><strong>forms.py</strong>: déclare les formulaires Django nécessaires pour enregistrer les données d&#8217;une requête dans la base de données. Ils sont utilisés principalement dans le fichier <cite>api.py</cite>. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/forms/">Documentation officielle</a> <a class="footnote-reference" href="#f2" id="id2">[2]</a></li>
+<li><strong>models.py</strong>: déclare les modèles de notre application. Contient également des méthodes d&#8217;instance pour certains modèles. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/db/models/">Documentation officielle</a> <a class="footnote-reference" href="#f3" id="id3">[3]</a></li>
+<li><strong>urls.py</strong>: contient les URL spécifiques à l&#8217;application. Elles sont ensuite ajoutées dans le fichier principal <tt class="docutils literal"><span class="pre">webmath/urls.py</span></tt>. La première url, de nom <tt class="docutils literal"><span class="pre">index</span></tt>, est le point de départ de notre application AngularJS. Le reste des routes est défini directement par AngularJS dans le fichier <tt class="docutils literal"><span class="pre">courses/static/courses/javascripts/config/routes.js</span></tt>. Dans <tt class="docutils literal"><span class="pre">urls.py</span></tt>, la deuxième url, de nom <tt class="docutils literal"><span class="pre">pdf</span></tt>, est celle qui génère le PDF d&#8217;un cours. Les routes qui suivent sont celles de l&#8217;API JSON qui utilisent les vues génériques du fichier <tt class="docutils literal"><span class="pre">api.py</span></tt>. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/http/urls/">Documentation officielle</a> <a class="footnote-reference" href="#f4" id="id4">[4]</a></li>
+<li><strong>utils.py</strong>: regroupe une série de fonctions utiles utilisées à travers l&#8217;application.</li>
+<li><strong>views.py</strong>: contient les vues Django. A l&#8217;instar des URL, il n&#8217;y a que deux fonctions, une qui est le point de départ de l&#8217;application et l&#8217;autre qui génère le PDF d&#8217;un cours. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/http/views/">Documentation officielle</a> <a class="footnote-reference" href="#f5" id="id5">[5]</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>courses/templates/courses/</strong>: contient le gabarit de base <tt class="docutils literal"><span class="pre">courses.html</span></tt> de notre application et le fichier Markdown <tt class="docutils literal"><span class="pre">pdf.md</span></tt> servant à générer le PDF d&#8217;un cours.</p>
+</li>
+<li><dl class="first docutils">
+<dt>courses/static/courses/</dt>
+<dd><ul class="first last simple">
+<li><strong>html/</strong>: contient tous les fichiers HTML utilisés par AngularJS. Les pages HTML sont reliées à une route dans le ficher <tt class="docutils literal"><span class="pre">courses/static/courses/javascripts/config/routes.js</span></tt> d&#8217;AngularJS qui s&#8217;occupe d&#8217;associer une route à un fichier HTML.</li>
+<li><strong>images/</strong>: contient les images utilisées pour le design de l&#8217;application.</li>
+<li><strong>stylesheets/</strong>: contient les feuilles de styles.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>courses/static/courses/javascripts/:</dt>
+<dd><ul class="first last simple">
+<li><strong>config/routes.js</strong>: déclare les routes principales de notre application avec AngularJS. <a class="reference external" href="https://docs.angularjs.org/tutorial/step_07">Documentation officielle</a> <a class="footnote-reference" href="#f6" id="id6">[6]</a></li>
+<li><strong>controllers/</strong>: déclare les contrôleurs AngularJS. Un fichier correspond à une route et son contrôleur. Ils sont utilisés dans le fichier <tt class="docutils literal"><span class="pre">courses/static/courses/javascripts/config/routes.js</span></tt>.</li>
+<li><strong>directives/</strong>: déclare des directives AngularJS. <a class="reference external" href="https://docs.angularjs.org/guide/directive">Documentation officielle</a> <a class="footnote-reference" href="#f7" id="id7">[7]</a></li>
+<li><strong>factories/resources.js</strong>: déclare des objets ressources qui permettent de communiquer facilement avec l&#8217;API. <a class="reference external" href="https://docs.angularjs.org/api/ngResource/service/$resource">Documentation officielle</a> <a class="footnote-reference" href="#f8" id="id8">[8]</a></li>
+<li><strong>filters/</strong>: déclare des filtres AngularJS. <a class="reference external" href="https://docs.angularjs.org/guide/filter">Documentation officielle</a> <a class="footnote-reference" href="#f9" id="id9">[9]</a></li>
+<li><strong>app.js</strong>: point de départ, déclare l&#8217;application AngularJS principale ainsi que les modules avec leurs dépendances. C&#8217;est dans ces modules qu&#8217;on ajoute ensuite les filtres, contrôleurs, etc.</li>
+<li><strong>extensions.js</strong>: permet de personnaliser Showdown.js, la bibliothèque qui transforme le Markdown en HTML. <a class="reference external" href="https://github.com/showdownjs/showdown">Documentation officielle</a> <a class="footnote-reference" href="#f10" id="id10">[10]</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>spec/conf.js</strong>: fichier de configuration de Protractor, le moteur de test.</p>
+</li>
+<li><p class="first"><strong>spec/</strong>: contient les fichiers de tests end-to-end Protractor. Chaque fichier correspond à une route de l&#8217;application.</p>
+</li>
+<li><dl class="first docutils">
+<dt>management/commands/</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/howto/custom-management-commands/">Documentation officielle</a> <a class="footnote-reference" href="#f11" id="id11">[11]</a></li>
+<li><strong>seed.py</strong>: commande qui crée des données de démonstration dans la base de données afin d&#8217;avoir une application fonctionnelle.</li>
+<li><strong>tests.py</strong>: commande qui lance les tests Protractor.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>webmath/test_router.py</strong>: Le routeur permet d&#8217;utiliser plusieurs bases de données avec Django. En l&#8217;occurrence, le routeur permet d&#8217;utiliser une base de données différente lorsqu&#8217;on lance les tests de notre application. <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/db/multi-db/">Documentation officielle</a> <a class="footnote-reference" href="#f12" id="id12">[12]</a></p>
+</li>
+</ul>
+</div>
+<div class="section" id="url">
+<h2>URL<a class="headerlink" href="#url" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Cette section regroupe une explication de toutes les URL de l&#8217;application. Toutes les URL se trouvent dans l&#8217;espace de nom <tt class="docutils literal"><span class="pre">courses</span></tt>, par exemple <tt class="docutils literal"><span class="pre">/courses/help</span></tt>. Lorsque un <tt class="docutils literal"><span class="pre">#</span></tt> se trouve dans l&#8217;URL, cela signifie que c&#8217;est une URL définie par AngularJS.</p>
+<div class="section" id="utilisateurs">
+<h3>Utilisateurs<a class="headerlink" href="#utilisateurs" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><strong>#/</strong>: Page d&#8217;accueil de l&#8217;application, on y trouve une liste des cours publiés. On peut les trier par catégories ou favoris.</li>
+<li><strong>#/new</strong>: Page qui permet aux enseignants de créer un nouveau cours.</li>
+<li><strong>#/:course_id/edit/:page</strong>: Page d&#8217;édition d&#8217;un cours. L&#8217;enseignant peut y éditer le contenu de son cours, le publier ou le retirer.</li>
+<li><strong>#/:course_id/preview/:page</strong>: Prévisualise une page d&#8217;un cours. Lorsqu&#8217;un enseignant rédige un cours, il peut voir le résultat final grâce à cette page.</li>
+<li><strong>#/teacher/courses:</strong> Liste de tous les cours du site, publiés ou non.</li>
+<li><strong>#/help</strong>: Page qui fournit une aide aux rédacteurs concernant la syntaxe <em>Markdown</em> et <em>LaTex</em>.</li>
+<li><strong>#/:course_id/edit</strong>: Page qui permet de modifier les informations de base d&#8217;un cours, telles que le nom, la description ou la difficulté.</li>
+<li><strong>#/:course_id/show/:page</strong>: Page pour lire un cours. Le cours y est affiché, on peut naviguer à travers les pages, commenter le cours, etc.</li>
+<li><strong>/pdf/:course_id/*.pdf</strong>: Renvoie un cours au format PDF pour pouvoir être téléchargé.</li>
+<li><strong>#/about</strong>: Page d&#8217;information générale sur l&#8217;application.</li>
+</ul>
+</div>
+<div class="section" id="api">
+<h3>API<a class="headerlink" href="#api" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Les URLs de l&#8217;API sont dans l&#8217;espace de nom <tt class="docutils literal"><span class="pre">api</span></tt>, par exemple <tt class="docutils literal"><span class="pre">/courses/api/themes</span></tt>.</p>
+<ul>
+<li><p class="first"><strong>/courses/all</strong>: renvoie une liste de tous les cours, publiés ou non.</p>
+</li>
+<li><p class="first"><strong>/courses</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>GET: renvoie tous les cours publiés.</li>
+<li>POST: crée un nouveau cours.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/courses/:id</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>PUT: met à jour un cours.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/pages/:page_id/courses/:course_id</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>GET: renvoie le contenu d&#8217;une page d&#8217;un cours.</li>
+<li>PUT: met à jour le contenu d&#8217;une page.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/themes</strong>: renvoie une liste de tous les thèmes en incluant leurs chapitres respectifs.</p>
+</li>
+<li><p class="first"><strong>/pages/:page_id/sections</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>POST: ajoute une section à une page d&#8217;un cours.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/courses/:course_id/pages</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>POST: ajoute une page à un cours.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/sections/:id</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>DELETE: supprime une section.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/courses/:course_id/comments</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>GET: renvoie les commentaires d&#8217;un cours.</li>
+<li>POST: ajoute un commentaire à un cours.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/courses/:course_id/menu</strong>: Permet de construire le menu d&#8217;un cours en renvoyant le nom de ses pages et de leurs sections.</p>
+</li>
+<li><p class="first"><strong>/courses/:course_id/publish</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>PUT: publie/retire un cours en changeant l&#8217;attribut <tt class="docutils literal"><span class="pre">published</span></tt> de <tt class="docutils literal"><span class="pre">True</span></tt> à <tt class="docutils literal"><span class="pre">False</span></tt> et vice-versa.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/courses/:course_id/favorite</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>PUT: ajoute/retire un cours au/des favoris de l&#8217;utilisateur.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>/pages/:page_id/progression</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>POST: marque une page d&#8217;un cours comme comprise ou à relire pour l&#8217;utilisateur.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="integration-d-angularjs-avec-django">
+<h3>Intégration d&#8217;AngularJS avec Django<a class="headerlink" href="#integration-d-angularjs-avec-django" title="Lien permanent vers ce titre">¶</a></h3>
+<p>En dehors de l&#8217;API et des PDF, Django ne fournit qu&#8217;une seule route dans l&#8217;application. En effet, à partir de cette route, Angular s&#8217;occupe de gérer les autres routes et les templates. Concrètement, quand on charge une page de notre application, la requête va d&#8217;abord passer par la vue Django <tt class="docutils literal"><span class="pre">index</span></tt> déclarée dans le fichier <cite>views.py</cite>. Cette vue s&#8217;occupe simplement d&#8217;afficher le template <tt class="docutils literal"><span class="pre">courses.html</span></tt>. Ce fichier HTML est un layout pour notre application, c&#8217;est-à-dire que son contenu est sur toutes les pages. Il contient le menu, l&#8217;inclusion des fichiers JavaScript et des feuilles de syle ainsi que le pied de page. Dans la balise <tt class="docutils literal"><span class="pre">body</span></tt>, on a ajouté la directive Angular <tt class="docutils literal"><span class="pre">ng-app=Courses</span></tt>. On déclare qu&#8217;à l&#8217;intérieur de cette balise se trouve une application AngularJS nommée <tt class="docutils literal"><span class="pre">CoursesApp</span></tt>. Ainsi, une fois que Django a affiché le template <tt class="docutils literal"><span class="pre">courses.html</span></tt>, Angular va insérer le contenu du bon fichier HTML dans la balise <tt class="docutils literal"><span class="pre">body</span></tt> selon l&#8217;URL et les routes écrites dans le fichier <tt class="docutils literal"><span class="pre">routes.js</span></tt>. La page finale est maintenant visible par l&#8217;utilisateur. Par exemple, si l&#8217;on se rend sur <tt class="docutils literal"><span class="pre">courses/help</span></tt>, Angular s&#8217;occupe de chercher le fichier <tt class="docutils literal"><span class="pre">help.html</span></tt> et d&#8217;insérer son contenu dans la balise <tt class="docutils literal"><span class="pre">body</span></tt> de <tt class="docutils literal"><span class="pre">courses.html</span></tt>. L&#8217;avantage de ce système est que lorsqu&#8217;on change de page, la vue Django n&#8217;est pas rappelée, mais seul le contenu de <cite>body</cite> est mis à jour avec le contenu HTML approprié à l&#8217;URL. AngularJS rend ainsi notre site web plus rapide.</p>
+</div>
+<div class="section" id="communication-avec-l-api">
+<h3>Communication avec l&#8217;API<a class="headerlink" href="#communication-avec-l-api" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Nous avons construit une API JSON afin qu&#8217;AngularJS puisse communiquer avec une base de données. Pour effectuer les requêtes sur l&#8217;API, on trouve deux méthodes utilisées dans le projet. La première consiste à utiliser l&#8217;objet Angular <tt class="docutils literal"><span class="pre">$http</span></tt>. Celui-ci permet de construire une requête et de récupérer la réponse et les éventuelles erreurs. On trouve toutes les spécifications sur la <a class="reference external" href="https://docs.angularjs.org/api/ng/service/$http">documentation AngularJS</a> <a class="footnote-reference" href="#f13" id="id13">[13]</a>. La seconde méthode est d&#8217;utiliser l&#8217;objet <tt class="docutils literal"><span class="pre">$resource</span></tt>. Si l&#8217;on possède une table sur laquelle on veut effectuer les opérations CRUD, <tt class="docutils literal"><span class="pre">$resource</span></tt> nous évite de devoir écrire à chaque fois les mêmes requêtes avec <tt class="docutils literal"><span class="pre">$http</span></tt>. En effet, il nous permet de créer un objet qui fournit directement les méthodes pour effectuer les différents types de requêtes sur l&#8217;API. Pour générer les URL, on fournit à l&#8217;objet une URL de base. Puis, en se basant sur les conventions du web, l&#8217;objet est capable d&#8217;effectuer les requêtes du CRUD. Ci-dessous se trouve un exemple d&#8217;un objet <tt class="docutils literal"><span class="pre">$resource</span></tt> et de son utilisation partielle.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Section</span> <span class="o">=</span> <span class="nx">$resource</span><span class="p">(</span>
+    <span class="s2">&quot;api/sections/:sectionId&quot;</span>
+<span class="p">);</span>
+
+<span class="nx">Section</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
+<span class="c1">// =&gt; GET /api/sections</span>
+<span class="kd">var</span> <span class="nx">section</span> <span class="o">=</span> <span class="nx">Section</span><span class="p">.</span><span class="nx">get</span><span class="p">({</span><span class="nx">sectionId</span><span class="o">:</span> <span class="mi">1</span><span class="p">});</span>
+<span class="c1">// =&gt; GET /api/sections/1</span>
+<span class="nx">card</span><span class="p">.</span><span class="nx">$save</span><span class="p">;</span>
+<span class="c1">// =&gt; POST /api/sections/1</span>
+</pre></div>
+</div>
+<p>Dans notre application, tous les objets <tt class="docutils literal"><span class="pre">$resource</span></tt> sont définis dans le fichier <tt class="docutils literal"><span class="pre">/courses/static/courses/javascripts/factories/resources.js</span></tt>. La <a class="reference external" href="https://docs.angularjs.org/api/ngResource/service/$resource">documentation</a>  <a class="footnote-reference" href="#f14" id="id14">[14]</a> fournit toutes les explications concernant <tt class="docutils literal"><span class="pre">$resource</span></tt>.</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/ref/contrib/admin">https://docs.djangoproject.com/fr/1.7/ref/contrib/admin</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/forms/">https://docs.djangoproject.com/fr/1.7/topics/forms/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/db/models/">https://docs.djangoproject.com/fr/1.7/topics/db/models/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/http/urls/">https://docs.djangoproject.com/fr/1.7/topics/http/urls/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/http/views/">https://docs.djangoproject.com/fr/1.7/topics/http/views/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td><a class="reference external" href="https://docs.angularjs.org/tutorial/step_07">https://docs.angularjs.org/tutorial/step_07</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[7]</a></td><td><a class="reference external" href="https://docs.angularjs.org/guide/directive">https://docs.angularjs.org/guide/directive</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[8]</a></td><td><a class="reference external" href="https://docs.angularjs.org/api/ngResource/service/$resource">https://docs.angularjs.org/api/ngResource/service/$resource</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[9]</a></td><td><a class="reference external" href="https://docs.angularjs.org/guide/filter">https://docs.angularjs.org/guide/filter</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[10]</a></td><td><a class="reference external" href="https://github.com/showdownjs/showdown">https://github.com/showdownjs/showdown</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[11]</a></td><td><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/howto/custom-management-commands/">https://docs.djangoproject.com/fr/1.7/howto/custom-management-commands/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f12" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id12">[12]</a></td><td><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/db/multi-db/">https://docs.djangoproject.com/fr/1.7/topics/db/multi-db/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f13" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id13">[13]</a></td><td><a class="reference external" href="https://docs.angularjs.org/api/ng/service/$http">https://docs.angularjs.org/api/ng/service/$http</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f14" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id14">[14]</a></td><td><a class="reference external" href="https://docs.angularjs.org/api/ngResource/service/$resource">https://docs.angularjs.org/api/ngResource/service/$resource</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bugs.html" class="btn btn-neutral float-right" title="Bugs et améliorations"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tests.html" class="btn btn-neutral" title="Tests"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Keran Kocher.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

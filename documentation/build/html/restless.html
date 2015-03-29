@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RestLess &mdash; Module de cours: guide</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Module de cours: guide" href="index.html"/>
+        <link rel="next" title="MathJax" href="maths.html"/>
+        <link rel="prev" title="Modèle relationnel" href="models.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> TM 2014-15: Développement d'une application de gestion de cours avec AngularJS</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Démarrage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angularjs.html">AngularJS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="angularjs.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angularjs.html#specificites-et-avantages">Spécificités et avantages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="functionalities.html">Fonctionnalités</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="functionalities.html#les-professeurs">Les professeurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionalities.html#les-etudiants">Les étudiants</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="schemas.html">Schémas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html#use-cases">Use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html#navigation">Navigation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Modèle relationnel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="models.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#les-cours">Les cours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#les-chapitres">Les chapitres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#les-commentaires">Les commentaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#la-progression">La progression</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">RestLess</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#presentation">Présentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-vues-generiques">Les vues génériques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fonctionnement-de-restless">Fonctionnement de RestLess</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="maths.html">MathJax</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maths.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maths.html#personnalisation">Personnalisation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide.html">Guide du développeur</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide.html#fichiers">Fichiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide.html#url">URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide.html#concepts">Concepts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">Bugs et améliorations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bugs.html#bugs">Bugs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bugs.html#ameliorations">Améliorations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bibliographie.html">Bibliographie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bibliographie.html#id1">Bibliographie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliographie.html#webographie">Webographie</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">TM 2014-15: Développement d'une application de gestion de cours avec AngularJS</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>RestLess</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/restless.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="restless">
+<h1>RestLess<a class="headerlink" href="#restless" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="presentation">
+<h2>Présentation<a class="headerlink" href="#presentation" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="https://github.com/dobarkod/django-restless">RestLess</a> <a class="footnote-reference" href="#f1" id="id2">[1]</a> est un set d&#8217;outils permettant de faciliter l&#8217;implémentation d&#8217;une API JSON dans Django. Il a l&#8217;avantage d&#8217;être léger et facile à utiliser comme nous le verrons par la suite. Une API, Application Programming Interface, est basiquement une application qui offre des services accessibles par une autre application. Le JSON est un format de données dans le style d&#8217;un dictionnaire <tt class="docutils literal"><span class="pre">{&quot;nom&quot;</span> <span class="pre">:</span> <span class="pre">&quot;Keran&quot;,</span> <span class="pre">&quot;prenom&quot;</span> <span class="pre">:</span> <span class="pre">&quot;Kocher&quot;}</span></tt>. On appelle donc une API JSON une application qui fournit des données en format JSON. Concrètement, il s&#8217;agit d&#8217;une série d&#8217;URL qui fournissent le contenu de différentes tables de la BD en format JSON. Quand on se rend sur une de ces URL, on ne voit pas une page HTML, mais simplement un dictionnaire de données. Sur notre site web rendez-vous sur <tt class="docutils literal"><span class="pre">http://webmath.com/courses/api/themes</span></tt> pour voir à quoi la page ressemble.</p>
+<p>Dans la présentation d&#8217;AngularJS, nous avons vu que le framework n&#8217;est pas capable de communiquer directement avec une base de données. C&#8217;est une limitation de JavaScript, qui s&#8217;exécute du côté du client dans notre cas. Pour palier à ce problème, on utilise un langage intermédiaire qui est capable de communiquer avec une BD et qui s&#8217;exécute côté serveur, c&#8217;est le cas de Python et son framework Django. On va donc construire une API avec Django. API à laquelle notre application AngularJS va pouvoir accéder. Dans les fait, Django va chercher les données dans la base de données, les transforme en format JSON puis les sert. Il suffit ensuite avec AngularJS d&#8217;accéder à l&#8217;URL correspondante et on dispose ensuite des données que l&#8217;on peut utiliser à sa guise dans nos vues AngularJS.</p>
+</div>
+<div class="section" id="les-vues-generiques">
+<h2>Les vues génériques<a class="headerlink" href="#les-vues-generiques" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Quand on développe une application web, il arrive souvent d&#8217;avoir du code redondant, répétitif. En effet, quand on crée des fonctionnalités, il s&#8217;agit généralement d&#8217;une table dans la base de données avec laquelle on communique pour ajouter ou modifier des données. Et ces interactions se ressemblent dans la plupart des cas. On parle généralement du CRUD: create, read, update and delete, en français créer, lire, mettre à jour et supprimer. On a une table et on veut accomplir les opérations CRUD dessus. Pour ce faire, on a une série d&#8217;URL qui exécutent différentes actions. Prenons l&#8217;exemple de la création d&#8217;un blog tout à fait typique. On va créer une table <tt class="docutils literal"><span class="pre">articles</span></tt> et on va implémenter les actions suivantes: on veut pouvoir afficher tous les articles, pouvoir n&#8217;en afficher qu&#8217;un seul, ajouter un nouvel article, le mettre à jour ou le supprimer. Ainsi, avec ces quatre opérations, l&#8217;on peut disposer d&#8217;un blog complet et fonctionnel. Pour beaucoup de fonctionnalités, il s&#8217;agit d&#8217;effectuer toujours ces mêmes opérations classiques; un autre exemple serait un système de commentaires. Pour programmer ces outils basiques et conventionnels, deux moyens sont à notre disposition dans Django. D&#8217;abord, l&#8217;on peut programmer de A à Z les opérations. Avec Django, il s&#8217;agit basiquement de créer une URL et de lui assigner une fonction qui s&#8217;occupe de communiquer avec la base de données et qui retourne une page HTML. Si l&#8217;on utilise cette méthode, on risque de devoir programmer souvent le même code au fil du développement et de perdre du temps. Ci-dessous le code pour afficher tous les articles avec la première méthode.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># url.py - fichier qui gère les URL du site</span>
+
+<span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">patterns</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">include</span>
+
+<span class="kn">from</span> <span class="nn">courses</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="c"># On crée une URL /articles qui utilise la fonction index - voir fichier views.py</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^articles$&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">index</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="c"># views.py - fichier qui contient les fonctions liées aux URLs</span>
+<span class="c"># = vue ou contrôleur</span>
+
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+
+<span class="c"># Fonction reliée à /articles</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="c"># Récupère tous les articles de la BD (fait appelle au modèle Article)</span>
+    <span class="n">articles</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="c"># Retourne le code HTML en utilisant le ficher courses.html</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">&quot;courses/courses.html&quot;</span><span class="p">,</span> <span class="nb">locals</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>La deuxième méthode consiste à utiliser les vues génériques. Ce sont des classes dans Django contenant les opérations conventionnelles déjà écrites. Il nous suffit donc de créer notre propre classe qui hérite d&#8217;une vue générique Django et d&#8217;ensuite la relier à notre URL, comme on le faisait précédemment avec la fonction. Pourquoi créer une classe et ne pas utiliser directement les classes Django ? On agit ainsi tout simplement pour pouvoir personnaliser la classe. Il faut déjà obligatoirement spécifier le modèle que doit utiliser la classe, par exemple pour savoir quels enregistrements elle doit aller récupérer. Regardons la même fonctionnalité qu&#8217;avant, mais écrite avec les vues génériques.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># url.py - fichier qui gère les URL du site</span>
+
+<span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">patterns</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">include</span>
+
+<span class="kn">from</span> <span class="nn">courses.views</span> <span class="kn">import</span> <span class="n">ArticlesList</span>
+
+<span class="c"># On crée une URL /articles qui utilise la vue générique ArticlesList - voir fichier views.py</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^articles$&#39;</span><span class="p">,</span> <span class="n">ArticlesList</span><span class="o">.</span><span class="n">as_view</span><span class="p">()),</span>
+<span class="p">)</span>
+
+<span class="c"># views.py - fichier qui contient les fonctions liées aux URL</span>
+<span class="c"># = vue ou contrôleur</span>
+
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">ListView</span>
+
+<span class="c"># La classe générique reliée à /articles</span>
+<span class="c"># Hérite de ListView, classe provenant de Django</span>
+<span class="k">class</span> <span class="nc">ArticlesList</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+
+    <span class="c"># On spécifie le modèle à utiliser</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Article</span>
+</pre></div>
+</div>
+<p>Avec la seconde méthode, le code est plus concis. L&#8217;exemple montre comment générer la liste des articles, mais il existe une vue générique pour chaque opération CRUD. Il est encore possible de personnaliser notre classe <tt class="docutils literal"><span class="pre">ArticlesList</span></tt> avec des options ou en surchargeant les méthodes. En revanche, si notre fonctionnalité a des besoins spécifiques qui s&#8217;éloignent trop de la convention, les vues génériques ne sont plus adaptées, car leur personnalisation a évidemment des limites. Dans ces cas-ci, on retourne à la première méthode. Toutes les explications et options des vues génériques se trouvent dans la <a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/class-based-views/generic-display/">documentation Django</a>  <a class="footnote-reference" href="#f2" id="id3">[2]</a>.</p>
+</div>
+<div class="section" id="fonctionnement-de-restless">
+<h2>Fonctionnement de RestLess<a class="headerlink" href="#fonctionnement-de-restless" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Nous avons étudié ce qu&#8217;étaient les vues génériques dans Django, parce que RestLess se base exclusivement sur ce concept pour construire une API JSON. En fait, RestLess fournit également des vues génériques qui sont des dérivées des classes Django. Les classes de RestLess font en effet exactement le même travail que celle de Django, à la différence qu&#8217;elles travaillent avec le format JSON. Ainsi, on peut construire facilement et rapidement notre API, en économisant du code et du temps. En revanche, Django possède beaucoup de vues génériques et RestLess n&#8217;offre que les plus utiles. Avant de que nous nous intéressions aux classes que nous pouvons utiliser avec RestLess, il faut d&#8217;abord voir les différents types de requêtes qui existent dans le monde du web.</p>
+<div class="section" id="http">
+<h3>HTTP<a class="headerlink" href="#http" title="Lien permanent vers ce titre">¶</a></h3>
+<p>HTTP est l&#8217;abréviation de <em>HyperText Transfer Protocol</em> qui veut dire <em>protocole de transfert hypertexte</em>. Ce protocole est utilisé sur internet pour la communication entre un client et un serveur. Le serveur est un ordinateur dont le rôle est de fournir le contenu désiré d&#8217;un site web. Le client est un navigateur utilisé par une personne qui navigue sur un site web. Lorsqu&#8217;un utilisateur visite une page, le navigateur demande au serveur la page HTML correspondante et ensuite il l&#8217;affiche à l&#8217;utilisateur. Pour établir le transfert de données, on utilise donc HTTP. Quand le client demande une information au serveur, on appelle cela une requête HTTP. Il y a plusieurs types de requêtes HTTP. Nous avons vu que le serveur envoie des données au client, mais le contraire est aussi vrai. Le client peut envoyer des données au serveur, quand il soumet un formulaire HTML par exemple. Ces différentes requêtes, formulées par un navigateur qui est le client, servent en général à agir sur une ressource en permettant notamment les opérations CRUD. On appelle une ressource une entité modifiable, souvent un enregistrement provenant d&#8217;une <em>BD</em>. La liste qui suit présente les différentes requêtes les plus importantes dans notre cas.</p>
+<ul class="simple">
+<li>GET: requête la plus courante, le serveur envoie les données au client, une page HTML par exemple. Aucune ressource modifiée.</li>
+<li>POST: le client envoie des données au serveur, souvent via un formulaire HTML. Le résultat est la création d&#8217;une ressource.</li>
+<li>PUT: le client envoie des données au serveur. Le résultat est la modification d&#8217;une ressource.</li>
+<li>DELETE: supprime une ressource.</li>
+</ul>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/http.png"><img alt="_images/http.png" src="_images/http.png" style="width: 1152.0px; height: 450.0px;" /></a>
+<p class="caption">Schéma de la communication entre un client et un serveur</p>
+</div>
+<p>Nous devons utiliser ces requêtes lorsqu&#8217;il s&#8217;agit de modifier nos ressources, c&#8217;est-à-dire les enregistrements de notre base de données. Par exemple on crée un cours, on le modifie ou on le supprime. Le travail de RestLess est de supporter ces requêtes. En clair, il doit fournir une URL et une fonction qui s&#8217;occupent de traiter les différents types de requêtes. Attention à ne pas confondre, une requête n&#8217;agit pas directement sur une ressource, c&#8217;est le serveur qui s&#8217;en occupe. La requête consiste juste en un transfert de données entre le client et le serveur et ainsi elle déclenche des actions.</p>
+</div>
+<div class="section" id="les-classes-restless">
+<h3>Les classes RestLess<a class="headerlink" href="#les-classes-restless" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Maintenant que les bases sont en place, nous pouvons enfin nous intéresser à la liste des classes RestLess utilisées dans le projet avec les requêtes supportées et leur utilité.</p>
+<ul>
+<li><p class="first">ListEndpoint</p>
+<blockquote>
+<div><ul class="simple">
+<li>get: retourne toutes les ressources</li>
+<li>post: crée une nouvelle ressource</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">DetailEndpoint</p>
+<blockquote>
+<div><ul class="simple">
+<li>get: retourne une ressource</li>
+<li>put: met à jour la ressource</li>
+<li>delete: supprime la ressource</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Endpoint</p>
+<blockquote>
+<div><ul class="simple">
+<li>pour créer des actions spécifiques</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>La liste ci-dessus regroupe les trois vues génériques dont nos classes peuvent hérités. Elles permettent de réaliser les quatre opérations sur nos ressources ainsi que des actions personnalisées. La différence entre la classe <tt class="docutils literal"><span class="pre">DetailEndpoint</span></tt> et <tt class="docutils literal"><span class="pre">ListEndpoint</span></tt> est que la première agit sur une ressource particulière. Elle a donc besoin d&#8217;un identifiant dans l&#8217;URL pour savoir quelle ressource elle doit modifier, dans le style <tt class="docutils literal"><span class="pre">/courses/:id</span></tt>. Notons qu&#8217;évidemment toutes les actions, le code qui s&#8217;exécute derrière une URL, retournent du JSON. En effet, il s&#8217;agit de la particularité et de l&#8217;utilité de RestLess. Comment concrètement utiliser ces classes dans le projet ? On fait comme précédemment dans l&#8217;exemple sur les vues génériques Django. La première étape consiste à créer une classe qui hérite soit de <tt class="docutils literal"><span class="pre">ListEndpoint</span></tt>, de <tt class="docutils literal"><span class="pre">DetailEndpoint</span></tt> ou de <tt class="docutils literal"><span class="pre">Endpoint</span></tt>. La seconde étape consiste à spécifier le modèle. Ensuite il faut créer une URL dans laquelle l&#8217;on spécifie qu&#8217;il faut utiliser notre classe précédemment déclarée. Ainsi. quand on fait une requête sur cette URL, suivant le type de requête, Django fait appel aux méthodes provenant des vues génériques RestLess. Par exemple, on crée une classe <tt class="docutils literal"><span class="pre">CoursesList</span></tt> dans laquelle on spécifie le modèle <tt class="docutils literal"><span class="pre">Course</span></tt>. Ensuite on rattache cette classe à l&#8217;url <tt class="docutils literal"><span class="pre">/courses</span></tt>. Si l&#8217;on fait une requête de type POST sur <tt class="docutils literal"><span class="pre">/courses</span></tt>, Django va chercher la méthode <tt class="docutils literal"><span class="pre">post</span></tt>, même nom que le type de requête, dans la classe <tt class="docutils literal"><span class="pre">CoursesList</span></tt>. Comme il ne la trouve pas dans notre classe, il la cherche dans la classe parente <tt class="docutils literal"><span class="pre">ListEndpoint</span></tt> et l&#8217;exécute. On appelle ce principe l&#8217;héritage. Le résultat est qu&#8217;une ressource est créée dans la table <tt class="docutils literal"><span class="pre">courses</span></tt> avec les paramètres du client. Une réponse en JSON contenant la ressource crée est retournée. On peut également faire une requête GET sur <tt class="docutils literal"><span class="pre">/courses</span></tt> et le serveur retourne tous les cours en format JSON également. Rien n&#8217;est plus nécessaire pour avoir notre API JSON fonctionnelle.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/requetes.png"><img alt="_images/requetes.png" src="_images/requetes.png" style="width: 1024.0px; height: 560.0px;" /></a>
+<p class="caption">API: schéma du traitement d&#8217;une requête à l&#8217;aide des vues génériques RestLess</p>
+</div>
+<p>Dans le cas de notre projet, il a fallu personnaliser les vues génériques pour répondre aux besoins spécifiques des ressources. Pour ce faire, on doit surcharger les méthodes héritées des classes RestLess. Comme mentionné précédemment, les méthodes ont le nom de la requête à laquelle elles correspondent. Si l&#8217;on fait une requête PUT, la méthode <tt class="docutils literal"><span class="pre">put</span></tt> est appelée et ainsi de suite. C&#8217;est un principe des vues génériques Django. Concernant nos vues génériques, si notre classe ne contient pas le méthode appelée par une requête, le framework va automatiquement chercher la méthode dans la classe parente. Celle-ci est la classe RestLess qui contient les méthodes classiques et conventionnelles qui nous évitent un code redondant. Par contre, si l&#8217;on ne veut plus utiliser ces méthodes classiques car elles ne sont plus adaptées, on crée alors une méthode de même nom dans la classe fille. Cette méthode sera desormais appelée à la place de celle de la classe mère. On appelle cela surcharger une méthode. Dans le projet, toutes les vues génériques sont écrites dans le fichier <tt class="docutils literal"><span class="pre">api.py</span></tt>. On peut y observer que plusieurs méthodes de tous types ont été surchargées. Il faut s&#8217;inspirer des méthodes RestLess qu&#8217;on surcharge pour que notre nouvelle méthode accepte les bons arguments et retourne une réponse valide. On retrouve le fichier source sur <a class="reference external" href="https://django-restless.readthedocs.org/en/latest/_modules/restless/modelviews.html">la documentation RestLess</a> <a class="footnote-reference" href="#f3" id="id4">[3]</a>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/surcharge.png"><img alt="_images/surcharge.png" src="_images/surcharge.png" style="width: 1024.0px; height: 560.0px;" /></a>
+<p class="caption">Surcharge d&#8217;une méthode</p>
+</div>
+<p>On doit parfois retourner des objets JSON personnalisés, c&#8217;est-à-dire pouvoir choisir les paires clé/valeur de notre dictionnaire. Par défaut RestLess retourne simplement tous les attributs de l&#8217;enregistrement en question. On accomplit cette personnalisation généralement dans le but de choisir certains attributs, d&#8217;en créer des nouveaux qui ne sont pas des champs de la table ou de joindre des enregistrements associés. RestLess fournit la méthode <tt class="docutils literal"><span class="pre">serialize</span></tt> pour résoudre ce problème. Par exemple, pour un cours nous avons besoin de joindre les pages associées et leur contenu ainsi que le nombre total de pages. On peut se rendre sur <a class="reference external" href="https://django-restless.readthedocs.org/en/latest/#">la documentation</a> <a class="footnote-reference" href="#f4" id="id5">[4]</a> pour plus d&#8217;informations et sur le fichier <tt class="docutils literal"><span class="pre">api.py</span></tt> pour des exemples d&#8217;utilisation.</p>
+<p class="rubric">Notes</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td><a class="reference external" href="https://github.com/dobarkod/django-restless">https://github.com/dobarkod/django-restless</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="https://docs.djangoproject.com/fr/1.7/topics/class-based-views/generic-display">https://docs.djangoproject.com/fr/1.7/topics/class-based-views/generic-display</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td><a class="reference external" href="https://django-restless.readthedocs.org/en/latest/_modules/restless/modelviews.html">https://django-restless.readthedocs.org/en/latest/_modules/restless/modelviews.html</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[4]</a></td><td><a class="reference external" href="https://django-restless.readthedocs.org/en/latest">https://django-restless.readthedocs.org/en/latest</a>/#</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="maths.html" class="btn btn-neutral float-right" title="MathJax"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="models.html" class="btn btn-neutral" title="Modèle relationnel"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Keran Kocher.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

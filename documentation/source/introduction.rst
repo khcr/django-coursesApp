@@ -1,0 +1,11 @@
+#############
+Introduction
+#############
+
+.. raw:: latex
+
+    \setcounter{page}{3}
+
+Les chapitres qui suivent décrivent le développement d'une application web complète et fonctionnelle. Mon choix s'est porté sur ce travail pour plusieurs raisons. Tout d'abord, l'informatique est une de mes plus grandes passions et ce projet est l'occasion de m'épanouir dans ce domaine. En effet, j'ai l'opportunité d'acquérir des connaissances supplémentaires et de progresser dans la programmation web en profitant de l'expertise d'un professeur. Ensuite, le cadre de groupe offre la possibilité d'apprendre à travailler à plusieurs pour atteindre un objectif commun, en l'occurence le développement d'une plateforme d'e-learning. L'application décrite dans ce document est un outil de gestion et de visionnage de cours. Elle propose aux enseignants de rédiger du contenu théorique, qui peut ensuite être visionné par des élèves. Ainsi, dans le cadre de ses classes, un professeur peut écrire un cours, en complément de son support habituel, afin d'appronfondir une matière ou d'aider des élèves en difficulté. Il a entre les mains un outil puissant. En effet, outre la possibilité d'aider ses propres étudiants, l'enseignant a également une plateforme pour exposer ses connaissances et les partager à un public plus large que l'école. De plus, il a tout intérêt à encourager ses élèves à s'inscrire sur le site. Effectivement, d'une part le site permet aux utilisateurs d'ajouter des cours à leurs favoris afin de les retrouver sans effort. D'autre part, sur chaque cours est offerte la possibilité de marquer une page comme lue ou à relire. Par conséquent, chaque élève sait où il se situe dans son apprentissage de la matière et peut facilement progresser.
+
+Pour atteindre l'objectif de l'application, on utilise une technologie en particulier. Il s'agit d'AngularJS, un outil développé par Google. Le projet s'articule principalement autour de cette technologie qui permet de construire des sites web rapides et agréables à utiliser. Le documentation qui suit sert à expliquer les bases d'AngularJS et son intégration avec Django, ainsi que d'autres technologies annexes. Ainsi, au terme de ce travail écrit, le lecteur est capable de comprendre le code source de l'application afin de pouvoir le réutiliser, le maintenir ou l'étendre.
