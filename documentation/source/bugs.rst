@@ -17,8 +17,8 @@ Améliorations
 
 * Implémentation complète de l'authentification
 * Possibilité de changer l'ordre des pages
-* Possibilité d'uploader des vidéos et des images
+* Possibilité de téléverser des vidéos et des images
 * Proposer des exercices en lien avec le cours
-* Afficher des statistiques (progression, pages à relire, propositions...) dans le Dashboard élève
+* Afficher des statistiques (progression, pages à relire, propositions...) dans le tableau de bord élève
 * Possibilité pour les étudiants de demander des cours spécifiques
 * Possibilité de faire une recherche parmi les cours publiés

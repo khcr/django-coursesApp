@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.2.20)  26 MAR 2015 17:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.2.20)  29 MAR 2015 15:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -942,11 +942,11 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
 
 ]
 Chapitre 2.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 155.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 157.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 193--194
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 []\T1/ptm/m/n/10 Pour lan-cer les tests, ins-tal-ler d'abord Pro-trac-tor (ne p
 as lan-cer le ser-veur web-dri-ver) :
  []
@@ -957,34 +957,34 @@ as lan-cer le ser-veur web-dri-ver) :
 Chapitre 3.
 [7]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 256.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 258.
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <9> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 261.
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 263.
  [8] <One_Way_Data_Binding.jpg, id=266, 401.5pt x 255.95625pt>
 File: One_Way_Data_Binding.jpg Graphic file (type jpg)
 
 <use One_Way_Data_Binding.jpg>
-Package pdftex.def Info: One_Way_Data_Binding.jpg used on input line 304.
+Package pdftex.def Info: One_Way_Data_Binding.jpg used on input line 306.
 (pdftex.def)             Requested size: 401.49901pt x 255.95561pt.
 File: One_Way_Data_Binding.jpg Graphic file (type jpg)
  <use One_Way_Data_Binding.jpg>
-Package pdftex.def Info: One_Way_Data_Binding.jpg used on input line 304.
+Package pdftex.def Info: One_Way_Data_Binding.jpg used on input line 306.
 (pdftex.def)             Requested size: 401.49901pt x 255.95561pt.
 
 <Two_Way_Data_Binding.jpg, id=267, 401.5pt x 332.24126pt>
 File: Two_Way_Data_Binding.jpg Graphic file (type jpg)
 
 <use Two_Way_Data_Binding.jpg>
-Package pdftex.def Info: Two_Way_Data_Binding.jpg used on input line 312.
+Package pdftex.def Info: Two_Way_Data_Binding.jpg used on input line 314.
 (pdftex.def)             Requested size: 401.49901pt x 332.24043pt.
 File: Two_Way_Data_Binding.jpg Graphic file (type jpg)
  <use Two_Way_Data_Binding.jpg>
-Package pdftex.def Info: Two_Way_Data_Binding.jpg used on input line 312.
+Package pdftex.def Info: Two_Way_Data_Binding.jpg used on input line 314.
 (pdftex.def)             Requested size: 401.49901pt x 332.24043pt.
  [9 <./One_Way_Data_Binding.jpg>]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <9> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 322.
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 325.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 324.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 327.
 
  (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
@@ -995,64 +995,64 @@ Chapitre 4.
 <new.png, id=290, 667.49374pt x 615.29875pt>
 File: new.png Graphic file (type png)
  <use new.png>
-Package pdftex.def Info: new.png used on input line 378.
+Package pdftex.def Info: new.png used on input line 380.
 (pdftex.def)             Requested size: 667.49213pt x 615.29724pt.
 File: new.png Graphic file (type png)
  <use new.png>
-Package pdftex.def Info: new.png used on input line 378.
+Package pdftex.def Info: new.png used on input line 380.
 (pdftex.def)             Requested size: 452.96788pt x 417.56201pt.
 
 [13] [14 <./new.png>] <edit.png, id=306, 1195.46625pt x 779.91376pt>
 File: edit.png Graphic file (type png)
 
 <use edit.png>
-Package pdftex.def Info: edit.png used on input line 420.
+Package pdftex.def Info: edit.png used on input line 422.
 (pdftex.def)             Requested size: 1195.46333pt x 779.91187pt.
 File: edit.png Graphic file (type png)
  <use edit.png>
-Package pdftex.def Info: edit.png used on input line 420.
+Package pdftex.def Info: edit.png used on input line 422.
 (pdftex.def)             Requested size: 452.96788pt x 295.51347pt.
 
 <all_courses.png, id=307, 1053.9375pt x 485.815pt>
 File: all_courses.png Graphic file (type png)
  <use all_courses.png>
-Package pdftex.def Info: all_courses.png used on input line 431.
+Package pdftex.def Info: all_courses.png used on input line 433.
 (pdftex.def)             Requested size: 1053.93494pt x 485.81381pt.
 File: all_courses.png Graphic file (type png)
 
 <use all_courses.png>
-Package pdftex.def Info: all_courses.png used on input line 431.
+Package pdftex.def Info: all_courses.png used on input line 433.
 (pdftex.def)             Requested size: 452.96788pt x 208.8pt.
  <home.png, id=308, 1133.23375pt x 741.77126pt>
 File: home.png Graphic file (type png)
 
 <use home.png>
-Package pdftex.def Info: home.png used on input line 447.
+Package pdftex.def Info: home.png used on input line 449.
 (pdftex.def)             Requested size: 1133.23099pt x 741.76945pt.
 File: home.png Graphic file (type png)
  <use home.png>
-Package pdftex.def Info: home.png used on input line 447.
+Package pdftex.def Info: home.png used on input line 449.
 (pdftex.def)             Requested size: 452.96788pt x 296.48819pt.
  [15 <./edit.png> <./all_courses.png>]
 <view.png, id=318, 1189.44376pt x 777.90625pt>
 File: view.png Graphic file (type png)
  <use view.png>
-Package pdftex.def Info: view.png used on input line 471.
+Package pdftex.def Info: view.png used on input line 473.
 (pdftex.def)             Requested size: 1189.44086pt x 777.90434pt.
 File: view.png Graphic file (type png)
  <use view.png>
-Package pdftex.def Info: view.png used on input line 471.
+Package pdftex.def Info: view.png used on input line 473.
 (pdftex.def)             Requested size: 452.96788pt x 296.23654pt.
 
 <comments.png, id=319, 1166.3575pt x 595.22375pt>
 File: comments.png Graphic file (type png)
  <use comments.png>
-Package pdftex.def Info: comments.png used on input line 482.
+Package pdftex.def Info: comments.png used on input line 484.
 (pdftex.def)             Requested size: 1166.35466pt x 595.2223pt.
 File: comments.png Graphic file (type png)
 
 <use comments.png>
-Package pdftex.def Info: comments.png used on input line 482.
+Package pdftex.def Info: comments.png used on input line 484.
 (pdftex.def)             Requested size: 452.96788pt x 231.15543pt.
  [16 <./home.png>] [17 <./view.png> <./comments.png>]
 [18
@@ -1062,22 +1062,22 @@ Chapitre 5.
 <use_cases.jpg, id=342, 803.0pt x 1055.945pt>
 File: use_cases.jpg Graphic file (type jpg)
  <use use_cases.jpg>
-Package pdftex.def Info: use_cases.jpg used on input line 491.
+Package pdftex.def Info: use_cases.jpg used on input line 493.
 (pdftex.def)             Requested size: 802.99805pt x 1055.94243pt.
 File: use_cases.jpg Graphic file (type jpg)
 
 <use use_cases.jpg>
-Package pdftex.def Info: use_cases.jpg used on input line 491.
+Package pdftex.def Info: use_cases.jpg used on input line 493.
 (pdftex.def)             Requested size: 452.96788pt x 595.65941pt.
  <navigation_schema.jpg, id=343, 803.0pt x 1339.0025pt>
 File: navigation_schema.jpg Graphic file (type jpg)
 
 <use navigation_schema.jpg>
-Package pdftex.def Info: navigation_schema.jpg used on input line 497.
+Package pdftex.def Info: navigation_schema.jpg used on input line 499.
 (pdftex.def)             Requested size: 802.99805pt x 1338.99925pt.
 File: navigation_schema.jpg Graphic file (type jpg)
  <use navigation_schema.jpg>
-Package pdftex.def Info: navigation_schema.jpg used on input line 497.
+Package pdftex.def Info: navigation_schema.jpg used on input line 499.
 (pdftex.def)             Requested size: 452.96788pt x 755.33238pt.
  [19] [20 <./use_cases.jpg>] [21 <./navigation_schema.jpg>] [22
 
@@ -1086,37 +1086,37 @@ Chapitre 6.
 <bd.png, id=362, 308.352pt x 120.45pt>
 File: bd.png Graphic file (type png)
  <use bd.png>
-Package pdftex.def Info: bd.png used on input line 511.
+Package pdftex.def Info: bd.png used on input line 513.
 (pdftex.def)             Requested size: 308.35124pt x 120.44969pt.
 File: bd.png Graphic file (type png)
  <use bd.png>
-Package pdftex.def Info: bd.png used on input line 511.
+Package pdftex.def Info: bd.png used on input line 513.
 (pdftex.def)             Requested size: 308.35124pt x 120.44969pt.
 
 <uml_courses.png, id=363, 897.3525pt x 589.20125pt>
 File: uml_courses.png Graphic file (type png)
  <use uml_courses.png>
-Package pdftex.def Info: uml_courses.png used on input line 527.
+Package pdftex.def Info: uml_courses.png used on input line 529.
 (pdftex.def)             Requested size: 897.3503pt x 589.1998pt.
 File: uml_courses.png Graphic file (type png)
 
 <use uml_courses.png>
-Package pdftex.def Info: uml_courses.png used on input line 527.
+Package pdftex.def Info: uml_courses.png used on input line 529.
 (pdftex.def)             Requested size: 452.96788pt x 297.41391pt.
  [23 <./bd.png>]
 <schema_cours.png, id=370, 308.352pt x 120.45pt>
 File: schema_cours.png Graphic file (type png)
  <use schema_cours.png>
-Package pdftex.def Info: schema_cours.png used on input line 535.
+Package pdftex.def Info: schema_cours.png used on input line 537.
 (pdftex.def)             Requested size: 308.35124pt x 120.44969pt.
 File: schema_cours.png Graphic file (type png)
 
 <use schema_cours.png>
-Package pdftex.def Info: schema_cours.png used on input line 535.
+Package pdftex.def Info: schema_cours.png used on input line 537.
 (pdftex.def)             Requested size: 308.35124pt x 120.44969pt.
  [24 <./uml_courses.png>]
 LaTeX Font Info:    Font shape `TS1/pcr/m/it' in size <9> not available
-(Font)              Font shape `TS1/pcr/m/sl' tried instead on input line 577.
+(Font)              Font shape `TS1/pcr/m/sl' tried instead on input line 579.
  [25 <./schema_cours.png>]
 [26] [27] [28]
 Chapitre 7.
@@ -1125,42 +1125,42 @@ Chapitre 7.
 ] [30] <http.png, id=416, 308.352pt x 120.45pt>
 File: http.png Graphic file (type png)
  <use http.png>
-Package pdftex.def Info: http.png used on input line 802.
+Package pdftex.def Info: http.png used on input line 804.
 (pdftex.def)             Requested size: 308.35124pt x 120.44969pt.
 File: http.png Graphic file (type png)
 
 <use http.png>
-Package pdftex.def Info: http.png used on input line 802.
+Package pdftex.def Info: http.png used on input line 804.
 (pdftex.def)             Requested size: 308.35124pt x 120.44969pt.
  [31 <./http.png>] <requetes.png, id=425, 308.352pt x 168.63pt>
 File: requetes.png Graphic file (type png)
 
 <use requetes.png>
-Package pdftex.def Info: requetes.png used on input line 852.
+Package pdftex.def Info: requetes.png used on input line 854.
 (pdftex.def)             Requested size: 308.35124pt x 168.62958pt.
 File: requetes.png Graphic file (type png)
  <use requetes.png>
-Package pdftex.def Info: requetes.png used on input line 852.
+Package pdftex.def Info: requetes.png used on input line 854.
 (pdftex.def)             Requested size: 308.35124pt x 168.62958pt.
 
 <surcharge.png, id=429, 308.352pt x 168.63pt>
 File: surcharge.png Graphic file (type png)
  <use surcharge.png>
-Package pdftex.def Info: surcharge.png used on input line 862.
+Package pdftex.def Info: surcharge.png used on input line 864.
 (pdftex.def)             Requested size: 308.35124pt x 168.62958pt.
 File: surcharge.png Graphic file (type png)
 
 <use surcharge.png>
-Package pdftex.def Info: surcharge.png used on input line 862.
+Package pdftex.def Info: surcharge.png used on input line 864.
 (pdftex.def)             Requested size: 308.35124pt x 168.62958pt.
  [32 <./requetes.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 889--890
+Underfull \hbox (badness 10000) in paragraph at lines 891--892
 []\T1/ptm/m/n/10 Dans notre ap-pli-ca-tion, tous les ob-jets \T1/pcr/m/n/10 $re
 source \T1/ptm/m/n/10 sont dé-fi-nis dans le fi-chier
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 889--890
+Underfull \hbox (badness 10000) in paragraph at lines 891--892
 \T1/pcr/m/n/10 /courses/static/courses/javascripts/factories/resources.js\T1/pt
 m/m/n/10 . La [][]do-cu-men-ta-tion[][]
  []
@@ -1172,15 +1172,15 @@ Chapitre 8.
 <mathjax.png, id=462, 218.8175pt x 94.3525pt>
 File: mathjax.png Graphic file (type png)
  <use mathjax.png>
-Package pdftex.def Info: mathjax.png used on input line 925.
+Package pdftex.def Info: mathjax.png used on input line 927.
 (pdftex.def)             Requested size: 218.81696pt x 94.35225pt.
 File: mathjax.png Graphic file (type png)
 
 <use mathjax.png>
-Package pdftex.def Info: mathjax.png used on input line 925.
+Package pdftex.def Info: mathjax.png used on input line 927.
 (pdftex.def)             Requested size: 218.81696pt x 94.35225pt.
  [35 <./mathjax.png>] [36]
-Underfull \hbox (badness 5189) in paragraph at lines 988--989
+Underfull \hbox (badness 5189) in paragraph at lines 990--991
 []\T1/ptm/b/n/10 restrict \T1/ptm/m/n/10 : `AE' si-gni-fie que notre di-rec-tiv
 e peut être un at-tri-but (A = At-tri-but), avec le
  []
@@ -1194,13 +1194,13 @@ Chapitre 9.
 ]
 Chapitre 10.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1116--1117
+Underfull \hbox (badness 10000) in paragraph at lines 1118--1119
 []\T1/ptm/b/n/10 controllers/ \T1/ptm/m/n/10 : dé-clare les contrô-leurs An-gu-
 larJS. Un fi-chier cor-res-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1116--1117
+Underfull \hbox (badness 10000) in paragraph at lines 1118--1119
 \T1/ptm/m/n/10 pond à une route et son contrô-leur. Ils sont uti-li-sés dans le
  fi-chier
  []
@@ -1226,16 +1226,16 @@ Chapitre 14.
 \openout8 = `tm2014.lof'.
 
  (./tm2014.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1421.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1429.
  [51]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1421.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1429.
  (./tm2014.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1421.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1421.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1429.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1429.
 
 Package rerunfilecheck Info: File `tm2014.out' has not changed.
 (rerunfilecheck)             Checksum: 0A644B976C6599D40444FE5542AFEE75;1996.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1421.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1429.
  ) 
 Here is how much of TeX's memory you used:
  10070 strings out of 493117
@@ -1254,7 +1254,7 @@ ype1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/ur
 w/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/ut
 mr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
 
-Output written on tm2014.pdf (53 pages, 1211858 bytes).
+Output written on tm2014.pdf (53 pages, 1215212 bytes).
 PDF statistics:
  703 PDF objects out of 1000 (max. 8388607)
  611 compressed objects within 7 object streams
