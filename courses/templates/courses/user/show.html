@@ -1,22 +1,24 @@
 <div id="show-course">
 
   <!-- Titre du cours + favoris -->
-  <h1>{{ course.name }} <span class="favorite glyphicon" ng-click="favorite()" ng-class="course.favorite ? 'glyphicon-star' : 'glyphicon-star-empty'"></span></h1>
+  <h1>{$ course.name $} <span class="favorite glyphicon" ng-click="favorite()" ng-class="course.favorite ? 'glyphicon-star' : 'glyphicon-star-empty'"></span></h1>
 
   <!-- Barre de progression -->
   <!-- http://www.w3schools.com/bootstrap/bootstrap_progressbars.asp -->
+  {% if user.is_authenticated %}
   <div class="progress">
-    <div class="progress-bar" role="progressbar" style="width:{{ course.percentage }}%">
-      <span>{{ course.percentage }}%</span>
+    <div class="progress-bar" role="progressbar" style="width:{$ course.percentage $}%">
+      <span>{$ course.percentage $}%</span>
     </div>
   </div>
+  {% endif %}
 
   <!-- Contenu du cours -->
-  <h2>{{ page.name }}</h2>
+  <h2>{$ page.name $}</h2>
   <div class="col-md-10">
     <div mathjax class="margin bottom" ng-repeat="section in page.sections">
-      <div id="{{ section.name }}">
-        <h3>{{ section.name }}</h3>
+      <div id="{$ section.name $}">
+        <h3>{$ section.name $}</h3>
         <div ng-bind-html="section.html_content"></div>
       </div>
     </div>
@@ -26,14 +28,14 @@
   <div class="menu col-md-2">
 
     <!-- PDF -->
-    <p><span class="glyphicon glyphicon-download"></span><a ng-click="wait()" ng-href="/courses/pdf/{{ course.id }}/{{ course.name | parameterize }}.pdf"> Télécharger le cours</a></p>
-    <p><em>{{ wait }}</em></p>
+    <p><span class="glyphicon glyphicon-download"></span><a ng-click="wait()" ng-href="/courses/pdf/{$ course.id $}/{$ course.name | parameterize $}.pdf"> Télécharger le cours</a></p>
+    <p><em>{$ wait $}</em></p>
 
     <!-- Lien vers les autres pages et sections -->
     <div ng-repeat="page in pages">
-      <div class="page-name"><a ng-href="/courses/#/{{ course.id }}/view/{{ page.order }}" ng-class="{ disabled: isCurrentPage(page) }">{{ page.name }}  <span ng-show="isCurrentPage(page)" class="glyphicon glyphicon-tag"></span></a></div>
+      <div class="page-name"><a ng-href="/courses/#/{$ course.id $}/view/{$ page.order $}" ng-class="{ disabled: isCurrentPage(page) }">{$ page.name $}  <span ng-show="isCurrentPage(page)" class="glyphicon glyphicon-tag"></span></a></div>
       <div class="section-name" ng-repeat="section in page.sections">
-        <a ng-href="/courses/#/{{ course.id }}/view/{{ page.order }}">{{ section.name }}</a>
+        <a ng-href="/courses/#/{$ course.id $}/view/{$ page.order $}">{$ section.name $}</a>
       </div>
     </div>
   </div>
@@ -42,8 +44,10 @@
   <div class="col-md-12 nav">
     <div class="pull-left"><button id="previous-page" class="btn btn-primary" ng-disabled="firstPage()" ng-click="previousPage()">Précédent</button></div>
     <div class="pull-right"><button id="next-page" class="btn btn-primary" ng-disabled="lastPage()" ng-click="nextPage()">Suivant</button></div>
+    {% if user.is_authenticated %}
     <div class="pull-right"><button id="page-success" class="btn btn-success" ng-disabled="isProgress('Compris')" ng-click="saveProgress(true)">J'ai compris !</button></div>
     <div class="pull-right"><button id="page-defeat" class="btn btn-danger" ng-disabled="isProgress('Relire')" ng-click="saveProgress(false)">A relire</button></div>
+    {% endif %}
   </div>
 
 </div>
@@ -58,25 +62,29 @@
 
   <!-- Liste -->
   <div class="comment col-md-7" ng-repeat="comment in comments">
-      <p class="author"><span class="glyphicon glyphicon-user"></span>  {{ comment.user }}</p>
-      <p>{{ comment.content }}<p><br>
-      <em><small>Posté le {{ comment.created_at | date : "d MMMM yyyy à H:mm" }}</small></em>
+      <p class="author"><span class="glyphicon glyphicon-user"></span>  {$ comment.user $}</p>
+      <p>{$ comment.content $}<p><br>
+      <em><small>Posté le {$ comment.created_at | date : "d MMMM yyyy à H:mm" $}</small></em>
   </div>
 
   <!-- Prévisualisation -->
   <div class="preview comment col-md-7">
-      <p class="author">{{ comment.user }}</p>
-      <p ng-hide="comment.content.length">{{ comment.placeholder }}<p>
-      <p>{{ comment.content }}<p>
+      <p class="author">{$ comment.user $}</p>
+      <p ng-hide="comment.content.length">{$ comment.placeholder $}<p>
+      <p>{$ comment.content $}<p>
   </div>
 
   <!-- Formulaire pour ajouter un commentaire -->
   <div class="new col-md-12">
+    {% if user.is_authenticated %}
     <form class="form-horizontal col-md-offset-3 col-md-6" role="form" name="newComment" ng-submit="newComment.$valid && saveComment()" novalidate>
       <div class="form-group">
         <textarea placeholder="Ton commentaire" class="col-md-12" msd-elastic="\n" ng-model="comment.content" ng-minlength=3 ng-maxlength=300 required></textarea>
         <input id="submit-comment" type="submit" value="Envoyer" class="form-control btn-primary" ng-disabled="newComment.$invalid">
       </div>
     </form>
+    {% else %}
+    <a href="/login"><button class="col-md-offset-3 col-md-6 btn btn-primary">Veuillez vous connecter pour commenter</button></a>
+    {% endif %}
   </div>
 </div>

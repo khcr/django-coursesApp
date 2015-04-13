@@ -6,22 +6,24 @@
     <!-- Liens pour trier les cours -->
     <div class="category"><strong>Choisir <span class="glyphicon glyphicon-search"></span></strong></div>
     <div class="category" ng-class="{current: currentCategory('Tous')}" ng-click="changeCategory()">Tous</div>
+    {% if user.is_authenticated %}
     <div id="favorites" class="category" ng-class="{current: currentCategory('Favoris')}" ng-click="selectFavorites()">Favoris <span class="glyphicon glyphicon-heart"></span></div>
+    {% endif %}
     <div class="category-container" ng-repeat="theme in themes">
-      <div ng-class="{current: currentCategory(theme.name)}" class="category" ng-click="changeCategory(theme.name)">{{ theme.name }}</div>
+      <div ng-class="{current: currentCategory(theme.name)}" class="category" ng-click="changeCategory(theme.name)">{$ theme.name $}</div>
     </div>
   </div>
 
   <!-- Liste des cours -->
   <div ng-repeat="course in courses">
     <div class="course-block col-md-5" ng-click="showCourse(course)">
-  	  <h4 class="course-name">{{ course.name }}</h4>
+  	  <h4 class="course-name">{$ course.name $}</h4>
       <div class="pull-right">
-        <div>{{ course.chapter.name }}</div>
+        <div>{$ course.chapter.name $}</div>
         <span class="glyphicon glyphicon-signal"></span>
-        {{ course.difficulty }}/3
+        {$ course.difficulty $}/3
       </div>
-  	  <p>{{ course.description }}</p>
+  	  <p>{$ course.description $}</p>
     </div>
   </div>
 </div>

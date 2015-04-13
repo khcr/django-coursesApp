@@ -2,12 +2,12 @@
 
   <!-- Titre du cours -->
   <div>
-    <h1 class="course-title noline">{{ course.name }}</h1><a ng-href="#/{{ course.id }}/edit"><span class="glyphicon glyphicon-cog"></span><small>Editer</small></a>
+    <h1 class="course-title noline">{$ course.name $}</h1><a ng-href="#/{$ course.id $}/edit"><span class="glyphicon glyphicon-cog"></span><small>Editer</small></a>
   </div>
 
   <!-- Barre de boutons -->
   <div class="pull-right margin bottom">
-    <small id="last-save"><em>Dernière sauvegarde: {{ lastSave | date: "H 'h' mm 'min' et ss 'sec'" }}</em></small>
+    <small id="last-save"><em>Dernière sauvegarde: {$ lastSave | date: "H 'h' mm 'min' et ss 'sec'" $}</em></small>
     <button id="save-page" type="button" ng-click="saveCourse()" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk"></span> Enregistrer</button>
     <button id="preview-page" type="button" ng-click="preview()" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span> Aperçu</button>
     <button id="publish-course" type="button" ng-hide="course.published" ng-click="publish()" class="btn btn-default"><span class="glyphicon glyphicon-globe"></span> Publier</button>
@@ -56,7 +56,7 @@
         <!-- Lien vers les autres pages et bouton pour en rajouter -->
         <span ng-repeat="page in pages"></span>
         <span ng-repeat="number in [] | range:1:page.total_pages">
-          <a ng-class="{disabled: isCurrentPage(number)}" ng-href="#/{{ course.id }}/edit/{{ number }}">{{ number }}</a>
+          <a ng-class="{disabled: isCurrentPage(number)}" ng-href="#/{$ course.id $}/edit/{$ number $}">{$ number $}</a>
         </span>
         <button id="new-page" class="btn btn-default" ng-click="newPage()"><span class="glyphicon glyphicon-file"></span> Nouvelle page</button>
       </div>

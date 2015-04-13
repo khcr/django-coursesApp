@@ -2,7 +2,8 @@
 
 // https://docs.angularjs.org/guide/directive
 
-var app = angular.module("directives");
+var app = angular.module("directives"),
+    teacherPath = "/courses/teacher/templates/directives/";
 
 // directive qui formate son contenu avec MathJax
 app.directive("mathjax", ["$timeout", function($timeout) {
@@ -25,7 +26,7 @@ app.directive("mathjax", ["$timeout", function($timeout) {
 app.directive("courseForm", function() {
   return {
     restrict: "E",
-    templateUrl: "/static/courses/html/directives/course_form.html"
+    templateUrl: teacherPath + "course_form.html"
   };
 });
 
@@ -33,6 +34,6 @@ app.directive("courseForm", function() {
 app.directive("backToCourse", function() {
   return {
     restrict: "E",
-    templateUrl: "/static/courses/html/directives/back_course.html"
+    templateUrl: teacherPath + "back_course.html"
   };
 });
