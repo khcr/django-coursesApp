@@ -259,7 +259,7 @@ class CoursePageProgress(Endpoint):
             # On met à jour avec le nouveau statut
             progression.status = status
             progression.save()
-        return Http200({"progression": status.name, "percentage": page.course.percentage()})
+        return Http200({"progression": status.name, "percentage": page.course.percentage(user)})
 
 class CoursePublish(Endpoint):
 

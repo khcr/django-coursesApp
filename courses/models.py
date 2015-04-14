@@ -51,9 +51,9 @@ class Course(models.Model):
         return self.pages.count()
 
     # calcule le pourcentage lu du cours en fonction de la progression et du nombre total de pages
-    def percentage(self):
+    def percentage(self, user):
         # pages marquées comme "comprises"
-        done = self.pages.filter(progression__status__name="Compris").count()
+        done = self.pages.filter(progression__user_id=user.id, progression__status__name="Compris").count()
         # pourcentage
         percentage = done / self.total_pages() * 100
         # arrondit le pourcentage

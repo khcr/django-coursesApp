@@ -12,7 +12,7 @@ def serialize_page(page, course, user):
     }
     is_user = user.is_authenticated() and user.is_active
     if is_user:
-        course_params['percentage'] = course.percentage()
+        course_params['percentage'] = course.percentage(user)
         course_params['favorite'] = course.has_favorite(user)
 
     return serialize(page, include=[
