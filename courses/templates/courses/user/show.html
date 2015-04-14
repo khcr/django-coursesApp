@@ -1,7 +1,12 @@
 <div id="show-course">
 
   <!-- Titre du cours + favoris -->
-  <h1>{$ course.name $} <span class="favorite glyphicon" ng-click="favorite()" ng-class="course.favorite ? 'glyphicon-star' : 'glyphicon-star-empty'"></span></h1>
+  <h1>
+    {$ course.name $} 
+    {% if user.is_authenticated %}
+    <span class="favorite glyphicon" ng-click="favorite()" ng-class="course.favorite ? 'glyphicon-star' : 'glyphicon-star-empty'"></span>
+    {% endif %}
+  </h1>
 
   <!-- Barre de progression -->
   <!-- http://www.w3schools.com/bootstrap/bootstrap_progressbars.asp -->
@@ -69,7 +74,7 @@
 
   <!-- Prévisualisation -->
   <div class="preview comment col-md-7">
-      <p class="author">{$ comment.user $}</p>
+      <p class="author"><span class="glyphicon glyphicon-user"></span>  {{ user.username|default:"Ton pseudo"}}</p>
       <p ng-hide="comment.content.length">{$ comment.placeholder $}<p>
       <p>{$ comment.content $}<p>
   </div>

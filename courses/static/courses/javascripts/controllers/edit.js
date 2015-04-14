@@ -2,10 +2,10 @@
 
 var app = angular.module("controllers");
 
-app.controller("EditCourseController", ["$scope", "$routeParams", "$http","Course", function($scope, $routeParams, $http, Course) {
+app.controller("EditCourseController", ["$scope", "$routeParams", "$http", "Course", function($scope, $routeParams, $http, Course) {
 
   // récupère le cours
-  $scope.course = Course.get({courseId: $routeParams.courseId, resources: ""});
+  $scope.course = Course.get({courseId: $routeParams.courseId});
 
   // pour le lien de retour au cours
   $scope.page = {order: 1};

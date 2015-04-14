@@ -89,7 +89,7 @@ app.controller("ShowCourseController", ["$scope", "$routeParams", "$location", "
   };
 
   // crée un commentaire d'exemple, affiché dans le formulaire pour ajouter un commentaire
-  var newComment = new Comment({"placeholder":"Ton commentaire", "user":"Keran", course_id: $routeParams.courseId});
+  var newComment = new Comment({"placeholder":"Ton commentaire", course_id: $routeParams.courseId});
   // Object.create permet de cloner une variable
   $scope.comment = Object.create(newComment);
 

@@ -1,11 +1,10 @@
 from restless.modelviews import ListEndpoint, DetailEndpoint, Endpoint
 from restless.models import serialize
-from restless.http import Http201, Http200
+from restless.http import Http201, Http200, HttpError
 
 from courses.models import Course, Page, Section, CourseComment, Status, Progression, Theme
 from courses.forms import CourseForm, PageForm, SectionForm, CommentForm
-from courses.utils import serialize_page
-from django.contrib.auth.models import User
+from courses.api_utils import *
 
 class CourseList(ListEndpoint):
     model = Course
@@ -13,13 +12,12 @@ class CourseList(ListEndpoint):
     # /courses
     # GET: renvoie une liste de cours
     def get(self, request):
-        # TODO: utiliser l'utilisateur connecté
-        user = User.objects.first()
+        user = request.user
         # Trie les cours par thème, sélectionne les cours favoris d'un utilisateur ou renvoie tous les cours
         # Retourne seulement les cours publiés
         if 'theme' in request.GET:
             courses = Course.objects.filter(chapter__theme__name=request.GET['theme'], published=True)
-        elif 'favorite' in request.GET:
+        elif 'favorite' in request.GET and user.is_authenticated() and user.is_active:
             courses = user.favorite_courses.filter(published=True)
         else:
             courses = Course.objects.filter(published=True)
@@ -29,12 +27,12 @@ class CourseList(ListEndpoint):
 
 
     # POST: crée un nouveau cours
+    @teacher_required
     def post(self, request):
         course_form = CourseForm(request.data)
         if course_form.is_valid():
             course = course_form.save(commit=False)
-            # TODO: utiliser l'utilisateur connecté
-            course.author = User.objects.first()
+            course.author = request.user
             course.save()
             # Crée une page vierge
             page = Page(name="Première page", order=1, course_id=course.id)
@@ -47,53 +45,81 @@ class TeacherCourseList(ListEndpoint):
     model = Course
 
     # /courses/all
-    # GET
-    # POST
 
+    # GET
+    @teacher_required
+    def get(self, request, *args, **kwargs):
+        return super().get(self, request, *args, **kwargs)
+
+    # POST: non utilisé
+    def post(self, request, *args, **kwargs):
+        raise HttpError(405, 'Method Not Allowed')
 
 class CourseDetail(DetailEndpoint):
     model = Course
 
     # /courses/:id
+
     # GET
+    @teacher_required
+    def get(self, request, *args, **kwargs):
+        return super().get(self, request, *args, **kwargs)
+
     # PUT
-    # DELETE
+    @teacher_required
+    def put(self, request, *args, **kwargs):
+        return super().put(self, request, *args, **kwargs)
+
+    # DELETE: non utilisé
+    def delete(self, request, *args, **kwargs):
+        raise HttpError(405, 'Method Not Allowed')
 
 class CoursePageList(ListEndpoint):
     model = Course
 
     # /courses/:id/pages
-    # GET
+
+    # GET: non utilisé
+    def get(self, request, *args, **kwargs):
+        raise HttpError(405, 'Method Not Allowed')
 
     # POST: ajoute une page à un cours
+    @teacher_required
     def post(self, request, course_id):
-        course = Course.objects.get(id=course_id)
+        course = get_object_or_404(Course, id=course_id)
         # Crée une page à la suite des autres
         order = course.pages.count() + 1
         page = Page(name="Titre de la page", order=order, course_id=course.id)
         page.save()
         # Crée une section dans la nouvelle page
         page.sections.create(name="Première section", order=1)
-        return Http201(serialize_page(page, course))
+        return Http201(serialize_page(page, course, request.user))
 
 class PageCourseDetail(DetailEndpoint):
     model = Page
 
     # /pages/:id/courses/:id
-    # DELETE
+
+    # DELETE: non utilisé
+    def delete(self, request, *args, **kwargs):
+        raise HttpError(405, 'Method Not Allowed')
 
     # GET: renvoie une page d'un cours
     def get(self, request, page_id, course_id):
         # /!\ l'argument "page_id" représente le champ "order" du modèle Page, pas l'"id"
-        course = Course.objects.get(id=course_id)
-        page = course.pages.get(order=page_id)
-        return serialize_page(page, course)
+        course = get_object_or_404(Course, id=course_id)
+        try:
+            page = Page.objects.get(course_id=course_id, order=page_id)
+        except Page.DoesNotExist:
+            page = Page(name="Page introuvable")
+        return serialize_page(page, course, request.user)
 
     # PUT: sauvegarde le contenu d'une page
+    @teacher_required
     def put(self, request, page_id, course_id):
-        course = Course.objects.get(id=course_id)
+        course = get_object_or_404(Course, id=course_id)
         # Récupère la page à éditer
-        page = Page.objects.get(id=page_id)
+        page = get_object_or_404(Page, id=page_id)
         # On utilise un formulaire (PageForm)
         # request.data est un dictionnaire contenant les données soumise par l'utilisateur
         # ici le contenu de la page
@@ -115,30 +141,44 @@ class PageCourseDetail(DetailEndpoint):
             if section_form.is_valid():
                 # On enregistre la section
                 section_form.save()
-        return Http200(serialize_page(page, course))
+        return Http200(serialize_page(page, course, request.user))
 
 class PageSectionList(ListEndpoint):
     model = Section
 
     # /pages/:id/sections
-    # GET
+
+    # GET: non utilisé
+    def get(self, request, *args, **kwargs):
+        raise HttpError(405, 'Method Not Allowed')
     
     # POST: Crée une nouvelle section dans une page
+    @teacher_required
     def post(self, request, page_id):
-        page = Page.objects.get(id=page_id)
+        page = get_object_or_404(Page, id=page_id)
         # Crée une section à la suite des autres
         order = page.sections.count() + 1
         section = page.sections.create(name="Editer ici", markdown_content="Et ici", order=order)
         section.save()
-        return Http201(serialize_page(page, page.course))
+        return Http201(serialize_page(page, page.course, request.user))
 
 class SectionDetail(DetailEndpoint):
     model = Section
 
     # /sections/:id
-    # GET
-    # PUT
+
+    # GET: non utilisé
+    def get(self, request, *args, **kwargs):
+        raise HttpError(405, 'Method Not Allowed')
+
+    # PUT: non utilisé
+    def put(self, request, *args, **kwargs):
+        raise HttpError(405, 'Method Not Allowed')
+
     # DELETE
+    @teacher_required
+    def delete(self, request, *args, **kwargs):
+        return super().delete(self, request, *args, **kwargs)
 
 
 class ThemeList(ListEndpoint):
@@ -167,12 +207,12 @@ class CommentList(ListEndpoint):
 
 
     # POST: crée un commentaire dans un cours
+    @login_required
     def post(self, request, pk):
         comment_form = CommentForm(request.data)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
-            # TODO: utiliser l'utilisateur connecté
-            comment.user = User.objects.first()
+            comment.user = request.user
             comment.course_id = pk
             comment.save()
             return Http201(serialize(comment, include=[
@@ -194,11 +234,11 @@ class CourseMenu(Endpoint):
 class CoursePageProgress(Endpoint):
 
     # Marque la progression d'un utilisateur
+    @login_required
     def put(self, request, pk):
-        # TODO: utiliser l'utilisateur connecté
-        user = User.objects.first()
+        user = request.user
         # On récupère la page concernée
-        page = Page.objects.get(id=pk)
+        page = get_object_or_404(Page, id=pk)
 
         # request.data est un dictionnaire contenant les données soumises par l'utilisateur
         # ici, si l'utilisateur a compris ou non la page
@@ -224,8 +264,9 @@ class CoursePageProgress(Endpoint):
 class CoursePublish(Endpoint):
 
     # Publie ou retire un cours
+    @teacher_required
     def put(self, request, pk):
-        course = Course.objects.get(id=pk)
+        course = get_object_or_404(Course, id=pk)
         # on inverse le booléen "published" qui détermine si le cours est publié ou non
         course.published = not course.published
         course.save()
@@ -234,10 +275,10 @@ class CoursePublish(Endpoint):
 class CourseFavorite(Endpoint):
 
     # Ajoute ou retire un cours des favoris de l'utilisateur
+    @login_required
     def post(self, request, pk):
-        # TODO: utiliser l'utilisateur connecté
-        user = User.objects.first()
-        course = Course.objects.get(pk=pk)
+        user = request.user
+        course = get_object_or_404(Course, id=pk)
         # teste si l'utilisateur a déjà le cours dans ses favoris
         is_favorite = course.has_favorite(user)
         if is_favorite:

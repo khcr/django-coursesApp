@@ -16,7 +16,7 @@ def index(request):
 
 # retourne les gabarits HTML pour AngularJS, accessible seulement pour les enseignants
 def teacher_templates(request, filename):
-    if request.user.is_authenticated() and request.user.is_teacher():
+    if request.user.is_authenticated() and request.user.is_active and request.user.is_teacher():
         return render(request, "courses/teacher/{}".format(filename))
     else:
         return render(request, "courses/unauthorized.html")
