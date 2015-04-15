@@ -7,7 +7,13 @@ exports.config = {
     'browserName': 'chrome'
   },
 
+  framework: 'jasmine2',
+
   jasmineNodeOpts: {
     showColors: true,
+  },
+
+  onPrepare: function() {
+    global.login = require("./helpers/login_helper")
   }
 }

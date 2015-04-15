@@ -1,6 +1,11 @@
 "use strict";
 
 describe("course show", function() {
+
+  beforeAll(function() {
+    login.asStudent();
+  });
+  
   beforeEach(function() {
     browser.get("http://localhost:3333/courses/#/1/view/1");
   });

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.template.loader import get_template
-from django.template import RequestContext
+from django.template import RequestContext, TemplateDoesNotExist
 from django.http import HttpResponse
 import re
 
@@ -13,6 +13,17 @@ from courses.models import Course
 # courses.html est le layout de l'application
 def index(request):
     return render(request, "courses/courses.html", locals())
+
+# retourne les gabarits HTML pour AngularJS, accessible seulement pour les enseignants
+def teacher_templates(request, filename):
+    if request.user.is_authenticated() and request.user.is_active and request.user.is_teacher():
+        return render(request, "courses/teacher/{}".format(filename))
+    else:
+        return render(request, "courses/unauthorized.html")
+
+# retourne les gabarits HTML pour AngularJS en modifiant le contenu si un utilisateur est connecté
+def user_templates(request, filename):
+    return render(request, "courses/user/{}".format(filename))
 
 # retourne un cours au format PDF
 def pdf(request, pk):

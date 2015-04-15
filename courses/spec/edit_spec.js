@@ -1,6 +1,11 @@
 "use strict";
 
 describe("course edit", function() {
+
+  beforeAll(function() {
+    login.asTeacher();
+  });
+
   beforeEach(function() {
     browser.get("http://localhost:3333/courses/#/1/edit");
   });

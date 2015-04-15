@@ -1,8 +1,8 @@
 <back-to-course></back-to-course>
 
-<h2>{{ page.name }}</h2>
+<h2>{$ page.name $}</h2>
 
 <div mathjax class="margin bottom" ng-repeat="section in page.sections">
-  <h3>{{ section.name }}</h3>
+  <h3>{$ section.name $}</h3>
   <div ng-bind-html="section.markdown_content | markdown"></div>
 </div>

@@ -1,6 +1,11 @@
 "use strict";
 
 describe("new course", function() {
+
+  beforeAll(function() {
+    login.asTeacher();
+  });
+  
   beforeEach(function() {
     browser.get("http://localhost:3333/courses/#/new");
   });

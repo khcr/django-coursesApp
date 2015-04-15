@@ -4,39 +4,42 @@ var app = angular.module("routes");
 
 // routes de l'application
 app.config(function($routeProvider, $resourceProvider){
-  var basePath = "/static/courses/html/";
+  var basePath = "/static/courses/html/",
+      teacherPath = "/courses/teacher/templates/",
+      userPath = "/courses/user/templates/";
+
   $routeProvider.when("/", {
-      templateUrl: basePath + "home.html",
+      templateUrl: userPath + "home.html",
       controller: "HomeCourseController"
     })
     .when("/about", {
       templateUrl: basePath + "about.html"
     })
     .when("/new", {
-      templateUrl: basePath + "new.html",
+      templateUrl: teacherPath + "new.html",
       controller: "NewCourseController"
     })
     .when("/:courseId/view/:pageId", {
-      templateUrl: basePath + "show.html",
+      templateUrl: userPath + "show.html",
       controller: "ShowCourseController"
     })
     .when("/:courseId/edit/:pageId", {
-      templateUrl: basePath + "page_edit.html",
+      templateUrl: teacherPath + "page_edit.html",
       controller: "EditPageController"
     })
     .when("/:courseId/edit", {
-      templateUrl: basePath + "edit.html",
+      templateUrl: teacherPath + "edit.html",
       controller: "EditCourseController"
     })
     .when("/:courseId/preview/:pageId", {
-      templateUrl: basePath + "preview.html",
+      templateUrl: teacherPath + "preview.html",
       controller: "PreviewCourseController"
     })
     .when("/help", {
-      templateUrl: basePath + "help.html"
+      templateUrl: teacherPath + "help.html"
     })
     .when("/teacher/courses", {
-      templateUrl: basePath + "teacher_course.html",
+      templateUrl: teacherPath + "teacher_course.html",
       controller: "TeacherCourseController"
     })
     .otherwise({ // Page 404

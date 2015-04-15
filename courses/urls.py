@@ -7,6 +7,10 @@ from courses.api import (CourseList, TeacherCourseList, CourseDetail, PageCourse
 urlpatterns = patterns('',
     # point de départ de l'application
     url(r'^$', views.index, name='index'),
+    # retourne les gabarits HTML pour AngularJS, accessible seulement pour les enseignants
+    url(r'^teacher/templates/(?P<filename>[\w/]+\.html)$', views.teacher_templates, name='teacher_templates'),
+    # retourne les gabarits HTML pour AngularJS, accessible pour les utilisateurs connectés
+    url(r'^user/templates/(?P<filename>[\w/]+\.html)$', views.user_templates, name='user_templates'),
     # génère le PDF d'un cours
     url(r'^pdf/(?P<pk>\d+)/.*\.pdf$', views.pdf, name='pdf'),
 
