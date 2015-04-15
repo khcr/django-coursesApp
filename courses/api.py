@@ -49,7 +49,7 @@ class TeacherCourseList(ListEndpoint):
     # GET
     @teacher_required
     def get(self, request, *args, **kwargs):
-        return super().get(self, request, *args, **kwargs)
+        return super().get(request, *args, **kwargs)
 
     # POST: non utilisé
     def post(self, request, *args, **kwargs):
@@ -63,12 +63,12 @@ class CourseDetail(DetailEndpoint):
     # GET
     @teacher_required
     def get(self, request, *args, **kwargs):
-        return super().get(self, request, *args, **kwargs)
+        return super().get(request, *args, **kwargs)
 
     # PUT
     @teacher_required
     def put(self, request, *args, **kwargs):
-        return super().put(self, request, *args, **kwargs)
+        return super().put(request, *args, **kwargs)
 
     # DELETE: non utilisé
     def delete(self, request, *args, **kwargs):
@@ -178,7 +178,7 @@ class SectionDetail(DetailEndpoint):
     # DELETE
     @teacher_required
     def delete(self, request, *args, **kwargs):
-        return super().delete(self, request, *args, **kwargs)
+        return super().delete(request, *args, **kwargs)
 
 
 class ThemeList(ListEndpoint):
