@@ -25,7 +25,6 @@ class CourseList(ListEndpoint):
                 ('chapter', dict(fields=['name']))
             ])
 
-
     # POST: crée un nouveau cours
     @teacher_required
     def post(self, request):
@@ -43,6 +42,7 @@ class CourseList(ListEndpoint):
 
 class TeacherCourseList(ListEndpoint):
     model = Course
+    methods = ['GET']
 
     # /courses/all
 
@@ -51,12 +51,10 @@ class TeacherCourseList(ListEndpoint):
     def get(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
 
-    # POST: non utilisé
-    def post(self, request, *args, **kwargs):
-        raise HttpError(405, 'Method Not Allowed')
 
 class CourseDetail(DetailEndpoint):
     model = Course
+    methods = ['GET', 'PUT']
 
     # /courses/:id
 
@@ -70,18 +68,12 @@ class CourseDetail(DetailEndpoint):
     def put(self, request, *args, **kwargs):
         return super().put(request, *args, **kwargs)
 
-    # DELETE: non utilisé
-    def delete(self, request, *args, **kwargs):
-        raise HttpError(405, 'Method Not Allowed')
 
 class CoursePageList(ListEndpoint):
     model = Course
+    methods = ['POST']
 
     # /courses/:id/pages
-
-    # GET: non utilisé
-    def get(self, request, *args, **kwargs):
-        raise HttpError(405, 'Method Not Allowed')
 
     # POST: ajoute une page à un cours
     @teacher_required
@@ -97,12 +89,9 @@ class CoursePageList(ListEndpoint):
 
 class PageCourseDetail(DetailEndpoint):
     model = Page
+    methods = ['GET', 'PUT']
 
     # /pages/:id/courses/:id
-
-    # DELETE: non utilisé
-    def delete(self, request, *args, **kwargs):
-        raise HttpError(405, 'Method Not Allowed')
 
     # GET: renvoie une page d'un cours
     def get(self, request, page_id, course_id):
@@ -145,12 +134,9 @@ class PageCourseDetail(DetailEndpoint):
 
 class PageSectionList(ListEndpoint):
     model = Section
+    methods = ['POST']
 
     # /pages/:id/sections
-
-    # GET: non utilisé
-    def get(self, request, *args, **kwargs):
-        raise HttpError(405, 'Method Not Allowed')
     
     # POST: Crée une nouvelle section dans une page
     @teacher_required
@@ -164,16 +150,9 @@ class PageSectionList(ListEndpoint):
 
 class SectionDetail(DetailEndpoint):
     model = Section
+    methods = ['DELETE']
 
     # /sections/:id
-
-    # GET: non utilisé
-    def get(self, request, *args, **kwargs):
-        raise HttpError(405, 'Method Not Allowed')
-
-    # PUT: non utilisé
-    def put(self, request, *args, **kwargs):
-        raise HttpError(405, 'Method Not Allowed')
 
     # DELETE
     @teacher_required
@@ -183,9 +162,9 @@ class SectionDetail(DetailEndpoint):
 
 class ThemeList(ListEndpoint):
     model = Theme
+    methods = ['GET']
 
     # /themes
-    # POST
 
     # GET: renvoie tous les thèmes et leurs chapitres
     def get(self, request):
