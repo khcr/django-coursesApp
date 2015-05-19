@@ -1,7 +1,8 @@
 // https://docs.angularjs.org/guide/module
 
 // Application principale et ses dépendances
-angular.module('coursesApp', ['ngSanitize', 'ngAnimate', 'monospaced.elastic', 'controllers', 'routes', 'tags', 'resources', 'filters', 'directives']);
+angular.module('coursesApp', ['ngSanitize', 'ngAnimate', 'monospaced.elastic', 
+  'controllers', 'routes', 'tags', 'resources', 'filters', 'directives', 'Interceptors']);
 
 // définit les modules
 angular.module('controllers', []);

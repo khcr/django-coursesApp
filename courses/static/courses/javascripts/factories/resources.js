@@ -9,9 +9,7 @@ app.factory("Course", ["$resource", function($resource) {
     "api/courses/:courseId/:resource",
     {courseId: "@id"},
     {
-      update: { method: "PUT" },
-      // ajoute une page au cours
-      add_page: { method: "POST", params: { resource: "pages" }}
+      update: { method: "PUT" }
     }
   );
 }]);
@@ -23,7 +21,9 @@ app.factory("Page", ["$resource", function($resource) {
     {
       update: { method: "PUT" },
       // ajoute une section à la page
-      add_section: { method: "POST", params: {resource: "sections" }}
+      add_section: { method: "POST", params: {resource: "sections" }},
+      // ajoute une page au cours
+      add_page: { method: "POST", params: { pageId: null, resource: null }, url: "api/courses/:courseId/pages" }
     }
   );
 }]);

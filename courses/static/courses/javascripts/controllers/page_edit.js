@@ -7,7 +7,7 @@ app.controller("EditPageController", ["$scope", "$routeParams", "$location", "Se
 
     // récupère la page et son contenu
     $scope.page = Page.get({ pageId: $routeParams.pageId, objectId: $routeParams.courseId }, function(page) {
-      $scope.course = new Course(page.course);
+      $scope.course = page.course;
     });
 
     // ajoute une section à la page
@@ -91,13 +91,9 @@ app.controller("EditPageController", ["$scope", "$routeParams", "$location", "Se
       // sauvegarde la page
       $scope.saveCourse();
       // ajoute une page dans la base de données
-      $scope.course.$add_page(function(page) {
-        $scope.page = page;
-        $scope.course = page.course;
-        // redirige vers l'édition de la nouvelle page
+      $scope.page.$add_page({ courseId: $scope.course.id }, function() {
         $location.path($scope.course.id + "/edit/" + $scope.page.order);
       });
-      
     };
 
     // teste si une page est la page actuelle

@@ -128,6 +128,7 @@ button:hover {
   background-color: #FFF7F7;
   display: inline-block;
   cursor: pointer;
+  height: 120px;
 }
 #home .course-block:hover{
   background-color: #FCD9D9;
